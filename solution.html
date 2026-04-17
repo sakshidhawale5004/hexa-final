@@ -45,6 +45,19 @@
             justify-content: space-between;
             align-items: center;
         }
+        
+        /* Hide Get Started button on mobile */
+        @media (max-width: 768px) {
+            header .btn-main {
+                display: none !important;
+            }
+            
+            header {
+                padding: 10px 20px;
+                width: 95%;
+                justify-content: space-between;
+            }
+        }
 
         .logo { font-weight: 800; font-size: 20px; text-transform: uppercase; }
         .logo span { color: var(--accent); }
@@ -171,6 +184,19 @@
     color:#000;
 }
 
+/* Mobile filter buttons */
+@media (max-width: 768px) {
+    .filter-buttons {
+        padding: 0 10px;
+    }
+    
+    .filter-btn {
+        padding: 8px 12px;
+        margin: 5px;
+        font-size: 13px;
+    }
+}
+
 /* GRID*/
 .country-container{
     display:grid;
@@ -190,28 +216,34 @@
     transition:0.4s;
 }*/
 
-.country-card img{
-    max-width:120px;
-    max-height:80px;
-}
-
-.country-card:hover{
-    transform:translateY(-5px);
-}
 .country-card{
     text-align:center;
     border-radius:15px;
     box-shadow:0 5px 20px rgba(0,0,0,0.08);
     transition:0.4s;
     background:rgba(255, 255, 255, 0.03);
-   
+    padding: 20px;
+    border: 1px solid var(--glass-border);
+}
+
+.country-card:hover{
+    transform:translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(245, 196, 0, 0.2);
+}
+
+.country-card img{
+    max-width:120px;
+    max-height:80px;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .country-card p{
     margin-top:10px;
     color:#fff;
     font-size:15px;
-    font-weight:500;
+    font-weight:600;
 }
 
 /* HIDE CLASS */
@@ -1090,24 +1122,22 @@ iframe {
         <div class="container">
             <div class="text-center mb-5">
                 <div class="hero-badge">Solutions</div>
-                <h1>About HexaTP</h1>
+                <h1 style="color: #ffffff;">About HexaTP</h1>
             </div>
 
             <div class="row g-5 align-items-stretch">
-                <div class="col-lg-7"> 
-                    
-                        <h2 class="section-title mb-4">WHY TP SO <span style="color:var(--accent)">IMPORTANT ?</span></h2>
-                        <p class="slate-text mb-4" style="font-size: 1.1rem; line-height: 1.8;">
-                           Increased number of intercompany transactions has made transfer pricing a leading risk management issue for global businesses. To curb manipulation and abuse of transfer pricing, various countries have introduced transfer pricing guidelines and law.
-                        </p>
-                        <p class="slate-text mb-0" style="font-size: 1.1rem; line-height: 1.8;">
-                           We help you comply with Transfer Pricing requirements by delivering meticulously prepared Documentation and Benchmarking analysis as per local requirements in conjunction with global standards.
-                        </p>
-                    </div>
+                <div class="col-lg-8 mx-auto"> 
+                    <h2 class="section-title mb-4" style="color: #ffffff;">WHY TP SO <span style="color:var(--accent)">IMPORTANT ?</span></h2>
+                    <p class="slate-text mb-4" style="font-size: 1.1rem; line-height: 1.8;">
+                       Increased number of intercompany transactions has made transfer pricing a leading risk management issue for global businesses. To curb manipulation and abuse of transfer pricing, various countries have introduced transfer pricing guidelines and law.
+                    </p>
+                    <p class="slate-text mb-0" style="font-size: 1.1rem; line-height: 1.8;">
+                       We help you comply with Transfer Pricing requirements by delivering meticulously prepared Documentation and Benchmarking analysis as per local requirements in conjunction with global standards.
+                    </p>
                 </div>
-                </div>
-                </div>
-                </section>
+            </div>
+        </div>
+    </section>
 
 <div class="stats-strip">
         <div class="container">
@@ -1123,18 +1153,17 @@ iframe {
     </div>
 
 <!-- FILTER BUTTONS -->
-<section class ="filter-buttons">
-    <button class="filter-btn active" onclick="filterCountry('all')">All</button>
-    <button class="filter-btn" onclick="filterCountry('gulf')">Gulf Region</button>
-    <button class="filter-btn" onclick="filterCountry('asia')">Asia</button>
-    <button class="filter-btn" onclick="filterCountry('south')">South East Asia</button>
-    <button class="filter-btn" onclick="filterCountry('africa')">Africa</button>
-    <button class="filter-btn" onclick="filterCountry('america')">America</button>
-</div>
+<section class="container my-5">
+    <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterCountry('all')">All</button>
+        <button class="filter-btn" onclick="filterCountry('gulf')">Gulf Region</button>
+        <button class="filter-btn" onclick="filterCountry('asia')">Asia</button>
+        <button class="filter-btn" onclick="filterCountry('south')">South East Asia</button>
+        <button class="filter-btn" onclick="filterCountry('africa')">Africa</button>
+        <button class="filter-btn" onclick="filterCountry('america')">America</button>
+    </div>
 
-<!--GRID -->
-<div class="country-container">
-
+    <!--GRID -->
     <div class="country-container">
 
     <!-- gulf -->
@@ -1242,10 +1271,11 @@ iframe {
         <p>United States</p>
     </div>
 
-</div>
+    </div>
+</section>
+
 <script>
 function filterCountry(category){
-
     let cards = document.querySelectorAll(".country-card");
     let buttons = document.querySelectorAll(".filter-btn");
 
@@ -1266,7 +1296,6 @@ function filterCountry(category){
     });
 }
 </script>
-</section>
 <!--trans-->
 <section class="tp-docs-section">
     <div class="section-wrapper">
@@ -1321,7 +1350,7 @@ function filterCountry(category){
         </div>
 
         <div class="advisory-visual">
-            <img src="nitin.png" alt="Professional Advisory Team">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Professional Advisory Team Meeting">
         </div>
 
     </div>
