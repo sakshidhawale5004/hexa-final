@@ -44,6 +44,19 @@
             justify-content: space-between;
             align-items: center;
         }
+        
+        /* Hide Get Started button on mobile */
+        @media (max-width: 768px) {
+            header .btn-main {
+                display: none !important;
+            }
+            
+            header {
+                padding: 10px 20px;
+                width: 95%;
+                justify-content: space-between;
+            }
+        }
 
         .logo { font-weight: 800; font-size: 20px; text-transform: uppercase; }
         .logo span { color: var(--accent); }
@@ -278,6 +291,49 @@
         .bento-card i { font-size: 32px; color: var(--accent); margin-bottom: 20px; display: block; }
         .bento-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 15px; }
         .bento-card p { color: #8a99af; font-size: 14px; line-height: 1.6; }
+        
+        /* Mobile Bento Grid Fixes */
+        @media (max-width: 768px) {
+            .bento-section {
+                padding: 60px 20px !important;
+            }
+            
+            .bento-grid {
+                grid-template-columns: 1fr !important;
+                grid-auto-rows: auto !important;
+                gap: 15px !important;
+            }
+            
+            .bento-card {
+                padding: 25px 20px !important;
+                min-height: auto !important;
+            }
+            
+            .bento-card.tall,
+            .bento-card.wide {
+                grid-row: auto !important;
+                grid-column: auto !important;
+            }
+            
+            .bento-card i {
+                font-size: 28px !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .bento-card h3 {
+                font-size: 18px !important;
+                margin-bottom: 12px !important;
+            }
+            
+            .bento-card p {
+                font-size: 14px !important;
+                line-height: 1.5 !important;
+            }
+            
+            .bento-card ul {
+                font-size: 13px !important;
+            }
+        }
 /*tech*/
 /* Container Background to match expert-khaki.vercel.app */
 .tech-expertise-section {
@@ -328,10 +384,10 @@
         }
 
         @media (max-width: 992px) {
-            .bento-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 768px) {
-            .bento-grid { grid-template-columns: 1fr; }
+            .bento-grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                grid-auto-rows: auto;
+            }
         }
 /*dropdown*/
        .dropdown-submenu{
@@ -566,22 +622,33 @@ header { position: relative; }
     }
     
     h2 {
-        font-size: 28px !important;
+        font-size: 24px !important;
         line-height: 1.3 !important;
     }
     
     h3 {
-        font-size: 24px !important;
+        font-size: 20px !important;
         line-height: 1.4 !important;
     }
     
     h4 {
-        font-size: 20px !important;
+        font-size: 18px !important;
     }
     
     p {
         font-size: 16px !important;
         line-height: 1.6 !important;
+    }
+    
+    /* Section Title Improvements */
+    .display-5 {
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .text-center.mb-5 h2 {
+        padding: 0 10px;
+        word-wrap: break-word;
     }
     
     /* Hero Section */
@@ -1103,7 +1170,7 @@ iframe {
      <section class="bento-section">
         <div class="text-center mb-5">
             <p class="text-uppercase fw-bold small mb-2" style="color: white;">What We Can Do</p>
-            <h2 class="display-5 fw-bold">Improve Your<span style="color:var(--accent)"> Experience With Us</span></h2>
+            <h2 class="display-5 fw-bold"><span style="color:#ffffff;">Improve Your</span><span style="color:var(--accent)"> Experience With Us</span></h2>
             
         </div>
 
