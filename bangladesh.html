@@ -156,10 +156,70 @@
     transform: translateY(-5px);
 }
 
+/* --- Professional Golden Frame Effect --- */
 .team-img-wrapper {
     position: relative;
     display: inline-block;
     margin-bottom: 20px;
+    padding: 15px;
+}
+
+/* Multiple overlapping golden frames effect */
+.team-img-wrapper::before,
+.team-img-wrapper::after {
+    content: '';
+    position: absolute;
+    border: 3px solid var(--accent);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* First golden frame (outer) */
+.team-img-wrapper::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotate(-2deg);
+    z-index: 0;
+}
+
+/* Second golden frame (inner) */
+.team-img-wrapper::after {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    transform: rotate(2deg);
+    z-index: 0;
+}
+
+/* Hover effect - frames expand */
+.team-card:hover .team-img-wrapper::before {
+    transform: rotate(-3deg) scale(1.02);
+    border-color: #fff;
+}
+
+.team-card:hover .team-img-wrapper::after {
+    transform: rotate(3deg) scale(1.02);
+    border-color: #fff;
+}
+
+.team-img-wrapper img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    border: 2px solid var(--accent);
+    box-shadow: 0 5px 15px rgba(245, 196, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Image hover effect */
+.team-card:hover .team-img-wrapper img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(245, 196, 0, 0.4);
 }
 
 /* Gold frame effect from the image */
