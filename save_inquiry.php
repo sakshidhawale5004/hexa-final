@@ -85,6 +85,37 @@ if ($stmt->execute()) {
     $stmt2->execute();
     $stmt2->close();
 
+    // Send email notification to admin
+    $to = 'md@hexatp.com';
+    $email_subject = 'New Consultation Request - HexaTP';
+    
+    // Format the date nicely
+    $formatted_date = date('F j, Y', strtotime($appointment_date));
+    
+    // Create email body
+    $email_body = "New Consultation Request Received\n\n";
+    $email_body .= "=================================\n\n";
+    $email_body .= "Client Details:\n";
+    $email_body .= "Name: $name\n";
+    $email_body .= "Email: $email\n";
+    $email_body .= "Phone: $phone\n\n";
+    $email_body .= "Appointment Details:\n";
+    $email_body .= "Date: $formatted_date\n";
+    $email_body .= "Time: $appointment_time\n";
+    $email_body .= "Consultation Type: $subject\n\n";
+    $email_body .= "Message:\n";
+    $email_body .= "$message\n\n";
+    $email_body .= "=================================\n\n";
+    $email_body .= "View all consultations: https://hexatp.com/admin_consultations.php\n";
+    
+    // Email headers
+    $headers = "From: HexaTP Contact Form <noreply@hexatp.com>\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion();
+    
+    // Send email
+    mail($to, $email_subject, $email_body, $headers);
+
     echo json_encode([
         'success' => true,
         'message' => 'Consultation request submitted successfully! We will contact you soon.'

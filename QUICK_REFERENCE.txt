@@ -1,0 +1,98 @@
+═══════════════════════════════════════════════════════════════
+  HEXATP DEPLOYMENT - QUICK REFERENCE CARD
+═══════════════════════════════════════════════════════════════
+
+📊 DATABASE CREDENTIALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Host:     localhost
+Database: u852823366_hexatp
+Username: u852823366_hexatp
+Password: Hexatp_2026
+
+🌐 WEBSITE URLS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Homepage:     https://hexatp.com
+Contact:      https://hexatp.com/contact.html
+Admin Panel:  https://hexatp.com/admin_consultations.php
+Test Page:    https://hexatp.com/test_connection.php
+
+🔧 HOSTINGER PANEL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Dashboard:    https://hpanel.hostinger.com/websites/hexatp.com
+File Manager: Click "Files" in sidebar
+Databases:    Click "Databases" in sidebar
+phpMyAdmin:   Databases → Manage → phpMyAdmin button
+
+📝 IMMEDIATE TASKS (IN ORDER)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. ✅ Create database tables in phpMyAdmin (SQL in NEXT_STEPS.md)
+2. ✅ Upload test_connection.php to public_html
+3. ✅ Visit https://hexatp.com/test_connection.php
+4. ✅ Upload all website files (HTML, images)
+5. ✅ Test contact form
+6. ✅ Delete security files (test_connection.php, create_database.php)
+
+⚠️ FILES TO DELETE AFTER TESTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- test_connection.php
+- create_database.php
+- DATABASE_SETUP_GUIDE.md
+- DEPLOYMENT_CHECKLIST.md
+- NEXT_STEPS.md
+- QUICK_REFERENCE.txt (this file)
+
+📁 FILES TO UPLOAD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HTML Files:
+  - index.html
+  - contact.html
+  - aboutus.html
+  - India.html, australia.html, bahrain.html, bangladesh.html
+  - botswana.html, canada.html, egypt.html, ghana.html
+  - indonesia.html, kenya.html, malaysia.html
+
+PHP Files (Already configured):
+  - db_config.php ✅
+  - save_inquiry.php ✅
+  - admin_consultations.php ✅
+  - check_status.php ✅
+  - create_database.php ✅
+  - test_connection.php ✅
+
+Images:
+  - All .jpg and .png files
+
+🔍 TESTING CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+□ Homepage loads correctly
+□ All images display
+□ Navigation works
+□ Contact form submits successfully
+□ Admin panel shows submissions
+□ Mobile responsive design works
+□ All country pages load
+
+🆘 COMMON ISSUES & FIXES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Issue: "Connection Failed"
+Fix:  Check db_config.php password is "Hexatp_2026"
+
+Issue: "Table doesn't exist"
+Fix:  Run SQL script in phpMyAdmin (see NEXT_STEPS.md)
+
+Issue: Form not working
+Fix:  Check save_inquiry.php is uploaded to public_html
+
+Issue: Images not loading
+Fix:  Verify images uploaded, check file names (case-sensitive)
+
+📞 SUPPORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Hostinger Support: 24/7 Live Chat in hPanel
+Help Center: https://support.hostinger.com
+
+⏱️ ESTIMATED COMPLETION TIME: 20-25 minutes
+
+═══════════════════════════════════════════════════════════════
+  PRINT THIS FOR QUICK REFERENCE DURING DEPLOYMENT
+═══════════════════════════════════════════════════════════════

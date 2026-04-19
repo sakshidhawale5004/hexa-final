@@ -4,12 +4,12 @@
  * HexaTP Consultation System
  */
 
-// Database credentials
-// IMPORTANT: Replace these with your actual Hostinger database credentials
-define('DB_HOST', 'localhost');  // Usually 'localhost' on Hostinger
-define('DB_USER', 'YOUR_DATABASE_USERNAME');  // Replace with your Hostinger DB username
-define('DB_PASS', 'YOUR_DATABASE_PASSWORD');  // Replace with your Hostinger DB password
-define('DB_NAME', 'YOUR_DATABASE_NAME');      // Replace with your Hostinger DB name
+// Database credentials for Hostinger
+// IMPORTANT: Replace the password with your actual password
+define('DB_HOST', 'localhost');
+define('DB_USER', 'u852823366_hexatp_user');
+define('DB_PASS', 'Hexatp_2026');
+define('DB_NAME', 'u852823366_hexatp_db');
 
 // Create connection
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);

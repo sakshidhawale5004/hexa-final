@@ -14,7 +14,7 @@
 3. **Fill Database Details**
    ```
    Database Name: hexatp_db
-   Database User: hexatp_user (or any name you prefer)
+   Database User: ![alt text](image.png) (or any name you prefer)![alt text](image-1.png)
    Password: [Create a strong password]
    ```
 
