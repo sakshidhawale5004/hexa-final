@@ -1,0 +1,12 @@
+{
+  "name": "hexatp-team-image-fix-test",
+  "version": "1.0.0",
+  "description": "Bug condition exploration test for team member image fix",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/bug-condition-exploration.test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^24.0.0"
+  }
+}

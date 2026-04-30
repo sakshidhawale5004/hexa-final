@@ -1,0 +1,135 @@
+# Implementation Plan
+
+- [x] 1. Write bug condition exploration test
+  - **Property 1: Bug Condition** - Incorrect Team Member Image References
+  - **CRITICAL**: This test MUST FAIL on unfixed code - failure confirms the bug exists
+  - **DO NOT attempt to fix the test or the code when it fails**
+  - **NOTE**: This test encodes the expected behavior - it will validate the fix when it passes after implementation
+  - **GOAL**: Surface counterexamples that demonstrate the bug exists
+  - **Scoped PBT Approach**: For deterministic bugs, scope the property to the concrete failing case(s) to ensure reproducibility
+  - Test implementation details from Bug Condition in design:
+    - Verify Kenya (kenya.html) George Mureithi profile uses external URL `https://hexatp.com/wp-content/uploads/2022/05/6-1-1024x1024.png` instead of local `George Mureithi.jpg`
+    - Verify Bangladesh (bangladesh.html) Mosttafa Shazzad Hasan profile uses external URL `https://hexatp.com/wp-content/uploads/2022/02/Shazzad-Hasan-980x980.png` instead of local `Mosttafa Shazzad Hasan.jpg`
+    - Verify Ghana (ghana.html) Nathaniel Owusu Ansah profile uses external URL `https://hexatp.com/wp-content/uploads/2022/05/Picture1.png` instead of local `Nathaniel Owusu Ansah.jpg`
+    - Verify UAE (unitedarab.html) Mohammad Taher Shaikh profile uses incorrect local file `hitansu.png` instead of `Mohammad Taher Shaikh new.jpg`
+    - Verify UAE (unitedarab.html) Saniya Abbasi profile uses incorrect local file `yishu.png` instead of `SANIYA.jpg`
+    - Verify Vietnam (viethnam.html) Udit Gupta profile uses incorrect local file `nitin.png` instead of `Udit Gupta.jpg`
+    - Verify US (us.html) Udit Gupta profile uses incorrect local file `nitin.png` instead of `Udit Gupta.jpg`
+  - The test assertions should match the Expected Behavior Properties from design:
+    - Assert that after fix, all 7 profiles use correct local image files
+    - Assert that both team card and modal popup use the same correct image
+    - Assert that no external hexatp.com URLs are present
+  - Run test on UNFIXED code
+  - **EXPECTED OUTCOME**: Test FAILS (this is correct - it proves the bug exists)
+  - Document counterexamples found to understand root cause:
+    - External URL dependencies for Kenya, Bangladesh, Ghana
+    - Wrong person photos for UAE (2 profiles), Vietnam, US
+  - Mark task complete when test is written, run, and failure is documented
+  - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7_
+
+- [ ] 2. Write preservation property tests (BEFORE implementing fix)
+  - **Property 2: Preservation** - Non-Buggy Profile Images Unchanged
+  - **IMPORTANT**: Follow observation-first methodology
+  - Observe behavior on UNFIXED code for non-buggy inputs:
+    - Identify all team member profiles on the 6 affected HTML files that are NOT in the bug list
+    - Record their current image `src` attribute values
+    - Verify these profiles display correctly on unfixed code
+  - Write property-based tests capturing observed behavior patterns from Preservation Requirements:
+    - For all team member profiles NOT in the bug list (Requirements 1.1-1.7), assert image references remain unchanged
+    - For all 6 affected HTML files, assert page layout, styling, and structure remain unchanged
+    - For all team member profiles, assert modal popup functionality remains unchanged
+    - For all team member profiles, assert name, credentials, and other details remain unchanged
+  - Property-based testing generates many test cases for stronger guarantees
+  - Run tests on UNFIXED code
+  - **EXPECTED OUTCOME**: Tests PASS (this confirms baseline behavior to preserve)
+  - Mark task complete when tests are written, run, and passing on unfixed code
+  - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6_
+
+- [ ] 3. Fix for team member image references
+
+  - [ ] 3.1 Update Kenya page (kenya.html)
+    - Update George Mureithi team card: Change `src="https://hexatp.com/wp-content/uploads/2022/05/6-1-1024x1024.png"` to `src="George Mureithi.jpg"`
+    - Update George Mureithi modal popup: Change `src="https://hexatp.com/wp-content/uploads/2022/05/6-1-1024x1024.png"` to `src="George Mureithi.jpg"`
+    - Verify `alt` attribute remains unchanged
+    - _Bug_Condition: isBugCondition(input) where input.src = 'https://hexatp.com/wp-content/uploads/2022/05/6-1-1024x1024.png' AND input.alt = 'George Mureithi'_
+    - _Expected_Behavior: result.image.src = 'George Mureithi.jpg' AND result.image.loads_successfully = true_
+    - _Preservation: All other team members on kenya.html remain unchanged_
+    - _Requirements: 1.1, 2.1, 3.1, 3.2, 3.3_
+
+  - [ ] 3.2 Update Bangladesh page (bangladesh.html)
+    - Update Mosttafa Shazzad Hasan team card: Change `src="https://hexatp.com/wp-content/uploads/2022/02/Shazzad-Hasan-980x980.png"` to `src="Mosttafa Shazzad Hasan.jpg"`
+    - Update Mosttafa Shazzad Hasan modal popup: Change `src="https://hexatp.com/wp-content/uploads/2022/02/Shazzad-Hasan-980x980.png"` to `src="Mosttafa Shazzad Hasan.jpg"`
+    - Verify `alt` attribute remains unchanged
+    - _Bug_Condition: isBugCondition(input) where input.src = 'https://hexatp.com/wp-content/uploads/2022/02/Shazzad-Hasan-980x980.png' AND input.alt = 'Mosttafa Shazzad Hasan'_
+    - _Expected_Behavior: result.image.src = 'Mosttafa Shazzad Hasan.jpg' AND result.image.loads_successfully = true_
+    - _Preservation: All other team members on bangladesh.html remain unchanged_
+    - _Requirements: 1.2, 2.2, 3.1, 3.2, 3.3_
+
+  - [ ] 3.3 Update Ghana page (ghana.html)
+    - Update Nathaniel Owusu Ansah team card: Change `src="https://hexatp.com/wp-content/uploads/2022/05/Picture1.png"` to `src="Nathaniel Owusu Ansah.jpg"`
+    - Update Nathaniel Owusu Ansah modal popup: Change `src="https://hexatp.com/wp-content/uploads/2022/05/Picture1.png"` to `src="Nathaniel Owusu Ansah.jpg"`
+    - Verify `alt` attribute remains unchanged
+    - _Bug_Condition: isBugCondition(input) where input.src = 'https://hexatp.com/wp-content/uploads/2022/05/Picture1.png' AND input.alt = 'Nathaniel Owusu Ansah'_
+    - _Expected_Behavior: result.image.src = 'Nathaniel Owusu Ansah.jpg' AND result.image.loads_successfully = true_
+    - _Preservation: All other team members on ghana.html remain unchanged_
+    - _Requirements: 1.3, 2.3, 3.1, 3.2, 3.3_
+
+  - [ ] 3.4 Update UAE page (unitedarab.html)
+    - Update Mohammad Taher Shaikh team card: Change `src="hitansu.png"` to `src="Mohammad Taher Shaikh new.jpg"`
+    - Update Mohammad Taher Shaikh modal popup: Change `src="hitansu.png"` to `src="Mohammad Taher Shaikh new.jpg"`
+    - Update Saniya Abbasi team card: Change `src="yishu.png"` to `src="SANIYA.jpg"`
+    - Update Saniya Abbasi modal popup: Change `src="yishu.png"` to `src="SANIYA.jpg"`
+    - Verify `alt` attributes remain unchanged
+    - _Bug_Condition: isBugCondition(input) where (input.src = 'hitansu.png' AND input.alt = 'Mohammad Taher Shaikh') OR (input.src = 'yishu.png' AND input.alt = 'Saniya Abbasi')_
+    - _Expected_Behavior: result.image.src = 'Mohammad Taher Shaikh new.jpg' OR 'SANIYA.jpg' AND result.image.displays_correct_person = true_
+    - _Preservation: All other team members on unitedarab.html remain unchanged_
+    - _Requirements: 1.4, 1.5, 2.4, 2.5, 3.1, 3.2, 3.3_
+
+  - [ ] 3.5 Update Vietnam page (viethnam.html)
+    - Update Udit Gupta team card: Change `src="nitin.png"` to `src="Udit Gupta.jpg"`
+    - Update Udit Gupta modal popup: Change `src="nitin.png"` to `src="Udit Gupta.jpg"`
+    - Verify `alt` attribute remains unchanged
+    - _Bug_Condition: isBugCondition(input) where input.src = 'nitin.png' AND input.alt = 'Udit Gupta'_
+    - _Expected_Behavior: result.image.src = 'Udit Gupta.jpg' AND result.image.displays_correct_person = true_
+    - _Preservation: All other team members on viethnam.html remain unchanged_
+    - _Requirements: 1.6, 2.6, 3.1, 3.2, 3.3_
+
+  - [ ] 3.6 Update US page (us.html)
+    - Update Udit Gupta team card: Change `src="nitin.png"` to `src="Udit Gupta.jpg"`
+    - Update Udit Gupta modal popup: Change `src="nitin.png"` to `src="Udit Gupta.jpg"`
+    - Verify `alt` attribute remains unchanged
+    - _Bug_Condition: isBugCondition(input) where input.src = 'nitin.png' AND input.alt = 'Udit Gupta'_
+    - _Expected_Behavior: result.image.src = 'Udit Gupta.jpg' AND result.image.displays_correct_person = true_
+    - _Preservation: All other team members on us.html remain unchanged_
+    - _Requirements: 1.7, 2.7, 3.1, 3.2, 3.3_
+
+  - [ ] 3.7 Verify bug condition exploration test now passes
+    - **Property 1: Expected Behavior** - Correct Local Image References
+    - **IMPORTANT**: Re-run the SAME test from task 1 - do NOT write a new test
+    - The test from task 1 encodes the expected behavior
+    - When this test passes, it confirms the expected behavior is satisfied
+    - Run bug condition exploration test from step 1
+    - **EXPECTED OUTCOME**: Test PASSES (confirms bug is fixed)
+    - Verify all 7 profiles now use correct local image files
+    - Verify no external hexatp.com URLs are present
+    - Verify both team card and modal popup use the same correct image for each profile
+    - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7_
+
+  - [ ] 3.8 Verify preservation tests still pass
+    - **Property 2: Preservation** - Non-Buggy Profile Images Unchanged
+    - **IMPORTANT**: Re-run the SAME tests from task 2 - do NOT write new tests
+    - Run preservation property tests from step 2
+    - **EXPECTED OUTCOME**: Tests PASS (confirms no regressions)
+    - Confirm all non-affected team member profiles remain unchanged
+    - Confirm page layout, styling, and functionality remain unchanged
+    - Confirm modal popup behavior remains unchanged for all profiles
+    - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6_
+
+- [~] 4. Checkpoint - Ensure all tests pass
+  - Verify all bug condition tests pass (correct images displayed)
+  - Verify all preservation tests pass (no regressions)
+  - Verify all 6 local image files exist and are accessible
+  - Open each affected HTML file in a browser and visually confirm correct images
+  - Check browser network tab to confirm no external hexatp.com requests
+  - Test modal popup functionality for all affected profiles
+  - Ask the user if questions arise

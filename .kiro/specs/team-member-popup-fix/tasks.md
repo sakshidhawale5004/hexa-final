@@ -1,0 +1,209 @@
+# Implementation Plan
+
+- [x] 1. Write bug condition exploration test
+  - **Property 1: Bug Condition** - Modal Popup Failure on Button Click
+  - **CRITICAL**: This test MUST FAIL on unfixed code - failure confirms the bug exists
+  - **DO NOT attempt to fix the test or the code when it fails**
+  - **NOTE**: This test encodes the expected behavior - it will validate the fix when it passes after implementation
+  - **GOAL**: Surface counterexamples that demonstrate the bug exists
+  - **Scoped PBT Approach**: For deterministic bugs, scope the property to the concrete failing case(s) to ensure reproducibility
+  - Test implementation details from Bug Condition in design:
+    - Test that clicking "Learn More" buttons on affected pages (Singapore, Thailand, Malaysia, Australia, Indonesia, Vietnam, Canada, US) triggers modal display
+    - Verify button `data-bs-target` attribute matches modal `id` attribute OR modal HTML exists
+    - Test cases:
+      - Thailand: Button `data-bs-target="#modalGyan"` should match modal `id="modalGyanTH"` (currently mismatched)
+      - Thailand: Button `data-bs-target="#modalPriyanka"` should match modal `id="modalPriyankaTH"` (currently mismatched)
+      - US: Button `data-bs-target="#modalGyan"` should match modal `id="modalGyanUS"` (currently mismatched)
+      - US: Button `data-bs-target="#modalUdit"` should match modal `id="modalUditUS"` (currently mismatched)
+      - Singapore: Button `data-bs-target="#modalGyan"` should have corresponding modal HTML (currently missing)
+      - Malaysia: Button `data-bs-target="#modalGyan"` should have corresponding modal HTML (currently missing)
+      - Vietnam, Indonesia, Canada, Australia: Verify button targets match modal IDs
+  - The test assertions should match the Expected Behavior Properties from design:
+    - Modal should display within 300ms of button click
+    - Modal should contain team member name, role, photo, and description
+    - Modal styling should match existing working pages
+  - Run test on UNFIXED code
+  - **EXPECTED OUTCOME**: Test FAILS (this is correct - it proves the bug exists)
+  - Document counterexamples found to understand root cause:
+    - Record which pages fail
+    - Record whether failure is due to ID mismatch or missing modal
+    - Record browser console errors (if any)
+  - Mark task complete when test is written, run, and failure is documented
+  - _Requirements: 1.1, 1.2, 1.3_
+
+- [x] 2. Write preservation property tests (BEFORE implementing fix)
+  - **Property 2: Preservation** - Existing Modal Functionality Unchanged
+  - **IMPORTANT**: Follow observation-first methodology
+  - Observe behavior on UNFIXED code for non-buggy inputs:
+    - Test "Learn More" buttons on working country pages (UAE, Saudi Arabia, Qatar, Oman, Bahrain, Egypt, India, Bangladesh, Kenya, Ghana, Botswana)
+    - Verify modals display correctly on these pages
+    - Document observed behavior: modal appears, displays team member info, can be closed via close button/backdrop/ESC
+  - Write property-based tests capturing observed behavior patterns from Preservation Requirements:
+    - Test that clicking "Learn More" on UAE page displays modal correctly
+    - Test that clicking "Learn More" on Saudi Arabia page displays modal correctly
+    - Test that modal close behavior works (close button, backdrop click, ESC key)
+    - Test that modal animations (fade-in/fade-out) work correctly
+    - Test that modal styling (colors, borders, spacing) is consistent
+    - Test that other page elements (navigation, forms, buttons) continue to work
+  - Property-based testing generates many test cases for stronger guarantees:
+    - Generate random sequences of button clicks across working pages
+    - Generate random modal close actions
+    - Verify correct modal appears for each click
+  - Run tests on UNFIXED code
+  - **EXPECTED OUTCOME**: Tests PASS (this confirms baseline behavior to preserve)
+  - Mark task complete when tests are written, run, and passing on unfixed code
+  - _Requirements: 3.1, 3.2, 3.3, 3.4_
+
+- [x] 3. Fix for team member modal popup failures across 8 country pages
+
+  - [x] 3.1 Fix ID mismatch on thailand.html
+    - Open thailand.html and locate team member "Learn More" buttons
+    - Update Gyan's button: Change `data-bs-target="#modalGyan"` to `data-bs-target="#modalGyanTH"` (around line 1033)
+    - Update Priyanka's button: Change `data-bs-target="#modalPriyanka"` to `data-bs-target="#modalPriyankaTH"` (around line 1045)
+    - Verify modal elements with `id="modalGyanTH"` and `id="modalPriyankaTH"` exist in the file
+    - _Bug_Condition: isBugCondition(input) where input.page = "thailand.html" AND (input.buttonTarget ≠ input.modalId)_
+    - _Expected_Behavior: Modal displays when button clicked, button target matches modal ID_
+    - _Preservation: Existing modal functionality on other pages unchanged_
+    - _Requirements: 1.1, 2.1, 2.3_
+
+  - [x] 3.2 Fix ID mismatch on us.html
+    - Open us.html and locate team member "Learn More" buttons
+    - Update Gyan's button: Change `data-bs-target="#modalGyan"` to `data-bs-target="#modalGyanUS"` (around line 1034)
+    - Update Udit's button: Change `data-bs-target="#modalUdit"` to `data-bs-target="#modalUditUS"` (around line 1046)
+    - Verify modal elements with `id="modalGyanUS"` and `id="modalUditUS"` exist in the file
+    - _Bug_Condition: isBugCondition(input) where input.page = "us.html" AND (input.buttonTarget ≠ input.modalId)_
+    - _Expected_Behavior: Modal displays when button clicked, button target matches modal ID_
+    - _Preservation: Existing modal functionality on other pages unchanged_
+    - _Requirements: 1.1, 2.1, 2.3_
+
+  - [x] 3.3 Fix ID mismatch on viethnam.html
+    - Open viethnam.html and locate team member "Learn More" buttons
+    - Identify which team members have "Learn More" buttons (likely Gyan and/or Priyanka)
+    - For each button, identify the current `data-bs-target` value and the actual modal `id` value
+    - Update button targets to match country-specific modal IDs (e.g., `#modalGyanVN`, `#modalPriyankaVN`)
+    - Verify modal elements with matching IDs exist in the file
+    - _Bug_Condition: isBugCondition(input) where input.page = "viethnam.html" AND (input.buttonTarget ≠ input.modalId)_
+    - _Expected_Behavior: Modal displays when button clicked, button target matches modal ID_
+    - _Preservation: Existing modal functionality on other pages unchanged_
+    - _Requirements: 1.1, 2.1, 2.3_
+
+  - [x] 3.4 Fix ID mismatch on indonesia.html
+    - Open indonesia.html and locate team member "Learn More" buttons
+    - Identify which team members have "Learn More" buttons (likely Gyan and/or Priyanka)
+    - For each button, identify the current `data-bs-target` value and the actual modal `id` value
+    - Update button targets to match country-specific modal IDs (e.g., `#modalGyanID`, `#modalPriyankaID`)
+    - Verify modal elements with matching IDs exist in the file
+    - _Bug_Condition: isBugCondition(input) where input.page = "indonesia.html" AND (input.buttonTarget ≠ input.modalId)_
+    - _Expected_Behavior: Modal displays when button clicked, button target matches modal ID_
+    - _Preservation: Existing modal functionality on other pages unchanged_
+    - _Requirements: 1.1, 2.1, 2.3_
+
+  - [x] 3.5 Fix ID mismatch on canada.html
+    - Open canada.html and locate team member "Learn More" buttons
+    - Identify which team members have "Learn More" buttons (likely Gyan and/or Udit)
+    - For each button, identify the current `data-bs-target` value and the actual modal `id` value
+    - Update button targets to match country-specific modal IDs (e.g., `#modalGyanCA`, `#modalUditCA`)
+    - Verify modal elements with matching IDs exist in the file
+    - _Bug_Condition: isBugCondition(input) where input.page = "canada.html" AND (input.buttonTarget ≠ input.modalId)_
+    - _Expected_Behavior: Modal displays when button clicked, button target matches modal ID_
+    - _Preservation: Existing modal functionality on other pages unchanged_
+    - _Requirements: 1.1, 2.1, 2.3_
+
+  - [x] 3.6 Fix ID mismatch on australia.html
+    - Open australia.html and locate team member "Learn More" buttons
+    - Identify which team members have "Learn More" buttons (likely Gyan and/or Priyanka)
+    - For each button, identify the current `data-bs-target` value and the actual modal `id` value
+    - Update button targets to match country-specific modal IDs (e.g., `#modalGyanAU`, `#modalPriyankaAU`)
+    - Verify modal elements with matching IDs exist in the file
+    - _Bug_Condition: isBugCondition(input) where input.page = "australia.html" AND (input.buttonTarget ≠ input.modalId)_
+    - _Expected_Behavior: Modal displays when button clicked, button target matches modal ID_
+    - _Preservation: Existing modal functionality on other pages unchanged_
+    - _Requirements: 1.1, 2.1, 2.3_
+
+  - [x] 3.7 Add missing modal HTML to singapore.html
+    - Open singapore.html and locate team member "Learn More" buttons
+    - Identify which team members need modals (likely Gyan Prakash Srivastava)
+    - Use unitedarab.html as a template for modal structure
+    - Add modal HTML for Gyan with `id="modalGyanSG"` after the team section
+    - Update button `data-bs-target` to `#modalGyanSG`
+    - Include all required modal elements:
+      - Modal header with close button
+      - Team member photo (img src="[path]/gyan.jpg")
+      - Team member name: "Gyan Prakash Srivastava"
+      - Team member role: "Founder & CEO"
+      - Professional description adapted for Singapore context
+      - Key specializations list (4 items)
+    - Ensure Bootstrap 5.3.2 modal classes and structure are used
+    - Verify modal styling matches existing working pages (CSS variables, colors, borders)
+    - _Bug_Condition: isBugCondition(input) where input.page = "singapore.html" AND input.modalExists = false_
+    - _Expected_Behavior: Modal displays when button clicked, modal HTML exists with correct ID_
+    - _Preservation: Existing modal functionality on other pages unchanged_
+    - _Requirements: 1.2, 2.2, 2.3_
+
+  - [x] 3.8 Add missing modal HTML to malaysia.html
+    - Open malaysia.html and locate team member "Learn More" buttons
+    - Identify which team members need modals (likely Gyan Prakash Srivastava)
+    - Use unitedarab.html as a template for modal structure
+    - Add modal HTML for Gyan with `id="modalGyanMY"` after the team section
+    - Update button `data-bs-target` to `#modalGyanMY`
+    - Include all required modal elements:
+      - Modal header with close button
+      - Team member photo (img src="[path]/gyan.jpg")
+      - Team member name: "Gyan Prakash Srivastava"
+      - Team member role: "Founder & CEO"
+      - Professional description adapted for Malaysia context
+      - Key specializations list (4 items)
+    - Ensure Bootstrap 5.3.2 modal classes and structure are used
+    - Verify modal styling matches existing working pages (CSS variables, colors, borders)
+    - _Bug_Condition: isBugCondition(input) where input.page = "malaysia.html" AND input.modalExists = false_
+    - _Expected_Behavior: Modal displays when button clicked, modal HTML exists with correct ID_
+    - _Preservation: Existing modal functionality on other pages unchanged_
+    - _Requirements: 1.2, 2.2, 2.3_
+
+  - [x] 3.9 Verify bug condition exploration test now passes
+    - **Property 1: Expected Behavior** - Modal Popup Success on Button Click
+    - **IMPORTANT**: Re-run the SAME test from task 1 - do NOT write a new test
+    - The test from task 1 encodes the expected behavior
+    - When this test passes, it confirms the expected behavior is satisfied
+    - Run bug condition exploration test from step 1
+    - Verify all test cases now pass:
+      - Thailand: Gyan and Priyanka modals display correctly
+      - US: Gyan and Udit modals display correctly
+      - Vietnam, Indonesia, Canada, Australia: All modals display correctly
+      - Singapore: Gyan modal displays correctly
+      - Malaysia: Gyan modal displays correctly
+    - Verify modal display timing (appears within 300ms)
+    - Verify modal content (name, role, photo, description present)
+    - Verify modal styling matches working pages
+    - **EXPECTED OUTCOME**: Test PASSES (confirms bug is fixed)
+    - _Requirements: 2.1, 2.2, 2.3_
+
+  - [x] 3.10 Verify preservation tests still pass
+    - **Property 2: Preservation** - Existing Modal Functionality Unchanged
+    - **IMPORTANT**: Re-run the SAME tests from task 2 - do NOT write new tests
+    - Run preservation property tests from step 2
+    - Verify all test cases still pass:
+      - UAE: All modals continue to work correctly
+      - Saudi Arabia: All modals continue to work correctly
+      - Qatar, Oman, Bahrain, Egypt, India, Bangladesh, Kenya, Ghana, Botswana: All modals continue to work correctly
+      - Modal close behavior (close button, backdrop, ESC) still works
+      - Modal animations still work
+      - Modal styling unchanged
+      - Other page elements (navigation, forms) still work
+    - **EXPECTED OUTCOME**: Tests PASS (confirms no regressions)
+    - Confirm all tests still pass after fix (no regressions)
+    - _Requirements: 3.1, 3.2, 3.3, 3.4_
+
+- [x] 4. Checkpoint - Ensure all tests pass
+  - Run all bug condition exploration tests - verify they pass
+  - Run all preservation tests - verify they pass
+  - Manually test each affected page in a web browser:
+    - Open each of the 8 affected country pages
+    - Click each "Learn More" button
+    - Verify modal appears correctly
+    - Verify modal content is accurate
+    - Verify modal can be closed (close button, backdrop, ESC)
+  - Test on multiple browsers (Chrome, Firefox, Safari, Edge) if possible
+  - Test responsive behavior on mobile/tablet if possible
+  - If any tests fail, investigate and fix before marking complete
+  - Ask the user if questions arise or if additional testing is needed

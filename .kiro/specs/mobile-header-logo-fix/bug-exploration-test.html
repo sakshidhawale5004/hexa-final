@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Header Logo Bug Exploration Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050a14;
+            --accent: #f5c400;
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        .test-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .test-header {
+            background: rgba(11, 29, 53, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            padding: 10px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        /* Original text-based logo implementation */
+        .logo { 
+            font-weight: 800; 
+            font-size: 20px; 
+            text-transform: uppercase; 
+        }
+        .logo span { 
+            color: var(--accent); 
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 18px !important;
+            }
+        }
+
+        .viewport-info {
+            background: rgba(245, 196, 0, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .test-result {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .bug-detected {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid #ff0000;
+        }
+
+        .working {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #00ff00;
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .instructions {
+            background: rgba(245, 196, 0, 0.05);
+            border-left: 3px solid var(--accent);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔍 Mobile Header Logo Bug Exploration Test</h1>
+        
+        <div class="instructions">
+            <h3>Test Instructions:</h3>
+            <ol>
+                <li>Open this file in a web browser</li>
+                <li>Use browser DevTools to emulate mobile devices (F12 → Device Toolbar)</li>
+                <li>Test the following viewport widths: 375px, 414px, 360px, 320px, 768px</li>
+                <li>Observe whether the logo displays "HEXATP" or a question mark (?)</li>
+                <li>Document your findings below</li>
+            </ol>
+        </div>
+
+        <div class="viewport-info">
+            <strong>Current Viewport:</strong> <span id="viewportWidth"></span>px × <span id="viewportHeight"></span>px
+            <br>
+            <strong>Bug Condition:</strong> Viewport width ≤ 768px
+        </div>
+
+        <div class="test-section">
+            <h2>Test Case 1: Original Text-Based Logo (UNFIXED)</h2>
+            <p>This is the current implementation that exhibits the bug on mobile devices.</p>
+            
+            <div class="test-header">
+                <div class="logo">HEXA<span>TP</span></div>
+                <div style="color: #ccc; font-size: 14px;">Navigation Menu</div>
+                <div style="background: var(--accent); color: #000; padding: 8px 20px; border-radius: 100px; font-weight: 700; font-size: 14px;">Get Started</div>
+            </div>
+
+            <div id="testResult1" class="test-result">
+                <strong>Expected Behavior on Mobile (≤768px):</strong> Should display question mark (?) - this confirms the bug exists
+                <br>
+                <strong>Expected Behavior on Desktop (>768px):</strong> Should display "HEXATP" correctly
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>Test Case 2: Image-Based Logo (PROPOSED FIX)</h2>
+            <p>This is the proposed fix using the LOGO.jpeg image file.</p>
+            
+            <div class="test-header">
+                <img src="../../LOGO.jpeg" alt="HexaTP - Transfer Pricing Simplified" style="height: 40px; width: auto; display: block;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <div style="display: none; color: #ff0000;">⚠️ LOGO.jpeg not found</div>
+                <div style="color: #ccc; font-size: 14px;">Navigation Menu</div>
+                <div style="background: var(--accent); color: #000; padding: 8px 20px; border-radius: 100px; font-weight: 700; font-size: 14px;">Get Started</div>
+            </div>
+
+            <div id="testResult2" class="test-result working">
+                <strong>Expected Behavior:</strong> Should display logo image correctly on all viewport sizes
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>📋 Bug Exploration Checklist</h2>
+            <p>Test the following scenarios and document your observations:</p>
+            
+            <h3>Mobile Viewports (Bug Condition: ≤768px)</h3>
+            <ul>
+                <li><strong>Mobile Chrome (375px):</strong> Does the text-based logo display "?" instead of "HEXATP"?</li>
+                <li><strong>Mobile Safari (414px):</strong> Does the text-based logo display "?" instead of "HEXATP"?</li>
+                <li><strong>Mobile Firefox (360px):</strong> Does the text-based logo display "?" instead of "HEXATP"?</li>
+                <li><strong>Small Mobile (320px):</strong> Does the text-based logo display "?" instead of "HEXATP"?</li>
+                <li><strong>Tablet Edge (768px):</strong> Does the text-based logo display correctly or show "?"?</li>
+            </ul>
+
+            <h3>Desktop/Tablet Viewports (Preservation: >768px)</h3>
+            <ul>
+                <li><strong>Desktop (1920px):</strong> Does the text-based logo display "HEXATP" correctly?</li>
+                <li><strong>Desktop (1440px):</strong> Does the text-based logo display "HEXATP" correctly?</li>
+                <li><strong>Tablet (1024px):</strong> Does the text-based logo display "HEXATP" correctly?</li>
+            </ul>
+
+            <h3>Root Cause Analysis</h3>
+            <ul>
+                <li>Is the Poppins font loading correctly? (Check Network tab in DevTools)</li>
+                <li>Are there any CSS specificity issues? (Check Computed styles in DevTools)</li>
+                <li>Is the font-weight: 800 supported on mobile? (Check font variations loaded)</li>
+                <li>Are there any character encoding issues? (Check page encoding)</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>🔬 Root Cause Hypothesis</h2>
+            <p>Based on the design document, the most likely root causes are:</p>
+            <ol>
+                <li><strong>Font Rendering Failure:</strong> Poppins font may not load properly on mobile devices</li>
+                <li><strong>CSS Specificity Issues:</strong> Mobile CSS rules may override logo styles unexpectedly</li>
+                <li><strong>Character Encoding Issues:</strong> Text content may have encoding problems on mobile browsers</li>
+                <li><strong>Font Weight/Style Mismatch:</strong> font-weight: 800 may not be supported on mobile</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Display current viewport dimensions
+        function updateViewportInfo() {
+            document.getElementById('viewportWidth').textContent = window.innerWidth;
+            document.getElementById('viewportHeight').textContent = window.innerHeight;
+            
+            // Update test result based on viewport
+            const isMobile = window.innerWidth <= 768;
+            const result1 = document.getElementById('testResult1');
+            
+            if (isMobile) {
+                result1.className = 'test-result bug-detected';
+                result1.innerHTML = '<strong>⚠️ Bug Condition Active (viewport ≤ 768px)</strong><br>If you see a question mark (?) in the logo above, the bug is confirmed.';
+            } else {
+                result1.className = 'test-result working';
+                result1.innerHTML = '<strong>✅ Desktop View (viewport > 768px)</strong><br>Logo should display "HEXATP" correctly.';
+            }
+        }
+
+        updateViewportInfo();
+        window.addEventListener('resize', updateViewportInfo);
+    </script>
+</body>
+</html>

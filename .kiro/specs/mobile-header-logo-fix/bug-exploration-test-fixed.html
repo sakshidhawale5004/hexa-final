@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Header Logo Bug Exploration Test - FIXED CODE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050a14;
+            --accent: #f5c400;
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: var(--accent);
+            margin-bottom: 30px;
+        }
+
+        .test-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .test-header {
+            background: rgba(11, 29, 53, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            padding: 10px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        /* FIXED: Image-based logo implementation */
+        .logo-img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .logo-img {
+                height: 30px;
+                width: auto;
+            }
+        }
+
+        .viewport-info {
+            background: rgba(245, 196, 0, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .test-result {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .bug-detected {
+            background: rgba(255, 0, 0, 0.1);
+            border: 1px solid #ff0000;
+        }
+
+        .working {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #00ff00;
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+
+        .instructions {
+            background: rgba(245, 196, 0, 0.05);
+            border-left: 3px solid var(--accent);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .test-checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .test-checklist li {
+            padding: 10px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .test-checklist li.pass {
+            border-left-color: #00ff00;
+            background: rgba(0, 255, 0, 0.05);
+        }
+
+        .test-checklist li.fail {
+            border-left-color: #ff0000;
+            background: rgba(255, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>✅ Mobile Header Logo Bug Exploration Test - FIXED CODE</h1>
+        
+        <div class="instructions">
+            <h3>Test Instructions:</h3>
+            <ol>
+                <li>Open this file in a web browser</li>
+                <li>Use browser DevTools to emulate mobile devices (F12 → Device Toolbar)</li>
+                <li>Test the following viewport widths: 375px, 414px, 360px, 320px, 768px</li>
+                <li>Verify that the logo displays the LOGO.jpeg image correctly (NOT a question mark)</li>
+                <li>Verify logo dimensions: 30px height on mobile (≤768px), 40px height on desktop (>768px)</li>
+                <li>Verify alt text: "HexaTP - Transfer Pricing Simplified"</li>
+            </ol>
+        </div>
+
+        <div class="viewport-info">
+            <strong>Current Viewport:</strong> <span id="viewportWidth"></span>px × <span id="viewportHeight"></span>px
+            <br>
+            <strong>Expected Logo Height:</strong> <span id="expectedHeight"></span>px
+            <br>
+            <strong>Actual Logo Height:</strong> <span id="actualHeight"></span>px
+            <br>
+            <strong>Test Status:</strong> <span id="testStatus"></span>
+        </div>
+
+        <div class="test-section">
+            <h2>Test Case: Image-Based Logo (FIXED IMPLEMENTATION)</h2>
+            <p>This is the fixed implementation using the LOGO.jpeg image file.</p>
+            
+            <div class="test-header">
+                <img id="logoImage" src="../../LOGO.jpeg" alt="HexaTP - Transfer Pricing Simplified" class="logo-img" onerror="handleImageError(this)">
+                <div style="color: #ccc; font-size: 14px;">Navigation Menu</div>
+                <div style="background: var(--accent); color: #000; padding: 8px 20px; border-radius: 100px; font-weight: 700; font-size: 14px;">Get Started</div>
+            </div>
+
+            <div id="testResult" class="test-result">
+                <strong>Expected Behavior:</strong> Logo image should display correctly on all viewport sizes
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>📋 Bug Exploration Test Checklist - FIXED CODE</h2>
+            <p>Re-running the SAME tests from Task 1 on FIXED code. These tests should now PASS.</p>
+            
+            <h3>Mobile Viewports (Bug Condition: ≤768px) - Expected: PASS</h3>
+            <ul class="test-checklist" id="mobileTests">
+                <li id="test375">
+                    <strong>Mobile Chrome (375px):</strong> 
+                    <span class="test-description">Verify LOGO.jpeg displays correctly (NOT "?")</span>
+                    <br>
+                    <span class="test-status">Status: Pending manual verification</span>
+                </li>
+                <li id="test414">
+                    <strong>Mobile Safari (414px):</strong> 
+                    <span class="test-description">Verify LOGO.jpeg displays correctly (NOT "?")</span>
+                    <br>
+                    <span class="test-status">Status: Pending manual verification</span>
+                </li>
+                <li id="test360">
+                    <strong>Mobile Firefox (360px):</strong> 
+                    <span class="test-description">Verify LOGO.jpeg displays correctly (NOT "?")</span>
+                    <br>
+                    <span class="test-status">Status: Pending manual verification</span>
+                </li>
+                <li id="test320">
+                    <strong>Small Mobile (320px):</strong> 
+                    <span class="test-description">Verify LOGO.jpeg displays without overflow</span>
+                    <br>
+                    <span class="test-status">Status: Pending manual verification</span>
+                </li>
+            </ul>
+
+            <h3>Additional Verification Checks</h3>
+            <ul class="test-checklist">
+                <li id="testAltText">
+                    <strong>Alt Text Verification:</strong> 
+                    <span class="test-description">Verify alt text is "HexaTP - Transfer Pricing Simplified"</span>
+                    <br>
+                    <span class="test-status" id="altTextStatus">Status: Checking...</span>
+                </li>
+                <li id="testDimensions">
+                    <strong>Dimensions Verification:</strong> 
+                    <span class="test-description">Verify logo height is 30px on mobile (≤768px), 40px on desktop (>768px)</span>
+                    <br>
+                    <span class="test-status" id="dimensionsStatus">Status: Checking...</span>
+                </li>
+                <li id="testImageSource">
+                    <strong>Image Source Verification:</strong> 
+                    <span class="test-description">Verify image source is LOGO.jpeg</span>
+                    <br>
+                    <span class="test-status" id="imageSourceStatus">Status: Checking...</span>
+                </li>
+                <li id="testImageVisible">
+                    <strong>Image Visibility Verification:</strong> 
+                    <span class="test-description">Verify logo image is visible (not hidden or display:none)</span>
+                    <br>
+                    <span class="test-status" id="visibilityStatus">Status: Checking...</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>🎯 Expected Test Outcome</h2>
+            <div class="working" style="padding: 20px; border-radius: 8px;">
+                <h3>✅ Tests Should PASS on Fixed Code</h3>
+                <p>When the bug exploration tests from Task 1 are re-run on the FIXED code:</p>
+                <ul>
+                    <li>✅ Mobile Chrome (375px): Logo displays LOGO.jpeg correctly (NOT "?")</li>
+                    <li>✅ Mobile Safari (414px): Logo displays LOGO.jpeg correctly (NOT "?")</li>
+                    <li>✅ Mobile Firefox (360px): Logo displays LOGO.jpeg correctly (NOT "?")</li>
+                    <li>✅ Small Mobile (320px): Logo displays LOGO.jpeg without overflow</li>
+                    <li>✅ Logo has correct alt text: "HexaTP - Transfer Pricing Simplified"</li>
+                    <li>✅ Logo has correct dimensions: 30px height on mobile, 40px on desktop</li>
+                </ul>
+                <p><strong>Conclusion:</strong> If all tests pass, the bug is confirmed FIXED.</p>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>📊 Automated Test Results</h2>
+            <div id="automatedResults" style="padding: 15px; background: rgba(255, 255, 255, 0.02); border-radius: 8px;">
+                <p>Running automated checks...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleImageError(img) {
+            const result = document.getElementById('testResult');
+            result.className = 'test-result bug-detected';
+            result.innerHTML = '<strong>⚠️ ERROR: LOGO.jpeg not found</strong><br>The image file could not be loaded. Check the file path.';
+        }
+
+        function updateViewportInfo() {
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+            const isMobile = viewportWidth <= 768;
+            
+            document.getElementById('viewportWidth').textContent = viewportWidth;
+            document.getElementById('viewportHeight').textContent = viewportHeight;
+            
+            const expectedHeight = isMobile ? 30 : 40;
+            document.getElementById('expectedHeight').textContent = expectedHeight;
+            
+            // Get actual logo height
+            const logoImage = document.getElementById('logoImage');
+            const actualHeight = logoImage ? Math.round(logoImage.offsetHeight) : 0;
+            document.getElementById('actualHeight').textContent = actualHeight;
+            
+            // Update test status
+            const testStatus = document.getElementById('testStatus');
+            if (actualHeight === expectedHeight) {
+                testStatus.innerHTML = '<span style="color: #00ff00;">✅ PASS - Logo height matches expected</span>';
+            } else {
+                testStatus.innerHTML = '<span style="color: #ff0000;">❌ FAIL - Logo height mismatch</span>';
+            }
+            
+            // Update test result
+            const result = document.getElementById('testResult');
+            if (isMobile) {
+                result.className = 'test-result working';
+                result.innerHTML = '<strong>✅ Mobile View (viewport ≤ 768px)</strong><br>Logo should display LOGO.jpeg image with 30px height.';
+            } else {
+                result.className = 'test-result working';
+                result.innerHTML = '<strong>✅ Desktop View (viewport > 768px)</strong><br>Logo should display LOGO.jpeg image with 40px height.';
+            }
+        }
+
+        function runAutomatedTests() {
+            const logoImage = document.getElementById('logoImage');
+            const results = [];
+            
+            // Test 1: Alt text verification
+            const altText = logoImage.alt;
+            const expectedAltText = "HexaTP - Transfer Pricing Simplified";
+            const altTextPass = altText === expectedAltText;
+            document.getElementById('altTextStatus').innerHTML = altTextPass 
+                ? '<span style="color: #00ff00;">✅ PASS - Alt text correct</span>' 
+                : '<span style="color: #ff0000;">❌ FAIL - Alt text incorrect</span>';
+            document.getElementById('testAltText').className = altTextPass ? 'pass' : 'fail';
+            results.push({ test: 'Alt Text', pass: altTextPass, expected: expectedAltText, actual: altText });
+            
+            // Test 2: Dimensions verification
+            const viewportWidth = window.innerWidth;
+            const isMobile = viewportWidth <= 768;
+            const expectedHeight = isMobile ? 30 : 40;
+            const actualHeight = Math.round(logoImage.offsetHeight);
+            const dimensionsPass = actualHeight === expectedHeight;
+            document.getElementById('dimensionsStatus').innerHTML = dimensionsPass 
+                ? `<span style="color: #00ff00;">✅ PASS - Height is ${actualHeight}px (expected ${expectedHeight}px)</span>` 
+                : `<span style="color: #ff0000;">❌ FAIL - Height is ${actualHeight}px (expected ${expectedHeight}px)</span>`;
+            document.getElementById('testDimensions').className = dimensionsPass ? 'pass' : 'fail';
+            results.push({ test: 'Dimensions', pass: dimensionsPass, expected: `${expectedHeight}px`, actual: `${actualHeight}px` });
+            
+            // Test 3: Image source verification
+            const imageSrc = logoImage.src;
+            const imageSourcePass = imageSrc.includes('LOGO.jpeg');
+            document.getElementById('imageSourceStatus').innerHTML = imageSourcePass 
+                ? '<span style="color: #00ff00;">✅ PASS - Image source is LOGO.jpeg</span>' 
+                : '<span style="color: #ff0000;">❌ FAIL - Image source incorrect</span>';
+            document.getElementById('testImageSource').className = imageSourcePass ? 'pass' : 'fail';
+            results.push({ test: 'Image Source', pass: imageSourcePass, expected: 'LOGO.jpeg', actual: imageSrc });
+            
+            // Test 4: Image visibility verification
+            const computedStyle = window.getComputedStyle(logoImage);
+            const isVisible = computedStyle.display !== 'none' && computedStyle.visibility !== 'hidden' && logoImage.offsetHeight > 0;
+            document.getElementById('visibilityStatus').innerHTML = isVisible 
+                ? '<span style="color: #00ff00;">✅ PASS - Logo is visible</span>' 
+                : '<span style="color: #ff0000;">❌ FAIL - Logo is hidden</span>';
+            document.getElementById('testImageVisible').className = isVisible ? 'pass' : 'fail';
+            results.push({ test: 'Visibility', pass: isVisible, expected: 'visible', actual: isVisible ? 'visible' : 'hidden' });
+            
+            // Display automated results
+            const automatedResults = document.getElementById('automatedResults');
+            const allPass = results.every(r => r.pass);
+            
+            let html = '<h3>' + (allPass ? '✅ All Automated Tests PASSED' : '⚠️ Some Tests Failed') + '</h3>';
+            html += '<table style="width: 100%; border-collapse: collapse; margin-top: 15px;">';
+            html += '<tr style="background: rgba(255, 255, 255, 0.05);"><th style="padding: 10px; text-align: left;">Test</th><th style="padding: 10px; text-align: left;">Expected</th><th style="padding: 10px; text-align: left;">Actual</th><th style="padding: 10px; text-align: left;">Status</th></tr>';
+            
+            results.forEach(r => {
+                const statusColor = r.pass ? '#00ff00' : '#ff0000';
+                const statusText = r.pass ? '✅ PASS' : '❌ FAIL';
+                html += `<tr style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding: 10px;">${r.test}</td>
+                    <td style="padding: 10px;">${r.expected}</td>
+                    <td style="padding: 10px;">${r.actual}</td>
+                    <td style="padding: 10px; color: ${statusColor};">${statusText}</td>
+                </tr>`;
+            });
+            
+            html += '</table>';
+            
+            if (allPass) {
+                html += '<div style="margin-top: 20px; padding: 15px; background: rgba(0, 255, 0, 0.1); border: 1px solid #00ff00; border-radius: 8px;">';
+                html += '<strong>✅ Bug Fix Verified</strong><br>';
+                html += 'All automated tests passed. The mobile header logo bug is confirmed FIXED.';
+                html += '</div>';
+            }
+            
+            automatedResults.innerHTML = html;
+        }
+
+        // Initialize
+        updateViewportInfo();
+        window.addEventListener('resize', updateViewportInfo);
+        
+        // Run automated tests after image loads
+        const logoImage = document.getElementById('logoImage');
+        if (logoImage.complete) {
+            runAutomatedTests();
+        } else {
+            logoImage.addEventListener('load', runAutomatedTests);
+        }
+    </script>
+</body>
+</html>

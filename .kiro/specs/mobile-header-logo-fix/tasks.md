@@ -1,0 +1,104 @@
+# Implementation Plan
+
+- [x] 1. Exploratory bug condition testing (BEFORE implementing fix)
+  - **Property 1: Bug Condition** - Mobile Logo Question Mark Display
+  - **CRITICAL**: This test MUST FAIL on unfixed code - failure confirms the bug exists
+  - **DO NOT attempt to fix the test or the code when it fails**
+  - **NOTE**: This test encodes the expected behavior - it will validate the fix when it passes after implementation
+  - **GOAL**: Surface counterexamples that demonstrate the bug exists on mobile devices
+  - **Manual Testing Approach**: Test on actual mobile devices and browser emulators to observe the question mark display
+  - Test that mobile viewport (≤ 768px) displays question mark instead of logo (from Bug Condition in design)
+  - Test cases:
+    - Mobile Chrome (375px width): Observe question mark in header
+    - Mobile Safari (414px width): Observe question mark in header
+    - Mobile Firefox (360px width): Observe question mark in header
+    - Small mobile (320px width): Observe question mark in header
+  - Run tests on UNFIXED code
+  - **EXPECTED OUTCOME**: Tests FAIL - question mark is displayed instead of logo (this is correct - it proves the bug exists)
+  - Document counterexamples found (specific browsers/devices showing the question mark)
+  - Analyze root cause: font rendering failure, CSS specificity, or encoding issue
+  - Mark task complete when tests are run, failures are documented, and root cause is analyzed
+  - _Requirements: 1.1, 1.2, 1.3_
+
+- [x] 2. Write preservation property tests (BEFORE implementing fix)
+  - **Property 2: Preservation** - Desktop/Tablet Logo Display
+  - **IMPORTANT**: Follow observation-first methodology
+  - Observe behavior on UNFIXED code for desktop/tablet viewports (> 768px)
+  - Document current logo appearance on desktop (1920px, 1440px, 1024px viewports)
+  - Document current logo appearance on tablet (768px, 1024px viewports)
+  - Document header layout, navigation menu, and CTA button positioning
+  - Write visual regression test cases capturing observed behavior patterns from Preservation Requirements
+  - Test cases:
+    - Desktop (1920px): Logo displays correctly with current styling
+    - Desktop (1440px): Logo displays correctly with current styling
+    - Tablet (1024px): Logo displays correctly with current styling
+    - Tablet edge case (768px): Logo displays correctly with current styling
+    - Header layout: Padding, alignment, spacing remain consistent
+    - Navigation menu: Desktop dropdown and mobile hamburger work correctly
+    - CTA button: "Get Started" button position and styling unchanged
+  - Run tests on UNFIXED code
+  - **EXPECTED OUTCOME**: Tests PASS (this confirms baseline behavior to preserve)
+  - Mark task complete when tests are written, run, and passing on unfixed code
+  - _Requirements: 3.1, 3.2, 3.3, 3.4_
+
+- [x] 3. Fix mobile header logo display
+
+  - [x] 3.1 Replace text-based logo with image-based logo in all HTML files
+    - Identify all 24 HTML files that contain the header logo element
+    - Replace `<div class="logo">HEXA<span>TP</span></div>` with `<img src="LOGO.jpeg" alt="HexaTP - Transfer Pricing Simplified" class="logo-img" />`
+    - Verify LOGO.jpeg file exists in root directory (hexatp-main/LOGO.jpeg)
+    - Ensure relative path `src="LOGO.jpeg"` is correct for all HTML file locations
+    - _Bug_Condition: isBugCondition(input) where input.viewportWidth <= 768 AND input.logoType == "text-based" AND logoDisplaysQuestionMark(input)_
+    - _Expected_Behavior: logoImageDisplayed(result) AND logoImageSource(result) == "LOGO.jpeg" AND logoImageVisible(result) == true_
+    - _Preservation: Desktop/tablet logo display (viewport > 768px), header layout, navigation functionality, CTA button remain unchanged_
+    - _Requirements: 1.1, 1.2, 1.3, 2.1, 2.2, 2.3, 3.1, 3.2, 3.3, 3.4_
+
+  - [x] 3.2 Add CSS styling for logo image in all HTML files
+    - Add `.logo-img` CSS class definition to `<style>` section in each HTML file
+    - Desktop styling: `height: 40px; width: auto; display: block;`
+    - Mobile styling (media query max-width: 768px): `height: 30px; width: auto;`
+    - Place CSS after existing `.logo` definition for proper cascade
+    - Verify logo image maintains aspect ratio with `width: auto`
+    - _Expected_Behavior: Logo image displays with correct dimensions on mobile (30px height) and desktop (40px height)_
+    - _Preservation: Existing `.logo` class styles remain for backward compatibility_
+    - _Requirements: 2.1, 2.2, 2.3, 3.1, 3.2_
+
+  - [x] 3.3 Verify bug condition exploration test now passes
+    - **Property 1: Expected Behavior** - Mobile Logo Image Display
+    - **IMPORTANT**: Re-run the SAME tests from task 1 - do NOT write new tests
+    - The tests from task 1 encode the expected behavior
+    - When these tests pass, it confirms the expected behavior is satisfied
+    - Run bug condition exploration tests from step 1 on FIXED code
+    - Test cases:
+      - Mobile Chrome (375px): Verify LOGO.jpeg displays correctly
+      - Mobile Safari (414px): Verify LOGO.jpeg displays correctly
+      - Mobile Firefox (360px): Verify LOGO.jpeg displays correctly
+      - Small mobile (320px): Verify LOGO.jpeg displays without overflow
+    - Verify logo image has correct alt text: "HexaTP - Transfer Pricing Simplified"
+    - Verify logo image has correct dimensions (30px height on mobile)
+    - **EXPECTED OUTCOME**: Tests PASS (confirms bug is fixed)
+    - _Requirements: 2.1, 2.2, 2.3_
+
+  - [x] 3.4 Verify preservation tests still pass
+    - **Property 2: Preservation** - Desktop/Tablet Logo Display Unchanged
+    - **IMPORTANT**: Re-run the SAME tests from task 2 - do NOT write new tests
+    - Run preservation property tests from step 2 on FIXED code
+    - Test cases:
+      - Desktop (1920px): Compare logo appearance with baseline from task 2
+      - Desktop (1440px): Compare logo appearance with baseline from task 2
+      - Tablet (1024px): Compare logo appearance with baseline from task 2
+      - Tablet edge case (768px): Compare logo appearance with baseline from task 2
+      - Header layout: Verify padding, alignment, spacing match baseline
+      - Navigation menu: Verify desktop dropdown and mobile hamburger still work
+      - CTA button: Verify "Get Started" button position and styling unchanged
+    - **EXPECTED OUTCOME**: Tests PASS (confirms no regressions)
+    - Confirm all preservation tests still pass after fix
+    - _Requirements: 3.1, 3.2, 3.3, 3.4_
+
+- [x] 4. Checkpoint - Ensure all tests pass
+  - Verify all bug condition tests pass (mobile logo displays correctly)
+  - Verify all preservation tests pass (desktop/tablet unchanged)
+  - Test navigation between pages maintains logo consistency
+  - Test page resize from desktop to mobile maintains logo display
+  - Verify all 24 HTML pages display logo correctly on mobile and desktop
+  - Ask the user if questions arise or if additional testing is needed
