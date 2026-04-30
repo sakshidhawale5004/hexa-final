@@ -225,7 +225,21 @@
     box-shadow:0 5px 20px rgba(0,0,0,0.08);
     transition:0.4s;
     background:rgba(255, 255, 255, 0.03);
-   
+    padding: 20px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.country-card:hover {
+    transform:translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(245, 196, 0, 0.15);
+}
+
+.country-card img {
+    max-width: 120px;
+    max-height: 80px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .country-card p{
@@ -1111,7 +1125,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
         <div class="container">
             <div class="text-center mb-5">
                 <div class="hero-badge">Solutions</div>
-                <h1>About HexaTP</h1>
+                <h1>Our Solutions</h1>
             </div>
 
             <div class="row g-5 align-items-stretch">
@@ -1144,125 +1158,124 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
     </div>
 
 <!-- FILTER BUTTONS -->
-<section class ="filter-buttons">
+<section class="filter-buttons">
     <button class="filter-btn active" onclick="filterCountry('all')">All</button>
     <button class="filter-btn" onclick="filterCountry('gulf')">Gulf Region</button>
     <button class="filter-btn" onclick="filterCountry('asia')">Asia</button>
     <button class="filter-btn" onclick="filterCountry('south')">South East Asia</button>
     <button class="filter-btn" onclick="filterCountry('africa')">Africa</button>
     <button class="filter-btn" onclick="filterCountry('america')">America</button>
-</div>
+</section>
 
 <!--GRID -->
 <div class="country-container">
 
-    <div class="country-container">
-
     <!-- gulf -->
     <div class="country-card gulf">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/bahrain_flag-png-wave-xl.jpg">
+        <img src="https://flagcdn.com/w320/bh.png" alt="Bahrain Flag">
         <p>Bahrain</p>
     </div>
 
     <div class="country-card gulf">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/5.jpg">
+        <img src="https://flagcdn.com/w320/qa.png" alt="Qatar Flag">
         <p>Qatar</p>
     </div>
 
     <div class="country-card gulf">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/18.jpg">
+        <img src="https://flagcdn.com/w320/sa.png" alt="Saudi Arabia Flag">
         <p>Saudi Arabia</p>
     </div>
 
     <div class="country-card gulf">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/3-1.jpg">
+        <img src="https://flagcdn.com/w320/eg.png" alt="Egypt Flag">
         <p>Egypt</p>
     </div>
 
     <div class="country-card gulf">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/6.jpg">
+        <img src="https://flagcdn.com/w320/om.png" alt="Oman Flag">
         <p>Oman</p>
     </div>
 
     <div class="country-card gulf">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/11.jpg">
+        <img src="https://flagcdn.com/w320/jo.png" alt="Jordan Flag">
         <p>Jordan</p>
     </div>
 
     <!-- Asia -->
     <div class="country-card asia">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/13.jpg">
+        <img src="https://flagcdn.com/w320/bd.png" alt="Bangladesh Flag">
         <p>Bangladesh</p>
     </div>
 
     <div class="country-card asia">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/12.jpg">
+        <img src="https://flagcdn.com/w320/in.png" alt="India Flag">
         <p>India</p>
     </div>
 
     <!-- south -->
     <div class="country-card south">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/9.jpg">
+        <img src="https://flagcdn.com/w320/my.png" alt="Malaysia Flag">
         <p>Malaysia</p>
     </div>
 
     <div class="country-card south">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/17.jpg">
+        <img src="https://flagcdn.com/w320/th.png" alt="Thailand Flag">
         <p>Thailand</p>
     </div>
 
     <div class="country-card south">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/21.jpg">
+        <img src="https://flagcdn.com/w320/ph.png" alt="Philippines Flag">
         <p>Philippines</p>
     </div>
 
     <div class="country-card south">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/10.jpg">
+        <img src="https://flagcdn.com/w320/id.png" alt="Indonesia Flag">
         <p>Indonesia</p>
     </div>
 
     <div class="country-card south">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/16.jpg">
+        <img src="https://flagcdn.com/w320/vn.png" alt="Vietnam Flag">
         <p>Vietnam</p>
     </div>
 
     <div class="country-card south">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/19.jpg">
+        <img src="https://flagcdn.com/w320/sg.png" alt="Singapore Flag">
         <p>Singapore</p>
     </div>
 
     <!-- africa -->
     <div class="country-card africa">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/7-1.jpg">
+        <img src="https://flagcdn.com/w320/ke.png" alt="Kenya Flag">
         <p>Kenya</p>
     </div>
 
     <div class="country-card africa">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/4.jpg">
+        <img src="https://flagcdn.com/w320/gh.png" alt="Ghana Flag">
         <p>Ghana</p>
     </div>
 
     <div class="country-card africa">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/2-1.jpg">
+        <img src="https://flagcdn.com/w320/bw.png" alt="Botswana Flag">
         <p>Botswana</p>
     </div>
 
     <div class="country-card africa">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/8-1.jpg">
+        <img src="https://flagcdn.com/w320/ng.png" alt="Nigeria Flag">
         <p>Nigeria</p>
     </div>
 
     <!-- america -->
     <div class="country-card america">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/14.jpg">
+        <img src="https://flagcdn.com/w320/ca.png" alt="Canada Flag">
         <p>Canada</p>
     </div>
 
     <div class="country-card america">
-        <img src="https://hexatp.com/wp-content/uploads/2022/05/1.jpg">
+        <img src="https://flagcdn.com/w320/us.png" alt="United States Flag">
         <p>United States</p>
     </div>
 
+</div>
 </div>
 <script>
 function filterCountry(category){
@@ -1342,7 +1355,7 @@ function filterCountry(category){
         </div>
 
         <div class="advisory-visual">
-            <img src="https://hexatp.com/wp-content/uploads/2024/11/a5771af7-42aa-4461-9c1b-b445a78bd6db.webp" alt="Professional Advisory Team">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80" alt="Professional Advisory Team">
         </div>
 
     </div>
