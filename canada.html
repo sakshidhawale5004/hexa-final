@@ -48,7 +48,7 @@
         .logo { font-weight: 800; font-size: 20px; text-transform: uppercase; }
         .logo span { color: var(--accent); }
 
-        .logo-img { height: 45px !important; width: 120px !important; display: block; object-fit: contain; }
+        .logo-img { height:  60px !important; width:  auto !important; display: block; object-fit: contain; }
 
         /* Professional Text Logo */
         .logo-text-wrapper {
@@ -698,7 +698,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
 <button class="mobile-nav-toggle" onclick="openMobileMenu()" aria-label="Open menu">?</button>
 <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
 <div class="mobile-menu" id="mobileMenu">
-    <button class="close-menu" onclick="closeMobileMenu()" aria-label="Close menu">×</button>
+    <button class="close-menu" onclick="closeMobileMenu()" aria-label="Close menu"></button>
     <ul>
         <li><a href="index.html">?? Home</a></li>
         <li><a href="aboutus.html">?? About</a></li>
@@ -762,7 +762,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
 </div>
 
 
-        <img src="Logo.jpeg" alt="HexaTP - Transfer Pricing Simplified" class="logo-img" width="120" height="45" />
+        <img src="logo_new1.png" alt="HexaTP - Transfer Pricing Simplified" class="logo-img" />
         <nav class="d-none d-md-block">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -851,7 +851,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                 </a>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg" class="img-fluid rounded shadow-lg" style="max-height: 250px; border: 1px solid var(--glass-border);">
+                    <img src="Flag_of_Canada_3-2.jpeg" alt="Flag" class="img-fluid rounded shadow-lg" style="width: 100%; max-width: 450px; height: 280px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);">
                 </div>
             </div>
         </div>
@@ -986,9 +986,9 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
                 <div class="col-lg-4">
                     <div class="glass-card" onclick="toggleContent('content3', 'arrow3')">
                         <span class="arrow" id="arrow3">CbC Reporting</span>
-                        <p style="color:var(--text-slate)">Threshold for groups over €750 Million.</p>
+                        <p style="color:var(--text-slate)">Threshold for groups over 750 Million.</p>
                         <div class="content" id="content3">
-                            <p>MNE groups with annual consolidated revenue of <strong>€750 million</strong> or more must file a Country-by-Country (CbC) Report.</p>
+                            <p>MNE groups with annual consolidated revenue of <strong>750 million</strong> or more must file a Country-by-Country (CbC) Report.</p>
                             <p>For Canadian-parented groups, this must be filed with the CRA within 12 months of the fiscal year-end.</p>
                         </div>
                     </div>
@@ -1159,7 +1159,9 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
     </section>
 
     <footer>
-        © 2026 HexaTP – Transfer Pricing Intelligence Platform
+         
+        <img src="logo_new1.png" alt="HexaTP Logo" class="logo-img" style="height: 35px !important; max-height: 35px !important; width: auto !important; display: block; margin: 0 auto 8px auto; opacity: 0.9;"><br>
+        2026 HexaTP  Transfer Pricing Intelligence Platform
     </footer>
 
     <script>

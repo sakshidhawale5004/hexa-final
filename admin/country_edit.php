@@ -270,8 +270,9 @@ if ($action === 'edit' && $country_id) {
     <div class="admin-header">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h1><i class="bi bi-pencil-square"></i> <?php echo $page_title; ?></h1>
+                <div class="col-md-6 d-flex align-items-center gap-3">
+                    <img src="../logo_new1.png" alt="HexaTP Logo" style="height: 40px;">
+                    <h1 class="mb-0"><?php echo $page_title; ?></h1>
                 </div>
                 <div class="col-md-6 text-end">
                     <a href="countries_list.php" class="btn btn-cancel">
@@ -579,6 +580,12 @@ if ($action === 'edit' && $country_id) {
                     endif;
                     ?>
                 </div>
+                <div class="text-center mt-3">
+                    <button type="button" class="btn btn-add" onclick="addCard()">
+                        <i class="bi bi-plus-circle"></i> Add Documentation Card
+                    </button>
+                </div>
+            </div>
                 
             <!-- Form Actions -->
             <div class="form-section">
@@ -589,8 +596,28 @@ if ($action === 'edit' && $country_id) {
                     <button type="submit" class="btn btn-save btn-draft" data-action="draft">
                         <i class="bi bi-file-earmark"></i> Save as Draft
                     </button>
-                    <?php if ($country && $country->id): ?>
-                    <a href="/country.php?id=<?php echo $country->id; ?>" target="_blank" class="btn btn-cancel" style="background: rgba(245, 196, 0, 0.1); color: var(--accent); border-color: var(--accent);">
+                    <?php 
+                    if ($country && $country->id): 
+                        // Logic to find live HTML file
+                        $html_file = strtolower(str_replace(' ', '', $country->country_name)) . '.html';
+                        $special_cases = [
+                            'united arab emirates' => 'unitedarab.html',
+                            'saudi arabia' => 'saudiarabia.html',
+                            'vietnam' => 'viethnam.html',
+                            'united states' => 'us.html'
+                        ];
+                        $lookup_name = strtolower(trim($country->country_name));
+                        if (isset($special_cases[$lookup_name])) {
+                            $html_file = $special_cases[$lookup_name];
+                        }
+                        
+                        // Default to country.php if HTML doesn't exist
+                        $live_url = "../" . $html_file;
+                        if (!file_exists(__DIR__ . '/../' . $html_file)) {
+                            $live_url = "../country.php?id=" . $country->id;
+                        }
+                    ?>
+                    <a href="<?php echo $live_url; ?>" target="_blank" class="btn btn-cancel" style="background: rgba(245, 196, 0, 0.1); color: var(--accent); border-color: var(--accent);">
                         <i class="bi bi-eye"></i> View Live Page
                     </a>
                     <?php endif; ?>
@@ -822,8 +849,9 @@ if ($action === 'edit' && $country_id) {
             
             // Determine API endpoint
             const countryId = data.country_id;
-            const method = countryId ? 'PUT' : 'POST';
-            const url = countryId ? `/api/country.php?id=${countryId}` : '/api/country.php';
+            // Use POST for both Create and Update to avoid shared hosting PUT restrictions
+            const method = 'POST';
+            const url = countryId ? `../api/country.php?id=${countryId}` : '../api/country.php';
             
             // Submit to API
             fetch(url, {

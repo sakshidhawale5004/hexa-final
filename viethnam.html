@@ -48,7 +48,7 @@
         .logo { font-weight: 800; font-size: 20px; text-transform: uppercase; }
         .logo span { color: var(--accent); }
 
-        .logo-img { height: 45px !important; width: 120px !important; display: block; object-fit: contain; }
+        .logo-img { height:  60px !important; width:  auto !important; display: block; object-fit: contain; }
 
         /* Professional Text Logo */
         .logo-text-wrapper {
@@ -698,7 +698,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
 <button class="mobile-nav-toggle" onclick="openMobileMenu()" aria-label="Open menu">?</button>
 <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
 <div class="mobile-menu" id="mobileMenu">
-    <button class="close-menu" onclick="closeMobileMenu()" aria-label="Close menu">×</button>
+    <button class="close-menu" onclick="closeMobileMenu()" aria-label="Close menu"></button>
     <ul>
         <li><a href="index.html">?? Home</a></li>
         <li><a href="aboutus.html">?? About</a></li>
@@ -762,7 +762,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
 </div>
 
 
-        <img src="Logo.jpeg" alt="HexaTP - Transfer Pricing Simplified" class="logo-img" width="120" height="45" />
+        <img src="logo_new1.png" alt="HexaTP - Transfer Pricing Simplified" class="logo-img" />
         <nav class="d-none d-md-block">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -851,7 +851,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                 </a>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Flag_of_Vietnam.svg" class="img-fluid rounded shadow-lg" style="max-height: 250px; border: 1px solid var(--glass-border);">
+                    <img src="Flag_of_Vietnam.jpeg" alt="Flag" class="img-fluid rounded shadow-lg" style="width: 100%; max-width: 450px; height: 280px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);">
                 </div>
             </div>
         </div>
@@ -967,8 +967,8 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
                         <p style="color:var(--text-slate)">The primary threshold for mandatory TP Documentation.</p>
                         <div class="content" id="content1">
                             <p>Taxpayers are exempt from preparing the Local File and Master File if:
-                                <br>• Annual revenue < <strong>VND 50 Billion</strong> AND
-                                <br>• Related party transactions < <strong>VND 30 Billion</strong>.
+                                <br> Annual revenue < <strong>VND 50 Billion</strong> AND
+                                <br> Related party transactions < <strong>VND 30 Billion</strong>.
                             </p>
                             <p>However, the <strong>Form 01 Disclosure</strong> is still required for all related party dealings.</p>
                         </div>
@@ -981,9 +981,9 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
                         <p style="color:var(--text-slate)">Exemptions for low-risk business profiles.</p>
                         <div class="content" id="content2">
                             <p>Entities with revenue < <strong>VND 1,000 Billion</strong> and EBIT/Revenue margins of:
-                                <br>• Distribution: > <strong>5%</strong>
-                                <br>• Manufacturing: > <strong>10%</strong>
-                                <br>• Processing: > <strong>15%</strong>
+                                <br> Distribution: > <strong>5%</strong>
+                                <br> Manufacturing: > <strong>10%</strong>
+                                <br> Processing: > <strong>15%</strong>
                             </p>
                             <p>may be exempt from benchmarking requirements, provided they do not have intangible property transactions.</p>
                         </div>
@@ -1168,7 +1168,9 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
     </section>
 
     <footer>
-        © 2026 HexaTP – Transfer Pricing Intelligence Platform
+         
+        <img src="logo_new1.png" alt="HexaTP Logo" class="logo-img" style="height: 35px !important; max-height: 35px !important; width: auto !important; display: block; margin: 0 auto 8px auto; opacity: 0.9;"><br>
+        2026 HexaTP  Transfer Pricing Intelligence Platform
     </footer>
 
     <script>

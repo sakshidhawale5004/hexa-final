@@ -169,19 +169,43 @@ $stats = $contentService->getStatistics();
             border: 1px solid var(--glass-border);
             color: var(--accent);
             padding: 6px 12px;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 0.85rem;
-            margin-right: 5px;
             transition: 0.3s;
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .action-btn:hover {
             background: var(--accent);
             color: #000;
             border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .action-btn-view {
+            border-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+        }
+
+        .action-btn-view:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .action-btn-live {
+            border-color: rgba(76, 175, 80, 0.3);
+            color: #81c784;
+        }
+
+        .action-btn-live:hover {
+            background: #4caf50;
+            color: #fff;
+            border-color: #4caf50;
         }
 
         .action-btn-danger {
@@ -288,8 +312,9 @@ $stats = $contentService->getStatistics();
     <div class="admin-header">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h1><i class="bi bi-globe"></i> Countries List</h1>
+                <div class="col-md-6 d-flex align-items-center gap-3">
+                    <img src="../logo_new1.png" alt="HexaTP Logo" style="height: 40px;">
+                    <h1 class="mb-0">Countries List</h1>
                 </div>
                 <div class="col-md-6 text-end">
                     <a href="dashboard.php" class="btn-add-new">
@@ -348,7 +373,26 @@ $stats = $contentService->getStatistics();
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($countries as $country): ?>
+                    <?php 
+                    foreach ($countries as $country): 
+                        // Logic to find live HTML file
+                        $html_file = strtolower(str_replace(' ', '', $country->country_name)) . '.html';
+                        
+                        // Special cases for filenames that don't match standard pattern
+                        $special_cases = [
+                            'united arab emirates' => 'unitedarab.html',
+                            'saudi arabia' => 'saudiarabia.html',
+                            'vietnam' => 'viethnam.html',
+                            'united states' => 'us.html'
+                        ];
+                        
+                        $lookup_name = strtolower(trim($country->country_name));
+                        if (isset($special_cases[$lookup_name])) {
+                            $html_file = $special_cases[$lookup_name];
+                        }
+                        
+                        $html_file_exists = file_exists(__DIR__ . '/../' . $html_file);
+                    ?>
                     <tr>
                         <td>
                             <strong><?php echo htmlspecialchars($country->country_name); ?></strong>
@@ -365,54 +409,30 @@ $stats = $contentService->getStatistics();
                             <small><?php echo $country->updated_at->format('M d, Y H:i'); ?></small>
                         </td>
                         <td>
-                            <a href="country_edit.php?id=<?php echo $country->id; ?>" class="action-btn" title="Edit">
-                                <i class="bi bi-pencil"></i> Edit
-                            </a>
-                            <?php
-                            // Map country names to actual HTML filenames
-                            $html_filename_map = [
-                                'Australia' => 'australia.html',
-                                'Bahrain' => 'bahrain.html',
-                                'Bangladesh' => 'bangladesh.html',
-                                'Botswana' => 'botswana.html',
-                                'Canada' => 'canada.html',
-                                'Egypt' => 'egypt.html',
-                                'Ghana' => 'ghana.html',
-                                'India' => 'India.html',
-                                'Indonesia' => 'indonesia.html',
-                                'Kenya' => 'kenya.html',
-                                'Malaysia' => 'malaysia.html',
-                                'Oman' => 'oman.html',
-                                'Qatar' => 'Qatar.html',
-                                'Saudi Arabia' => 'Saudiarabia.html',
-                                'Singapore' => 'singapore.html',
-                                'Thailand' => 'thailand.html',
-                                'United Arab Emirates' => 'unitedarab.html',
-                                'United States' => 'us.html',
-                                'Vietnam' => 'viethnam.html'
-                            ];
-                            $html_file = $html_filename_map[$country->country_name] ?? strtolower($country->country_code) . '.html';
-                            ?>
-                            <a href="/country.php?id=<?php echo $country->id; ?>" target="_blank" class="action-btn" title="View">
-                                <i class="bi bi-eye"></i> View
-                            </a>
-                            <?php if ($current_user->role === 'admin'): ?>
-                            <button onclick="deleteCountry(<?php echo $country->id; ?>, '<?php echo htmlspecialchars($country->country_name); ?>')" class="action-btn action-btn-danger" title="Delete">
-                                <i class="bi bi-trash"></i> Delete
-                            </button>
-                            <?php endif; ?>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="country_edit.php?id=<?php echo $country->id; ?>" class="action-btn" title="Edit Content">
+                                    <i class="bi bi-pencil-square"></i> Edit
+                                </a>
+                                
+                                <a href="../country.php?id=<?php echo $country->id; ?>" target="_blank" class="action-btn action-btn-view" title="Preview dynamic page">
+                                    <i class="bi bi-eye"></i> View
+                                </a>
+
+                                <?php if ($html_file_exists): ?>
+                                <a href="../<?php echo $html_file; ?>" target="_blank" class="action-btn action-btn-live" title="View published HTML">
+                                    <i class="bi bi-globe"></i> Live
+                                </a>
+                                <?php endif; ?>
+
+                                <?php if ($current_user->role === 'admin'): ?>
+                                <button onclick="deleteCountry(<?php echo $country->id; ?>, '<?php echo htmlspecialchars($country->country_name); ?>')" class="action-btn action-btn-danger" title="Delete">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                                <?php endif; ?>
+                            </div>
                         </td>
                     </tr>
                     <?php endforeach; ?>
-                    
-                    <?php if (empty($countries)): ?>
-                    <tr>
-                        <td colspan="5" class="text-center" style="padding: 40px;">
-                            <i class="bi bi-inbox" style="font-size: 3rem; color: var(--text-slate);"></i>
-                            <p style="color: var(--text-slate); margin-top: 15px;">No countries found. Click "Add New Country" to get started.</p>
-                        </td>
-                    </tr>
-                    <?php endif; ?>
                 </tbody>
             </table>
         </div>
@@ -451,7 +471,7 @@ $stats = $contentService->getStatistics();
             btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Deleting...';
             btn.disabled = true;
 
-            fetch(`/api/country.php?id=${id}`, {
+            fetch(`../api/country.php?id=${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'

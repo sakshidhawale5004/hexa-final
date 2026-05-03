@@ -22,230 +22,237 @@ if (!$country || $country->status !== 'published') {
     exit;
 }
 
-$page_title = $country->meta_title ?: $country->country_name . " Transfer Pricing";
+$page_title = $country->meta_title ?: $country->country_name . " Transfer Pricing | HexaTP";
+$meta_description = $country->meta_description ?? '';
+
+// Include Global Header
+include 'includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($page_title); ?></title>
-    <meta name="description" content="<?php echo htmlspecialchars($country->meta_description ?? ''); ?>">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <style>
-        :root {
-            --bg-deep: #0a0e17;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --accent: #f5c400;
-            --text-slate: #94a3b8;
-        }
 
-        body {
-            background-color: var(--bg-deep);
-            color: #ffffff;
-            font-family: 'Poppins', sans-serif;
-        }
+<style>
+    /* Premium overrides for dynamic content */
+    .hero {
+        padding: 160px 0 100px;
+        background: radial-gradient(circle at top right, rgba(245, 196, 0, 0.1), transparent);
+        border-bottom: 1px solid var(--glass-border);
+    }
 
-        .hero {
-            padding: 100px 0;
-            background: radial-gradient(circle at top right, rgba(245, 196, 0, 0.05), transparent);
-        }
+    .section-title {
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 800;
+        margin-bottom: 40px;
+        position: relative;
+        display: inline-block;
+    }
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: var(--accent);
+    }
 
-        .section-title {
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 800;
-            margin-bottom: 40px;
-        }
+    .card-box {
+        background: var(--card-bg);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .card-box:hover {
+        transform: translateY(-10px);
+        border-color: var(--accent);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
 
-        .card-box {
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            transition: 0.3s;
-        }
+    .doc-accordion-item {
+        background: var(--card-bg);
+        border: 1px solid var(--glass-border);
+        margin-bottom: 15px;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+    .doc-accordion-item:hover {
+        border-color: rgba(245, 196, 0, 0.3);
+    }
 
-        .framework-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
+    .doc-accordion-header {
+        padding: 25px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        .doc-accordion-item {
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            margin-bottom: 15px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
+    .doc-accordion-content {
+        padding: 0 25px 25px;
+        display: none;
+        color: var(--text-slate);
+        border-top: 1px solid var(--glass-border);
+        padding-top: 20px;
+    }
 
-        .doc-accordion-header {
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .btn-accent {
+        background: var(--accent);
+        color: #000;
+        font-weight: 700;
+        padding: 14px 35px;
+        border-radius: 100px;
+        text-decoration: none;
+        display: inline-block;
+        transition: 0.3s;
+    }
+    .btn-accent:hover {
+        background: #fff;
+        transform: scale(1.05);
+    }
+</style>
 
-        .doc-accordion-header:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .doc-accordion-content {
-            padding: 0 20px 20px;
-            display: none;
-            color: var(--text-slate);
-        }
-
-        .cta {
-            padding: 80px 0;
-            text-align: center;
-            background: linear-gradient(rgba(10, 14, 23, 0.8), rgba(10, 14, 23, 0.8)), url('assets/img/cta-bg.jpg');
-            background-size: cover;
-        }
-
-        .btn-accent {
-            background: var(--accent);
-            color: #000;
-            font-weight: 600;
-            padding: 12px 30px;
-            border-radius: 8px;
-        }
-
-        footer {
-            padding: 50px 0;
-            border-top: 1px solid var(--glass-border);
-        }
-    </style>
-</head>
-<body>
-
-    <section class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1><?php echo nl2br(htmlspecialchars($country->hero_title ?? '')); ?></h1>
-                    <p><?php echo nl2br(htmlspecialchars($country->hero_description ?? '')); ?></p>
-                    <a href="#consult" class="btn btn-accent mt-3">Book Free Consultation</a>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <?php if ($country->flag_url): ?>
-                        <img src="<?php echo htmlspecialchars($country->flag_url); ?>" class="img-fluid rounded shadow-lg" style="max-height: 250px; border: 1px solid var(--glass-border);">
-                    <?php endif; ?>
+<section class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <span class="hero-tag" style="background: rgba(245,196,0,0.1); color: var(--accent); padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; display: inline-block;">
+                    Global Strategic Coverage
+                </span>
+                <h1 class="display-3 fw-bold mb-4">
+                    Transfer Pricing <span class="text-warning"><?php echo htmlspecialchars($country->country_name); ?></span>
+                </h1>
+                <p class="lead text-slate mb-4" style="font-size: 1.25rem; opacity: 0.9;">
+                    <?php 
+                    // Use hero_description from DB, or fallback to a default if empty
+                    echo nl2br(htmlspecialchars($country->hero_description ?? 'Navigate local tax regulations with our expert advisory and compliance services.')); 
+                    ?>
+                </p>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="#consult" class="btn-accent">Get Started</a>
+                    <a href="#overview" class="btn btn-outline-light rounded-pill px-4">View Overview</a>
                 </div>
             </div>
+            <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                <?php if ($country->flag_url): ?>
+                    <div class="position-relative d-inline-block">
+                        <img src="<?php echo htmlspecialchars($country->flag_url); ?>" class="img-fluid rounded-4 shadow-lg" style="max-height: 300px; border: 2px solid var(--glass-border); position: relative; z-index: 2;">
+                        <div style="position: absolute; top: 20px; right: -20px; width: 100%; height: 100%; background: var(--accent); opacity: 0.1; border-radius: 1rem; z-index: 1;"></div>
+                    </div>
+                <?php endif; ?>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <?php if ($country->overview): ?>
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-title">Overview</h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="p-4 card-box h-100">
+<?php if ($country->overview): ?>
+<section class="py-5" id="overview">
+    <div class="container">
+        <h2 class="section-title">Overview</h2>
+        <div class="row g-4 mt-2">
+            <div class="col-md-6">
+                <div class="p-5 card-box h-100">
+                    <div class="text-slate" style="font-size: 1.1rem; line-height: 1.8;">
                         <?php echo $country->overview->overview_text_left; ?>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="p-4 card-box h-100">
+            </div>
+            <div class="col-md-6">
+                <div class="p-5 card-box h-100">
+                    <div class="text-slate" style="font-size: 1.1rem; line-height: 1.8;">
                         <?php echo $country->overview->overview_text_right; ?>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <?php endif; ?>
+    </div>
+</section>
+<?php endif; ?>
 
-    <?php if (!empty($country->regulatory_frameworks)): ?>
-    <section class="py-5" style="background: rgba(255,255,255,0.02);">
-        <div class="container">
-            <h2 class="section-title text-center">Key Regulatory Frameworks</h2>
-            <div class="row g-4">
-                <?php foreach ($country->regulatory_frameworks as $fw): ?>
-                <div class="col-md-4">
-                    <div class="p-4 card-box framework-card h-100">
-                        <h4 class="text-warning mb-3"><?php echo htmlspecialchars($fw->title); ?></h4>
-                        <div class="text-slate"><?php echo $fw->description; ?></div>
+<?php if (!empty($country->regulatory_frameworks)): ?>
+<section class="py-5" style="background: rgba(255,255,255,0.01);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Key Regulatory Frameworks</h2>
+        </div>
+        <div class="row g-4">
+            <?php foreach ($country->regulatory_frameworks as $fw): ?>
+            <div class="col-md-4">
+                <div class="p-4 card-box h-100">
+                    <div class="mb-3">
+                        <i class="bi bi-shield-check text-warning" style="font-size: 2rem;"></i>
+                    </div>
+                    <h4 class="text-white mb-3"><?php echo htmlspecialchars($fw->title); ?></h4>
+                    <div class="text-slate" style="font-size: 0.95rem; line-height: 1.6;">
+                        <?php echo $fw->description; ?>
                     </div>
                 </div>
-                <?php endforeach; ?>
             </div>
+            <?php endforeach; ?>
         </div>
-    </section>
-    <?php endif; ?>
+    </div>
+</section>
+<?php endif; ?>
 
-    <?php if (!empty($country->documentation_cards)): ?>
-    <section class="py-5">
-        <div class="container">
-            <h2 class="section-title">TP Documentation Requirements</h2>
-            <div class="accordion-custom">
-                <?php foreach ($country->documentation_cards as $index => $card): ?>
-                <div class="doc-accordion-item">
-                    <div class="doc-accordion-header" onclick="toggleAccordion(<?php echo $index; ?>)">
-                        <h5 class="mb-0"><?php echo htmlspecialchars($card->title); ?></h5>
-                        <i class="bi bi-plus-lg" id="icon<?php echo $index; ?>"></i>
+<?php if (!empty($country->documentation_cards)): ?>
+<section class="py-5">
+    <div class="container">
+        <h2 class="section-title">TP Documentation Requirements</h2>
+        <div class="mt-5">
+            <?php foreach ($country->documentation_cards as $index => $card): ?>
+            <div class="doc-accordion-item">
+                <div class="doc-accordion-header" onclick="toggleAccordion(<?php echo $index; ?>)">
+                    <h5 class="mb-0 fw-bold"><?php echo htmlspecialchars($card->title); ?></h5>
+                    <i class="bi bi-plus-circle text-warning fs-4" id="icon<?php echo $index; ?>"></i>
+                </div>
+                <div class="doc-accordion-content" id="content<?php echo $index; ?>">
+                    <div class="mb-4 p-3 rounded bg-white bg-opacity-5 border-start border-warning border-3">
+                        <span class="text-warning fw-bold">Summary:</span><br>
+                        <?php echo htmlspecialchars($card->short_description); ?>
                     </div>
-                    <div class="doc-accordion-content" id="content<?php echo $index; ?>">
-                        <div class="mb-3 p-2 border-bottom border-secondary" style="font-style: italic;">
-                            <?php echo htmlspecialchars($card->short_description); ?>
-                        </div>
-                        <div class="detailed-content">
-                            <?php echo $card->detailed_content; ?>
-                        </div>
+                    <div class="detailed-content text-slate">
+                        <?php echo $card->detailed_content; ?>
                     </div>
                 </div>
-                <?php endforeach; ?>
             </div>
+            <?php endforeach; ?>
         </div>
-    </section>
-    <?php endif; ?>
+    </div>
+</section>
+<?php endif; ?>
 
-    <section class="cta" id="consult">
-        <div class="container">
-            <h2>Seeking TP Advisory in <?php echo htmlspecialchars($country->country_name); ?>?</h2>
-            <p style="color:var(--text-slate)">Navigate the complex TP landscape with our specialized local expertise and benchmarking solutions.</p>
-            <a href="mailto:md@hexatp.com" class="btn btn-accent mt-3">Contact Team</a>
-        </div>
-    </section>
+<section class="py-5 mt-5" id="consult" style="background: linear-gradient(45deg, #050a14, #102444); border-top: 1px solid var(--glass-border);">
+    <div class="container text-center py-4">
+        <h2 class="mb-4">Seeking TP Advisory in <?php echo htmlspecialchars($country->country_name); ?>?</h2>
+        <p class="text-slate mb-5 mx-auto" style="max-width: 700px;">Our specialized local expertise and benchmarking solutions help you navigate the complex TP landscape with confidence.</p>
+        <a href="mailto:md@hexatp.com" class="btn-accent">Schedule a Call with Experts</a>
+    </div>
+</section>
 
-    <footer>
-        <div class="container text-center">
-            <p>&copy; <?php echo date('Y'); ?> HexaTP. All rights reserved.</p>
-            <?php if ($country && $country->updated_at): ?>
-            <p style="font-size: 0.8rem; color: var(--text-slate); margin-top: 10px;">
-                <i class="bi bi-clock-history me-1"></i> Last Updated: <?php echo $country->updated_at->format('M d, Y H:i'); ?>
-            </p>
-            <?php endif; ?>
-        </div>
-    </footer>
+<script>
+    function toggleAccordion(index) {
+        const content = document.getElementById('content' + index);
+        const icon = document.getElementById('icon' + index);
+        const allContents = document.querySelectorAll('.doc-accordion-content');
+        const allIcons = document.querySelectorAll('.doc-accordion-header i');
 
-    <script>
-        function toggleAccordion(index) {
-            const content = document.getElementById('content' + index);
-            const icon = document.getElementById('icon' + index);
-            const allContents = document.querySelectorAll('.doc-accordion-content');
-            const allIcons = document.querySelectorAll('.doc-accordion-header i');
-
-            allContents.forEach((c, i) => {
-                if (i !== index) {
-                    c.style.display = 'none';
-                    allIcons[i].className = 'bi bi-plus-lg';
-                }
-            });
-
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-                icon.className = 'bi bi-plus-lg';
-            } else {
-                content.style.display = 'block';
-                icon.className = 'bi bi-dash-lg';
+        allContents.forEach((c, i) => {
+            if (i !== index) {
+                c.style.display = 'none';
+                allIcons[i].className = 'bi bi-plus-circle text-warning fs-4';
             }
+        });
+
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+            icon.className = 'bi bi-plus-circle text-warning fs-4';
+        } else {
+            content.style.display = 'block';
+            icon.className = 'bi bi-dash-circle text-warning fs-4';
         }
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    }
+</script>
+
+<?php include 'includes/footer.php'; ?>
+

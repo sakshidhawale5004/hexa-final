@@ -40,9 +40,15 @@ try {
     if ($method === 'GET') {
         handleGetCountry($contentService);
     }
-    // Handle POST request - Create country
+    // Handle POST request - Create or Update country
     elseif ($method === 'POST') {
-        handleCreateCountry($contentService, $authService);
+        // Many shared hosting environments block PUT. 
+        // We allow POST to handle updates if an id is provided in the query string.
+        if (isset($_GET['id'])) {
+            handleUpdateCountry($contentService, $authService);
+        } else {
+            handleCreateCountry($contentService, $authService);
+        }
     }
     // Handle PUT request - Update country
     elseif ($method === 'PUT') {

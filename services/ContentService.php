@@ -337,15 +337,16 @@ class ContentService {
         
         try {
             // Create revision record for status change
-            $this->revisionRepo->create(
-                $id,
-                'country',
-                $id,
-                'status',
-                'draft',
-                'published',
-                $user_id
-            );
+            $revision = new ContentRevision();
+            $revision->country_id = $id;
+            $revision->content_type = 'country';
+            $revision->content_id = $id;
+            $revision->field_name = 'status';
+            $revision->old_value = 'draft';
+            $revision->new_value = 'published';
+            $revision->changed_by = $user_id;
+            
+            $this->revisionRepo->create($revision);
             
             // Update the country
             $result = $this->countryRepo->update($id, $country);
@@ -434,15 +435,16 @@ class ContentService {
         
         foreach ($fields as $field) {
             if ($old->$field !== $new->$field) {
-                $this->revisionRepo->create(
-                    $country_id,
-                    'country',
-                    $country_id,
-                    $field,
-                    $old->$field,
-                    $new->$field,
-                    $user_id
-                );
+                $revision = new ContentRevision();
+                $revision->country_id = $country_id;
+                $revision->content_type = 'country';
+                $revision->content_id = $country_id;
+                $revision->field_name = $field;
+                $revision->old_value = $old->$field;
+                $revision->new_value = $new->$field;
+                $revision->changed_by = $user_id;
+                
+                $this->revisionRepo->create($revision);
             }
         }
     }

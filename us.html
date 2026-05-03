@@ -48,7 +48,7 @@
         .logo { font-weight: 800; font-size: 20px; text-transform: uppercase; }
         .logo span { color: var(--accent); }
 
-        .logo-img { height: 45px !important; width: 120px !important; display: block; object-fit: contain; }
+        .logo-img { height:  60px !important; width:  auto !important; display: block; object-fit: contain; }
 
         /* Professional Text Logo */
         .logo-text-wrapper {
@@ -698,7 +698,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
 <button class="mobile-nav-toggle" onclick="openMobileMenu()" aria-label="Open menu">?</button>
 <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
 <div class="mobile-menu" id="mobileMenu">
-    <button class="close-menu" onclick="closeMobileMenu()" aria-label="Close menu">×</button>
+    <button class="close-menu" onclick="closeMobileMenu()" aria-label="Close menu"></button>
     <ul>
         <li><a href="index.html">?? Home</a></li>
         <li><a href="aboutus.html">?? About</a></li>
@@ -762,7 +762,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
 </div>
 
 
-        <img src="Logo.jpeg" alt="HexaTP - Transfer Pricing Simplified" class="logo-img" width="120" height="45" />
+        <img src="logo_new1.png" alt="HexaTP - Transfer Pricing Simplified" class="logo-img" />
         <nav class="d-none d-md-block">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -851,7 +851,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                 </a>
                 </div>
                 <div class="col-lg-6 text-center">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" class="img-fluid rounded shadow-lg" style="max-height: 250px; border: 1px solid var(--glass-border);">
+                    <img src="Flag_of_the_United_States_1912-1959.jpeg" alt="Flag" class="img-fluid rounded shadow-lg" style="width: 100%; max-width: 450px; height: 280px; object-fit: cover; border-radius: 12px; border: 1px solid var(--glass-border);">
                 </div>
             </div>
         </div>
@@ -924,7 +924,7 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
                 </div>
                 <div class="col-lg-6">
                     <p style="color:var(--text-slate);">
-                        Compliance is driven by <strong>Section 6662(e)</strong>, which imposes strict contemporaneous requirements. Documentation is not just a reporting obligation—it is a mandatory shield against 20% to 40% accuracy-related penalties during an audit.
+                        Compliance is driven by <strong>Section 6662(e)</strong>, which imposes strict contemporaneous requirements. Documentation is not just a reporting obligationit is a mandatory shield against 20% to 40% accuracy-related penalties during an audit.
                     </p>
                 </div>
             </div>
@@ -967,8 +967,8 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
                         <p style="color:var(--text-slate)">Avoiding the "Substantial Misstatement" trap.</p>
                         <div class="content" id="content1">
                             <p>Penalties apply if the TP adjustment exceeds the lesser of $5M or 10% of gross receipts:
-                                <br>• <strong>20% Penalty:</strong> Substantial misstatement.
-                                <br>• <strong>40% Penalty:</strong> Gross misstatement.
+                                <br> <strong>20% Penalty:</strong> Substantial misstatement.
+                                <br> <strong>40% Penalty:</strong> Gross misstatement.
                             </p>
                             <p>Contemporaneous documentation is the <em>only</em> way to establish "reasonable cause" and avoid these additions to tax.</p>
                         </div>
@@ -1162,7 +1162,9 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
     </section>
 
     <footer>
-        © 2026 HexaTP – Transfer Pricing Intelligence Platform
+         
+        <img src="logo_new1.png" alt="HexaTP Logo" class="logo-img" style="height: 35px !important; max-height: 35px !important; width: auto !important; display: block; margin: 0 auto 8px auto; opacity: 0.9;"><br>
+        2026 HexaTP  Transfer Pricing Intelligence Platform
     </footer>
 
     <script>

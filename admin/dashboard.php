@@ -216,8 +216,9 @@ $csrf_token = $authService->generateCsrfToken();
     <div class="admin-header">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-6">
-                    <h1><i class="bi bi-speedometer2"></i> Dashboard</h1>
+                <div class="col-md-6 d-flex align-items-center gap-3">
+                    <img src="../logo_new1.png" alt="HexaTP Logo" style="height: 40px;">
+                    <h1 class="mb-0">Dashboard</h1>
                 </div>
                 <div class="col-md-6 text-end">
                     <div class="user-info">
@@ -329,7 +330,7 @@ $csrf_token = $authService->generateCsrfToken();
         // Logout function
         function logout() {
             if (confirm('Are you sure you want to logout?')) {
-                fetch('/api/auth.php', {
+                fetch('../api/auth.php', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

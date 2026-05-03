@@ -17,6 +17,21 @@ class CountryRepository {
         $this->conn = $connection;
     }
     
+    /**
+     * Transaction Handling
+     */
+    public function beginTransaction(): bool {
+        return $this->conn->begin_transaction();
+    }
+    
+    public function commit(): bool {
+        return $this->conn->commit();
+    }
+    
+    public function rollback(): bool {
+        return $this->conn->rollback();
+    }
+    
     public function create(Country $country): int|false {
         $sql = "INSERT INTO countries (
             country_name, country_code, flag_url, hero_title, hero_description,
@@ -138,6 +153,44 @@ class CountryRepository {
         $result = $stmt->execute();
         $stmt->close();
         return $result;
+    }
+
+    /**
+     * Check if a country with the given name already exists,
+     * optionally excluding a specific ID (used during updates).
+     */
+    public function countryNameExists(string $name, ?int $exclude_id = null): bool {
+        if ($exclude_id !== null) {
+            $sql  = "SELECT COUNT(*) as cnt FROM countries WHERE country_name = ? AND id != ?";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) return false;
+            $stmt->bind_param('si', $name, $exclude_id);
+        } else {
+            $sql  = "SELECT COUNT(*) as cnt FROM countries WHERE country_name = ?";
+            $stmt = $this->conn->prepare($sql);
+            if (!$stmt) return false;
+            $stmt->bind_param('s', $name);
+        }
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row    = $result->fetch_assoc();
+        $stmt->close();
+        return (int)$row['cnt'] > 0;
+    }
+
+    /**
+     * Check if a country with the given ID exists.
+     */
+    public function exists(int $id): bool {
+        $sql  = "SELECT COUNT(*) as cnt FROM countries WHERE id = ?";
+        $stmt = $this->conn->prepare($sql);
+        if (!$stmt) return false;
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row    = $result->fetch_assoc();
+        $stmt->close();
+        return (int)$row['cnt'] > 0;
     }
     
     public function getCountryWithRelations(int $id): ?Country {
