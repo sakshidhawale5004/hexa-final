@@ -11,7 +11,7 @@
     </section>
 
     <footer style="padding: 20px; text-align: center; color: var(--text-slate); font-size: 14px;">
-        <img src="hexatp-logo.jpeg" alt="HexaTP Logo" style="height: 35px !important; max-height: 35px !important; width: auto !important; display: block; margin: 0 auto 8px auto; opacity: 0.9;"><br>
+        <img src="hexa-logo.jpeg" alt="HexaTP Logo" style="height: 35px !important; max-height: 35px !important; width: auto !important; display: block; margin: 0 auto 8px auto; opacity: 0.9;"><br>
         2026 HexaTP | Transfer Pricing Intelligence Platform
     </footer>
 
