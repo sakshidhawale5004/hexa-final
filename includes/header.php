@@ -54,7 +54,7 @@
             align-items: center;
         }
 
-        .logo-img { height: 60px !important; width: auto !important; display: block; object-fit: contain; }
+        .logo-img { height: 45px !important; width: auto !important; display: block; object-fit: contain; }
 
         nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
         nav a { text-decoration: none; color: #444; font-size: 14px; font-weight: 600; transition: 0.3s; }
