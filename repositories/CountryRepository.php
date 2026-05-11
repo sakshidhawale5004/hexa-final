@@ -4,6 +4,7 @@ require_once __DIR__ . '/../models/Country.php';
 require_once __DIR__ . '/../models/CountryOverview.php';
 require_once __DIR__ . '/../models/RegulatoryFramework.php';
 require_once __DIR__ . '/../models/DocumentationCard.php';
+require_once __DIR__ . '/../models/CountryService.php';
 
 /**
  * CountryRepository
@@ -15,6 +16,10 @@ class CountryRepository {
     
     public function __construct(mysqli $connection) {
         $this->conn = $connection;
+    }
+
+    public function getConnection(): mysqli {
+        return $this->conn;
     }
     
     /**
@@ -34,22 +39,28 @@ class CountryRepository {
     
     public function create(Country $country): int|false {
         $sql = "INSERT INTO countries (
-            country_name, country_code, flag_url, hero_title, hero_description,
-            meta_title, meta_description, status, created_at, updated_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())";
+            country_name, country_code, flag_url, hero_title, hero_description, hero_bg_image,
+            meta_title, meta_description, cta_title, cta_button_text,
+            footer_title, footer_email, status, created_at, updated_at
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())";
         
         $stmt = $this->conn->prepare($sql);
         if (!$stmt) return false;
         
         $stmt->bind_param(
-            'ssssssss',
+            'sssssssssssss',
             $country->country_name,
             $country->country_code,
             $country->flag_url,
             $country->hero_title,
             $country->hero_description,
+            $country->hero_bg_image,
             $country->meta_title,
             $country->meta_description,
+            $country->cta_title,
+            $country->cta_button_text,
+            $country->footer_title,
+            $country->footer_email,
             $country->status
         );
         
@@ -121,6 +132,7 @@ class CountryRepository {
         $sql = "UPDATE countries SET
             country_name = ?, country_code = ?, flag_url = ?, hero_title = ?,
             hero_description = ?, meta_title = ?, meta_description = ?,
+            cta_title = ?, cta_button_text = ?, footer_title = ?, footer_email = ?,
             status = ?, updated_at = NOW()
         WHERE id = ?";
         
@@ -128,7 +140,7 @@ class CountryRepository {
         if (!$stmt) return false;
         
         $stmt->bind_param(
-            'ssssssssi',
+            'ssssssssssssi',
             $country->country_name,
             $country->country_code,
             $country->flag_url,
@@ -136,6 +148,10 @@ class CountryRepository {
             $country->hero_description,
             $country->meta_title,
             $country->meta_description,
+            $country->cta_title,
+            $country->cta_button_text,
+            $country->footer_title,
+            $country->footer_email,
             $country->status,
             $id
         );
@@ -200,6 +216,7 @@ class CountryRepository {
         $country->overview = $this->getOverview($id);
         $country->regulatory_frameworks = $this->getRegulatoryFrameworks($id);
         $country->documentation_cards = $this->getDocumentationCards($id);
+        $country->country_services = $this->getCountryServices($id);
         
         return $country;
     }
@@ -284,6 +301,35 @@ class CountryRepository {
         foreach ($items as $item) {
             if (empty($item['title'])) continue;
             $stmt->bind_param('isssi', $country_id, $item['title'], $item['short_description'], $item['detailed_content'], $item['display_order']);
+            $stmt->execute();
+        }
+        $stmt->close();
+        return true;
+    }
+
+    public function getCountryServices(int $country_id): array {
+        $sql = "SELECT * FROM country_services WHERE country_id = ? ORDER BY display_order ASC";
+        $stmt = $this->conn->prepare($sql);
+        if (!$stmt) return [];
+        $stmt->bind_param('i', $country_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $items = [];
+        while ($row = $result->fetch_assoc()) {
+            $items[] = CountryService::fromArray($row);
+        }
+        $stmt->close();
+        return $items;
+    }
+
+    public function saveCountryServices(int $country_id, array $items): bool {
+        $this->conn->query("DELETE FROM country_services WHERE country_id = $country_id");
+        if (empty($items)) return true;
+        $sql = "INSERT INTO country_services (country_id, title, description, display_order, created_at, updated_at) VALUES (?, ?, ?, ?, NOW(), NOW())";
+        $stmt = $this->conn->prepare($sql);
+        foreach ($items as $item) {
+            if (empty($item['title'])) continue;
+            $stmt->bind_param('issi', $country_id, $item['title'], $item['description'], $item['display_order']);
             $stmt->execute();
         }
         $stmt->close();

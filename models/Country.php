@@ -17,6 +17,11 @@ class Country {
     public ?string $hero_description;
     public ?string $meta_title;
     public ?string $meta_description;
+    public ?string $cta_title;
+    public ?string $cta_button_text;
+    public ?string $footer_title;
+    public ?string $footer_email;
+    public ?string $hero_bg_image;
     public string $status; // 'draft' or 'published'
     public DateTime $created_at;
     public DateTime $updated_at;
@@ -25,6 +30,7 @@ class Country {
     public $overview = null;
     public array $regulatory_frameworks = [];
     public array $documentation_cards = [];
+    public array $country_services = [];
     
     // Validation constants
     const MAX_HERO_TITLE_LENGTH = 100;
@@ -167,6 +173,11 @@ class Country {
             'hero_description' => $this->hero_description,
             'meta_title' => $this->meta_title,
             'meta_description' => $this->meta_description,
+            'cta_title' => $this->cta_title,
+            'cta_button_text' => $this->cta_button_text,
+            'footer_title' => $this->footer_title,
+            'footer_email' => $this->footer_email,
+            'hero_bg_image' => $this->hero_bg_image,
             'status' => $this->status,
             'created_at' => $this->created_at->format('Y-m-d H:i:s'),
             'updated_at' => $this->updated_at->format('Y-m-d H:i:s')
@@ -199,6 +210,14 @@ class Country {
                     : $card;
             }, $this->documentation_cards);
         }
+
+        if (!empty($this->country_services)) {
+            $data['country_services'] = array_map(function($service) {
+                return is_object($service) && method_exists($service, 'toArray') 
+                    ? $service->toArray() 
+                    : $service;
+            }, $this->country_services);
+        }
         
         return $data;
     }
@@ -227,6 +246,11 @@ class Country {
         $country->hero_description = $data['hero_description'] ?? null;
         $country->meta_title = $data['meta_title'] ?? null;
         $country->meta_description = $data['meta_description'] ?? null;
+        $country->cta_title = $data['cta_title'] ?? null;
+        $country->cta_button_text = $data['cta_button_text'] ?? null;
+        $country->footer_title = $data['footer_title'] ?? null;
+        $country->footer_email = $data['footer_email'] ?? null;
+        $country->hero_bg_image = $data['hero_bg_image'] ?? null;
         $country->status = $data['status'] ?? 'draft';
         
         // Set timestamps
@@ -253,6 +277,10 @@ class Country {
         
         if (isset($data['documentation_cards'])) {
             $country->documentation_cards = $data['documentation_cards'];
+        }
+
+        if (isset($data['country_services'])) {
+            $country->country_services = $data['country_services'];
         }
         
         return $country;

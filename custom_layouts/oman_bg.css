@@ -1,0 +1,3 @@
+.hero { background image with overlay */
+            background: linear-gradient(180deg, rgba(5, 10, 20, 0.85), rgba(1, 4, 10, 0.95)), 
+                        url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlGwWXqlYrQ0HwMyNopzk9N_Hd55omGljkyQ&s'); background-size: cover; background-position: center; background-attachment: fixed; }

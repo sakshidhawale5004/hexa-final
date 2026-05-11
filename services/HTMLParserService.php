@@ -122,7 +122,7 @@ class HTMLParserService {
         $sanitized = $dom->saveHTML();
         
         // Remove XML declaration if present
-        $sanitized = preg_replace('/<\?xml[^>]*\?>/', '', $sanitized);
+        $sanitized = preg_replace('/<\?xml[^>]*>/i', '', $sanitized);
         
         return trim($sanitized);
     }
@@ -154,7 +154,7 @@ class HTMLParserService {
         $html = $dom->saveHTML();
         
         // Remove XML declaration if present
-        $html = preg_replace('/<\?xml[^>]*\?>/', '', $html);
+        $html = preg_replace('/<\?xml[^>]*>/i', '', $html);
         
         // Clean up excessive whitespace while preserving structure
         $html = preg_replace('/\n\s*\n/', "\n", $html);

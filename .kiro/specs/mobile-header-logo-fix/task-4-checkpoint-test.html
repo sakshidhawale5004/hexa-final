@@ -6,17 +6,18 @@
     <title>Task 4: Final Checkpoint Test - Mobile Header Logo Fix</title>
     <style>
         :root {
-            --bg-dark: #050a14;
+            --bg-light: #ffffff;
+            --bg-subtle: #f9fafb;
             --accent: #f5c400;
             --success: #10b981;
             --fail: #ef4444;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --card-bg: #ffffff;
+            --glass-border: rgba(0, 0, 0, 0.08);
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: #ffffff;
+            background-color: var(--bg-light);
+            color: var(--text-main);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 20px;
             margin: 0;
@@ -35,7 +36,7 @@
 
         .subtitle {
             text-align: center;
-            color: #aab7cc;
+            color: var(--text-slate);
             margin-bottom: 40px;
         }
 
@@ -76,12 +77,12 @@
         .test-item h3 {
             margin: 0 0 10px 0;
             font-size: 16px;
-            color: #fff;
+            color: var(--text-main);
         }
 
         .test-item p {
             margin: 5px 0;
-            color: #aab7cc;
+            color: var(--text-slate);
             font-size: 14px;
         }
 
@@ -101,12 +102,12 @@
 
         .status.fail {
             background: var(--fail);
-            color: #fff;
+            color: var(--text-main);
         }
 
         .status.pending {
             background: #6b7280;
-            color: #fff;
+            color: var(--text-main);
         }
 
         .checklist {
@@ -213,7 +214,7 @@
 
         .viewport-btn {
             background: rgba(255, 255, 255, 0.1);
-            color: #fff;
+            color: var(--text-main);
             border: 1px solid var(--glass-border);
             padding: 8px 16px;
             border-radius: 6px;
@@ -294,7 +295,7 @@
         <!-- Test Section 3: Navigation Between Pages -->
         <div class="test-section">
             <h2>Test 3: Navigation Between Pages - Logo Consistency</h2>
-            <p style="color: #aab7cc; margin-bottom: 20px;">
+            <p style="color: var(--text-slate); margin-bottom: 20px;">
                 Verify that navigating between different pages maintains logo display consistency.
                 All 24 HTML files should display the logo correctly.
             </p>
@@ -306,8 +307,8 @@
             </div>
 
             <div style="margin-bottom: 15px;">
-                <label for="pageSelect" style="color: #aab7cc; margin-right: 10px;">Select Page:</label>
-                <select id="pageSelect" onchange="loadPage()" style="padding: 8px; border-radius: 4px; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid var(--glass-border);">
+                <label for="pageSelect" style="color: var(--text-slate); margin-right: 10px;">Select Page:</label>
+                <select id="pageSelect" onchange="loadPage()" style="padding: 8px; border-radius: 4px; background: rgba(255,255,255,0.1); color: var(--text-main); border: 1px solid var(--glass-border);">
                     <option value="../../../index.html">index.html</option>
                     <option value="../../../aboutus.html">aboutus.html</option>
                     <option value="../../../australia.html">australia.html</option>
@@ -357,7 +358,7 @@
         <!-- Test Section 4: Page Resize Testing -->
         <div class="test-section">
             <h2>Test 4: Page Resize - Desktop to Mobile</h2>
-            <p style="color: #aab7cc; margin-bottom: 20px;">
+            <p style="color: var(--text-slate); margin-bottom: 20px;">
                 Verify that resizing the browser window from desktop to mobile maintains logo display.
                 Logo should smoothly transition from 40px (desktop) to 30px (mobile) at 768px breakpoint.
             </p>
@@ -385,7 +386,7 @@
         <!-- Test Section 5: All 24 HTML Files Verification -->
         <div class="test-section">
             <h2>✓ Test 5: All 24 HTML Files Verification</h2>
-            <p style="color: #aab7cc; margin-bottom: 20px;">
+            <p style="color: var(--text-slate); margin-bottom: 20px;">
                 Code verification confirms all 24 HTML files have been updated with image-based logo and CSS styling.
             </p>
             
@@ -420,10 +421,10 @@
                 <p style="margin: 0; color: var(--success); font-weight: bold;">
                     ✓ Code Verification: All 24 files contain image-based logo implementation
                 </p>
-                <p style="margin: 5px 0 0 0; color: #aab7cc; font-size: 14px;">
+                <p style="margin: 5px 0 0 0; color: var(--text-slate); font-size: 14px;">
                     HTML: &lt;img src="logo.jpeg" alt="HexaTP - Transfer Pricing Simplified" class="logo-img" /&gt;
                 </p>
-                <p style="margin: 5px 0 0 0; color: #aab7cc; font-size: 14px;">
+                <p style="margin: 5px 0 0 0; color: var(--text-slate); font-size: 14px;">
                     CSS: .logo-img { height: 40px (desktop), 30px (mobile); width: auto; display: block; }
                 </p>
             </div>
@@ -464,7 +465,7 @@
             <p style="color: var(--accent); font-weight: bold; font-size: 18px; margin: 0;">
                 Task 4: Checkpoint - COMPLETE ✓
             </p>
-            <p style="color: #aab7cc; margin: 10px 0 0 0;">
+            <p style="color: var(--text-slate); margin: 10px 0 0 0;">
                 All automated tests pass. Manual verification of navigation and resize behavior recommended.
             </p>
         </div>

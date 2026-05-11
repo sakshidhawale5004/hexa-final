@@ -61,12 +61,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #050a14;
+            --bg-light: #ffffff;
+            --bg-subtle: #f9fafb;
             --accent: #f5c400;
-            --accent-glow: rgba(245, 196, 0, 0.3);
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-slate: #94a3b8;
+            --accent-glow: rgba(245, 196, 0, 0.2);
+            --card-bg: #ffffff;
+            --glass-border: rgba(0, 0, 0, 0.08);
+            --text-main: #0f172a;
+            --text-slate: #64748b;
         }
 
         * {
@@ -76,8 +78,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: #ffffff;
+            background-color: var(--bg-light);
+            color: var(--text-main);
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
             display: flex;
@@ -130,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--glass-border);
             border-radius: 8px;
-            color: #ffffff;
+            color: var(--text-main);
             padding: 12px 16px;
             transition: all 0.3s ease;
         }
@@ -139,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             background: rgba(255, 255, 255, 0.08);
             border-color: var(--accent);
             box-shadow: 0 0 0 3px var(--accent-glow);
-            color: #ffffff;
+            color: var(--text-main);
         }
 
         .form-control::placeholder {
@@ -241,7 +243,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="login-container">
         <div class="login-card">
             <div class="logo-section">
-                <img src="../logo_new1.png" alt="HexaTP Logo" style="height: 60px; margin-bottom: 20px;">
+                <img src="../final-logo-hexa.jpeg" alt="HexaTP Logo" style="height: 60px; margin-bottom: 20px;">
                 <h1>HexaTP CMS</h1>
                 <p>Country Content Management System</p>
             </div>

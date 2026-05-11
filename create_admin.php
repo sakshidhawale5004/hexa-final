@@ -187,7 +187,7 @@ if ($row['count'] > 0) {
             width: 100%;
             padding: 12px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            color: var(--text-main);
             border: none;
             border-radius: 5px;
             font-size: 16px;

@@ -85,6 +85,25 @@ if ($stmt->execute()) {
     $stmt2->execute();
     $stmt2->close();
 
+    // Send email notification
+    $to = "md@hexatp.com";
+    $email_subject = "New Consultation Request: " . $subject;
+    $email_body = "You have received a new consultation request.\n\n" .
+                 "Name: $name\n" .
+                 "Email: $email\n" .
+                 "Phone: $phone\n" .
+                 "Consultation Type: $subject\n" .
+                 "Appointment Date: $appointment_date\n" .
+                 "Appointment Time: $appointment_time\n" .
+                 "Message: $message\n";
+    $headers = "From: HexaTP Website <md@hexatp.com>\r\n" .
+               "Reply-To: $email\r\n" .
+               "X-Mailer: PHP/" . phpversion() . "\r\n" .
+               "MIME-Version: 1.0\r\n" .
+               "Content-Type: text/plain; charset=UTF-8\r\n";
+
+    @mail($to, $email_subject, $email_body, $headers);
+
     echo json_encode([
         'success' => true,
         'message' => 'Consultation request submitted successfully! We will contact you soon.'

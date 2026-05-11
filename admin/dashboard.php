@@ -43,23 +43,25 @@ $csrf_token = $authService->generateCsrfToken();
     <link rel="stylesheet" href="assets/css/admin.css">
     <style>
         :root {
-            --bg-dark: #050a14;
+            --bg-light: #ffffff;
+            --bg-subtle: #f9fafb;
             --accent: #f5c400;
-            --accent-glow: rgba(245, 196, 0, 0.3);
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-slate: #94a3b8;
+            --accent-glow: rgba(245, 196, 0, 0.2);
+            --card-bg: #ffffff;
+            --glass-border: rgba(0, 0, 0, 0.08);
+            --text-main: #0f172a;
+            --text-slate: #64748b;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: #ffffff;
+            background-color: var(--bg-light);
+            color: var(--text-main);
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
         }
 
         .admin-header {
-            background: rgba(11, 29, 53, 0.8);
+            background: rgba(255, 255, 255, 0.85); box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--glass-border);
             padding: 20px 0;
@@ -78,7 +80,7 @@ $csrf_token = $authService->generateCsrfToken();
         }
 
         .user-info strong {
-            color: #ffffff;
+            color: var(--text-main);
         }
 
         .stats-card {
@@ -194,7 +196,7 @@ $csrf_token = $authService->generateCsrfToken();
 
         .logout-btn:hover {
             background: #dc3545;
-            color: #fff;
+            color: var(--text-main);
             border-color: #dc3545;
         }
 
@@ -217,7 +219,7 @@ $csrf_token = $authService->generateCsrfToken();
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 d-flex align-items-center gap-3">
-                    <img src="../logo_new1.png" alt="HexaTP Logo" style="height: 40px;">
+                    <img src="../final-logo-hexa.jpeg" alt="HexaTP Logo" style="height: 40px;">
                     <h1 class="mb-0">Dashboard</h1>
                 </div>
                 <div class="col-md-6 text-end">

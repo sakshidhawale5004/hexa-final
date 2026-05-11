@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# 1. Redirect .html requests to country.php if they exist in the database
+# This ensures that even if Saudiarabia.html exists, we show the dynamic CMS version
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} ^/(.*)\.html$
+RewriteRule ^(.*)\.html$ country.php?slug=$1 [L,QSA]
+
+# 2. Force CMS for specific country patterns (Optional but safer)
+# RewriteRule ^(india|saudiarabia|australia|qatar|oman|bahrain|egypt|singapore|malaysia|thailand|indonesia|viethnam|bangladesh|kenya|ghana|botswana|us|canada)\.html$ country.php?slug=$1 [L,NC,QSA]
+
+# 3. Standard PHP extension hiding
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]

@@ -51,22 +51,24 @@ $stats = $stats_result->fetch_assoc();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <style>
         :root {
-            --bg-dark: #050a14;
+            --bg-light: #ffffff;
+            --bg-subtle: #f9fafb;
             --accent: #f5c400;
-            --accent-glow: rgba(245, 196, 0, 0.3);
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-slate: #94a3b8;
+            --accent-glow: rgba(245, 196, 0, 0.2);
+            --card-bg: #ffffff;
+            --glass-border: rgba(0, 0, 0, 0.08);
+            --text-main: #0f172a;
+            --text-slate: #64748b;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: #ffffff;
+            background-color: var(--bg-light);
+            color: var(--text-main);
             font-family: 'Poppins', sans-serif;
         }
 
         .admin-header {
-            background: rgba(11, 29, 53, 0.8);
+            background: rgba(255, 255, 255, 0.85); box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--glass-border);
             padding: 20px 0;
@@ -125,7 +127,7 @@ $stats = $stats_result->fetch_assoc();
             border: none;
             padding: 15px;
             border-bottom: 1px solid var(--glass-border);
-            color: #ccc;
+            color: #444;
         }
 
         .table tbody tr:hover {
@@ -139,17 +141,17 @@ $stats = $stats_result->fetch_assoc();
 
         .badge-confirmed {
             background: #4caf50;
-            color: #fff;
+            color: var(--text-main);
         }
 
         .badge-completed {
             background: #2196f3;
-            color: #fff;
+            color: var(--text-main);
         }
 
         .badge-cancelled {
             background: #f44336;
-            color: #fff;
+            color: var(--text-main);
         }
 
         .filter-section {
@@ -159,7 +161,7 @@ $stats = $stats_result->fetch_assoc();
         .filter-btn {
             background: var(--card-bg);
             border: 1px solid var(--glass-border);
-            color: #ccc;
+            color: #444;
             padding: 10px 20px;
             border-radius: 8px;
             margin-right: 10px;
@@ -208,32 +210,32 @@ $stats = $stats_result->fetch_assoc();
         .form-control {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--glass-border);
-            color: #fff;
+            color: var(--text-main);
         }
 
         .form-control:focus {
             background: rgba(255, 255, 255, 0.08);
             border-color: var(--accent);
-            color: #fff;
+            color: var(--text-main);
             box-shadow: none;
         }
 
         .form-select {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--glass-border);
-            color: #fff;
+            color: var(--text-main);
         }
 
         .form-select:focus {
             background: rgba(255, 255, 255, 0.08);
             border-color: var(--accent);
-            color: #fff;
+            color: var(--text-main);
             box-shadow: none;
         }
 
         .form-select option {
             background: #050a14;
-            color: #fff;
+            color: var(--text-main);
         }
 
         @media (max-width: 768px) {
@@ -261,7 +263,7 @@ $stats = $stats_result->fetch_assoc();
     <div class="admin-header">
         <div class="container">
             <h1><i class="bi bi-calendar-check"></i> Consultations Dashboard</h1>
-            <p class="text-secondary mb-0">Manage all consultation requests</p>
+            <p class="text-muted mb-0">Manage all consultation requests</p>
         </div>
     </div>
 
@@ -361,7 +363,7 @@ $stats = $stats_result->fetch_assoc();
                                             <p><strong>Status:</strong> <span class="badge badge-<?php echo $consultation['status']; ?>"><?php echo ucfirst($consultation['status']); ?></span></p>
                                             <p><strong>Message:</strong></p>
                                             <p><?php echo nl2br(htmlspecialchars($consultation['message'])); ?></p>
-                                            <p><small class="text-secondary">Submitted: <?php echo date('M d, Y H:i', strtotime($consultation['created_at'])); ?></small></p>
+                                            <p><small class="text-muted">Submitted: <?php echo date('M d, Y H:i', strtotime($consultation['created_at'])); ?></small></p>
                                         </div>
                                     </div>
                                 </div>
@@ -371,7 +373,7 @@ $stats = $stats_result->fetch_assoc();
                 </table>
             <?php else: ?>
                 <div class="text-center py-5">
-                    <p class="text-secondary">No consultations found.</p>
+                    <p class="text-muted">No consultations found.</p>
                 </div>
             <?php endif; ?>
         </div>

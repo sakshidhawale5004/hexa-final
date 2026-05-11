@@ -58,23 +58,25 @@ if ($action === 'edit' && $country_id) {
     <script src="https://cdn.jsdelivr.net/npm/tinymce@6/tinymce.min.js" referrerpolicy="origin"></script>
     <style>
         :root {
-            --bg-dark: #050a14;
+            --bg-light: #ffffff;
+            --bg-subtle: #f9fafb;
             --accent: #f5c400;
-            --accent-glow: rgba(245, 196, 0, 0.3);
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-slate: #94a3b8;
+            --accent-glow: rgba(245, 196, 0, 0.2);
+            --card-bg: #ffffff;
+            --glass-border: rgba(0, 0, 0, 0.08);
+            --text-main: #0f172a;
+            --text-slate: #64748b;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: #ffffff;
+            background-color: var(--bg-light);
+            color: var(--text-main);
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
         }
 
         .admin-header {
-            background: rgba(11, 29, 53, 0.8);
+            background: rgba(255, 255, 255, 0.85); box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--glass-border);
             padding: 20px 0;
@@ -122,7 +124,7 @@ if ($action === 'edit' && $country_id) {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--glass-border);
             border-radius: 8px;
-            color: #ffffff;
+            color: var(--text-main);
             padding: 12px 16px;
         }
 
@@ -130,7 +132,7 @@ if ($action === 'edit' && $country_id) {
             background: rgba(255, 255, 255, 0.08);
             border-color: var(--accent);
             box-shadow: 0 0 0 3px var(--accent-glow);
-            color: #ffffff;
+            color: var(--text-main);
         }
 
         .form-control::placeholder {
@@ -186,7 +188,7 @@ if ($action === 'edit' && $country_id) {
 
         .btn-cancel:hover {
             background: rgba(255, 255, 255, 0.05);
-            color: #ffffff;
+            color: var(--text-main);
         }
 
         .alert-success {
@@ -232,7 +234,7 @@ if ($action === 'edit' && $country_id) {
 
         .btn-remove:hover {
             background: #dc3545;
-            color: #fff;
+            color: var(--text-main);
         }
 
         .btn-add {
@@ -246,7 +248,7 @@ if ($action === 'edit' && $country_id) {
 
         .btn-add:hover {
             background: #4caf50;
-            color: #fff;
+            color: var(--text-main);
         }
 
         /* TinyMCE dark theme adjustments */
@@ -271,7 +273,7 @@ if ($action === 'edit' && $country_id) {
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-6 d-flex align-items-center gap-3">
-                    <img src="../logo_new1.png" alt="HexaTP Logo" style="height: 40px;">
+                    <img src="../final-logo-hexa.jpeg" alt="HexaTP Logo" style="height: 40px;">
                     <h1 class="mb-0"><?php echo $page_title; ?></h1>
                 </div>
                 <div class="col-md-6 text-end">
@@ -341,16 +343,33 @@ if ($action === 'edit' && $country_id) {
                         </div>
                     </div>
                 </div>
-                <div class="mb-3">
-                    <label for="flag_url" class="form-label">Flag URL</label>
-                    <input 
-                        type="url" 
-                        class="form-control" 
-                        id="flag_url" 
-                        name="flag_url" 
-                        placeholder="https://example.com/flags/australia.png"
-                        value="<?php echo $country ? htmlspecialchars($country->flag_url ?? '') : ''; ?>"
-                    >
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="flag_url" class="form-label">Flag URL</label>
+                            <input 
+                                type="url" 
+                                class="form-control" 
+                                id="flag_url" 
+                                name="flag_url" 
+                                placeholder="https://example.com/flags/australia.png"
+                                value="<?php echo $country ? htmlspecialchars($country->flag_url ?? '') : ''; ?>"
+                            >
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="hero_bg_image" class="form-label">Hero Background Image URL</label>
+                            <input 
+                                type="url" 
+                                class="form-control" 
+                                id="hero_bg_image" 
+                                name="hero_bg_image" 
+                                placeholder="https://example.com/images/hero-bg.jpg"
+                                value="<?php echo $country ? htmlspecialchars($country->hero_bg_image ?? '') : ''; ?>"
+                            >
+                        </div>
+                    </div>
                 </div>
             </div>
 

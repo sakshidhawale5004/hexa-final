@@ -1,0 +1,3 @@
+.hero { background image with overlay */
+            background: linear-gradient(180deg, rgba(5, 10, 20, 0.85), rgba(1, 4, 10, 0.95)), 
+                        url('https://media.gettyimages.com/id/108203368/photo/urban-textures.jpg?s=612x612&w=gi&k=20&c=2Tpru2LU-6mXW1fLA9ujmvnWOB0sn51XZ2A-oKelr3U='); background-size: cover; background-position: center; background-attachment: fixed; }

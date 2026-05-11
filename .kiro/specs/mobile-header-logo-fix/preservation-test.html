@@ -7,15 +7,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #050a14;
+            --bg-light: #ffffff;
+            --bg-subtle: #f9fafb;
             --accent: #f5c400;
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-slate: #94a3b8;
+            --glass-border: rgba(0, 0, 0, 0.08);
+            --text-main: #0f172a;
+            --text-slate: #64748b;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: #ffffff;
+            background-color: var(--bg-light);
+            color: var(--text-main);
             font-family: 'Poppins', sans-serif;
             padding: 20px;
         }
@@ -31,7 +33,7 @@
         }
 
         .test-section {
-            background: rgba(255, 255, 255, 0.03);
+            background: #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             border: 1px solid var(--glass-border);
             border-radius: 12px;
             padding: 30px;
@@ -44,7 +46,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto 30px;
-            background: rgba(11, 29, 53, 0.8);
+            background: rgba(255, 255, 255, 0.85); box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             backdrop-filter: blur(12px);
             border: 1px solid var(--glass-border);
             border-radius: 100px;
@@ -73,7 +75,7 @@
         
         nav a { 
             text-decoration: none; 
-            color: #ccc; 
+            color: #444; 
             font-size: 14px; 
             font-weight: 500; 
             transition: 0.3s; 
