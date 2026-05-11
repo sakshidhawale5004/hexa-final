@@ -166,42 +166,39 @@
 
         .hexa-card {
             background: #ffffff;
-            /* Subtle glass effect */
             border: 1px solid var(--glass-border);
             border-radius: 20px;
-            padding: 30px 15px;
+            padding: 40px 20px;
             text-align: center;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
+            align-items: center;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
         }
 
         .hexa-card:hover {
             transform: translateY(-10px);
             border-color: #f5c400;
-            /* Glows yellow on hover */
-            background: rgba(245, 196, 0, 0.02);
-            box-shadow: 0 10px 30px rgba(245, 196, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(245, 196, 0, 0.1);
         }
 
         .hexa-card .letter {
-            font-size: 48px;
+            font-size: 56px;
             font-weight: 800;
             color: #f5c400;
-            /* Matching your theme yellow */
             line-height: 1;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
 
         .hexa-card .label {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
             color: #0f172a;
-            text-transform: capitalize;
-            letter-spacing: 0.5px;
+            line-height: 1.4;
+            letter-spacing: 0.2px;
         }
 
         @media (max-width: 768px) {
