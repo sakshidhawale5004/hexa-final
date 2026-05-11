@@ -155,7 +155,7 @@
         </div>
 
         <a href="index.html">
-            <img src="final-logo-hexa1.jpeg" alt="HexaTP Logo" class="logo-img" />
+            <img src="hexatp-logo.jpeg" alt="HexaTP Logo" class="logo-img" />
         </a>
         <nav class="d-none d-md-block">
             <ul>
