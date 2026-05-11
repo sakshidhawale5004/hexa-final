@@ -136,7 +136,7 @@
         <button class="mobile-nav-toggle" onclick="openMobileMenu()">?</button>
         <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
         <div class="mobile-menu" id="mobileMenu">
-            <button class="btn-close btn-close-white position-absolute top-0 end-0 m-4" onclick="closeMobileMenu()"></button>
+            <button class="btn-close  position-absolute top-0 end-0 m-4" onclick="closeMobileMenu()"></button>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutus.html">About</a></li>
@@ -155,7 +155,7 @@
         </div>
 
         <a href="index.html">
-            <img src="final-logo-hexa.jpeg" alt="HexaTP Logo" class="logo-img" />
+            <img src="final-logo-hexa1.jpeg" alt="HexaTP Logo" class="logo-img" />
         </a>
         <nav class="d-none d-md-block">
             <ul>

@@ -112,7 +112,7 @@ include 'includes/header.php';
     .cta {
         padding: 80px 0;
         text-align: center;
-        background: linear-gradient(180deg, var(--bg-darker), var(--bg-dark));
+        background: var(--bg-subtle);
     }
 
     /* Team styles */
@@ -284,10 +284,10 @@ if (file_exists($modalFile)) {
 <!-- General Inquiry Modal -->
 <div class="modal fade" id="expertInquiryModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="background: var(--bg-dark); border: 1px solid var(--accent); border-radius: 20px;">
+        <div class="modal-content" style="background: var(--bg-light); border: 1px solid var(--accent); border-radius: 20px;">
             <div class="modal-header border-0 pb-0">
                 <h5 class="modal-title" style="font-weight: 700;">Inquiry for <span id="expertName" style="color: var(--accent);">Expert</span></h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-4">
                 <form id="expertForm">

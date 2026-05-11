@@ -273,7 +273,7 @@ if ($action === 'edit' && $country_id) {
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-6 d-flex align-items-center gap-3">
-                    <img src="../final-logo-hexa.jpeg" alt="HexaTP Logo" style="height: 40px;">
+                    <img src="../final-logo-hexa1.jpeg" alt="HexaTP Logo" style="height: 40px;">
                     <h1 class="mb-0"><?php echo $page_title; ?></h1>
                 </div>
                 <div class="col-md-6 text-end">

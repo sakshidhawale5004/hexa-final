@@ -131,7 +131,7 @@ $stats = $stats_result->fetch_assoc();
         }
 
         .table tbody tr:hover {
-            background: rgba(245, 196, 0, 0.05);
+            background: #f8fafc;
         }
 
         .badge-pending {
@@ -195,7 +195,7 @@ $stats = $stats_result->fetch_assoc();
         }
 
         .modal-content {
-            background: var(--bg-dark);
+            background: var(--bg-light);
             border: 1px solid var(--glass-border);
         }
 
