@@ -472,7 +472,7 @@ if ($is_migrating) {
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6 d-flex align-items-center gap-3">
-                    <img src="../hexa-logo.jpeg" alt="HexaTP Logo" style="height: 40px;">
+                    <img src="../logo-hexatp.jpeg" alt="HexaTP Logo" style="height: 40px;">
                     <h1 class="mb-0">Content Migration</h1>
                 </div>
             </div>

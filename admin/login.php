@@ -243,7 +243,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="login-container">
         <div class="login-card">
             <div class="logo-section">
-                <img src="../hexa-logo.jpeg" alt="HexaTP Logo" style="height: 60px; margin-bottom: 20px;">
+                <img src="../logo-hexatp.jpeg" alt="HexaTP Logo" style="height: 60px; margin-bottom: 20px;">
                 <h1>HexaTP CMS</h1>
                 <p>Country Content Management System</p>
             </div>

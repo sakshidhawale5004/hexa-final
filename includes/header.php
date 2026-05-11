@@ -54,7 +54,7 @@
             align-items: center;
         }
 
-        .logo-img { height: 45px !important; width: auto !important; display: block; object-fit: contain; }
+        .logo-img { height: 50px !important; width: auto !important; display: block; object-fit: contain; }
 
         nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
         nav a { text-decoration: none; color: #444; font-size: 14px; font-weight: 600; transition: 0.3s; }
@@ -155,7 +155,7 @@
         </div>
 
         <a href="index.html">
-            <img src="hexa-logo.jpeg" alt="HexaTP Logo" class="logo-img" />
+            <img src="logo-hexatp.jpeg" alt="HexaTP Logo" class="logo-img" />
         </a>
         <nav class="d-none d-md-block">
             <ul>

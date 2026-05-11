@@ -315,7 +315,7 @@ $stats = $contentService->getStatistics();
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-6 d-flex align-items-center gap-3">
-                    <img src="../hexa-logo.jpeg" alt="HexaTP Logo" style="height: 40px;">
+                    <img src="../logo-hexatp.jpeg" alt="HexaTP Logo" style="height: 40px;">
                     <h1 class="mb-0">Countries List</h1>
                 </div>
                 <div class="col-md-6 text-end">
