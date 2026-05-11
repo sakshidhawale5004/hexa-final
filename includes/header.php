@@ -54,7 +54,7 @@
             align-items: center;
         }
 
-        .logo-img { height: 50px !important; width: auto !important; display: block; object-fit: contain; }
+        .logo-img { height: 38px !important; padding: 4px 0; width: auto !important; display: block; object-fit: contain; }
 
         nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
         nav a { text-decoration: none; color: #444; font-size: 14px; font-weight: 600; transition: 0.3s; }
@@ -127,7 +127,7 @@
         @media (max-width: 768px) {
             .mobile-nav-toggle { display: block; }
             header nav.d-none.d-md-block { display: none !important; }
-            .logo-img { height: 35px !important; }
+            .logo-img { height: 38px !important; padding: 4px 0; }
         }
     </style>
 </head>
