@@ -1018,6 +1018,38 @@
                 toggleElement.classList.toggle('active');
             }
         }
+        
+        // Filter Insights Function
+        function filterInsights(category) {
+            const cards = document.querySelectorAll('.insight-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter cards
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.style.opacity = '1', 10);
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
+                }
+            });
+        }
+        
+        // Newsletter Submit Handler
+        function handleNewsletterSubmit(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            if (email) {
+                alert('Thank you for subscribing! Check your email for confirmation.');
+                event.target.reset();
+            }
+        }
+        
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.mobile-menu a').forEach(link => {
                 link.addEventListener('click', function() { closeMobileMenu(); });
