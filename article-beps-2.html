@@ -235,10 +235,27 @@
 <body>
 
     <header>
-        <img src="logo-hexatp.jpeg" alt="HexaTP" class="logo-img" />
+
+        <!-- Mobile Navigation -->
+        <button class="mobile-nav-toggle" onclick="openMobileMenu()" aria-label="Open menu">☰</button>
+        <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="close-menu" onclick="closeMobileMenu()" aria-label="Close menu">×</button>
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="aboutus.html">ℹ️ About</a></li>
+                <li><a href="solution.html">💡 Solutions</a></li>
+                <li><a href="insights.html">📰 TP Insights</a></li>
+                <li><a href="contact.html">📞 Contact</a></li>
+            </ul>
+        </div>
+
+        <img src="logo-hexatp.jpeg" alt="HexaTP - Transfer Pricing Simplified" class="logo-img" />
         <nav class="d-none d-md-block">
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="solution.html">Solutions</a></li>
                 <li><a href="insights.html">TP Insights</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -377,6 +394,41 @@
     <footer>
         <p>&copy; 2024 HexaTP. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileOverlay');
+            menu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileOverlay');
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function toggleSubmenu(submenuId, toggleElement) {
+            const submenu = document.getElementById(submenuId);
+            if (submenu) {
+                submenu.classList.toggle('active');
+                toggleElement.classList.toggle('active');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    closeMobileMenu();
+                });
+            });
+        });
+    </script>
 
 </body>
 

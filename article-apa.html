@@ -229,16 +229,174 @@
                 display: none !important;
             }
         }
+
+        /* ========== MOBILE NAVIGATION STYLES ========== */
+        .mobile-nav-toggle {
+            display: none;
+            position: absolute;
+            right: 5%;
+            top: 20px;
+            background: none;
+            border: none;
+            color: #f5c400;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 10px;
+            line-height: 1;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 80px 20px 20px;
+            transition: right 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-menu ul li a {
+            color: #0f172a;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu ul li a:hover {
+            background: rgba(245, 196, 0, 0.1);
+            color: #f5c400;
+            transform: translateX(5px);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #f5c400;
+            font-size: 32px;
+            cursor: pointer;
+            padding: 5px;
+            line-height: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .close-menu:hover {
+            transform: rotate(90deg);
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            backdrop-filter: blur(2px);
+        }
+
+        .mobile-overlay.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            header nav.d-none.d-md-block {
+                display: none !important;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-menu,
+            .mobile-overlay,
+            .mobile-nav-toggle {
+                display: none !important;
+            }
+        }
+
+        .mobile-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .mobile-menu::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .mobile-menu::-webkit-scrollbar-thumb {
+            background: rgba(245, 196, 0, 0.3);
+            border-radius: 3px;
+        }
+
+        .mobile-menu::-webkit-scrollbar-thumb:hover {
+            background: rgba(245, 196, 0, 0.5);
+        }
     </style>
 </head>
 
 <body>
 
     <header>
-        <img src="logo-hexatp.jpeg" alt="HexaTP" class="logo-img" />
+
+        <!-- Mobile Navigation -->
+        <button class="mobile-nav-toggle" onclick="openMobileMenu()" aria-label="Open menu">☰</button>
+        <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="close-menu" onclick="closeMobileMenu()" aria-label="Close menu">×</button>
+            <ul>
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="aboutus.html">ℹ️ About</a></li>
+                <li><a href="solution.html">💡 Solutions</a></li>
+                <li><a href="insights.html">📰 TP Insights</a></li>
+                <li><a href="contact.html">📞 Contact</a></li>
+            </ul>
+        </div>
+
+        <img src="logo-hexatp.jpeg" alt="HexaTP - Transfer Pricing Simplified" class="logo-img" />
         <nav class="d-none d-md-block">
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="solution.html">Solutions</a></li>
                 <li><a href="insights.html">TP Insights</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -398,6 +556,41 @@
     <footer>
         <p>&copy; 2024 HexaTP. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileOverlay');
+            menu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const overlay = document.getElementById('mobileOverlay');
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function toggleSubmenu(submenuId, toggleElement) {
+            const submenu = document.getElementById(submenuId);
+            if (submenu) {
+                submenu.classList.toggle('active');
+                toggleElement.classList.toggle('active');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    closeMobileMenu();
+                });
+            });
+        });
+    </script>
 
 </body>
 
