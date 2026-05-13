@@ -129,6 +129,46 @@
             header nav.d-none.d-md-block { display: none !important; }
             .logo-img { height: 38px !important; padding: 4px 0; }
         }
+
+        /* Dropdown Styles */
+        .dropdown-menu {
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            padding: 10px;
+            background: #ffffff !important;
+            min-width: 200px;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-main);
+            border-radius: 8px;
+            transition: 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--accent);
+            color: #000 !important;
+        }
+
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            display: none;
+            margin-top: -5px;
+        }
+
+        .dropdown-submenu:hover > .dropdown-menu {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -164,7 +204,7 @@
                 <li><a href="solution.html">Solutions</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Countries</a>
-                    <ul class="dropdown-menu" style="background: var(--accent);">
+                    <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="India.html">India</a></li>
                         <li><a class="dropdown-item" href="Saudiarabia.html">Saudi Arabia</a></li>
                         <li><a class="dropdown-item" href="unitedarab.html">UAE</a></li>
