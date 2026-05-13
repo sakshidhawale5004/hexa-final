@@ -151,17 +151,17 @@
                             <ul class="mobile-submenu" id="asiaMenu">
                                 <li><a href="India.html">India</a></li>
                                 <li><a href="bangladesh.html">Bangladesh</a></li>
-                                <li>
-                                    <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('seaMenu', this)"><span>South East Asia</span></div>
-                                    <ul class="mobile-submenu" id="seaMenu">
-                                        <li><a href="singapore.html">Singapore</a></li>
-                                        <li><a href="thailand.html">Thailand</a></li>
-                                        <li><a href="malaysia.html">Malaysia</a></li>
-                                        <li><a href="australia.html">Australia</a></li>
-                                        <li><a href="indonesia.html">Indonesia</a></li>
-                                        <li><a href="viethnam.html">Vietnam</a></li>
-                                    </ul>
-                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('seaMenu', this)"><span>South East Asia</span></div>
+                            <ul class="mobile-submenu" id="seaMenu">
+                                <li><a href="singapore.html">Singapore</a></li>
+                                <li><a href="thailand.html">Thailand</a></li>
+                                <li><a href="malaysia.html">Malaysia</a></li>
+                                <li><a href="australia.html">Australia</a></li>
+                                <li><a href="indonesia.html">Indonesia</a></li>
+                                <li><a href="viethnam.html">Vietnam</a></li>
                             </ul>
                         </li>
                         <li>
@@ -215,17 +215,18 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="India.html">India</a></li>
                                 <li><a class="dropdown-item" href="bangladesh.html">Bangladesh</a></li>
-                                <li class="dropdown-submenu position-relative">
-                                    <a class="dropdown-item dropdown-toggle" href="#">South East Asia</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="singapore.html">Singapore</a></li>
-                                        <li><a class="dropdown-item" href="thailand.html">Thailand</a></li>
-                                        <li><a class="dropdown-item" href="malaysia.html">Malaysia</a></li>
-                                        <li><a class="dropdown-item" href="australia.html">Australia</a></li>
-                                        <li><a class="dropdown-item" href="indonesia.html">Indonesia</a></li>
-                                        <li><a class="dropdown-item" href="viethnam.html">Vietnam</a></li>
-                                    </ul>
-                                </li>
+                            </ul>
+                        </li>
+                        <!-- South East Asia -->
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">South East Asia</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="singapore.html">Singapore</a></li>
+                                <li><a class="dropdown-item" href="thailand.html">Thailand</a></li>
+                                <li><a class="dropdown-item" href="malaysia.html">Malaysia</a></li>
+                                <li><a class="dropdown-item" href="australia.html">Australia</a></li>
+                                <li><a class="dropdown-item" href="indonesia.html">Indonesia</a></li>
+                                <li><a class="dropdown-item" href="viethnam.html">Vietnam</a></li>
                             </ul>
                         </li>
                         <!-- Africa -->
