@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transfer Pricing Documentation: A Complete Guide | HexaTP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-light: #ffffff;
+            --bg-subtle: #f9fafb;
+            --accent: #f5c400;
+            --accent-glow: rgba(245, 196, 0, 0.2);
+            --card-bg: #ffffff;
+            --glass-border: rgba(0, 0, 0, 0.08);
+            --text-main: #0f172a;
+            --text-slate: #64748b;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: #0f172a;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 10px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 38px !important;
+            padding: 4px 0;
+            width: auto !important;
+            display: block;
+            object-fit: contain;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        .btn-main {
+            background: var(--accent);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 100px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 20px var(--accent-glow);
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            background: #fff;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 180px 40px 60px;
+        }
+
+        .article-header {
+            margin-bottom: 40px;
+        }
+
+        .article-badge {
+            display: inline-block;
+            background: rgba(245, 196, 0, 0.1);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .article-title {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-slate);
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .article-content {
+            line-height: 1.8;
+            font-size: 16px;
+            color: var(--text-main);
+        }
+
+        .article-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .article-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            color: var(--text-slate);
+        }
+
+        .article-content ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+            color: var(--text-slate);
+        }
+
+        .highlight-box {
+            background: rgba(245, 196, 0, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--text-main);
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-slate);
+            font-size: 14px;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                top: 10px;
+                width: 95%;
+                padding: 8px 15px;
+            }
+
+            .article-container {
+                padding: 100px 20px 40px;
+            }
+
+            .article-title {
+                font-size: 28px;
+            }
+
+            .article-content h2 {
+                font-size: 22px;
+            }
+
+            .article-content h3 {
+                font-size: 18px;
+            }
+
+            nav.d-none.d-md-block {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logo-hexatp.jpeg" alt="HexaTP" class="logo-img" />
+        <nav class="d-none d-md-block">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="insights.html">TP Insights</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="mailto:md@hexatp.com" class="btn-main py-2 px-4 fs-6">Get Started</a>
+    </header>
+
+    <div class="article-container">
+        <a href="insights.html" class="back-link">← Back to Insights</a>
+
+        <div class="article-header">
+            <span class="article-badge">Blog</span>
+            <h1 class="article-title">Transfer Pricing Documentation: A Complete Guide</h1>
+            <div class="article-meta">
+                <span>📅 May 10, 2024</span>
+                <span>⏱️ 8 min read</span>
+                <span>✍️ HexaTP Team</span>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <p>Transfer Pricing (TP) documentation is one of the most critical aspects of tax compliance for multinational enterprises (MNEs). In this comprehensive guide, we'll walk you through everything you need to know about TP documentation, from basic requirements to advanced best practices.</p>
+
+            <h2>What is Transfer Pricing Documentation?</h2>
+            <p>Transfer Pricing documentation is a set of records that demonstrates that an MNE's intercompany transactions are priced in accordance with the arm's length principle. This documentation serves as evidence during tax audits and helps companies defend their TP positions.</p>
+
+            <div class="highlight-box">
+                <strong>Key Point:</strong> Proper TP documentation is not just a compliance requirement—it's your best defense against tax authorities during audits.
+            </div>
+
+            <h2>Why is TP Documentation Important?</h2>
+            <ul>
+                <li><strong>Tax Compliance:</strong> Required by tax authorities in most jurisdictions</li>
+                <li><strong>Audit Defense:</strong> Provides evidence of arm's length pricing</li>
+                <li><strong>Risk Mitigation:</strong> Reduces exposure to transfer pricing adjustments</li>
+                <li><strong>Penalty Avoidance:</strong> Helps avoid substantial penalties and interest</li>
+                <li><strong>Dispute Resolution:</strong> Supports mutual agreement procedures (MAP)</li>
+            </ul>
+
+            <h2>Key Components of TP Documentation</h2>
+
+            <h3>1. Master File</h3>
+            <p>The master file provides an overview of the MNE's business, including:</p>
+            <ul>
+                <li>Organizational structure and ownership</li>
+                <li>Description of business operations</li>
+                <li>Intangible assets and their ownership</li>
+                <li>Intercompany financing arrangements</li>
+                <li>Transfer pricing policies</li>
+            </ul>
+
+            <h3>2. Local Files</h3>
+            <p>Local files contain detailed information about specific intercompany transactions, including:</p>
+            <ul>
+                <li>Nature and characteristics of transactions</li>
+                <li>Functional analysis of parties involved</li>
+                <li>Economic analysis and benchmarking studies</li>
+                <li>Transfer pricing method selection and application</li>
+                <li>Supporting documentation and contracts</li>
+            </ul>
+
+            <h3>3. Country-by-Country Reporting (CbCR)</h3>
+            <p>CbCR provides information about the allocation of income, profits, and taxes paid by jurisdiction. This is required for large MNEs with annual consolidated revenue exceeding certain thresholds.</p>
+
+            <h2>Transfer Pricing Methods</h2>
+            <p>The OECD Transfer Pricing Guidelines recognize five main methods:</p>
+            <ul>
+                <li><strong>Comparable Uncontrolled Price (CUP):</strong> Compares prices charged between independent parties</li>
+                <li><strong>Resale Price Method:</strong> Starts with the price at which a product is resold to an independent party</li>
+                <li><strong>Cost Plus Method:</strong> Adds an appropriate markup to the costs incurred</li>
+                <li><strong>Profit Split Method:</strong> Allocates combined profit based on each party's contribution</li>
+                <li><strong>Transactional Net Margin Method (TNMM):</strong> Examines net profit margins</li>
+            </ul>
+
+            <h2>Best Practices for TP Documentation</h2>
+
+            <h3>1. Start Early</h3>
+            <p>Begin your TP documentation process at the beginning of the fiscal year, not at the end. This allows you to gather accurate data and make informed decisions.</p>
+
+            <h3>2. Maintain Contemporaneous Documentation</h3>
+            <p>Documentation should be prepared contemporaneously with the transactions. Many jurisdictions require this for penalty protection.</p>
+
+            <h3>3. Use Robust Benchmarking Studies</h3>
+            <p>Invest in comprehensive benchmarking studies using reliable databases and methodologies. This is often the most critical element of your defense.</p>
+
+            <h3>4. Document Your Analysis</h3>
+            <p>Clearly document your functional analysis, economic analysis, and the rationale for your transfer pricing method selection.</p>
+
+            <h3>5. Keep Records Organized</h3>
+            <p>Maintain well-organized records that are easily accessible during audits. Use consistent naming conventions and clear file structures.</p>
+
+            <div class="highlight-box">
+                <strong>Pro Tip:</strong> Consider using specialized TP documentation software to streamline the process and ensure consistency across your organization.
+            </div>
+
+            <h2>Common Mistakes to Avoid</h2>
+            <ul>
+                <li>Preparing documentation after the fact (not contemporaneous)</li>
+                <li>Using outdated or unreliable benchmarking data</li>
+                <li>Failing to document the functional analysis properly</li>
+                <li>Inconsistency between documentation and actual transactions</li>
+                <li>Ignoring changes in business circumstances</li>
+                <li>Not updating documentation annually</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>Transfer Pricing documentation is a critical component of tax compliance for multinational enterprises. By following the guidelines outlined in this article and maintaining robust, contemporaneous documentation, you can significantly reduce your transfer pricing risk and ensure compliance with tax authorities worldwide.</p>
+
+            <p>At HexaTP, we specialize in helping companies develop and maintain comprehensive transfer pricing documentation that withstands scrutiny. Contact us today to learn how we can support your TP compliance needs.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 HexaTP. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

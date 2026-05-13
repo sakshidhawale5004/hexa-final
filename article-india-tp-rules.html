@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>India Releases New Transfer Pricing Rules | HexaTP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-light: #ffffff;
+            --bg-subtle: #f9fafb;
+            --accent: #f5c400;
+            --accent-glow: rgba(245, 196, 0, 0.2);
+            --card-bg: #ffffff;
+            --glass-border: rgba(0, 0, 0, 0.08);
+            --text-main: #0f172a;
+            --text-slate: #64748b;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: #0f172a;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 10px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 38px !important;
+            padding: 4px 0;
+            width: auto !important;
+            display: block;
+            object-fit: contain;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--text-main);
+        }
+
+        .btn-main {
+            background: var(--accent);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 100px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 20px var(--accent-glow);
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            background: #fff;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 180px 40px 60px;
+        }
+
+        .article-header {
+            margin-bottom: 40px;
+        }
+
+        .article-badge {
+            display: inline-block;
+            background: rgba(245, 196, 0, 0.1);
+            color: var(--accent);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .article-title {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-slate);
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .article-content {
+            line-height: 1.8;
+            font-size: 16px;
+            color: var(--text-main);
+        }
+
+        .article-content h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .article-content h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .article-content p {
+            margin-bottom: 20px;
+            color: var(--text-slate);
+        }
+
+        .article-content ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+            color: var(--text-slate);
+        }
+
+        .highlight-box {
+            background: rgba(245, 196, 0, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--text-main);
+        }
+
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-slate);
+            font-size: 14px;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                top: 10px;
+                width: 95%;
+                padding: 8px 15px;
+            }
+
+            .article-container {
+                padding: 100px 20px 40px;
+            }
+
+            .article-title {
+                font-size: 28px;
+            }
+
+            .article-content h2 {
+                font-size: 22px;
+            }
+
+            .article-content h3 {
+                font-size: 18px;
+            }
+
+            nav.d-none.d-md-block {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logo-hexatp.jpeg" alt="HexaTP" class="logo-img" />
+        <nav class="d-none d-md-block">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="insights.html">TP Insights</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="mailto:md@hexatp.com" class="btn-main py-2 px-4 fs-6">Get Started</a>
+    </header>
+
+    <div class="article-container">
+        <a href="insights.html" class="back-link">← Back to Insights</a>
+
+        <div class="article-header">
+            <span class="article-badge">News</span>
+            <h1 class="article-title">India Releases New Transfer Pricing Rules</h1>
+            <div class="article-meta">
+                <span>📅 May 5, 2024</span>
+                <span>⏱️ 7 min read</span>
+                <span>✍️ HexaTP Team</span>
+            </div>
+        </div>
+
+        <div class="article-content">
+            <p>India's tax authority has recently released updated transfer pricing rules that significantly impact multinational enterprises operating in the country. This article provides an overview of the key changes and what companies need to do to ensure compliance.</p>
+
+            <h2>Overview of the New Rules</h2>
+            <p>The new transfer pricing rules represent a significant shift in India's approach to transfer pricing compliance. These rules are designed to align with international best practices while addressing specific concerns related to the Indian market.</p>
+
+            <div class="highlight-box">
+                <strong>Important:</strong> The new rules are effective from the financial year 2024-25. Companies must ensure compliance with these rules in their transfer pricing documentation.
+            </div>
+
+            <h2>Key Changes in the New Rules</h2>
+
+            <h3>1. Enhanced Documentation Requirements</h3>
+            <p>The new rules require more detailed and comprehensive transfer pricing documentation, including:</p>
+            <ul>
+                <li>Detailed functional analysis of all related party transactions</li>
+                <li>Comprehensive economic analysis supporting transfer prices</li>
+                <li>Robust benchmarking studies using multiple data sources</li>
+                <li>Clear documentation of the transfer pricing method selection</li>
+                <li>Annual updates to documentation reflecting business changes</li>
+            </ul>
+
+            <h3>2. Stricter Benchmarking Requirements</h3>
+            <p>The rules now require:</p>
+            <ul>
+                <li>Use of multiple comparable databases</li>
+                <li>Detailed comparability analysis</li>
+                <li>Adjustment for differences between comparable and controlled transactions</li>
+                <li>Use of appropriate statistical methods</li>
+                <li>Documentation of all adjustments made</li>
+            </ul>
+
+            <h3>3. Expanded Scope of Related Party Transactions</h3>
+            <p>The new rules expand the definition of related party transactions to include:</p>
+            <ul>
+                <li>Transactions with permanent establishments</li>
+                <li>Transactions with associated enterprises</li>
+                <li>Transactions involving intangible assets</li>
+                <li>Financing transactions</li>
+                <li>Service transactions</li>
+            </ul>
+
+            <h3>4. Increased Penalties for Non-Compliance</h3>
+            <p>The new rules introduce stricter penalties for non-compliance, including:</p>
+            <ul>
+                <li>Higher penalties for inadequate documentation</li>
+                <li>Increased interest on transfer pricing adjustments</li>
+                <li>Potential criminal prosecution for serious violations</li>
+            </ul>
+
+            <h2>Compliance Timeline</h2>
+
+            <h3>Immediate Actions (By June 30, 2024)</h3>
+            <ul>
+                <li>Review current transfer pricing policies</li>
+                <li>Assess compliance with new requirements</li>
+                <li>Identify gaps in documentation</li>
+                <li>Plan for necessary updates</li>
+            </ul>
+
+            <h3>Short-term Actions (By September 30, 2024)</h3>
+            <ul>
+                <li>Update transfer pricing documentation</li>
+                <li>Conduct new benchmarking studies if necessary</li>
+                <li>Implement new transfer pricing policies</li>
+                <li>Train relevant staff on new requirements</li>
+            </ul>
+
+            <h3>Long-term Actions (Ongoing)</h3>
+            <ul>
+                <li>Maintain contemporaneous documentation</li>
+                <li>Update documentation annually</li>
+                <li>Monitor regulatory changes</li>
+                <li>Maintain compliance with all requirements</li>
+            </ul>
+
+            <h2>Impact on Different Industries</h2>
+
+            <h3>Technology and Software</h3>
+            <p>Companies in the technology sector face particular challenges due to the intangible nature of their products and services. The new rules require detailed analysis of intangible asset ownership and value creation.</p>
+
+            <h3>Manufacturing</h3>
+            <p>Manufacturing companies must ensure that their transfer prices for goods and services reflect arm's length pricing. The new rules require more detailed functional analysis.</p>
+
+            <h3>Services</h3>
+            <p>Service providers must document the value added by their services and ensure that transfer prices reflect this value. The new rules require detailed analysis of service characteristics.</p>
+
+            <h2>Best Practices for Compliance</h2>
+
+            <h3>1. Engage Specialists Early</h3>
+            <p>Engage transfer pricing specialists early in the process to ensure compliance with the new rules and avoid costly adjustments later.</p>
+
+            <h3>2. Maintain Contemporaneous Documentation</h3>
+            <p>Ensure that all transfer pricing documentation is prepared contemporaneously with the transactions. This is critical for penalty protection.</p>
+
+            <h3>3. Use Robust Benchmarking</h3>
+            <p>Invest in comprehensive benchmarking studies using multiple data sources and methodologies. This provides the strongest defense against tax authority challenges.</p>
+
+            <h3>4. Document Everything</h3>
+            <p>Document all decisions, analyses, and assumptions made in determining transfer prices. This documentation should be clear and easily understood by tax authorities.</p>
+
+            <h3>5. Stay Updated</h3>
+            <p>Monitor regulatory changes and updates to ensure ongoing compliance. Transfer pricing regulations are constantly evolving.</p>
+
+            <div class="highlight-box">
+                <strong>Recommendation:</strong> Consider conducting a transfer pricing audit to assess your current compliance position and identify any gaps that need to be addressed.
+            </div>
+
+            <h2>Conclusion</h2>
+            <p>India's new transfer pricing rules represent a significant change in the regulatory landscape. Companies operating in India must take immediate action to ensure compliance with these new requirements. By following best practices and engaging qualified specialists, companies can navigate these changes successfully and minimize their transfer pricing risk.</p>
+
+            <p>HexaTP has extensive experience helping multinational enterprises comply with India's transfer pricing regulations. Contact us today to discuss how we can help your organization navigate these new rules.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 HexaTP. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
