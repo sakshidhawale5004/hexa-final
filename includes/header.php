@@ -176,6 +176,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a href="insights.html">TP Insights</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
@@ -236,6 +237,7 @@
                         </li>
                     </ul>
                 </li>
+                <li><a href="insights.html">TP Insights</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
