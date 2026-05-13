@@ -133,21 +133,32 @@
         }
 
         .filter-btn {
-            padding: 10px 25px;
+            padding: 12px 28px;
             border: 2px solid var(--glass-border);
             background: #ffffff;
             border-radius: 100px;
             cursor: pointer;
             font-weight: 600;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             color: var(--text-main);
+            font-size: 14px;
+            text-transform: capitalize;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
-        .filter-btn:hover,
+        .filter-btn:hover {
+            border-color: var(--accent);
+            background: rgba(245, 196, 0, 0.1);
+            color: var(--text-main);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245, 196, 0, 0.15);
+        }
+
         .filter-btn.active {
             background: var(--accent);
             border-color: var(--accent);
             color: #000;
+            box-shadow: 0 4px 15px rgba(245, 196, 0, 0.3);
         }
 
         /* --- INSIGHTS GRID --- */
@@ -823,9 +834,9 @@
         <!-- FILTER TABS -->
         <div class="filter-tabs">
             <button class="filter-btn active" onclick="filterInsights('all')">All</button>
-            <button class="filter-btn" onclick="filterInsights('blog')">📝 Blogs</button>
-            <button class="filter-btn" onclick="filterInsights('article')">📄 Articles</button>
-            <button class="filter-btn" onclick="filterInsights('news')">📰 News</button>
+            <button class="filter-btn" onclick="filterInsights('blog')">Blogs</button>
+            <button class="filter-btn" onclick="filterInsights('article')">Articles</button>
+            <button class="filter-btn" onclick="filterInsights('news')">News</button>
         </div>
 
         <!-- FEATURED ARTICLE -->
