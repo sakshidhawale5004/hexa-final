@@ -57,7 +57,7 @@
 
         .logo-img { height: 38px !important; padding: 4px 0; width: auto !important; display: block; object-fit: contain; }
         nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
-        nav a { text-decoration: none; color: #444; font-size: 14px; font-weight: 600; transition: 0.3s; }
+        nav a { text-decoration: none; color: #444; font-size: 14px; font-weight: 600; transition: 0.3s; font-family: 'Poppins', sans-serif; }
         nav a:hover { color: var(--accent); }
 
         .btn-main {
@@ -75,11 +75,13 @@
 
         /* Dropdown Styles */
         .dropdown-menu { border: 1px solid var(--glass-border); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 10px; background: #ffffff !important; min-width: 200px; z-index: 9999; }
-        .dropdown-item { padding: 10px 20px; font-size: 14px; font-weight: 500; color: var(--text-main); border-radius: 8px; transition: 0.2s; }
-        .dropdown-item:hover { background-color: var(--accent); color: #000 !important; }
+        .dropdown-item { padding: 10px 20px; font-size: 14px; font-weight: 500; color: var(--text-main); border-radius: 8px; transition: 0.2s; font-family: 'Poppins', sans-serif; }
+        .dropdown-item:hover { background-color: rgba(245, 196, 0, 0.15); color: var(--text-main) !important; }
+        .dropdown-item.dropdown-toggle { color: var(--accent); font-weight: 600; }
+        .dropdown-item.dropdown-toggle:hover { background-color: rgba(245, 196, 0, 0.2); color: var(--accent) !important; }
         .dropdown-toggle::after { vertical-align: middle; margin-left: 5px; opacity: 0.7; }
         .dropdown-submenu { position: relative; }
-        .dropdown-submenu .dropdown-menu { position: absolute; top: 0; left: 100%; display: none; margin-top: -5px; background: #ffffff; }
+        .dropdown-submenu .dropdown-menu { position: absolute; top: 0; left: 100%; display: none; margin-top: -5px; background: #ffffff; border: 1px solid var(--glass-border); }
         .dropdown-submenu:hover > .dropdown-menu { display: block; }
 
         /* Mobile Nav */
