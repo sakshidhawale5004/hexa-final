@@ -541,11 +541,11 @@ footer {
         @media (max-width: 768px) {
             .mobile-nav-toggle { display: block; }
             header nav.d-none.d-md-block { display: none !important; }
-            .logo-img { height: 35px; width: auto; }
-            header { width: 95% !important; padding: 8px 12px !important; top: 10px !important; justify-content: space-between !important; }
-            header > a.btn-main { order: 2; padding: 6px 10px !important; font-size: 10px !important; white-space: nowrap; margin: 0 !important; }
-            header > img.logo-img { order: 1; }
-            .mobile-nav-toggle { order: 3; }
+            .logo-img { height: 32px; width: auto; }
+            header { width: 100% !important; padding: 12px 15px !important; top: 0 !important; left: 0 !important; transform: none !important; border-radius: 0 !important; justify-content: space-between !important; align-items: center !important; max-width: 100% !important; }
+            header > a.btn-main { display: none !important; }
+            header > img.logo-img { order: 1; margin: 0 !important; }
+            .mobile-nav-toggle { order: 2; position: static !important; right: auto !important; top: auto !important; }
         }
         @media (min-width: 769px) { .mobile-menu, .mobile-overlay, .mobile-nav-toggle { display: none !important; } }
         .mobile-menu::-webkit-scrollbar { width: 6px; }
@@ -1137,6 +1137,7 @@ h1, h2, h3, h4, h5, h6 {
         <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
         <div class="mobile-menu" id="mobileMenu">
             <button class="close-menu" onclick="closeMobileMenu()" aria-label="Close menu">&#x2715;</button>
+            <a href="mailto:md@hexatp.com?subject=Transfer%20Pricing%20Consultation%20Request&body=Hello%20HexaTP%20Team,%0A%0AI%20am%20interested%20in%20discussing%20transfer%20pricing%20solutions.%0A%0APlease%20contact%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you" class="btn-main" style="display: block; width: 100%; text-align: center; margin-bottom: 20px; padding: 12px 16px !important; font-size: 14px !important;">Get Started</a>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutus.html">About</a></li>
