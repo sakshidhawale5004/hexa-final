@@ -1,6 +1,5 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,8 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
-    <style>
+<style>
         :root {
             --bg-light: #ffffff;
             --bg-subtle: #f9fafb;
@@ -23,15 +21,13 @@
             --text-main: #0f172a;
             --text-slate: #64748b;
         }
-
-        body {
+body {
             background-color: var(--bg-light);
             color: #0f172a;
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
         }
-
-        /* --- SLEEK NAV --- */
+/* --- SLEEK NAV --- */
         header {
             position: fixed;
             top: 20px;
@@ -50,24 +46,20 @@
             justify-content: space-between;
             align-items: center;
         }
-
-        .logo {
+.logo {
             font-weight: 800;
             font-size: 20px;
             text-transform: uppercase;
         }
-
-        .logo span {
+.logo span {
             color: var(--text-main);
         }
-
-        .logo-img { height: 38px !important; padding: 4px 0;
+.logo-img { height: 38px !important; padding: 4px 0;
             width:  auto !important;
             display: block;
             object-fit: contain;
         }
-
-        /* Professional Text Logo */
+/* Professional Text Logo */
         .logo-text-wrapper {
             font-weight: 800;
             font-size: 24px;
@@ -76,25 +68,21 @@
             align-items: center;
             font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
         }
-
-        .logo-hexa {
+.logo-hexa {
             color: #0f172a;
         }
-
-        .logo-tp {
+.logo-tp {
             color: var(--text-main);
             margin-left: 2px;
         }
-
-        nav ul {
+nav ul {
             list-style: none;
             display: flex;
             gap: 25px;
             margin: 0;
             padding: 0;
         }
-
-        nav a {
+nav a {
             text-decoration: none;
             color: #444;
             font-size: 14px;
@@ -102,14 +90,11 @@
             transition: 0.3s;
             font-family: 'Poppins', sans-serif;
         }
-
-        nav a:hover {
+nav a:hover {
             color: var(--text-main);
         }
-
-        .nav-link.dropdown-toggle { font-family: 'Poppins', sans-serif !important; font-weight: 600 !important; font-size: 14px !important; color: #444 !important; }
-
-        /* Dropdown Styles */
+.nav-link.dropdown-toggle { font-family: 'Poppins', sans-serif !important; font-weight: 600 !important; font-size: 14px !important; color: #444 !important; }
+/* Dropdown Styles */
         .dropdown-menu { border: 1px solid var(--glass-border); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 8px 0; background: #ffffff !important; min-width: 200px; z-index: 9999; }
         .dropdown-item { padding: 10px 20px; font-size: 14px; font-weight: 500; color: var(--text-main); border-radius: 0; transition: 0.2s; font-family: 'Poppins', sans-serif; }
         .dropdown-item:hover { background-color: rgba(245, 196, 0, 0.15); color: var(--text-main) !important; }
@@ -119,15 +104,13 @@
         .dropdown-submenu { position: relative; }
         .dropdown-submenu .dropdown-menu { position: absolute; top: 0; left: 100%; display: none; margin-top: -5px; background: #ffffff; border: 1px solid var(--glass-border); border-radius: 8px; padding: 8px 0; }
         .dropdown-submenu:hover > .dropdown-menu { display: block; }
-
-        /* --- HERO SECTION --- */
+/* --- HERO SECTION --- */
         .hero-section {
             padding: 180px 5% 100px;
             text-align: center;
             background: radial-gradient(circle at top center, #fff9e6 0%, var(--bg-light) 70%);
         }
-
-        .hero-tag {
+.hero-tag {
             background: #fff;
             border: 1px solid var(--glass-border);
             padding: 6px 18px;
@@ -140,22 +123,19 @@
             margin-bottom: 25px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
         }
-
-        .hero-section h1 {
+.hero-section h1 {
             font-size: clamp(32px, 5vw, 55px);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 25px;
         }
-
-        .hero-section p {
+.hero-section p {
             max-width: 700px;
             margin: 0 auto 40px;
             color: var(--text-slate);
             font-size: 18px;
         }
-
-        .btn-main {
+.btn-main {
             background: var(--accent);
             color: #000;
             padding: 16px 35px;
@@ -166,19 +146,16 @@
             transition: 0.3s;
             display: inline-block;
         }
-
-        .btn-main:hover {
+.btn-main:hover {
             transform: translateY(-3px);
             background: #fff;
         }
-
-        /* HEXA SECTION STYLES */
+/* HEXA SECTION STYLES */
         .hexa-container {
             max-width: 1000px;
             margin: 0 auto;
         }
-
-        .hexa-card {
+.hexa-card {
             background: #ffffff;
             border: 1px solid var(--glass-border);
             border-radius: 20px;
@@ -192,60 +169,51 @@
             align-items: center;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
         }
-
-        .hexa-card:hover {
+.hexa-card:hover {
             transform: translateY(-10px);
             border-color: #f5c400;
             box-shadow: 0 20px 40px rgba(245, 196, 0, 0.1);
         }
-
-        .hexa-card .letter {
+.hexa-card .letter {
             font-size: 56px;
             font-weight: 800;
             color: #f5c400;
             line-height: 1;
             margin-bottom: 25px;
         }
-
-        .hexa-card .label {
+.hexa-card .label {
             font-size: 15px;
             font-weight: 600;
             color: #0f172a;
             line-height: 1.4;
             letter-spacing: 0.2px;
         }
-
-        @media (max-width: 768px) {
+@media (max-width: 768px) {
             .hexa-card .letter {
                 font-size: 36px;
             }
-
-            .hexa-card .label {
+.hexa-card .label {
                 font-size: 12px;
             }
         }
-
-        /* --- STATS STRIP --- */
+/* --- STATS STRIP --- */
         .stats-strip {
             background: var(--accent);
             padding: 30px 0;
             color: #000;
         }
-
-        .stat-item h2 {
+.stat-item h2 {
             font-weight: 800;
             font-size: 40px;
             margin: 0;
         }
-
-        .stat-item p {
+.stat-item p {
             font-weight: 600;
             font-size: 12px;
             text-transform: uppercase;
             opacity: 0.8;
         }
-
-        /*map*/
+/*map*/
         /* GLOBAL MAP SECTION STYLES */
         .global-map-section {
             background-color: var(--bg-light);
@@ -253,8 +221,7 @@
             padding: 100px 0;
             color: #0f172a;
         }
-
-        .map-title {
+.map-title {
             font-size: 36px;
             font-weight: 800;
             /* Extra bold as seen in Image 3 */
@@ -263,41 +230,34 @@
             margin-bottom: 50px;
             text-transform: uppercase;
         }
-
-        .map-wrapper {
+.map-wrapper {
             max-width: 1000px;
             margin: 0 auto;
             position: relative;
         }
-
-        .map-wrapper img {
+.map-wrapper img {
             width: 100%;
             height: auto;
             filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
         }
-
-        @media (max-width: 768px) {
+@media (max-width: 768px) {
             .map-title {
                 font-size: 24px;
             }
-
-            .global-map-section {
+.global-map-section {
                 padding: 60px 20px;
             }
         }
-
-        /*we are*/
+/*we are*/
         /* Custom styling for hexagonal icon container */
         .who-we-are {
             background: var(--bg-subtle);
             color: #0f172a;
         }
-
-        .who-we-are p {
+.who-we-are p {
             color: var(--text-slate);
         }
-
-        .icon-hex {
+.icon-hex {
             width: 60px;
             height: 60px;
             border: 2px solid #b49a78;
@@ -310,8 +270,7 @@
             color: #b49a78;
             font-size: 24px;
         }
-
-        /* Custom button styling */
+/* Custom button styling */
         .btn-main {
             background: var(--accent);
             color: #000;
@@ -323,13 +282,11 @@
             transition: 0.3s;
             display: inline-block;
         }
-
-        .btn-main:hover {
+.btn-main:hover {
             transform: translateY(-3px);
             background: #fff;
         }
-
-        /* Hexagonal Icon Style */
+/* Hexagonal Icon Style */
         .icon-hex {
             width: 50px;
             height: 50px;
@@ -343,20 +300,17 @@
             color: var(--text-main);
             font-size: 20px;
         }
-
-        /* --- BENTO GRID SECTION --- */
+/* --- BENTO GRID SECTION --- */
         .bento-section {
             padding: 80px 8%;
         }
-
-        .bento-grid {
+.bento-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-auto-rows: 280px;
             gap: 20px;
         }
-
-        .bento-card {
+.bento-card {
             background: #ffffff;
             border: 1px solid var(--glass-border);
             border-radius: 24px;
@@ -366,63 +320,53 @@
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
         }
-
-        .bento-card:hover {
+.bento-card:hover {
             border-color: var(--text-main);
             background: rgba(245, 196, 0, 0.01);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
         }
-
-        .bento-card.tall {
+.bento-card.tall {
             grid-row: span 2;
         }
-
-        .bento-card.wide {
+.bento-card.wide {
             grid-column: span 2;
         }
-
-        .bento-card i {
+.bento-card i {
             font-size: 32px;
             color: var(--text-main);
             margin-bottom: 20px;
             display: block;
         }
-
-        .bento-card h3 {
+.bento-card h3 {
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 15px;
         }
-
-        .bento-card p {
+.bento-card p {
             color: var(--text-slate);
             font-size: 14px;
             line-height: 1.6;
         }
-
-        /*tech*/
+/*tech*/
         /* Container Background to match expert-khaki.vercel.app */
         .tech-expertise-section {
             background-color: var(--bg-light);
             color: #0f172a;
             font-family: 'Inter', sans-serif;
         }
-
-        /* Feature Titles and Lists */
+/* Feature Titles and Lists */
         .small-text {
             color: var(--text-slate);
             /* Slate color for secondary text */
             font-size: 0.9rem;
             line-height: 1.6;
         }
-
-        .icon-amber {
+.icon-amber {
             font-size: 1.5rem;
             color: #f59e0b;
             /* Brand Amber from live site */
         }
-
-        /* Request Demo Button */
+/* Request Demo Button */
         .demo-btn {
             background-color: var(--accent);
             color: #000;
@@ -434,38 +378,32 @@
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
         }
-
-        .demo-btn:hover {
+.demo-btn:hover {
             background-color: #fff;
             color: #000;
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2);
         }
-
-        /* Graphic Highlight */
+/* Graphic Highlight */
         .brain-circuit-graphic img {
             filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.15));
         }
-
-        .contact-footer {
+.contact-footer {
             padding: 100px 5%;
             text-align: center;
             background: linear-gradient(0deg, #fff9e6 0%, var(--bg-light) 100%);
         }
-
-        @media (max-width: 992px) {
+@media (max-width: 992px) {
             .bento-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-
-        @media (max-width: 768px) {
+@media (max-width: 768px) {
             .bento-grid {
                 grid-template-columns: 1fr;
             }
         }
-
-        /* --- Dropdown Styles --- */
+/* --- Dropdown Styles --- */
         .dropdown-menu {
             border: 1px solid var(--glass-border);
             border-radius: 12px;
@@ -475,12 +413,10 @@
             min-width: 200px;
             z-index: 9999;
         }
-
-        .dropdown-submenu {
+.dropdown-submenu {
             position: relative;
         }
-
-        .dropdown-submenu .dropdown-menu {
+.dropdown-submenu .dropdown-menu {
             position: absolute;
             top: 0;
             left: 100%;
@@ -488,12 +424,10 @@
             margin-top: -5px;
             background: #ffffff;
         }
-
-        .dropdown-submenu:hover>.dropdown-menu {
+.dropdown-submenu:hover>.dropdown-menu {
             display: block;
         }
-
-        .dropdown-item {
+.dropdown-item {
             padding: 10px 20px;
             font-size: 14px;
             font-weight: 500;
@@ -501,31 +435,26 @@
             border-radius: 8px;
             transition: 0.2s;
         }
-
-        .dropdown-item:hover {
+.dropdown-item:hover {
             background-color: var(--accent);
             color: #000 !important;
         }
-
-        .dropdown-toggle::after {
+.dropdown-toggle::after {
             vertical-align: middle;
             margin-left: 5px;
             opacity: 0.7;
         }
-
-        .cta {
+.cta {
             padding: 80px 0;
             text-align: center;
             background: var(--bg-subtle);
         }
-
-        .contact-footer {
+.contact-footer {
             padding: 100px 5%;
             text-align: center;
             background: linear-gradient(0deg, #fff9e6 0%, var(--bg-light) 100%);
         }
-
-        .btn-accent {
+.btn-accent {
             background: var(--accent);
             color: #000;
             padding: 14px 30px;
@@ -534,13 +463,11 @@
             text-decoration: none;
             display: inline-block;
         }
-
-        .btn-accent:hover {
+.btn-accent:hover {
             background: #fff;
             color: #000;
         }
-
-        footer {
+footer {
             padding: 20px;
             text-align: center;
             color: var(--text-slate);
@@ -613,78 +540,63 @@
         .mobile-menu::-webkit-scrollbar-thumb:hover { background: rgba(245,196,0,0.5); }
         /* ========== END HEADER STYLES ========== */
         </style>
-
-    <style>
+<style>
         </style>
-
-
-    <style>
+<style>
         /* ========== COMPREHENSIVE MOBILE RESPONSIVE STYLES ========== */
-
-        /* Base Responsive Typography */
+/* Base Responsive Typography */
         @media (max-width: 768px) {
             body {
                 font-size: 16px;
                 line-height: 1.6;
             }
-
-            h1 {
+h1 {
                 font-size: 32px !important;
                 line-height: 1.2 !important;
             }
-
-            h2 {
+h2 {
                 font-size: 28px !important;
                 line-height: 1.3 !important;
             }
-
-            h3 {
+h3 {
                 font-size: 24px !important;
                 line-height: 1.4 !important;
             }
-
-            h4 {
+h4 {
                 font-size: 20px !important;
             }
-
-            p {
+p {
                 font-size: 16px !important;
                 line-height: 1.6 !important;
             }
-
-            /* Hero Section */
+/* Hero Section */
             .hero-section,
             .hero,
             .hero-split {
                 padding: 120px 20px 60px !important;
                 text-align: center !important;
             }
-
-            .hero-section h1,
+.hero-section h1,
             .hero h1 {
                 font-size: 36px !important;
                 margin-bottom: 20px !important;
             }
-
-            .hero-section p,
+.hero-section p,
             .hero p {
                 font-size: 16px !important;
                 max-width: 100% !important;
                 padding: 0 10px !important;
             }
-
-            /* Header/Navigation */
+/* Header/Navigation */
             header {
                 width: 95% !important;
                 padding: 10px 20px !important;
                 top: 10px !important;
             }
-
-            .logo {
+.logo {
                 font-size: 18px !important;
             }
-
-            /* Buttons */
+/* Buttons */
             .btn-main,
             .btn-accent,
             .btn-glow,
@@ -694,8 +606,7 @@
                 width: auto !important;
                 display: inline-block !important;
             }
-
-            /* Cards & Grid Layouts */
+/* Cards & Grid Layouts */
             .card,
             .service-card,
             .feature-card,
@@ -704,39 +615,33 @@
                 margin-bottom: 20px !important;
                 padding: 20px !important;
             }
-
-            .grid,
+.grid,
             .bento-grid,
             .advisory-container,
             .section-wrapper {
                 grid-template-columns: 1fr !important;
                 gap: 20px !important;
             }
-
-            /* Containers */
+/* Containers */
             .container {
                 padding-left: 20px !important;
                 padding-right: 20px !important;
             }
-
-            section {
+section {
                 padding: 60px 20px !important;
             }
-
-            /* Images */
+/* Images */
             img:not(.logo-img) {
                 max-width: 100% !important;
                 height: auto !important;
             }
-
-            /* Tables */
+/* Tables */
             table {
                 display: block !important;
                 overflow-x: auto !important;
                 white-space: nowrap !important;
             }
-
-            /* Forms */
+/* Forms */
             input,
             textarea,
             select {
@@ -744,138 +649,111 @@
                 font-size: 16px !important;
                 padding: 12px !important;
             }
-
-            /* Modals */
+/* Modals */
             .modal-dialog {
                 margin: 10px !important;
                 max-width: calc(100% - 20px) !important;
             }
-
-            .modal-content {
+.modal-content {
                 border-radius: 12px !important;
             }
-
-            /* Stats/Numbers */
+/* Stats/Numbers */
             .stat-number,
             .stats-card {
                 font-size: 32px !important;
             }
-
-            /* Columns */
+/* Columns */
             .row>[class*='col-'] {
                 padding-left: 15px !important;
                 padding-right: 15px !important;
             }
-
-            /* Hide desktop-only elements */
+/* Hide desktop-only elements */
             .d-none.d-md-block:not(nav) {
                 display: none !important;
             }
-
-            /* Show mobile-only elements */
+/* Show mobile-only elements */
             .d-block.d-md-none {
                 display: block !important;
             }
-
-            /* Spacing */
+/* Spacing */
             .mb-5 {
                 margin-bottom: 30px !important;
             }
-
-            .mt-5 {
+.mt-5 {
                 margin-top: 30px !important;
             }
-
-            .py-5 {
+.py-5 {
                 padding-top: 40px !important;
                 padding-bottom: 40px !important;
             }
-
-            /* Footer */
+/* Footer */
             footer {
                 padding: 40px 20px !important;
                 text-align: center !important;
             }
-
-            footer .row {
+footer .row {
                 flex-direction: column !important;
             }
-
-            footer .col-md-3,
+footer .col-md-3,
             footer .col-md-4,
             footer .col-md-6 {
                 margin-bottom: 30px !important;
                 text-align: center !important;
             }
         }
-
-        /* Tablet Responsive (768px - 1024px) */
+/* Tablet Responsive (768px - 1024px) */
         @media (min-width: 769px) and (max-width: 1024px) {
             .container {
                 max-width: 720px !important;
             }
-
-            h1 {
+h1 {
                 font-size: 42px !important;
             }
-
-            h2 {
+h2 {
                 font-size: 36px !important;
             }
-
-            .grid,
+.grid,
             .bento-grid {
                 grid-template-columns: repeat(2, 1fr) !important;
             }
         }
-
-        /* Small Mobile (< 400px) */
+/* Small Mobile (< 400px) */
         @media (max-width: 400px) {
             body {
                 font-size: 14px;
             }
-
-            h1 {
+h1 {
                 font-size: 28px !important;
             }
-
-            h2 {
+h2 {
                 font-size: 24px !important;
             }
-
-            .btn-main,
+.btn-main,
             .btn-accent {
                 padding: 10px 20px !important;
                 font-size: 13px !important;
             }
-
-            header {
+header {
                 padding: 8px 15px !important;
             }
-
-            .logo {
+.logo {
                 font-size: 16px !important;
             }
         }
-
-        /* Landscape Mobile */
+/* Landscape Mobile */
         @media (max-height: 500px) and (orientation: landscape) {
-
-            .hero-section,
+.hero-section,
             .hero {
                 padding: 80px 20px 40px !important;
             }
-
-            .hero-section h1,
+.hero-section h1,
             .hero h1 {
                 font-size: 32px !important;
             }
         }
-
-        /* Touch-friendly improvements */
+/* Touch-friendly improvements */
         @media (hover: none) and (pointer: coarse) {
-
-            /* Touch devices */
+/* Touch devices */
             a,
             button,
             .btn,
@@ -883,35 +761,29 @@
                 min-height: 44px !important;
                 min-width: 44px !important;
             }
-
-            input,
+input,
             textarea,
             select {
                 font-size: 16px !important;
                 /* Prevents zoom on iOS */
             }
         }
-
-        /* Prevent horizontal scroll */
+/* Prevent horizontal scroll */
         body {
             overflow-x: hidden !important;
         }
-
-        * {
+* {
             max-width: 100%;
         }
-
-        /* Ensure images don't overflow */
+/* Ensure images don't overflow */
         img:not(.logo-img),
         video,
         iframe {
             max-width: 100% !important;
             height: auto !important;
         }
-
-        /* ========== ENHANCED MOBILE RESPONSIVENESS ========== */
-        
-        /* Mobile Header Improvements */
+/* ========== ENHANCED MOBILE RESPONSIVENESS ========== */
+/* Mobile Header Improvements */
         @media (max-width: 768px) {
             header {
                 top: 10px;
@@ -919,124 +791,100 @@
                 padding: 8px 15px;
                 border-radius: 50px;
             }
-
-            .logo {
+.logo {
                 font-size: 16px;
             }
-
-            .logo-img {
+.logo-img {
                 height: 32px !important;
             }
-
-            .btn-main {
+.btn-main {
                 padding: 10px 20px;
                 font-size: 12px;
             }
-
-            nav.d-none.d-md-block {
+nav.d-none.d-md-block {
                 display: none !important;
             }
         }
-
-        /* Mobile Hero Section */
+/* Mobile Hero Section */
         @media (max-width: 768px) {
             .hero-section {
                 padding: 100px 20px 60px !important;
             }
-
-            .hero-section h1 {
+.hero-section h1 {
                 font-size: 28px !important;
                 line-height: 1.2 !important;
             }
-
-            .hero-section p {
+.hero-section p {
                 font-size: 14px !important;
             }
-
-            .hero-tag {
+.hero-tag {
                 font-size: 10px !important;
                 padding: 5px 12px !important;
             }
         }
-
-        /* Mobile Countries Section */
+/* Mobile Countries Section */
         @media (max-width: 768px) {
             .region-card {
                 padding: 15px !important;
             }
-
-            .region-card h5 {
+.region-card h5 {
                 font-size: 14px !important;
                 margin-bottom: 10px !important;
             }
-
-            .region-card ul li {
+.region-card ul li {
                 padding: 6px 0 !important;
                 font-size: 13px !important;
             }
-
-            .countries-coverage h2 {
+.countries-coverage h2 {
                 font-size: 1.8rem !important;
             }
-
-            .countries-coverage p {
+.countries-coverage p {
                 font-size: 0.95rem !important;
             }
         }
-
-        /* Mobile Map Section */
+/* Mobile Map Section */
         @media (max-width: 768px) {
             .map-b2b-card {
                 border-radius: 20px;
                 overflow: hidden;
             }
-
-            .col-lg-5 {
+.col-lg-5 {
                 padding: 20px !important;
             }
-
-            .col-lg-7 {
+.col-lg-7 {
                 padding: 0 !important;
             }
-
-            .map-visual {
+.map-visual {
                 min-height: 250px !important;
             }
-
-            .stat-box {
+.stat-box {
                 padding: 15px !important;
             }
-
-            .stat-box h3 {
+.stat-box h3 {
                 font-size: 1.4rem !important;
             }
-
-            .stat-box small {
+.stat-box small {
                 font-size: 0.65rem !important;
             }
         }
-
-        /* Mobile Bento Grid */
+/* Mobile Bento Grid */
         @media (max-width: 768px) {
             .bento-grid {
                 grid-template-columns: 1fr !important;
                 grid-auto-rows: auto !important;
                 gap: 15px !important;
             }
-
-            .bento-card {
+.bento-card {
                 padding: 20px !important;
                 min-height: 200px !important;
             }
-
-            .bento-card.tall,
+.bento-card.tall,
             .bento-card.wide {
                 grid-row: auto !important;
                 grid-column: auto !important;
             }
         }
-
-        /* Mobile Forms & Inputs */
+/* Mobile Forms & Inputs */
         @media (max-width: 768px) {
             .form-control,
             .form-select,
@@ -1047,197 +895,158 @@
                 padding: 12px !important;
                 border-radius: 8px !important;
             }
-
-            .form-label {
+.form-label {
                 font-size: 13px !important;
                 margin-bottom: 6px !important;
             }
         }
-
-        /* Mobile Footer */
+/* Mobile Footer */
         @media (max-width: 768px) {
             footer {
                 padding: 30px 15px !important;
                 font-size: 12px !important;
             }
-
-            footer .row {
+footer .row {
                 flex-direction: column !important;
             }
-
-            footer .col-md-3,
+footer .col-md-3,
             footer .col-md-4,
             footer .col-md-6 {
                 margin-bottom: 20px !important;
                 text-align: center !important;
             }
         }
-
-        /* Extra Small Devices (< 480px) */
+/* Extra Small Devices (< 480px) */
         @media (max-width: 480px) {
             header {
                 top: 8px;
                 width: 96%;
                 padding: 6px 12px;
             }
-
-            .logo {
+.logo {
                 font-size: 14px;
             }
-
-            .logo-img {
+.logo-img {
                 height: 28px !important;
             }
-
-            .hero-section {
+.hero-section {
                 padding: 80px 15px 40px !important;
             }
-
-            .hero-section h1 {
+.hero-section h1 {
                 font-size: 24px !important;
             }
-
-            .btn-main {
+.btn-main {
                 padding: 8px 16px;
                 font-size: 11px;
                 width: 100%;
             }
-
-            .map-title {
+.map-title {
                 font-size: 1.5rem !important;
             }
-
-            .map-visual {
+.map-visual {
                 min-height: 200px !important;
             }
-
-            .region-card {
+.region-card {
                 padding: 12px !important;
             }
-
-            .region-card h5 {
+.region-card h5 {
                 font-size: 12px !important;
             }
-
-            .region-card ul li {
+.region-card ul li {
                 font-size: 12px !important;
                 padding: 5px 0 !important;
             }
-
-            .bento-card {
+.bento-card {
                 padding: 15px !important;
             }
-
-            .bento-card h3 {
+.bento-card h3 {
                 font-size: 16px !important;
             }
-
-            .bento-card p {
+.bento-card p {
                 font-size: 12px !important;
             }
-
-            .stat-box {
+.stat-box {
                 padding: 12px !important;
             }
-
-            .stat-box h3 {
+.stat-box h3 {
                 font-size: 1.2rem !important;
             }
         }
-
-        /* Mobile Navigation Menu Improvements */
+/* Mobile Navigation Menu Improvements */
         @media (max-width: 768px) {
             .mobile-menu {
                 width: 85vw;
                 max-width: 300px;
             }
-
-            .mobile-menu ul li {
+.mobile-menu ul li {
                 margin-bottom: 12px;
             }
-
-            .mobile-menu ul li a {
+.mobile-menu ul li a {
                 font-size: 16px;
                 padding: 10px 12px;
             }
-
-            .mobile-dropdown-toggle {
+.mobile-dropdown-toggle {
                 font-size: 16px;
                 padding: 10px 12px;
             }
-
-            .mobile-submenu li a {
+.mobile-submenu li a {
                 font-size: 14px;
                 padding: 8px 12px;
             }
-
-            .close-menu {
+.close-menu {
                 font-size: 28px;
                 top: 15px;
                 right: 15px;
             }
-
-            .mobile-nav-toggle {
+.mobile-nav-toggle {
                 font-size: 24px;
                 right: 15px;
                 top: 18px;
             }
         }
-
-        /* Landscape Mobile */
+/* Landscape Mobile */
         @media (max-width: 768px) and (orientation: landscape) {
             header {
                 top: 5px;
                 padding: 5px 15px;
             }
-
-            .hero-section {
+.hero-section {
                 padding: 60px 20px 30px !important;
             }
-
-            .hero-section h1 {
+.hero-section h1 {
                 font-size: 22px !important;
             }
-
-            .mobile-menu {
+.mobile-menu {
                 height: 100vh;
                 overflow-y: auto;
             }
         }
-
-        /* Tablet Specific (768px - 1024px) */
+/* Tablet Specific (768px - 1024px) */
         @media (min-width: 769px) and (max-width: 1024px) {
             header {
                 width: 92%;
                 padding: 10px 25px;
             }
-
-            .logo {
+.logo {
                 font-size: 18px;
             }
-
-            nav ul {
+nav ul {
                 gap: 15px;
             }
-
-            nav a {
+nav a {
                 font-size: 13px;
             }
-
-            .hero-section h1 {
+.hero-section h1 {
                 font-size: 40px !important;
             }
-
-            .map-title {
+.map-title {
                 font-size: 2rem !important;
             }
-
-            .bento-grid {
+.bento-grid {
                 grid-template-columns: repeat(2, 1fr) !important;
             }
         }
-
-        /* Ensure touch targets are at least 44x44px */
+/* Ensure touch targets are at least 44x44px */
         @media (hover: none) and (pointer: coarse) {
             a, button, .btn, .card, .mobile-menu ul li a {
                 min-height: 44px !important;
@@ -1245,39 +1054,31 @@
                 display: flex !important;
                 align-items: center !important;
             }
-
-            input, textarea, select {
+input, textarea, select {
                 font-size: 16px !important;
                 padding: 12px !important;
             }
         }
-
-        /* Prevent layout shift on scroll */
+/* Prevent layout shift on scroll */
         html {
             scroll-behavior: smooth;
         }
-
-        /* Improve readability on mobile */
+/* Improve readability on mobile */
         @media (max-width: 768px) {
             body {
                 line-height: 1.6;
             }
-
-            p {
+p {
                 word-break: break-word;
             }
-
-            h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
                 word-break: break-word;
             }
         }
     </style>
-
 </head>
-
 <body>
-
-        <header>
+<header>
         <!-- Mobile Navigation -->
         <button class="mobile-nav-toggle" onclick="openMobileMenu()" aria-label="Open menu">&#9776;</button>
         <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
@@ -1302,8 +1103,7 @@
                                 <li><a href="Qatar.html">Qatar</a></li>
                                 <li><a href="oman.html">Oman</a></li>
                                 <li><a href="bahrain.html">Bahrain</a></li>
-                                <li><a href="egypt.html">Egypt</a></li>
-                            </ul>
+</ul>
                         </li>
                         <li>
                             <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('asiaMenu', this)">
@@ -1324,7 +1124,7 @@
                                 <li><a href="malaysia.html">Malaysia</a></li>
                                 <li><a href="australia.html">Australia</a></li>
                                 <li><a href="indonesia.html">Indonesia</a></li>
-                                <li><a href="viethnam.html">Vietnam</a></li>
+                                <li><a href="vietnam.html">Vietnam</a></li>
                             </ul>
                         </li>
                         <li>
@@ -1335,6 +1135,7 @@
                                 <li><a href="kenya.html">Kenya</a></li>
                                 <li><a href="ghana.html">Ghana</a></li>
                                 <li><a href="botswana.html">Botswana</a></li>
+                                <li><a href="egypt.html">Egypt</a></li>
                             </ul>
                         </li>
                         <li>
@@ -1372,8 +1173,7 @@
                                 <li><a class="dropdown-item" href="Qatar.html">Qatar</a></li>
                                 <li><a class="dropdown-item" href="oman.html">Oman</a></li>
                                 <li><a class="dropdown-item" href="bahrain.html">Bahrain</a></li>
-                                <li><a class="dropdown-item" href="egypt.html">Egypt</a></li>
-                            </ul>
+</ul>
                         </li>
                         <!-- Asia -->
                         <li class="dropdown-submenu">
@@ -1392,7 +1192,7 @@
                                 <li><a class="dropdown-item" href="malaysia.html">Malaysia</a></li>
                                 <li><a class="dropdown-item" href="australia.html">Australia</a></li>
                                 <li><a class="dropdown-item" href="indonesia.html">Indonesia</a></li>
-                                <li><a class="dropdown-item" href="viethnam.html">Vietnam</a></li>
+                                <li><a class="dropdown-item" href="vietnam.html">Vietnam</a></li>
                             </ul>
                         </li>
                         <!-- Africa -->
@@ -1400,6 +1200,7 @@
                             <a class="dropdown-item dropdown-toggle" href="#">Africa</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="kenya.html">Kenya</a></li>
+                                <li><a class="dropdown-item" href="egypt.html">Egypt</a></li>
                                 <li><a class="dropdown-item" href="ghana.html">Ghana</a></li>
                                 <li><a class="dropdown-item" href="botswana.html">Botswana</a></li>
                             </ul>
@@ -1420,10 +1221,8 @@
         </nav>
         <a href="mailto:md@hexatp.com" class="btn-main py-2 px-4 fs-6">Get Started</a>
     </header>
-
-    <section class="hero-section">
-
-        <div class="hero-tag">Expert-Led. Deadline-Driven. Audit-Ready.</div>
+<section class="hero-section">
+<div class="hero-tag">Expert-Led. Deadline-Driven. Audit-Ready.</div>
         <h1>Your Co-Sourced <span style="color:var(--accent)">Transfer Pricing Team</span> <br>for Global Client Delivery</h1>
         <p>HexaTP helps firms and tax teams deliver defensible transfer pricing work across jurisdictions.</p>
         <div class="d-flex justify-content-center gap-3 mt-4">
@@ -1431,8 +1230,7 @@
             <a href="solution.html" class="btn-main"
                 style="background:transparent; color:var(--text-main); border:1px solid var(--accent);">View Transfer Pricing Solutions</a>
         </div>
-
-        <div class="container mt-5">
+<div class="container mt-5">
             <div class="row g-4 hexa-container">
                 <div class="col-6 col-md-3">
                     <div class="hexa-card">
@@ -1461,8 +1259,7 @@
             </div>
         </div>
     </section>
-
-    <div class="stats-strip">
+<div class="stats-strip">
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-3 stat-item">
@@ -1484,8 +1281,7 @@
             </div>
         </div>
     </div>
-
-    <section class="global-map-section py-5">
+<section class="global-map-section py-5">
         <div class="container">
             <div class="map-b2b-card">
                 <div class="row align-items-center">
@@ -1496,8 +1292,7 @@
                             HexaTP provides comprehensive Transfer Pricing solutions across 50+ jurisdictions. 
                             Our global intelligence platform ensures cross-border compliance and strategic tax optimization for multinational enterprises.
                         </p>
-                        
-                        <div class="row g-3 mt-4">
+<div class="row g-3 mt-4">
                             <div class="col-4">
                                 <div class="stat-box text-center">
                                     <h3 class="fw-bold mb-0">50+</h3>
@@ -1528,8 +1323,7 @@
             </div>
         </div>
     </section>
-
-    <style>
+<style>
         .map-b2b-card {
             background: var(--bg-subtle);
             border: 1px solid var(--glass-border);
@@ -1538,8 +1332,7 @@
             backdrop-filter: blur(15px);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
-
-        .badge-b2b {
+.badge-b2b {
             background: rgba(245, 196, 0, 0.1);
             color: var(--text-main);
             padding: 8px 20px;
@@ -1551,54 +1344,46 @@
             border: 1px solid rgba(245, 196, 0, 0.2);
             display: inline-block;
         }
-
-        .map-title {
+.map-title {
             font-weight: 800;
             font-size: 3rem;
             line-height: 1;
             letter-spacing: -1.5px;
             color: #0f172a;
         }
-
-        .text-accent {
+.text-accent {
             color: var(--text-main);
         }
-
-        .map-desc {
+.map-desc {
             font-size: 1.05rem;
             line-height: 1.7;
             color: var(--text-slate);
         }
-
-        .stat-box {
+.stat-box {
             background: #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             border: 1px solid var(--glass-border);
             padding: 20px;
             border-radius: 15px;
             transition: 0.3s;
         }
-
-        .stat-box:hover {
+.stat-box:hover {
             background: #f8fafc;
             border-color: var(--text-main);
             transform: translateY(-5px);
         }
-
-        .stat-box h3 {
+.stat-box h3 {
             color: var(--text-main);
             font-size: 1.8rem;
             margin-bottom: 5px;
         }
-
-        .stat-box small {
+.stat-box small {
             color: #0f172a;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-weight: 600;
             font-size: 0.7rem;
         }
-
-        .map-visual {
+.map-visual {
             position: relative;
             height: 100%;
             min-height: 400px;
@@ -1607,20 +1392,17 @@
             justify-content: center;
             background: radial-gradient(circle at center, rgba(245, 196, 0, 0.05) 0%, transparent 70%);
         }
-
-        .map-visual img {
+.map-visual img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             filter: brightness(1.1) contrast(1.1);
             transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
-        .map-visual:hover img {
+.map-visual:hover img {
             transform: scale(1.05);
         }
-
-        .map-overlay-glow {
+.map-overlay-glow {
             position: absolute;
             top: 0;
             left: 0;
@@ -1629,13 +1411,11 @@
             background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, transparent 30%);
             pointer-events: none;
         }
-
-        @media (max-width: 992px) {
+@media (max-width: 992px) {
             .map-title {
                 font-size: 2.2rem;
             }
-
-            .col-lg-5 {
+.col-lg-5 {
                 padding: 40px !important;
             }
             .map-visual {
@@ -1643,10 +1423,8 @@
             }
         }
     </style>
-
-    </style>
-
-    <section class="who-we-are py-5">
+</style>
+<section class="who-we-are py-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
@@ -1654,8 +1432,7 @@
                     <h2 class="display-5 fw-bold mb-4">A Specialist <span style="color:var(--accent)">Transfer Pricing Delivery Partner</span> for Firms and Tax Teams</h2>
                     <p class="mb-3 text" style="line-height: 1.8;">HexaTP supports CA Firms, Law Firms, Advisory Partners and Multinational Tax Teams with Transfer Pricing Documentation, Benchmarking, TP Policy Support and Audit-ready reporting.</p>
                     <p class="mb-5 text" style="line-height: 1.8;">Our multi-disciplinary team includes lawyers, Economists, CAs, Cost Accountants, CPAs, MBAs and Senior TP Professionals, combining legal, accounting, cost, economic and business insight to deliver practical, defensible and audit-ready TP support.</p>
-
-                    <div class="row g-4 mb-5">
+<div class="row g-4 mb-5">
                         <div class="col-6 d-flex align-items-center">
                             <div class="icon-hex me-3">
                                 <i class="bi bi-lightbulb text-warning"></i>
@@ -1668,26 +1445,22 @@
                             </div>
                             <h6 class="fw-bold m-0" style="color:var(--text-main);">Client Centric</h6>
                         </div>
-
-                        <div class="col-6 d-flex align-items-center">
+<div class="col-6 d-flex align-items-center">
                             <div class="icon-hex me-3">
                                 <i class="bi bi-patch-check text-warning"></i>
                             </div>
                             <h6 class="fw-bold m-0" style="color:var(--text-main);">Quality</h6>
                         </div>
-
-                        <div class="col-6 d-flex align-items-center">
+<div class="col-6 d-flex align-items-center">
                             <div class="icon-hex me-3">
                                 <i class="bi bi-speedometer2 text-warning"></i>
                             </div>
                             <h6 class="fw-bold m-0" style="color:var(--text-main);">Efficiency</h6>
                         </div>
                     </div>
-
-                    <a href="aboutus.html" class="btn-main py-2 px-4 fs-6">Step Inside</a>
+<a href="aboutus.html" class="btn-main py-2 px-4 fs-6">Step Inside</a>
                 </div>
-
-                <div class="col-lg-6">
+<div class="col-lg-6">
                     <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1024&q=80" alt="Cityscape"
                         class="img-fluid rounded shadow-lg"
                         style="width: 100%; max-width: 450px; height: 280px; object-fit: cover; border: 1px solid var(--glass-border);">
@@ -1695,25 +1468,19 @@
             </div>
         </div>
     </section>
-
-
-
-    <section class="bento-section">
+<section class="bento-section">
         <div class="text-center mb-5">
             <p class="text-uppercase fw-bold small mb-2" style="color: #0f172a;">What We Can Do</p>
             <h2 class="display-5 fw-bold">Improve Your<span style="color:var(--accent)"> Experience With Us</span></h2>
-
-        </div>
-
-        <div class="bento-grid">
+</div>
+<div class="bento-grid">
             <div class="bento-card wide">
                 <i class="bi bi-diagram-3"></i>
                 <h3>Transfer Pricing Documentation Solutions</h3>
                 <p>Transfer Pricing compliance requirements by delivering meticulously prepared Documentation as per
                     Local TP Regulations and global standards.</p>
             </div>
-
-            <div class="bento-card tall"
+<div class="bento-card tall"
                 style="background: linear-gradient(to bottom, rgba(245, 196, 0, 0.1), transparent);">
                 <i class="bi bi-shield-check"></i>
                 <h3>Risk Mitigation</h3>
@@ -1725,25 +1492,21 @@
                     <li><i class="bi bi-check2 text-warning me-2"></i> Policy Tuning</li>
                 </ul>
             </div>
-
-            <div class="bento-card">
+<div class="bento-card">
                 <i class="bi bi-bank"></i>
                 <h3>Proprietary Database</h3>
-                <p>Enriched with our proprietary database â€œHexanomyâ€ which encompasses financial data of 100,000 plus
+                <p>Enriched with our proprietary database “Hexanomy” which encompasses financial data of 100,000 plus
                     companies.
-
-                    We also have access to various public financial databases, industry and trade directories which
+We also have access to various public financial databases, industry and trade directories which
                     assist us to render comprehensive TP analysis</p>
             </div>
-
-            <div class="bento-card">
+<div class="bento-card">
                 <i class="bi bi-globe-americas"></i>
                 <h3>Advisory & Litigation Support Solutions</h3>
                 <p>We help design and implement Global TP Policy / Review Agreements for Multinational Corporations. We
                     also provide TP litigation support services.</p>
             </div>
-
-            <div class="bento-card wide">
+<div class="bento-card wide">
                 <i class="bi bi-briefcase"></i>
                 <h3>TP Due Diligence / Health Check Services</h3>
                 <p>We assist in identifying gaps by providing health check up from Legal, Corporate and TP documentation
@@ -1751,8 +1514,7 @@
             </div>
         </div>
     </section>
-
-    <section class="tech-expertise-section py-5">
+<section class="tech-expertise-section py-5">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
@@ -1761,23 +1523,22 @@
                     <p class="lead mb-5" style="color: var(--text-slate);">Our proprietary Knowledge Engineering platform combines
                         artificial intelligence, advanced analytics, and decades of TP expertise to deliver insights
                         that matter.</p>
-
-                    <div class="row g-4">
+<div class="row g-4">
                         <div class="col-md-6">
                             <div class="feature-item mb-4">
                                 <div class="icon-amber mb-2"><i class="bi bi-search text-warning"></i></div>
                                 <h5 class="text-dark fw-bold">Intelligent Data Analysis</h5>
                                 <ul class="list-unstyled small-text">
-                                    <li>â€¢ Automated comparability analysis</li>
-                                    <li>â€¢ Real-time benchmarking updates</li>
+                                    <li>• Automated comparability analysis</li>
+                                    <li>• Real-time benchmarking updates</li>
                                 </ul>
                             </div>
                             <div class="feature-item">
                                 <div class="icon-amber mb-2"> <i class="bi bi-bar-chart-line text-warning"></i></div>
                                 <h5 class="text-dark fw-bold">Comprehensive Databases</h5>
                                 <ul class="list-unstyled small-text">
-                                    <li>â€¢ Access to 500,000+ comparables</li>
-                                    <li>â€¢ Financial data from 50+ countries</li>
+                                    <li>• Access to 500,000+ comparables</li>
+                                    <li>• Financial data from 50+ countries</li>
                                 </ul>
                             </div>
                         </div>
@@ -1786,16 +1547,16 @@
                                 <div class="icon-amber mb-2"> <i class="bi bi-clock-history text-warning"></i></div>
                                 <h5 class="text-dark fw-bold">Efficiency & Accuracy</h5>
                                 <ul class="list-unstyled small-text">
-                                    <li>â€¢ 50% faster documentation preparation</li>
-                                    <li>â€¢ 99.9% data accuracy</li>
+                                    <li>• 50% faster documentation preparation</li>
+                                    <li>• 99.9% data accuracy</li>
                                 </ul>
                             </div>
                             <div class="feature-item">
                                 <div class="icon-amber mb-2"><i class="bi bi-shield-lock text-warning"></i></div>
                                 <h5 class="text-dark fw-bold">Security & Compliance</h5>
                                 <ul class="list-unstyled small-text">
-                                    <li>â€¢ Bank-grade encryption</li>
-                                    <li>â€¢ GDPR compliant</li>
+                                    <li>• Bank-grade encryption</li>
+                                    <li>• GDPR compliant</li>
                                 </ul>
                             </div>
                         </div>
@@ -1820,8 +1581,7 @@
             <a href="contact.html" class="btn btn-accent mt-3">Contact Experts</a>
         </div>
     </section>
-
-    <section class="contact-footer">
+<section class="contact-footer">
         <span class="text-warning text-uppercase fw-bold letter-spacing-2">Secure Your Future</span>
         <h2 class="mt-3">Ready for a Professional Consultation?</h2>
         <a href="mailto:md@hexatp.com" class="btn-main px-5 py-3 fs-5 mt-4">md@hexatp.com</a>
@@ -1830,13 +1590,10 @@
     </section>
     <footer>
         <img src="logo-hexatp.jpeg" alt="HexaTP Logo" class="logo-img" style="height: 35px !important; max-height: 35px !important; width: auto !important; display: block; margin: 0 auto 8px auto; opacity: 0.9;"><br>
-        Â© 2026 HexaTP â€“ Transfer Pricing Intelligence Platform
+        © 2026 HexaTP – Transfer Pricing Intelligence Platform
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    
-
-    <script>
+<script>
         function openMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             const overlay = document.getElementById('mobileOverlay');
@@ -1868,5 +1625,5 @@
         });
     </script>
 </body>
-
 </html>
+

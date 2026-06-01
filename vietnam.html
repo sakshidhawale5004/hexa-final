@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -8,28 +8,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
+<style>
         :root {
             --bg-light: #ffffff;
             --bg-subtle: #f9fafb;
-            
-            --accent: #f5c400;
+--accent: #f5c400;
             --accent-glow: rgba(245, 196, 0, 0.2);
             --card-bg: #ffffff;
             --glass-border: rgba(0, 0, 0, 0.08);
             --text-main: #0f172a;
             --text-slate: #64748b;
         }
-
-        body {
+body {
             background-color: var(--bg-light);
             color: var(--text-main);
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
         }
-
-        header {
+header {
             position: fixed;
             top: 20px;
             left: 50%;
@@ -46,13 +42,10 @@
             justify-content: space-between;
             align-items: center;
         }
-
-        .logo { font-weight: 800; font-size: 20px; text-transform: uppercase; }
+.logo { font-weight: 800; font-size: 20px; text-transform: uppercase; }
         .logo span { color: var(--accent); }
-
-        .logo-img { height: 38px !important; padding: 4px 0; width:  auto !important; display: block; object-fit: contain; }
-
-        /* Professional Text Logo */
+.logo-img { height: 38px !important; padding: 4px 0; width:  auto !important; display: block; object-fit: contain; }
+/* Professional Text Logo */
         .logo-text-wrapper {
             font-weight: 800;
             font-size: 24px;
@@ -61,22 +54,18 @@
             align-items: center;
             font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
         }
-
-        .logo-hexa {
+.logo-hexa {
             color: var(--text-main);
         }
-
-        .logo-tp {
+.logo-tp {
             color: var(--accent);
             margin-left: 2px;
         }
-
-        nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
+nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
         nav a { text-decoration: none; color: #444; font-size: 14px; font-weight: 500; transition: 0.3s; font-family: 'Poppins', sans-serif; }
         nav a:hover { color: var(--accent); }
         .nav-link.dropdown-toggle { font-family: 'Poppins', sans-serif !important; font-weight: 600 !important; font-size: 14px !important; color: #444 !important; }
-
-        .btn-main {
+.btn-main {
             background: var(--accent);
             color: #000;
             padding: 10px 25px;
@@ -87,10 +76,8 @@
             transition: 0.3s;
             display: inline-block;
         }
-
-        .btn-main:hover { transform: translateY(-3px); background: #fff; color: #000; }
-
-       .hero {
+.btn-main:hover { transform: translateY(-3px); background: #fff; color: #000; }
+.hero {
             padding: 160px 0 100px;
             /* Added background image with overlay */
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), 
@@ -99,11 +86,9 @@
             background-position: center;
             background-attachment: fixed; /* Parallax effect */
         }
-
-        .hero h1 { font-weight: 700; font-size: 48px; }
+.hero h1 { font-weight: 700; font-size: 48px; }
         .hero p { color: var(--text-slate); max-width: 600px; }
-
-        .btn-accent {
+.btn-accent {
             background: var(--accent);
             color: black;
             font-weight: 600;
@@ -112,10 +97,8 @@
             text-decoration: none;
             display: inline-block;
         }
-
-        .btn-accent:hover { box-shadow: 0 0 20px var(--accent-glow); }
-
-        .glass-card {
+.btn-accent:hover { box-shadow: 0 0 20px var(--accent-glow); }
+.glass-card {
             background: var(--card-bg);
             border: 1px solid var(--glass-border);
             border-radius: 12px;
@@ -124,33 +107,25 @@
             transition: 0.3s;
             cursor: pointer;
         }
-
-        .glass-card:hover { transform: translateY(-6px); border-color: var(--accent); }
-
-        .section-title { font-weight: 700; font-size: 34px; margin-bottom: 40px; }
-
-        .reg-box {
+.glass-card:hover { transform: translateY(-6px); border-color: var(--accent); }
+.section-title { font-weight: 700; font-size: 34px; margin-bottom: 40px; }
+.reg-box {
             padding: 25px;
             border-left: 3px solid var(--accent);
             background: var(--card-bg);
             margin-bottom: 20px;
             height: 100%;
         }
-
-        .container h5 { color: var(--accent); margin-bottom: 15px; }
-
-        .arrow { font-size: 18px; color: var(--accent); display: block; margin-bottom: 10px; transition: 0.3s; }
+.container h5 { color: var(--accent); margin-bottom: 15px; }
+.arrow { font-size: 18px; color: var(--accent); display: block; margin-bottom: 10px; transition: 0.3s; }
         .rotate { transform: rotate(90deg); }
-
-        .content { display: none; margin-top: 15px; line-height: 1.7; color: var(--text-slate); font-size: 0.95rem; }
-
-        .cta {
+.content { display: none; margin-top: 15px; line-height: 1.7; color: var(--text-slate); font-size: 0.95rem; }
+.cta {
             padding: 80px 0;
             text-align: center;
             background: var(--bg-subtle);
         }
-
-        .contact-footer {
+.contact-footer {
             padding: 100px 5%;
             text-align: center;
             background: linear-gradient(0deg, #fff9e6 0%, var(--bg-light) 100%);
@@ -165,18 +140,15 @@
     transition: 0.3s;
     height: 100%;
 }
-
 .team-card:hover {
     border-color: var(--accent);
     transform: translateY(-5px);
 }
-
 .team-img-wrapper {
     position: relative;
     display: inline-block;
     margin-bottom: 20px;
 }
-
 /* Gold frame effect from the image */
 .team-img-wrapper::before {
     content: '';
@@ -185,10 +157,8 @@
     left: 5px;
     right: -5px;
     bottom: 5px;
-   
-    z-index: 0;
+z-index: 0;
 }
-
 .team-img-wrapper img {
     width: 150px;
     height: 150px;
@@ -197,19 +167,16 @@
     z-index: 1;
     border: 1px solid var(--glass-border);
 }
-
 .team-card h5 {
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 5px;
 }
-
 .team-card .role {
     color: var(--text-slate);
     font-size: 0.85rem;
     margin-bottom: 15px;
 }
-
 .learn-more-btn {
     color: var(--text-main);
     text-decoration: none;
@@ -221,7 +188,6 @@
     border-top: 1px solid var(--glass-border);
     padding-top: 15px;
 }
-
 .learn-more-btn:hover {
     color: var(--accent);
 }
@@ -305,78 +271,63 @@
         .mobile-menu::-webkit-scrollbar-thumb:hover { background: rgba(245,196,0,0.5); }
         /* ========== END HEADER STYLES ========== */
         </style>
-
 <style>
 </style>
-
-
 <style>
 /* ========== COMPREHENSIVE MOBILE RESPONSIVE STYLES ========== */
-
 /* Base Responsive Typography */
 @media (max-width: 768px) {
     body {
         font-size: 16px;
         line-height: 1.6;
     }
-    
-    h1 {
+h1 {
         font-size: 32px !important;
         line-height: 1.2 !important;
     }
-    
-    h2 {
+h2 {
         font-size: 28px !important;
         line-height: 1.3 !important;
     }
-    
-    h3 {
+h3 {
         font-size: 24px !important;
         line-height: 1.4 !important;
     }
-    
-    h4 {
+h4 {
         font-size: 20px !important;
     }
-    
-    p {
+p {
         font-size: 16px !important;
         line-height: 1.6 !important;
     }
-    
-    /* Hero Section */
+/* Hero Section */
     .hero-section,
     .hero,
     .hero-split {
         padding: 120px 20px 60px !important;
         text-align: center !important;
     }
-    
-    .hero-section h1,
+.hero-section h1,
     .hero h1 {
         font-size: 36px !important;
         margin-bottom: 20px !important;
     }
-    
-    .hero-section p,
+.hero-section p,
     .hero p {
         font-size: 16px !important;
         max-width: 100% !important;
         padding: 0 10px !important;
     }
-    
-    /* Header/Navigation */
+/* Header/Navigation */
     header {
         width: 95% !important;
         padding: 10px 20px !important;
         top: 10px !important;
     }
-    
-    .logo {
+.logo {
         font-size: 18px !important;
     }
-    
-    /* Buttons */
+/* Buttons */
     .btn-main,
     .btn-accent,
     .btn-glow,
@@ -386,8 +337,7 @@
         width: auto !important;
         display: inline-block !important;
     }
-    
-    /* Cards & Grid Layouts */
+/* Cards & Grid Layouts */
     .card,
     .service-card,
     .feature-card,
@@ -396,35 +346,29 @@
         margin-bottom: 20px !important;
         padding: 20px !important;
     }
-    
-    .grid,
+.grid,
     .bento-grid,
     .advisory-container,
     .section-wrapper {
         grid-template-columns: 1fr !important;
         gap: 20px !important;
     }
-    
-    /* Containers */
+/* Containers */
     .container {
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
-    
-    section {
+section {
         padding: 60px 20px !important;
     }
-    
-    /* Images */ img:not(.logo-img) { max-width: 100% !important; height: auto !important; }
-    
-    /* Tables */
+/* Images */ img:not(.logo-img) { max-width: 100% !important; height: auto !important; }
+/* Tables */
     table {
         display: block !important;
         overflow-x: auto !important;
         white-space: nowrap !important;
     }
-    
-    /* Forms */
+/* Forms */
     input,
     textarea,
     select {
@@ -432,133 +376,108 @@
         font-size: 16px !important;
         padding: 12px !important;
     }
-    
-    /* Modals */
+/* Modals */
     .modal-dialog {
         margin: 10px !important;
         max-width: calc(100% - 20px) !important;
     }
-    
-    .modal-content {
+.modal-content {
         border-radius: 12px !important;
     }
-    
-    /* Stats/Numbers */
+/* Stats/Numbers */
     .stat-number,
     .stats-card {
         font-size: 32px !important;
     }
-    
-    /* Columns */
+/* Columns */
     .row > [class*='col-'] {
         padding-left: 15px !important;
         padding-right: 15px !important;
     }
-    
-    /* Hide desktop-only elements */
+/* Hide desktop-only elements */
     .d-none.d-md-block:not(nav) {
         display: none !important;
     }
-    
-    /* Show mobile-only elements */
+/* Show mobile-only elements */
     .d-block.d-md-none {
         display: block !important;
     }
-    
-    /* Spacing */
+/* Spacing */
     .mb-5 {
         margin-bottom: 30px !important;
     }
-    
-    .mt-5 {
+.mt-5 {
         margin-top: 30px !important;
     }
-    
-    .py-5 {
+.py-5 {
         padding-top: 40px !important;
         padding-bottom: 40px !important;
     }
-    
-    /* Footer */
+/* Footer */
     footer {
         padding: 40px 20px !important;
         text-align: center !important;
     }
-    
-    footer .row {
+footer .row {
         flex-direction: column !important;
     }
-    
-    footer .col-md-3,
+footer .col-md-3,
     footer .col-md-4,
     footer .col-md-6 {
         margin-bottom: 30px !important;
         text-align: center !important;
     }
 }
-
 /* Tablet Responsive (768px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     .container {
         max-width: 720px !important;
     }
-    
-    h1 {
+h1 {
         font-size: 42px !important;
     }
-    
-    h2 {
+h2 {
         font-size: 36px !important;
     }
-    
-    .grid,
+.grid,
     .bento-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }
-
 /* Small Mobile (< 400px) */
 @media (max-width: 400px) {
     body {
         font-size: 14px;
     }
-    
-    h1 {
+h1 {
         font-size: 28px !important;
     }
-    
-    h2 {
+h2 {
         font-size: 24px !important;
     }
-    
-    .btn-main,
+.btn-main,
     .btn-accent {
         padding: 10px 20px !important;
         font-size: 13px !important;
     }
-    
-    header {
+header {
         padding: 8px 15px !important;
     }
-    
-    .logo {
+.logo {
         font-size: 16px !important;
     }
 }
-
 /* Landscape Mobile */
 @media (max-height: 500px) and (orientation: landscape) {
     .hero-section,
     .hero {
         padding: 80px 20px 40px !important;
     }
-    
-    .hero-section h1,
+.hero-section h1,
     .hero h1 {
         font-size: 32px !important;
     }
 }
-
 /* Touch-friendly improvements */
 @media (hover: none) and (pointer: coarse) {
     /* Touch devices */
@@ -569,29 +488,23 @@
         min-height: 44px !important;
         min-width: 44px !important;
     }
-    
-    input,
+input,
     textarea,
     select {
         font-size: 16px !important; /* Prevents zoom on iOS */
     }
 }
-
 /* Prevent horizontal scroll */
 body {
     overflow-x: hidden !important;
 }
-
 * {
     max-width: 100%;
 }
-
 /* Ensure images don't overflow */
 img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !important; }
 </style>
-
 </head>
-
 <body>
         <header>
         <!-- Mobile Navigation -->
@@ -618,8 +531,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <li><a href="Qatar.html">Qatar</a></li>
                                 <li><a href="oman.html">Oman</a></li>
                                 <li><a href="bahrain.html">Bahrain</a></li>
-                                <li><a href="egypt.html">Egypt</a></li>
-                            </ul>
+</ul>
                         </li>
                         <li>
                             <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('asiaMenu', this)">
@@ -640,7 +552,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <li><a href="malaysia.html">Malaysia</a></li>
                                 <li><a href="australia.html">Australia</a></li>
                                 <li><a href="indonesia.html">Indonesia</a></li>
-                                <li><a href="viethnam.html">Vietnam</a></li>
+                                <li><a href="vietnam.html">Vietnam</a></li>
                             </ul>
                         </li>
                         <li>
@@ -649,6 +561,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                             </div>
                             <ul class="mobile-submenu" id="africaMenu">
                                 <li><a href="botswana.html">Botswana</a></li>
+                                <li><a href="egypt.html">Egypt</a></li>
                                 <li><a href="ghana.html">Ghana</a></li>
                                 <li><a href="kenya.html">Kenya</a></li>
                             </ul>
@@ -688,8 +601,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <li><a class="dropdown-item" href="Qatar.html">Qatar</a></li>
                                 <li><a class="dropdown-item" href="oman.html">Oman</a></li>
                                 <li><a class="dropdown-item" href="bahrain.html">Bahrain</a></li>
-                                <li><a class="dropdown-item" href="egypt.html">Egypt</a></li>
-                            </ul>
+</ul>
                         </li>
                         <!-- Asia -->
                         <li class="dropdown-submenu">
@@ -708,7 +620,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <li><a class="dropdown-item" href="malaysia.html">Malaysia</a></li>
                                 <li><a class="dropdown-item" href="australia.html">Australia</a></li>
                                 <li><a class="dropdown-item" href="indonesia.html">Indonesia</a></li>
-                                <li><a class="dropdown-item" href="viethnam.html">Vietnam</a></li>
+                                <li><a class="dropdown-item" href="vietnam.html">Vietnam</a></li>
                             </ul>
                         </li>
                         <!-- Africa -->
@@ -716,6 +628,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                             <a class="dropdown-item dropdown-toggle" href="#">Africa</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="kenya.html">Kenya</a></li>
+                                <li><a class="dropdown-item" href="egypt.html">Egypt</a></li>
                                 <li><a class="dropdown-item" href="ghana.html">Ghana</a></li>
                                 <li><a class="dropdown-item" href="botswana.html">Botswana</a></li>
                             </ul>
@@ -736,8 +649,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
         </nav>
         <a href="mailto:md@hexatp.com" class="btn-main py-2 px-4 fs-6">Get Started</a>
     </header>
-
-    <section class="hero">
+<section class="hero">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -787,12 +699,10 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
     function openModal(memberName) {
     // Set the name in the modal title
     document.getElementById('teamMemberName').innerText = memberName;
-    
-    // Show the modal using Bootstrap's API
+// Show the modal using Bootstrap's API
     var myModal = new bootstrap.Modal(document.getElementById('learnMoreModal'));
     myModal.show();
 }
-
 // Optional: Handle form submission
 document.getElementById('inquiryForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -807,7 +717,6 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
     color: var(--text-main);
     box-shadow: 0 0 10px var(--accent-glow);
 }
-
 . {
     filter: invert(1) grayscale(100%) brightness(200%);
 }
@@ -829,8 +738,7 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
             </div>
         </div>
     </section>
-
-    <section class="py-5">
+<section class="py-5">
         <div class="container">
             <h2 class="section-title text-center">Core Pillars of Decree 132</h2>
             <div class="row g-4">
@@ -855,8 +763,7 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
             </div>
         </div>
     </section>
-
-    <section class="py-5">
+<section class="py-5">
         <div class="container">
             <h2 class="section-title text-center">Compliance Thresholds</h2>
             <div class="row g-4">
@@ -873,8 +780,7 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4">
+<div class="col-lg-4">
                     <div class="glass-card" onclick="toggleContent('content2', 'arrow2')">
                         <span class="arrow" id="arrow2">Simplified Safe Harbors</span>
                         <p style="color:var(--text-slate)">Exemptions for low-risk business profiles.</p>
@@ -888,8 +794,7 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4">
+<div class="col-lg-4">
                     <div class="glass-card" onclick="toggleContent('content3', 'arrow3')">
                         <span class="arrow" id="arrow3">CbC Reporting</span>
                         <p style="color:var(--text-slate)">Threshold for groups over VND 18,000 Billion.</p>
@@ -902,8 +807,7 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
             </div>
         </div>
     </section>
-
-    <section class="py-5">
+<section class="py-5">
         <div class="container">
             <h2 class="section-title text-center">Our Vietnam TP Services</h2>
             <div class="row g-4">
@@ -934,8 +838,7 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
             </div>
         </div>
     </section>
-
-    <section class="cta" id="consult">
+<section class="cta" id="consult">
         <div class="container">
             <h2>Secure Your Vietnam Tax Position</h2>
             <p style="color:var(--text-slate)">The GDT's "substance over form" approach requires robust defense. Ensure your Vietnam TP documentation is audit-ready.</p>
@@ -946,9 +849,7 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
     <div class="container">
         <p class="text-center mb-4" style="color: var(--text-slate);">For further information on transfer pricing in Vietnam, please contact:</p>
         <div class="row g-4 justify-content-center">
-            
-    
-            <div class="col-lg-3 col-md-6">
+<div class="col-lg-3 col-md-6">
                 <div class="team-card">
                     <div class="team-img-wrapper">
                         <img src="Gyan Prakash Srivastava new.jpg" alt="Gyan Prakash Srivastava">
@@ -1008,7 +909,6 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
         </div>
     </div>
 </div>
-
 <div class="modal fade" id="modalUditVN" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content" style="background: var(--bg-light); border: 1px solid var(--accent); border-radius: 20px; overflow: hidden;">
@@ -1045,16 +945,13 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
 <style>
         /* Modal Refinements */
 .modal-lg { max-width: 850px; }
-
 .modal-content {
     box-shadow: 0 0 30px rgba(0,0,0,0.5), 0 0 15px var(--accent-glow);
 }
-
 .modal-body {
     max-height: 85vh;
     overflow-y: auto;
 }
-
 /* Custom scrollbar for the modal bio */
 .modal-body::-webkit-scrollbar { width: 5px; }
 .modal-body::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
@@ -1065,19 +962,15 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
         <a href="mailto:md@hexatp.com" class="btn-main px-5 py-3 fs-5 mt-4">md@hexatp.com</a>
         <p class="mt-4 text-muted">Expert advisory for the complex Vietnamese regulatory environment.</p>
     </section>
-
-    <footer>
-         
-        <img src="logo-hexatp.jpeg" alt="HexaTP Logo" class="logo-img" style="height: 35px !important; max-height: 35px !important; width: auto !important; display: block; margin: 0 auto 8px auto; opacity: 0.9;"><br>
+<footer>
+<img src="logo-hexatp.jpeg" alt="HexaTP Logo" class="logo-img" style="height: 35px !important; max-height: 35px !important; width: auto !important; display: block; margin: 0 auto 8px auto; opacity: 0.9;"><br>
         2026 HexaTP  Transfer Pricing Intelligence Platform
     </footer>
-
-    <script>
+<script>
         function toggleContent(contentId, arrowId) {
             let content = document.getElementById(contentId);
             let arrow = document.getElementById(arrowId);
-
-            if (content.style.display === "block") {
+if (content.style.display === "block") {
                 content.style.display = "none";
                 arrow.classList.remove("rotate");
             } else {
@@ -1087,27 +980,15 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-
-
-    </div>
 </div>
-
-
-    </div>
 </div>
-
-
-    </div>
 </div>
-
-
-    </div>
 </div>
-
-    <script>
+</div>
+</div>
+</div>
+</div>
+<script>
         function openMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             const overlay = document.getElementById('mobileOverlay');

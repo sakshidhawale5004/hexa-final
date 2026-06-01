@@ -1,15 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us â€“ HexaTP</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+    <title>Contact Us – HexaTP</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-    <style>
+<style>
         :root {
             --bg-light: #ffffff;
             --bg-subtle: #f9fafb;
@@ -20,15 +18,13 @@
             --text-main: #0f172a;
             --text-slate: #64748b;
         }
-
-        body {
+body {
             background-color: var(--bg-light);
             color: var(--text-main);
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
         }
-
-        /* --- NAV (Consistent with About Us) --- */
+/* --- NAV (Consistent with About Us) --- */
         header {
             position: fixed;
             top: 20px;
@@ -46,13 +42,10 @@
             justify-content: space-between;
             align-items: center;
         }
-
-        .logo { font-weight: 800; font-size: 20px; text-transform: uppercase; }
+.logo { font-weight: 800; font-size: 20px; text-transform: uppercase; }
         .logo span { color: var(--accent); }
-
-        .logo-img { height: 38px !important; padding: 4px 0; width:  auto !important; display: block; object-fit: contain; }
-
-        /* Professional Text Logo */
+.logo-img { height: 38px !important; padding: 4px 0; width:  auto !important; display: block; object-fit: contain; }
+/* Professional Text Logo */
         .logo-text-wrapper {
             font-weight: 800;
             font-size: 24px;
@@ -61,22 +54,18 @@
             align-items: center;
             font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
         }
-
-        .logo-hexa {
+.logo-hexa {
             color: var(--text-main);
         }
-
-        .logo-tp {
+.logo-tp {
             color: var(--accent);
             margin-left: 2px;
         }
-
-        nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
+nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
         nav a { text-decoration: none; color: #444; font-size: 14px; font-weight: 500; transition: 0.3s; font-family: 'Poppins', sans-serif; }
         nav a:hover { color: var(--accent); }
         .nav-link.dropdown-toggle { font-family: 'Poppins', sans-serif !important; font-weight: 600 !important; font-size: 14px !important; color: #444 !important; }
-
-        .btn-main {
+.btn-main {
             background: var(--accent);
             color: #000;
             padding: 12px 30px;
@@ -87,10 +76,8 @@
             transition: 0.3s;
             display: inline-block;
         }
-
-        .btn-main:hover { transform: translateY(-3px); background: #fff; color: #000; }
-
-        /* --- Contact Hero Section --- */
+.btn-main:hover { transform: translateY(-3px); background: #fff; color: #000; }
+/* --- Contact Hero Section --- */
         .contact-hero {
             padding: 160px 0 60px;
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95)), 
@@ -99,8 +86,7 @@
             background-position: center;
             text-align: center;
         }
-
-        .hero-badge {
+.hero-badge {
             background: #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.02);
             color: var(--accent);
             border: 1px solid var(--glass-border);
@@ -113,8 +99,7 @@
             display: inline-block;
             margin-bottom: 20px;
         }
-
-        /* --- Glass Cards & Form --- */
+/* --- Glass Cards & Form --- */
         .glass-card {
             background: var(--card-bg);
             border: 1px solid var(--glass-border);
@@ -124,13 +109,11 @@
             height: 100%;
             transition: 0.4s;
         }
-
-        .glass-card:hover {
+.glass-card:hover {
             border-color: var(--accent);
             transform: translateY(-5px);
         }
-
-        .form-control {
+.form-control {
             background: #ffffff;
             border: 1px solid var(--glass-border);
             border-radius: 12px;
@@ -138,15 +121,13 @@
             padding: 15px;
             margin-bottom: 20px;
         }
-
-        .form-control:focus {
+.form-control:focus {
             background: rgba(255, 255, 255, 0.08);
             border-color: var(--accent);
             color: var(--text-main);
             box-shadow: none;
         }
-
-        .form-select {
+.form-select {
             background: #ffffff;
             border: 1px solid var(--glass-border);
             border-radius: 12px;
@@ -154,20 +135,17 @@
             padding: 15px;
             margin-bottom: 20px;
         }
-
-        .form-select:focus {
+.form-select:focus {
             background: rgba(255, 255, 255, 0.08);
             border-color: var(--accent);
             color: var(--text-main);
             box-shadow: none;
         }
-
-        .form-select option {
+.form-select option {
             background: #ffffff;
             color: var(--text-main);
         }
-
-        /* Calendar Styles */
+/* Calendar Styles */
         .calendar-section {
             background: #ffffff;
             border: 1px solid var(--glass-border);
@@ -175,21 +153,18 @@
             padding: 15px;
             margin-bottom: 20px;
         }
-
-        .calendar-header {
+.calendar-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
         }
-
-        .calendar-month {
+.calendar-month {
             font-weight: 600;
             color: var(--accent);
             font-size: 14px;
         }
-
-        .calendar-nav-btn {
+.calendar-nav-btn {
             background: transparent;
             border: 1px solid var(--glass-border);
             color: var(--accent);
@@ -199,28 +174,24 @@
             transition: 0.3s;
             font-weight: 600;
         }
-
-        .calendar-nav-btn:hover {
+.calendar-nav-btn:hover {
             background: rgba(245, 196, 0, 0.1);
             border-color: var(--accent);
         }
-
-        .calendar-grid {
+.calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 5px;
             margin-bottom: 15px;
         }
-
-        .calendar-day-header {
+.calendar-day-header {
             text-align: center;
             font-weight: 600;
             color: var(--accent);
             font-size: 12px;
             padding: 8px 0;
         }
-
-        .calendar-day {
+.calendar-day {
             aspect-ratio: 1;
             display: flex;
             align-items: center;
@@ -233,38 +204,32 @@
             font-size: 12px;
             font-weight: 500;
         }
-
-        .calendar-day:hover:not(.disabled):not(.other-month) {
+.calendar-day:hover:not(.disabled):not(.other-month) {
             background: rgba(245, 196, 0, 0.1);
             border-color: var(--accent);
         }
-
-        .calendar-day.selected {
+.calendar-day.selected {
             background: var(--accent);
             color: #000;
             border-color: var(--accent);
             font-weight: 600;
         }
-
-        .calendar-day.disabled {
+.calendar-day.disabled {
             opacity: 0.3;
             cursor: not-allowed;
         }
-
-        .calendar-day.other-month {
+.calendar-day.other-month {
             opacity: 0.2;
             cursor: default;
         }
-
-        /* Time Slots */
+/* Time Slots */
         .time-slots-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 8px;
             margin-bottom: 20px;
         }
-
-        .time-slot {
+.time-slot {
             padding: 12px;
             border: 1px solid var(--glass-border);
             border-radius: 8px;
@@ -275,26 +240,22 @@
             font-size: 13px;
             font-weight: 500;
         }
-
-        .time-slot:hover {
+.time-slot:hover {
             background: rgba(245, 196, 0, 0.1);
             border-color: var(--accent);
         }
-
-        .time-slot.selected {
+.time-slot.selected {
             background: var(--accent);
             color: #000;
             border-color: var(--accent);
             font-weight: 600;
         }
-
-        .contact-icon {
+.contact-icon {
             font-size: 2rem;
             color: var(--accent);
             margin-bottom: 15px;
         }
-
-        /* --- Dropdown Styles --- */
+/* --- Dropdown Styles --- */
         .dropdown-submenu { position: relative; }
         .dropdown-submenu .dropdown-menu {
             position: absolute;
@@ -305,22 +266,19 @@
         }
         .dropdown-submenu:hover > .dropdown-menu { display: block; }
         .dropdown-item:hover { background-color: var(--accent); color: #000 !important; }
-
-       .contact-footer {
+.contact-footer {
             padding: 100px 5%;
             text-align: center;
             background: linear-gradient(0deg, #fff9e6 0%, var(--bg-light) 100%);
         }
-
-        .form-tabs {
+.form-tabs {
             display: flex;
             gap: 10px;
             margin-bottom: 30px;
             border-bottom: 2px solid var(--glass-border);
             padding-bottom: 15px;
         }
-
-        .form-tab {
+.form-tab {
             padding: 10px 20px;
             background: transparent;
             border: none;
@@ -331,25 +289,20 @@
             border-bottom: 3px solid transparent;
             margin-bottom: -15px;
         }
-
-        .form-tab:hover {
+.form-tab:hover {
             color: var(--accent);
         }
-
-        .form-tab.active {
+.form-tab.active {
             color: var(--accent);
             border-bottom-color: var(--accent);
         }
-
-        .form-content {
+.form-content {
             display: none;
         }
-
-        .form-content.active {
+.form-content.active {
             display: block;
         }
-
-        .form-select {
+.form-select {
             background: #ffffff;
             border: 1px solid var(--glass-border);
             border-radius: 12px;
@@ -357,142 +310,111 @@
             padding: 15px;
             margin-bottom: 20px;
         }
-
-        .form-select:focus {
+.form-select:focus {
             background: rgba(255, 255, 255, 0.08);
             border-color: var(--accent);
             color: var(--text-main);
             box-shadow: none;
         }
-
-        .form-select option {
+.form-select option {
             background: #ffffff;
             color: var(--text-main);
         }
-
-        /* Mobile Responsive Styles */
+/* Mobile Responsive Styles */
         @media (max-width: 992px) {
             .bento-grid { grid-template-columns: repeat(2, 1fr); }
-            
-            header {
+header {
                 width: 95%;
                 padding: 12px 20px;
             }
-            
-            .logo { font-size: 18px; }
-            
-            nav ul { gap: 15px; }
+.logo { font-size: 18px; }
+nav ul { gap: 15px; }
             nav a { font-size: 12px; }
-            
-            .contact-hero {
+.contact-hero {
                 padding: 120px 0 40px;
             }
-            
-            .contact-hero h1 {
+.contact-hero h1 {
                 font-size: 2.5rem;
             }
-            
-            .glass-card {
+.glass-card {
                 padding: 30px;
             }
         }
-
-        @media (max-width: 768px) {
+@media (max-width: 768px) {
             .bento-grid { grid-template-columns: 1fr; }
-            
-            header {
+header {
                 top: 10px;
                 width: 95%;
                 padding: 10px 15px;
                 flex-wrap: wrap;
             }
-            
-            .logo { font-size: 16px; }
-            
-            nav {
+.logo { font-size: 16px; }
+nav {
                 display: none !important;
             }
-            
-            .btn-main {
+.btn-main {
                 padding: 10px 20px;
                 font-size: 12px;
             }
-            
-            .contact-hero {
+.contact-hero {
                 padding: 100px 0 30px;
             }
-            
-            .contact-hero h1 {
+.contact-hero h1 {
                 font-size: 1.8rem;
             }
-            
-            .contact-hero p {
+.contact-hero p {
                 font-size: 14px;
             }
-            
-            .glass-card {
+.glass-card {
                 padding: 20px;
                 border-radius: 16px;
             }
-            
-            .glass-card h3 {
+.glass-card h3 {
                 font-size: 1.3rem;
             }
-            
-            .form-control,
+.form-control,
             .form-select {
                 padding: 12px;
                 font-size: 14px;
                 margin-bottom: 15px;
             }
-            
-            .form-label {
+.form-label {
                 font-size: 13px;
                 margin-bottom: 8px;
             }
-            
-            .time-slots-grid {
+.time-slots-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 6px;
             }
-            
-            .time-slot {
+.time-slot {
                 padding: 10px;
                 font-size: 12px;
             }
-            
-            .calendar-day {
+.calendar-day {
                 font-size: 11px;
             }
-            
-            .calendar-day-header {
+.calendar-day-header {
                 font-size: 10px;
             }
-            
-            .contact-footer {
+.contact-footer {
                 padding: 60px 5%;
             }
-            
-            .contact-footer h2 {
+.contact-footer h2 {
                 font-size: 1.5rem;
             }
-            
-            .row {
+.row {
                 margin-left: 0;
                 margin-right: 0;
             }
-            
-            .col-lg-6 {
+.col-lg-6 {
                 padding: 10px;
             }
-            
-            .hero-badge {
+.hero-badge {
                 font-size: 0.75rem;
                 padding: 6px 15px;
             }
         }
-
-        @media (max-width: 576px) {
+@media (max-width: 576px) {
             header {
                 position: relative;
                 top: 0;
@@ -501,112 +423,89 @@
                 border-radius: 0;
                 margin-bottom: 20px;
             }
-            
-            .logo { font-size: 14px; }
-            
-            .contact-hero {
+.logo { font-size: 14px; }
+.contact-hero {
                 padding: 80px 0 20px;
                 margin-top: 60px;
             }
-            
-            .contact-hero h1 {
+.contact-hero h1 {
                 font-size: 1.5rem;
             }
-            
-            .glass-card {
+.glass-card {
                 padding: 15px;
                 border-radius: 12px;
             }
-            
-            .glass-card h3 {
+.glass-card h3 {
                 font-size: 1.1rem;
                 margin-bottom: 15px;
             }
-            
-            .form-control,
+.form-control,
             .form-select {
                 padding: 10px;
                 font-size: 13px;
                 margin-bottom: 12px;
             }
-            
-            .form-label {
+.form-label {
                 font-size: 12px;
                 margin-bottom: 6px;
             }
-            
-            .time-slots-grid {
+.time-slots-grid {
                 grid-template-columns: 1fr;
                 gap: 5px;
             }
-            
-            .time-slot {
+.time-slot {
                 padding: 8px;
                 font-size: 11px;
             }
-            
-            .calendar-grid {
+.calendar-grid {
                 gap: 3px;
             }
-            
-            .calendar-day {
+.calendar-day {
                 font-size: 10px;
                 padding: 2px;
             }
-            
-            .btn-main {
+.btn-main {
                 padding: 10px 15px;
                 font-size: 11px;
                 width: 100%;
             }
-            
-            .contact-footer {
+.contact-footer {
                 padding: 40px 5%;
             }
-            
-            .contact-footer h2 {
+.contact-footer h2 {
                 font-size: 1.2rem;
             }
-            
-            .contact-footer .btn-main {
+.contact-footer .btn-main {
                 padding: 10px 20px;
                 font-size: 12px;
             }
-            
-            h5 {
+h5 {
                 font-size: 0.95rem;
             }
-            
-            .col-lg-6 {
+.col-lg-6 {
                 padding: 5px;
             }
         }
-
-        @media (max-width: 400px) {
+@media (max-width: 400px) {
             .contact-hero h1 {
                 font-size: 1.2rem;
             }
-            
-            .glass-card {
+.glass-card {
                 padding: 12px;
             }
-            
-            .form-control,
+.form-control,
             .form-select {
                 padding: 8px;
                 font-size: 12px;
             }
-            
-            .time-slots-grid {
+.time-slots-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .calendar-day {
+.calendar-day {
                 font-size: 9px;
             }
         }
-        
-        footer { padding: 20px; text-align: center; color: var(--text-slate); font-size: 14px; }
+footer { padding: 20px; text-align: center; color: var(--text-slate); font-size: 14px; }
             /* ========== HEADER STYLES ========== */
         header {
             position: fixed;
@@ -675,78 +574,63 @@
         .mobile-menu::-webkit-scrollbar-thumb:hover { background: rgba(245,196,0,0.5); }
         /* ========== END HEADER STYLES ========== */
         </style>
-
 <style>
 </style>
-
-
 <style>
 /* ========== COMPREHENSIVE MOBILE RESPONSIVE STYLES ========== */
-
 /* Base Responsive Typography */
 @media (max-width: 768px) {
     body {
         font-size: 16px;
         line-height: 1.6;
     }
-    
-    h1 {
+h1 {
         font-size: 32px !important;
         line-height: 1.2 !important;
     }
-    
-    h2 {
+h2 {
         font-size: 28px !important;
         line-height: 1.3 !important;
     }
-    
-    h3 {
+h3 {
         font-size: 24px !important;
         line-height: 1.4 !important;
     }
-    
-    h4 {
+h4 {
         font-size: 20px !important;
     }
-    
-    p {
+p {
         font-size: 16px !important;
         line-height: 1.6 !important;
     }
-    
-    /* Hero Section */
+/* Hero Section */
     .hero-section,
     .hero,
     .hero-split {
         padding: 120px 20px 60px !important;
         text-align: center !important;
     }
-    
-    .hero-section h1,
+.hero-section h1,
     .hero h1 {
         font-size: 36px !important;
         margin-bottom: 20px !important;
     }
-    
-    .hero-section p,
+.hero-section p,
     .hero p {
         font-size: 16px !important;
         max-width: 100% !important;
         padding: 0 10px !important;
     }
-    
-    /* Header/Navigation */
+/* Header/Navigation */
     header {
         width: 95% !important;
         padding: 10px 20px !important;
         top: 10px !important;
     }
-    
-    .logo {
+.logo {
         font-size: 18px !important;
     }
-    
-    /* Buttons */
+/* Buttons */
     .btn-main,
     .btn-accent,
     .btn-glow,
@@ -756,8 +640,7 @@
         width: auto !important;
         display: inline-block !important;
     }
-    
-    /* Cards & Grid Layouts */
+/* Cards & Grid Layouts */
     .card,
     .service-card,
     .feature-card,
@@ -766,35 +649,29 @@
         margin-bottom: 20px !important;
         padding: 20px !important;
     }
-    
-    .grid,
+.grid,
     .bento-grid,
     .advisory-container,
     .section-wrapper {
         grid-template-columns: 1fr !important;
         gap: 20px !important;
     }
-    
-    /* Containers */
+/* Containers */
     .container {
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
-    
-    section {
+section {
         padding: 60px 20px !important;
     }
-    
-    /* Images */ img:not(.logo-img) { max-width: 100% !important; height: auto !important; }
-    
-    /* Tables */
+/* Images */ img:not(.logo-img) { max-width: 100% !important; height: auto !important; }
+/* Tables */
     table {
         display: block !important;
         overflow-x: auto !important;
         white-space: nowrap !important;
     }
-    
-    /* Forms */
+/* Forms */
     input,
     textarea,
     select {
@@ -802,133 +679,108 @@
         font-size: 16px !important;
         padding: 12px !important;
     }
-    
-    /* Modals */
+/* Modals */
     .modal-dialog {
         margin: 10px !important;
         max-width: calc(100% - 20px) !important;
     }
-    
-    .modal-content {
+.modal-content {
         border-radius: 12px !important;
     }
-    
-    /* Stats/Numbers */
+/* Stats/Numbers */
     .stat-number,
     .stats-card {
         font-size: 32px !important;
     }
-    
-    /* Columns */
+/* Columns */
     .row > [class*='col-'] {
         padding-left: 15px !important;
         padding-right: 15px !important;
     }
-    
-    /* Hide desktop-only elements */
+/* Hide desktop-only elements */
     .d-none.d-md-block:not(nav) {
         display: none !important;
     }
-    
-    /* Show mobile-only elements */
+/* Show mobile-only elements */
     .d-block.d-md-none {
         display: block !important;
     }
-    
-    /* Spacing */
+/* Spacing */
     .mb-5 {
         margin-bottom: 30px !important;
     }
-    
-    .mt-5 {
+.mt-5 {
         margin-top: 30px !important;
     }
-    
-    .py-5 {
+.py-5 {
         padding-top: 40px !important;
         padding-bottom: 40px !important;
     }
-    
-    /* Footer */
+/* Footer */
     footer {
         padding: 40px 20px !important;
         text-align: center !important;
     }
-    
-    footer .row {
+footer .row {
         flex-direction: column !important;
     }
-    
-    footer .col-md-3,
+footer .col-md-3,
     footer .col-md-4,
     footer .col-md-6 {
         margin-bottom: 30px !important;
         text-align: center !important;
     }
 }
-
 /* Tablet Responsive (768px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
     .container {
         max-width: 720px !important;
     }
-    
-    h1 {
+h1 {
         font-size: 42px !important;
     }
-    
-    h2 {
+h2 {
         font-size: 36px !important;
     }
-    
-    .grid,
+.grid,
     .bento-grid {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }
-
 /* Small Mobile (< 400px) */
 @media (max-width: 400px) {
     body {
         font-size: 14px;
     }
-    
-    h1 {
+h1 {
         font-size: 28px !important;
     }
-    
-    h2 {
+h2 {
         font-size: 24px !important;
     }
-    
-    .btn-main,
+.btn-main,
     .btn-accent {
         padding: 10px 20px !important;
         font-size: 13px !important;
     }
-    
-    header {
+header {
         padding: 8px 15px !important;
     }
-    
-    .logo {
+.logo {
         font-size: 16px !important;
     }
 }
-
 /* Landscape Mobile */
 @media (max-height: 500px) and (orientation: landscape) {
     .hero-section,
     .hero {
         padding: 80px 20px 40px !important;
     }
-    
-    .hero-section h1,
+.hero-section h1,
     .hero h1 {
         font-size: 32px !important;
     }
 }
-
 /* Touch-friendly improvements */
 @media (hover: none) and (pointer: coarse) {
     /* Touch devices */
@@ -939,31 +791,25 @@
         min-height: 44px !important;
         min-width: 44px !important;
     }
-    
-    input,
+input,
     textarea,
     select {
         font-size: 16px !important; /* Prevents zoom on iOS */
     }
 }
-
 /* Prevent horizontal scroll */
 body {
     overflow-x: hidden !important;
 }
-
 * {
     max-width: 100%;
 }
-
 /* Ensure images don't overflow */
 img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !important; }
 </style>
-
 </head>
 <body>
-
-         <header>
+<header>
         <!-- Mobile Navigation -->
         <button class="mobile-nav-toggle" onclick="openMobileMenu()" aria-label="Open menu">&#9776;</button>
         <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
@@ -988,8 +834,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <li><a href="Qatar.html">Qatar</a></li>
                                 <li><a href="oman.html">Oman</a></li>
                                 <li><a href="bahrain.html">Bahrain</a></li>
-                                <li><a href="egypt.html">Egypt</a></li>
-                            </ul>
+</ul>
                         </li>
                         <li>
                             <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('asiaMenu', this)">
@@ -1010,7 +855,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <li><a href="malaysia.html">Malaysia</a></li>
                                 <li><a href="australia.html">Australia</a></li>
                                 <li><a href="indonesia.html">Indonesia</a></li>
-                                <li><a href="viethnam.html">Vietnam</a></li>
+                                <li><a href="vietnam.html">Vietnam</a></li>
                             </ul>
                         </li>
                         <li>
@@ -1019,6 +864,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                             </div>
                             <ul class="mobile-submenu" id="africaMenu">
                                 <li><a href="botswana.html">Botswana</a></li>
+                                <li><a href="egypt.html">Egypt</a></li>
                                 <li><a href="ghana.html">Ghana</a></li>
                                 <li><a href="kenya.html">Kenya</a></li>
                             </ul>
@@ -1058,8 +904,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <li><a class="dropdown-item" href="Qatar.html">Qatar</a></li>
                                 <li><a class="dropdown-item" href="oman.html">Oman</a></li>
                                 <li><a class="dropdown-item" href="bahrain.html">Bahrain</a></li>
-                                <li><a class="dropdown-item" href="egypt.html">Egypt</a></li>
-                            </ul>
+</ul>
                         </li>
                         <!-- Asia -->
                         <li class="dropdown-submenu">
@@ -1078,7 +923,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <li><a class="dropdown-item" href="malaysia.html">Malaysia</a></li>
                                 <li><a class="dropdown-item" href="australia.html">Australia</a></li>
                                 <li><a class="dropdown-item" href="indonesia.html">Indonesia</a></li>
-                                <li><a class="dropdown-item" href="viethnam.html">Vietnam</a></li>
+                                <li><a class="dropdown-item" href="vietnam.html">Vietnam</a></li>
                             </ul>
                         </li>
                         <!-- Africa -->
@@ -1086,6 +931,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                             <a class="dropdown-item dropdown-toggle" href="#">Africa</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="kenya.html">Kenya</a></li>
+                                <li><a class="dropdown-item" href="egypt.html">Egypt</a></li>
                                 <li><a class="dropdown-item" href="ghana.html">Ghana</a></li>
                                 <li><a class="dropdown-item" href="botswana.html">Botswana</a></li>
                             </ul>
@@ -1106,25 +952,22 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
         </nav>
         <a href="mailto:md@hexatp.com" class="btn-main py-2 px-4 fs-6">Get Started</a>
     </header>
-
-    <section class="contact-hero">
+<section class="contact-hero">
         <div class="container">
             <div class="hero-badge">Get In Touch</div>
             <h1 class="display-4 fw-bold">Contact <span style="color:var(--accent)">Our Experts</span></h1>
             <p class="text-muted mt-3">We provide worldwide transfer pricing solutions through our global network.</p>
         </div>
     </section>
-
-    <section class="py-5">
+<section class="py-5">
         <div class="container">
             <div class="row g-5">
                 <!-- LEFT SIDE: APPOINTMENT CALENDAR -->
                 <div class="col-lg-6">
                     <div class="glass-card">
-                        <h3 class="mb-4">âœï¸ WRITE US</h3>
+                        <h3 class="mb-4">✍️ WRITE US</h3>
                         <p class="text-muted mb-4">Book a Free Consultation Call</p>
-                        
-                        <form id="consultationForm" action="save_inquiry.php" method="POST">
+<form id="consultationForm" action="save_inquiry.php" method="POST">
                             <!-- Calendar Section -->
                             <div class="calendar-section mb-4">
                                 <label class="form-label fw-600">Select Date *</label>
@@ -1136,15 +979,13 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <div class="calendar-grid" id="calendarGrid"></div>
                                 <input type="hidden" name="appointment_date" id="selectedDate" required>
                             </div>
-
-                            <!-- Time Slots -->
+<!-- Time Slots -->
                             <div class="mb-4">
                                 <label class="form-label fw-600">Select Time *</label>
                                 <div class="time-slots-grid" id="timeSlots"></div>
                                 <input type="hidden" name="appointment_time" id="selectedTime" required>
                             </div>
-
-                            <!-- Consultation Type -->
+<!-- Consultation Type -->
                             <label class="form-label fw-600">Consultation Type *</label>
                             <select class="form-select" name="subject" required>
                                 <option value="">Select a consultation type...</option>
@@ -1153,32 +994,25 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <option value="Compliance Audit">Compliance Audit</option>
                                 <option value="General Inquiry">General Inquiry</option>
                             </select>
-
-                            <!-- Contact Info -->
+<!-- Contact Info -->
                             <label class="form-label fw-600 mt-3">Your Name *</label>
                             <input type="text" class="form-control" name="name" placeholder="Your Name" required>
-
-                            <label class="form-label fw-600">Email Address *</label>
+<label class="form-label fw-600">Email Address *</label>
                             <input type="email" class="form-control" name="email" placeholder="Email Address" required>
-
-                            <label class="form-label fw-600">Phone Number *</label>
+<label class="form-label fw-600">Phone Number *</label>
                             <input type="text" class="form-control" name="phone" placeholder="Phone Number" required>
-
-                            <label class="form-label fw-600">Message</label>
+<label class="form-label fw-600">Message</label>
                             <textarea class="form-control" name="message" rows="3" placeholder="Tell us about your consultation needs..."></textarea>
-
-                            <button type="submit" class="btn-main w-100 border-0 mt-4">Schedule Consultation</button>
+<button type="submit" class="btn-main w-100 border-0 mt-4">Schedule Consultation</button>
                             <div id="consultationFormMessage" class="mt-3" style="display:none;"></div>
                         </form>
                     </div>
                 </div>
-
-                <!-- RIGHT SIDE: GET IN TOUCH -->
+<!-- RIGHT SIDE: GET IN TOUCH -->
                 <div class="col-lg-6">
                     <div class="glass-card">
-                        <h3 class="mb-4">ðŸ“ GET IN TOUCH</h3>
-                        
-                        <!-- HEAD OFFICE -->
+                        <h3 class="mb-4">📍 GET IN TOUCH</h3>
+<!-- HEAD OFFICE -->
                         <div class="mb-4">
                             <h5 style="color: var(--accent); font-weight: 600;">HEAD OFFICE</h5>
                             <p class="text-muted mb-0">
@@ -1190,8 +1024,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <small>Gurugram, India</small>
                             </p>
                         </div>
-
-                        <!-- EMAIL -->
+<!-- EMAIL -->
                         <div class="mb-4">
                             <h5 style="color: var(--accent); font-weight: 600;">EMAIL</h5>
                             <p class="text-muted mb-0">
@@ -1199,8 +1032,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <a href="mailto:info@hexatp.com" style="color: var(--accent); text-decoration: none;">info@hexatp.com</a>
                             </p>
                         </div>
-
-                        <!-- PHONE -->
+<!-- PHONE -->
                         <div class="mb-4">
                             <h5 style="color: var(--accent); font-weight: 600;">PHONE</h5>
                             <p class="text-muted mb-0">
@@ -1208,8 +1040,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <a href="tel:+918288800381" style="color: var(--accent); text-decoration: none;">+91-8288800381</a>
                             </p>
                         </div>
-
-                        <!-- STAY CONNECTED -->
+<!-- STAY CONNECTED -->
                         <div>
                             <h5 style="color: var(--accent); font-weight: 600;">STAY CONNECTED</h5>
                             <div style="display: flex; gap: 15px; margin-top: 15px;">
@@ -1235,9 +1066,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
             </div>
         </div>
     </section>
-
-    
-     <section class="contact-footer">
+<section class="contact-footer">
         <span class="text-warning text-uppercase fw-bold letter-spacing-2">Secure Your Future</span>
         <h2 class="mt-3">Ready for a Professional Consultation?</h2>
         <a href="mailto:md@hexatp.com" class="btn-main px-5 py-3 fs-5 mt-4">md@hexatp.com</a>
@@ -1245,121 +1074,97 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
     </section>
  <footer>
         <img src="logo-hexatp.jpeg" alt="HexaTP Logo" class="logo-img" style="height: 35px !important; max-height: 35px !important; width: auto !important; display: block; margin: 0 auto 8px auto; opacity: 0.9;"><br>
-        Â© 2026 HexaTP â€“ Transfer Pricing Intelligence Platform
+        © 2026 HexaTP – Transfer Pricing Intelligence Platform
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         let currentDate = new Date();
         let selectedDate = null;
         let selectedTime = null;
-
-        // Initialize calendar on page load
+// Initialize calendar on page load
         document.addEventListener('DOMContentLoaded', function() {
             renderCalendar();
             generateTimeSlots();
         });
-
-        function renderCalendar() {
+function renderCalendar() {
             const year = currentDate.getFullYear();
             const month = currentDate.getMonth();
-            
-            // Update month/year display
+// Update month/year display
             const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
                 'July', 'August', 'September', 'October', 'November', 'December'];
             document.getElementById('monthYear').textContent = monthNames[month] + ' ' + year;
-
-            const firstDay = new Date(year, month, 1).getDay();
+const firstDay = new Date(year, month, 1).getDay();
             const daysInMonth = new Date(year, month + 1, 0).getDate();
             const daysInPrevMonth = new Date(year, month, 0).getDate();
-
-            let html = '';
-            
-            // Day headers
+let html = '';
+// Day headers
             const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
             dayHeaders.forEach(day => {
                 html += '<div class="calendar-day-header">' + day + '</div>';
             });
-
-            // Previous month days
+// Previous month days
             for (let i = firstDay - 1; i >= 0; i--) {
                 html += '<div class="calendar-day other-month">' + (daysInPrevMonth - i) + '</div>';
             }
-
-            // Current month days
+// Current month days
             const today = new Date();
             today.setHours(0, 0, 0, 0);
-
-            for (let day = 1; day <= daysInMonth; day++) {
+for (let day = 1; day <= daysInMonth; day++) {
                 const date = new Date(year, month, day);
                 const dateStr = date.toISOString().split('T')[0];
                 const isToday = date.getTime() === today.getTime();
                 const isPast = date < today;
                 const isSelected = selectedDate === dateStr;
-
-                let className = 'calendar-day';
+let className = 'calendar-day';
                 if (isPast) className += ' disabled';
                 if (isSelected) className += ' selected';
-
-                html += '<div class="' + className + '" onclick="selectDate(\'' + dateStr + '\')">' + day + '</div>';
+html += '<div class="' + className + '" onclick="selectDate(\'' + dateStr + '\')">' + day + '</div>';
             }
-
-            // Next month days
+// Next month days
             const totalCells = firstDay + daysInMonth;
             const remainingCells = totalCells % 7 === 0 ? 0 : 7 - (totalCells % 7);
             for (let day = 1; day <= remainingCells; day++) {
                 html += '<div class="calendar-day other-month">' + day + '</div>';
             }
-
-            document.getElementById('calendarGrid').innerHTML = html;
+document.getElementById('calendarGrid').innerHTML = html;
         }
-
-        function selectDate(dateStr) {
+function selectDate(dateStr) {
             selectedDate = dateStr;
             document.getElementById('selectedDate').value = dateStr;
             renderCalendar();
         }
-
-        function prevMonth() {
+function prevMonth() {
             currentDate.setMonth(currentDate.getMonth() - 1);
             renderCalendar();
         }
-
-        function nextMonth() {
+function nextMonth() {
             currentDate.setMonth(currentDate.getMonth() + 1);
             renderCalendar();
         }
-
-        function generateTimeSlots() {
+function generateTimeSlots() {
             const slots = ['09:00 AM', '10:00 AM', '11:00 AM', '02:00 PM', '03:00 PM', '04:00 PM'];
             let html = '';
-
-            slots.forEach(slot => {
+slots.forEach(slot => {
                 const isSelected = selectedTime === slot ? ' selected' : '';
                 html += '<div class="time-slot' + isSelected + '" onclick="selectTime(\'' + slot + '\')">' + slot + '</div>';
             });
-
-            document.getElementById('timeSlots').innerHTML = html;
+document.getElementById('timeSlots').innerHTML = html;
         }
-
-        function selectTime(time) {
+function selectTime(time) {
             selectedTime = time;
             document.getElementById('selectedTime').value = time;
             generateTimeSlots();
         }
-
-        // Handle consultation form submission
+// Handle consultation form submission
         document.getElementById('consultationForm').addEventListener('submit', function(e) {
             e.preventDefault();
-
-            if (!selectedDate || !selectedTime) {
+if (!selectedDate || !selectedTime) {
                 alert('Please select both date and time');
                 return;
             }
-            
-            const formData = new FormData(this);
+const formData = new FormData(this);
             const messageDiv = document.getElementById('consultationFormMessage');
-            
-            fetch('save_inquiry.php', {
+fetch('save_inquiry.php', {
                 method: 'POST',
                 body: formData
             })
@@ -1368,7 +1173,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                 messageDiv.style.display = 'block';
                 if (data.success) {
                     messageDiv.className = 'alert alert-success';
-                    messageDiv.textContent = 'âœ… ' + data.message;
+                    messageDiv.textContent = '✅ ' + data.message;
                     document.getElementById('consultationForm').reset();
                     selectedDate = null;
                     selectedTime = null;
@@ -1376,21 +1181,18 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                     generateTimeSlots();
                 } else {
                     messageDiv.className = 'alert alert-danger';
-                    messageDiv.textContent = 'âŒ ' + data.message;
+                    messageDiv.textContent = '❌ ' + data.message;
                 }
             })
             .catch(error => {
                 messageDiv.style.display = 'block';
                 messageDiv.className = 'alert alert-danger';
-                messageDiv.textContent = 'âŒ An error occurred. Please try again.';
+                messageDiv.textContent = '❌ An error occurred. Please try again.';
                 console.error('Error:', error);
             });
         });
     </script>
-
-
-
-    <script>
+<script>
         function openMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             const overlay = document.getElementById('mobileOverlay');

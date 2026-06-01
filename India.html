@@ -1,6 +1,5 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,28 +10,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
-    <style>
+<style>
         :root {
             --bg-light: #ffffff;
             --bg-subtle: #f9fafb;
-            
-            --accent: #f5c400;
+--accent: #f5c400;
             --accent-glow: rgba(245, 196, 0, 0.2);
             --card-bg: #ffffff;
             --glass-border: rgba(0, 0, 0, 0.08);
             --text-main: #0f172a;
             --text-slate: #64748b;
         }
-
-        body {
+body {
             background-color: var(--bg-light);
             color: var(--text-main);
             font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
         }
-
-        header {
+header {
             position: fixed;
             top: 20px;
             left: 50%;
@@ -49,24 +44,20 @@
             justify-content: space-between;
             align-items: center;
         }
-
-        .logo {
+.logo {
             font-weight: 800;
             font-size: 20px;
             text-transform: uppercase;
         }
-
-        .logo span {
+.logo span {
             color: var(--accent);
         }
-
-        .logo-img { height: 38px !important; padding: 4px 0;
+.logo-img { height: 38px !important; padding: 4px 0;
             width: auto !important;
             display: block;
             object-fit: contain;
         }
-
-        /* Professional Text Logo */
+/* Professional Text Logo */
         .logo-text-wrapper {
             font-weight: 800;
             font-size: 24px;
@@ -75,25 +66,21 @@
             align-items: center;
             font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
         }
-
-        .logo-hexa {
+.logo-hexa {
             color: var(--text-main);
         }
-
-        .logo-tp {
+.logo-tp {
             color: var(--accent);
             margin-left: 2px;
         }
-
-        nav ul {
+nav ul {
             list-style: none;
             display: flex;
             gap: 25px;
             margin: 0;
             padding: 0;
         }
-
-        nav a {
+nav a {
             text-decoration: none;
             color: #444;
             font-size: 14px;
@@ -101,14 +88,11 @@
             transition: 0.3s;
             font-family: 'Poppins', sans-serif;
         }
-
-        nav a:hover {
+nav a:hover {
             color: var(--accent);
         }
-
-        .nav-link.dropdown-toggle { font-family: 'Poppins', sans-serif !important; font-weight: 600 !important; font-size: 14px !important; color: #444 !important; }
-
-        .btn-main {
+.nav-link.dropdown-toggle { font-family: 'Poppins', sans-serif !important; font-weight: 600 !important; font-size: 14px !important; color: #444 !important; }
+.btn-main {
             background: var(--accent);
             color: #000;
             padding: 10px 25px;
@@ -119,14 +103,12 @@
             transition: 0.3s;
             display: inline-block;
         }
-
-        .btn-main:hover {
+.btn-main:hover {
             transform: translateY(-3px);
             background: #fff;
             color: #000;
         }
-
-        .hero {
+.hero {
             padding: 160px 0 100px;
             /* Added background image with overlay */
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)),
@@ -136,18 +118,15 @@
             background-attachment: fixed;
             /* Parallax effect */
         }
-
-        .hero h1 {
+.hero h1 {
             font-weight: 700;
             font-size: 48px;
         }
-
-        .hero p {
+.hero p {
             color: var(--text-slate);
             max-width: 600px;
         }
-
-        .btn-accent {
+.btn-accent {
             background: var(--accent);
             color: black;
             font-weight: 600;
@@ -156,12 +135,10 @@
             text-decoration: none;
             display: inline-block;
         }
-
-        .btn-accent:hover {
+.btn-accent:hover {
             box-shadow: 0 0 20px var(--accent-glow);
         }
-
-        .glass-card {
+.glass-card {
             background: var(--card-bg);
             border: 1px solid var(--glass-border);
             border-radius: 12px;
@@ -170,64 +147,54 @@
             transition: 0.3s;
             cursor: pointer;
         }
-
-        .glass-card:hover {
+.glass-card:hover {
             transform: translateY(-6px);
             border-color: var(--accent);
         }
-
-        .section-title {
+.section-title {
             font-weight: 700;
             font-size: 34px;
             margin-bottom: 40px;
         }
-
-        .reg-box {
+.reg-box {
             padding: 25px;
             border-left: 3px solid var(--accent);
             background: var(--card-bg);
             margin-bottom: 20px;
             height: 100%;
         }
-
-        .container h5 {
+.container h5 {
             color: var(--accent);
             margin-bottom: 15px;
         }
-
-        .arrow {
+.arrow {
             font-size: 18px;
             color: var(--accent);
             display: block;
             margin-bottom: 10px;
             transition: 0.3s;
         }
-
-        .rotate {
+.rotate {
             transform: rotate(90deg);
         }
-
-        .content {
+.content {
             display: none;
             margin-top: 15px;
             line-height: 1.7;
             color: var(--text-slate);
             font-size: 0.95rem;
         }
-
-        .cta {
+.cta {
             padding: 80px 0;
             text-align: center;
             background: var(--bg-subtle);
         }
-
-        .contact-footer {
+.contact-footer {
             padding: 100px 5%;
             text-align: center;
             background: linear-gradient(0deg, #fff9e6 0%, var(--bg-light) 100%);
         }
-
-        /* --- Team Section Styles --- */
+/* --- Team Section Styles --- */
         .team-card {
             background: var(--card-bg);
             border: 1px solid var(--glass-border);
@@ -237,19 +204,16 @@
             transition: 0.3s;
             height: 100%;
         }
-
-        .team-card:hover {
+.team-card:hover {
             border-color: var(--accent);
             transform: translateY(-5px);
         }
-
-        .team-img-wrapper {
+.team-img-wrapper {
             position: relative;
             display: inline-block;
             margin-bottom: 20px;
         }
-
-        /* Gold frame effect from the image */
+/* Gold frame effect from the image */
         .team-img-wrapper::before {
             content: '';
             position: absolute;
@@ -257,11 +221,9 @@
             left: 5px;
             right: -5px;
             bottom: 5px;
-
-            z-index: 0;
+z-index: 0;
         }
-
-        .team-img-wrapper img {
+.team-img-wrapper img {
             width: 150px;
             height: 150px;
             object-fit: cover;
@@ -269,20 +231,17 @@
             z-index: 1;
             border: 1px solid var(--glass-border);
         }
-
-        .team-card h5 {
+.team-card h5 {
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 5px;
         }
-
-        .team-card .role {
+.team-card .role {
             color: var(--text-slate);
             font-size: 0.85rem;
             margin-bottom: 15px;
         }
-
-        .learn-more-btn {
+.learn-more-btn {
             color: var(--text-main);
             text-decoration: none;
             font-size: 0.85rem;
@@ -293,19 +252,16 @@
             border-top: 1px solid var(--glass-border);
             padding-top: 15px;
         }
-
-        .learn-more-btn:hover {
+.learn-more-btn:hover {
             color: var(--accent);
         }
-
-        footer {
+footer {
             padding: 20px;
             text-align: center;
             color: var(--text-slate);
             font-size: 14px;
         }
-
-        /* --- Dropdown Styles --- */
+/* --- Dropdown Styles --- */
         .dropdown-menu {
             border: 1px solid var(--glass-border);
             border-radius: 12px;
@@ -315,12 +271,10 @@
             min-width: 200px;
             z-index: 9999;
         }
-
-        .dropdown-submenu {
+.dropdown-submenu {
             position: relative;
         }
-
-        .dropdown-submenu .dropdown-menu {
+.dropdown-submenu .dropdown-menu {
             position: absolute;
             top: 0;
             left: 100%;
@@ -329,12 +283,10 @@
             background: #ffffff;
             border: 1px solid var(--glass-border);
         }
-
-        .dropdown-submenu:hover>.dropdown-menu {
+.dropdown-submenu:hover>.dropdown-menu {
             display: block;
         }
-
-        .dropdown-item {
+.dropdown-item {
             padding: 10px 20px;
             font-size: 14px;
             font-weight: 500;
@@ -343,23 +295,19 @@
             transition: 0.2s;
             font-family: 'Poppins', sans-serif;
         }
-
-        .dropdown-item:hover {
+.dropdown-item:hover {
             background-color: rgba(245, 196, 0, 0.15);
             color: var(--text-main) !important;
         }
-
-        .dropdown-item.dropdown-toggle {
+.dropdown-item.dropdown-toggle {
             color: var(--accent);
             font-weight: 600;
         }
-
-        .dropdown-item.dropdown-toggle:hover {
+.dropdown-item.dropdown-toggle:hover {
             background-color: rgba(245, 196, 0, 0.2);
             color: var(--accent) !important;
         }
-
-        .dropdown-toggle::after {
+.dropdown-toggle::after {
             vertical-align: middle;
             margin-left: 5px;
             opacity: 0.7;
@@ -432,78 +380,63 @@
         .mobile-menu::-webkit-scrollbar-thumb:hover { background: rgba(245,196,0,0.5); }
         /* ========== END HEADER STYLES ========== */
         </style>
-
-    <style>
+<style>
         </style>
-
-
-    <style>
+<style>
         /* ========== COMPREHENSIVE MOBILE RESPONSIVE STYLES ========== */
-
-        /* Base Responsive Typography */
+/* Base Responsive Typography */
         @media (max-width: 768px) {
             body {
                 font-size: 16px;
                 line-height: 1.6;
             }
-
-            h1 {
+h1 {
                 font-size: 32px !important;
                 line-height: 1.2 !important;
             }
-
-            h2 {
+h2 {
                 font-size: 28px !important;
                 line-height: 1.3 !important;
             }
-
-            h3 {
+h3 {
                 font-size: 24px !important;
                 line-height: 1.4 !important;
             }
-
-            h4 {
+h4 {
                 font-size: 20px !important;
             }
-
-            p {
+p {
                 font-size: 16px !important;
                 line-height: 1.6 !important;
             }
-
-            /* Hero Section */
+/* Hero Section */
             .hero-section,
             .hero,
             .hero-split {
                 padding: 120px 20px 60px !important;
                 text-align: center !important;
             }
-
-            .hero-section h1,
+.hero-section h1,
             .hero h1 {
                 font-size: 36px !important;
                 margin-bottom: 20px !important;
             }
-
-            .hero-section p,
+.hero-section p,
             .hero p {
                 font-size: 16px !important;
                 max-width: 100% !important;
                 padding: 0 10px !important;
             }
-
-            /* Header/Navigation */
+/* Header/Navigation */
             header {
                 width: 95% !important;
                 padding: 10px 20px !important;
                 top: 10px !important;
             }
-
-            .logo {
+.logo {
                 font-size: 18px !important;
             }
-
-            /* Buttons */
+/* Buttons */
             .btn-main,
             .btn-accent,
             .btn-glow,
@@ -513,8 +446,7 @@
                 width: auto !important;
                 display: inline-block !important;
             }
-
-            /* Cards & Grid Layouts */
+/* Cards & Grid Layouts */
             .card,
             .service-card,
             .feature-card,
@@ -523,39 +455,33 @@
                 margin-bottom: 20px !important;
                 padding: 20px !important;
             }
-
-            .grid,
+.grid,
             .bento-grid,
             .advisory-container,
             .section-wrapper {
                 grid-template-columns: 1fr !important;
                 gap: 20px !important;
             }
-
-            /* Containers */
+/* Containers */
             .container {
                 padding-left: 20px !important;
                 padding-right: 20px !important;
             }
-
-            section {
+section {
                 padding: 60px 20px !important;
             }
-
-            /* Images */
+/* Images */
             img:not(.logo-img) {
                 max-width: 100% !important;
                 height: auto !important;
             }
-
-            /* Tables */
+/* Tables */
             table {
                 display: block !important;
                 overflow-x: auto !important;
                 white-space: nowrap !important;
             }
-
-            /* Forms */
+/* Forms */
             input,
             textarea,
             select {
@@ -563,138 +489,111 @@
                 font-size: 16px !important;
                 padding: 12px !important;
             }
-
-            /* Modals */
+/* Modals */
             .modal-dialog {
                 margin: 10px !important;
                 max-width: calc(100% - 20px) !important;
             }
-
-            .modal-content {
+.modal-content {
                 border-radius: 12px !important;
             }
-
-            /* Stats/Numbers */
+/* Stats/Numbers */
             .stat-number,
             .stats-card {
                 font-size: 32px !important;
             }
-
-            /* Columns */
+/* Columns */
             .row>[class*='col-'] {
                 padding-left: 15px !important;
                 padding-right: 15px !important;
             }
-
-            /* Hide desktop-only elements */
+/* Hide desktop-only elements */
             .d-none.d-md-block:not(nav) {
                 display: none !important;
             }
-
-            /* Show mobile-only elements */
+/* Show mobile-only elements */
             .d-block.d-md-none {
                 display: block !important;
             }
-
-            /* Spacing */
+/* Spacing */
             .mb-5 {
                 margin-bottom: 30px !important;
             }
-
-            .mt-5 {
+.mt-5 {
                 margin-top: 30px !important;
             }
-
-            .py-5 {
+.py-5 {
                 padding-top: 40px !important;
                 padding-bottom: 40px !important;
             }
-
-            /* Footer */
+/* Footer */
             footer {
                 padding: 40px 20px !important;
                 text-align: center !important;
             }
-
-            footer .row {
+footer .row {
                 flex-direction: column !important;
             }
-
-            footer .col-md-3,
+footer .col-md-3,
             footer .col-md-4,
             footer .col-md-6 {
                 margin-bottom: 30px !important;
                 text-align: center !important;
             }
         }
-
-        /* Tablet Responsive (768px - 1024px) */
+/* Tablet Responsive (768px - 1024px) */
         @media (min-width: 769px) and (max-width: 1024px) {
             .container {
                 max-width: 720px !important;
             }
-
-            h1 {
+h1 {
                 font-size: 42px !important;
             }
-
-            h2 {
+h2 {
                 font-size: 36px !important;
             }
-
-            .grid,
+.grid,
             .bento-grid {
                 grid-template-columns: repeat(2, 1fr) !important;
             }
         }
-
-        /* Small Mobile (< 400px) */
+/* Small Mobile (< 400px) */
         @media (max-width: 400px) {
             body {
                 font-size: 14px;
             }
-
-            h1 {
+h1 {
                 font-size: 28px !important;
             }
-
-            h2 {
+h2 {
                 font-size: 24px !important;
             }
-
-            .btn-main,
+.btn-main,
             .btn-accent {
                 padding: 10px 20px !important;
                 font-size: 13px !important;
             }
-
-            header {
+header {
                 padding: 8px 15px !important;
             }
-
-            .logo {
+.logo {
                 font-size: 16px !important;
             }
         }
-
-        /* Landscape Mobile */
+/* Landscape Mobile */
         @media (max-height: 500px) and (orientation: landscape) {
-
-            .hero-section,
+.hero-section,
             .hero {
                 padding: 80px 20px 40px !important;
             }
-
-            .hero-section h1,
+.hero-section h1,
             .hero h1 {
                 font-size: 32px !important;
             }
         }
-
-        /* Touch-friendly improvements */
+/* Touch-friendly improvements */
         @media (hover: none) and (pointer: coarse) {
-
-            /* Touch devices */
+/* Touch devices */
             a,
             button,
             .btn,
@@ -702,25 +601,21 @@
                 min-height: 44px !important;
                 min-width: 44px !important;
             }
-
-            input,
+input,
             textarea,
             select {
                 font-size: 16px !important;
                 /* Prevents zoom on iOS */
             }
         }
-
-        /* Prevent horizontal scroll */
+/* Prevent horizontal scroll */
         body {
             overflow-x: hidden !important;
         }
-
-        * {
+* {
             max-width: 100%;
         }
-
-        /* Ensure images don't overflow */
+/* Ensure images don't overflow */
         img:not(.logo-img),
         video,
         iframe {
@@ -728,9 +623,7 @@
             height: auto !important;
         }
     </style>
-
 </head>
-
 <body>
         <header>
         <!-- Mobile Navigation -->
@@ -757,8 +650,7 @@
                                 <li><a href="Qatar.html">Qatar</a></li>
                                 <li><a href="oman.html">Oman</a></li>
                                 <li><a href="bahrain.html">Bahrain</a></li>
-                                <li><a href="egypt.html">Egypt</a></li>
-                            </ul>
+</ul>
                         </li>
                         <li>
                             <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('asiaMenu', this)">
@@ -779,7 +671,7 @@
                                 <li><a href="malaysia.html">Malaysia</a></li>
                                 <li><a href="australia.html">Australia</a></li>
                                 <li><a href="indonesia.html">Indonesia</a></li>
-                                <li><a href="viethnam.html">Vietnam</a></li>
+                                <li><a href="vietnam.html">Vietnam</a></li>
                             </ul>
                         </li>
                         <li>
@@ -788,6 +680,7 @@
                             </div>
                             <ul class="mobile-submenu" id="africaMenu">
                                 <li><a href="botswana.html">Botswana</a></li>
+                                <li><a href="egypt.html">Egypt</a></li>
                                 <li><a href="ghana.html">Ghana</a></li>
                                 <li><a href="kenya.html">Kenya</a></li>
                             </ul>
@@ -827,8 +720,7 @@
                                 <li><a class="dropdown-item" href="Qatar.html">Qatar</a></li>
                                 <li><a class="dropdown-item" href="oman.html">Oman</a></li>
                                 <li><a class="dropdown-item" href="bahrain.html">Bahrain</a></li>
-                                <li><a class="dropdown-item" href="egypt.html">Egypt</a></li>
-                            </ul>
+</ul>
                         </li>
                         <!-- Asia -->
                         <li class="dropdown-submenu">
@@ -847,7 +739,7 @@
                                 <li><a class="dropdown-item" href="malaysia.html">Malaysia</a></li>
                                 <li><a class="dropdown-item" href="australia.html">Australia</a></li>
                                 <li><a class="dropdown-item" href="indonesia.html">Indonesia</a></li>
-                                <li><a class="dropdown-item" href="viethnam.html">Vietnam</a></li>
+                                <li><a class="dropdown-item" href="vietnam.html">Vietnam</a></li>
                             </ul>
                         </li>
                         <!-- Africa -->
@@ -875,18 +767,15 @@
         </nav>
         <a href="mailto:md@hexatp.com" class="btn-main py-2 px-4 fs-6">Get Started</a>
     </header>
-
-    <section class="hero">
+<section class="hero">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-
-                    <h1 class="mb-4">Transfer Pricing in <span class="text-warning">India</span></h1>
+<h1 class="mb-4">Transfer Pricing in <span class="text-warning">India</span></h1>
                     <p class="mb-4" style="color: var(--text-slate);">Navigate India's rigorous TP landscape. Ensure
                         compliance with Section 92 of the Income Tax Act and manage documentation for both international
                         and Specified Domestic Transactions (SDT).</p>
-
-                    <div class="d-flex gap-3 flex-wrap">
+<div class="d-flex gap-3 flex-wrap">
                         <a href="javascript:void(0)" class="btn btn-accent"
                             onclick="openModal('General Consultation')">Book Free Consultation</a>
                     </div>
@@ -939,13 +828,11 @@
         function openModal(memberName) {
             // Set the name in the modal title
             document.getElementById('teamMemberName').innerText = memberName;
-
-            // Show the modal using Bootstrap's API
+// Show the modal using Bootstrap's API
             var myModal = new bootstrap.Modal(document.getElementById('learnMoreModal'));
             myModal.show();
         }
-
-        // Optional: Handle form submission
+// Optional: Handle form submission
         document.getElementById('inquiryForm').addEventListener('submit', function (e) {
             e.preventDefault();
             alert('Thank you! Your inquiry has been sent to our team.');
@@ -959,8 +846,7 @@
             color: var(--text-main);
             box-shadow: 0 0 10px var(--accent-glow);
         }
-
-        . {
+. {
             filter: invert(1) grayscale(100%) brightness(200%);
         }
     </style>
@@ -985,8 +871,7 @@
             </div>
         </div>
     </section>
-
-    <section class="py-5">
+<section class="py-5">
         <div class="container">
             <h2 class="section-title text-center">Key Regulatory Framework</h2>
             <div class="row g-4">
@@ -1014,8 +899,7 @@
             </div>
         </div>
     </section>
-
-    <section class="py-5">
+<section class="py-5">
         <div class="container">
             <h2 class="section-title text-center">Documentation Pillars</h2>
             <div class="row g-4">
@@ -1031,8 +915,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4">
+<div class="col-lg-4">
                     <div class="glass-card" onclick="toggleContent('content2', 'arrow2')">
                         <span class="arrow" id="arrow2">Local File & Master File</span>
                         <p style="color:var(--text-slate)">Threshold-based reporting for MNEs in India.</p>
@@ -1045,8 +928,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4">
+<div class="col-lg-4">
                     <div class="glass-card" onclick="toggleContent('content3', 'arrow3')">
                         <span class="arrow" id="arrow3">CbC Reporting</span>
                         <p style="color:var(--text-slate)">Reporting for groups with revenue over INR 6400 Crore.</p>
@@ -1060,8 +942,7 @@
             </div>
         </div>
     </section>
-
-    <section class="py-5">
+<section class="py-5">
         <div class="container">
             <h2 class="section-title text-center">Our Services in India</h2>
             <div class="row g-4">
@@ -1093,8 +974,7 @@
             </div>
         </div>
     </section>
-
-    <section class="cta" id="consult">
+<section class="cta" id="consult">
         <div class="container">
             <h2>Seeking TP Advisory in India?</h2>
             <p style="color:var(--text-slate)">Navigate India's complex TP landscape with our specialized local
@@ -1102,15 +982,12 @@
             <a class="btn btn-accent mt-3">Contact India Team</a>
         </div>
     </section>
-
-    <section class="py-5">
+<section class="py-5">
         <div class="container">
             <p class="text-center mb-4" style="color: var(--text-slate);">For further information on transfer pricing
                 please contact:</p>
             <div class="row g-4 justify-content-center">
-
-
-                <div class="col-lg-3 col-md-6">
+<div class="col-lg-3 col-md-6">
                     <div class="team-card">
                         <div class="team-img-wrapper">
                             <img src="PRIYANKA new.jpg" alt="Priyanka Sondhi">
@@ -1228,50 +1105,41 @@
             max-height: 85vh;
             overflow-y: auto;
         }
-
-        /* Scrollbar for long bios */
+/* Scrollbar for long bios */
         .modal-body::-webkit-scrollbar {
             width: 4px;
         }
-
-        .modal-body::-webkit-scrollbar-thumb {
+.modal-body::-webkit-scrollbar-thumb {
             background: var(--accent);
             border-radius: 10px;
         }
-
-        @media (max-width: 768px) {
+@media (max-width: 768px) {
             .modal-body .row.g-0 {
                 flex-direction: column;
             }
-
-            .col-md-4 {
+.col-md-4 {
                 border-right: none !important;
                 border-bottom: 1px solid var(--glass-border);
             }
         }
     </style>
-
-    <section class="contact-footer">
+<section class="contact-footer">
         <span class="text-warning text-uppercase fw-bold" style="letter-spacing:2px;">Secure Your Future</span>
         <h2 class="mt-3">Ready for a Professional Consultation?</h2>
         <a href="mailto:md@hexatp.com" class="btn-main px-5 py-3 fs-5 mt-4">md@hexatp.com</a>
         <p class="mt-4 text-muted">Contact our Managing Director for a confidential consultation on your Transfer
             Pricing needs.</p>
     </section>
-
-    <footer>
-
-        <img src="logo-hexatp.jpeg" alt="HexaTP Logo" class="logo-img"
+<footer>
+<img src="logo-hexatp.jpeg" alt="HexaTP Logo" class="logo-img"
             style="height: 35px !important; max-height: 35px !important; width: auto !important; display: block; margin: 0 auto 8px auto; opacity: 0.9;"><br>
         2026 HexaTP Transfer Pricing Intelligence Platform
     </footer>
-
-    <script>
+<script>
         function toggleContent(contentId, arrowId) {
             let content = document.getElementById(contentId);
             let arrow = document.getElementById(arrowId);
-
-            if (content.style.display === "block") {
+if (content.style.display === "block") {
                 content.style.display = "none";
                 arrow.classList.remove("rotate");
             } else {
@@ -1281,27 +1149,15 @@
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    
-
-
-
+</div>
     </div>
+</div>
     </div>
-
-
+</div>
     </div>
+</div>
     </div>
-
-
-    </div>
-    </div>
-
-
-    </div>
-    </div>
-
-    <script>
+<script>
         function openMobileMenu() {
             const menu = document.getElementById('mobileMenu');
             const overlay = document.getElementById('mobileOverlay');
@@ -1333,5 +1189,5 @@
         });
     </script>
 </body>
-
 </html>
+
