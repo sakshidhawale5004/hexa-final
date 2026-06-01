@@ -542,8 +542,10 @@ footer {
             .mobile-nav-toggle { display: block; }
             header nav.d-none.d-md-block { display: none !important; }
             .logo-img { height: 35px; width: auto; }
-            header { width: 95% !important; padding: 8px 12px !important; top: 10px !important; justify-content: flex-start !important; gap: 8px !important; }
-            header > a.btn-main { order: -1; margin-right: auto; padding: 6px 10px !important; font-size: 10px !important; white-space: nowrap; }
+            header { width: 95% !important; padding: 8px 12px !important; top: 10px !important; justify-content: space-between !important; }
+            header > a.btn-main { order: 2; padding: 6px 10px !important; font-size: 10px !important; white-space: nowrap; margin: 0 !important; }
+            header > img.logo-img { order: 1; }
+            .mobile-nav-toggle { order: 3; }
         }
         @media (min-width: 769px) { .mobile-menu, .mobile-overlay, .mobile-nav-toggle { display: none !important; } }
         .mobile-menu::-webkit-scrollbar { width: 6px; }
