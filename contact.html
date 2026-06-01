@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us – HexaTP</title>
+    <title>Contact Us â€“ HexaTP</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -1033,26 +1033,6 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                             </ul>
                         </li>
                     </ul>
-                        <li>
-                            <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('africaMenu', this)">
-                                <span>Africa</span>
-                            </div>
-                            <ul class="mobile-submenu" id="africaMenu">
-                                <li><a href="kenya.html">Kenya</a></li>
-                                <li><a href="ghana.html">Ghana</a></li>
-                                <li><a href="botswana.html">Botswana</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('americaMenu', this)">
-                                <span>America</span>
-                            </div>
-                            <ul class="mobile-submenu" id="americaMenu">
-                                <li><a href="canada.html">Canada</a></li>
-                                <li><a href="us.html">United States</a></li>
-                            </ul>
-                        </li>
-                    </ul>
                 </li>
                 <li><a href="insights.html">TP Insights</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -1141,7 +1121,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                 <!-- LEFT SIDE: APPOINTMENT CALENDAR -->
                 <div class="col-lg-6">
                     <div class="glass-card">
-                        <h3 class="mb-4">✍️ WRITE US</h3>
+                        <h3 class="mb-4">âœï¸ WRITE US</h3>
                         <p class="text-muted mb-4">Book a Free Consultation Call</p>
                         
                         <form id="consultationForm" action="save_inquiry.php" method="POST">
@@ -1196,7 +1176,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                 <!-- RIGHT SIDE: GET IN TOUCH -->
                 <div class="col-lg-6">
                     <div class="glass-card">
-                        <h3 class="mb-4">📍 GET IN TOUCH</h3>
+                        <h3 class="mb-4">ðŸ“ GET IN TOUCH</h3>
                         
                         <!-- HEAD OFFICE -->
                         <div class="mb-4">
@@ -1265,7 +1245,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
     </section>
  <footer>
         <img src="logo-hexatp.jpeg" alt="HexaTP Logo" class="logo-img" style="height: 35px !important; max-height: 35px !important; width: auto !important; display: block; margin: 0 auto 8px auto; opacity: 0.9;"><br>
-        © 2026 HexaTP – Transfer Pricing Intelligence Platform
+        Â© 2026 HexaTP â€“ Transfer Pricing Intelligence Platform
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -1388,7 +1368,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                 messageDiv.style.display = 'block';
                 if (data.success) {
                     messageDiv.className = 'alert alert-success';
-                    messageDiv.textContent = '✅ ' + data.message;
+                    messageDiv.textContent = 'âœ… ' + data.message;
                     document.getElementById('consultationForm').reset();
                     selectedDate = null;
                     selectedTime = null;
@@ -1396,13 +1376,13 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                     generateTimeSlots();
                 } else {
                     messageDiv.className = 'alert alert-danger';
-                    messageDiv.textContent = '❌ ' + data.message;
+                    messageDiv.textContent = 'âŒ ' + data.message;
                 }
             })
             .catch(error => {
                 messageDiv.style.display = 'block';
                 messageDiv.className = 'alert alert-danger';
-                messageDiv.textContent = '❌ An error occurred. Please try again.';
+                messageDiv.textContent = 'âŒ An error occurred. Please try again.';
                 console.error('Error:', error);
             });
         });
@@ -1443,3 +1423,4 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
     </script>
 </body>
 </html>
+
