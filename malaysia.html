@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -237,8 +237,8 @@ z-index: 0;
         .dropdown-submenu .dropdown-menu { position: absolute; top: 0; left: 100%; display: none; margin-top: -5px; background: #ffffff; border: 1px solid var(--glass-border); border-radius: 8px; padding: 8px 0; }
         .dropdown-submenu:hover > .dropdown-menu { display: block; }
         /* Mobile Nav */
-        .mobile-nav-toggle { display: none; position: absolute; right: 5%; top: 20px; background: none; border: none; color: #f5c400; font-size: 28px; cursor: pointer; z-index: 1001; padding: 10px; line-height: 1; width: 44px; height: 44px; min-width: 44px; min-height: 44px; }
-        .mobile-nav-toggle::before { content: ''; display: block; width: 24px; height: 2px; background: #f5c400; position: relative; box-shadow: 0 8px 0 #f5c400, 0 16px 0 #f5c400; }
+        .mobile-nav-toggle { display: none; position: absolute; right: 15px; top: 15px; background: none; border: none; color: #f5c400; font-size: 28px; cursor: pointer; z-index: 1001; padding: 10px; line-height: 1; width: 50px; height: 50px; min-width: 50px; min-height: 50px; }
+        .mobile-nav-toggle::before { content: ''; display: block; width: 28px; height: 3px; background: #f5c400; position: relative; box-shadow: 0 10px 0 #f5c400, 0 20px 0 #f5c400; }
         .mobile-menu { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-left: 1px solid rgba(0,0,0,0.1); padding: 80px 20px 20px; transition: right 0.3s ease; z-index: 1000; overflow-y: auto; box-shadow: -5px 0 20px rgba(0,0,0,0.5); }
         .mobile-menu.active { right: 0; }
         .mobile-menu ul { list-style: none; padding: 0; margin: 0; }
@@ -424,7 +424,7 @@ footer .row {
     }
 footer .col-md-3,
     footer .col-md-4,
-    footer .col-md-6 {
+    .d-flex { flex-direction: column !important; align-items: center !important; } .d-flex .btn-main { width: 100% !important; max-width: 280px !important; margin-bottom: 12px !important; } footer .col-md-6 {
         margin-bottom: 30px !important;
         text-align: center !important;
     }
@@ -971,4 +971,6 @@ if (content.style.display === "block") {
     </script>
 </body>
 </html>
+
+
 
