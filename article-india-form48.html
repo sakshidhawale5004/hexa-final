@@ -65,11 +65,23 @@
         .article-content li { margin-bottom: 10px; font-size: 16px; }
         .highlight-box { background: rgba(245, 196, 0, 0.05); border-left: 4px solid var(--accent); padding: 20px; border-radius: 8px; margin: 30px 0; }
         .highlight-box strong { color: var(--accent); }
-        .cta-section { background: linear-gradient(135deg, var(--text-main) 0%, #1a2a4a 100%); color: #ffffff; padding: 60px 40px; border-radius: 20px; text-align: center; margin-top: 60px; }
+        .cta-section { background: linear-gradient(135deg, var(--text-main) 0%, #1a2a4a 100%); color: #ffffff; padding: 60px 40px; border-radius: 20px; text-align: center; margin-top: 60px; margin-bottom: 60px; box-shadow: 0 10px 40px rgba(245, 196, 0, 0.15); width: 100%; box-sizing: border-box; }
         .cta-section h3 { font-size: 28px; font-weight: 800; margin-bottom: 15px; }
         .cta-section p { font-size: 16px; margin-bottom: 30px; opacity: 0.9; }
-        .cta-btn { background: var(--accent); color: #000; padding: 12px 30px; border-radius: 100px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; }
-        .cta-btn:hover { transform: translateY(-3px); }
+        .cta-btn { background: var(--accent); color: #000; padding: 14px 32px; border-radius: 100px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
+        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(245, 196, 0, 0.3); }
+        @media (max-width: 768px) {
+            .cta-section { padding: 40px 20px !important; margin-top: 40px; margin-bottom: 40px; }
+            .cta-section h3 { font-size: 22px; }
+            .cta-section p { font-size: 14px; margin-bottom: 25px; }
+            .cta-btn { padding: 12px 24px; font-size: 14px; }
+        }
+        @media (max-width: 480px) {
+            .cta-section { padding: 30px 15px !important; margin: 30px 0; }
+            .cta-section h3 { font-size: 20px; margin-bottom: 12px; }
+            .cta-section p { font-size: 13px; margin-bottom: 20px; }
+            .cta-btn { padding: 10px 20px; font-size: 13px; }
+        }
         footer { padding: 40px 20px; text-align: center; color: var(--text-slate); font-size: 14px; border-top: 1px solid var(--glass-border); }
         @media (max-width: 768px) {
             header { top: 10px; width: 95%; padding: 8px 15px; }
@@ -259,13 +271,13 @@
                 <p style="margin-bottom: 20px; font-size: 15px; color: var(--text-slate);">Read our latest insights on Form 48 on LinkedIn and share your thoughts on India's new transfer pricing requirements.</p>
                 <a href="https://www.linkedin.com/posts/hexatp_transferpricing-form48-indiatax-activity-7461030328510537728-E-xU?utm_source=share&utm_medium=member_ios&rcm=ACoAAAau2XEBf6zxehqX1GWZW-Z1LznC-mkkx-I" target="_blank" style="background: #0A66C2; color: white; padding: 12px 30px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s;">View on LinkedIn</a>
             </div>
-
-            <div class="cta-section">
-                <h3>Need Expert Guidance on Form 48 Compliance?</h3>
-                <p>Our transfer pricing specialists can help you navigate India's Form 48 requirements and ensure full compliance. Get in touch today for a consultation.</p>
-                <a href="mailto:md@hexatp.com?subject=India%20Form%2048%20Consultation&body=Hello%20HexaTP%20Team,%0A%0AI%20need%20assistance%20with%20India%20Form%2048%20compliance%20and%20transfer%20pricing%20documentation.%0A%0APlease%20contact%20me%20to%20discuss%20how%20you%20can%20help.%0A%0AThank%20you" class="cta-btn">Request a Consultation</a>
-            </div>
         </div>
+    </div>
+
+    <div class="cta-section" style="max-width: 800px; margin: 80px auto; padding: 60px 40px !important; width: 90%;">
+        <h3>Need Expert Guidance on Form 48 Compliance?</h3>
+        <p>Our transfer pricing specialists can help you navigate India's Form 48 requirements and ensure full compliance. Get in touch today for a consultation.</p>
+        <a href="mailto:md@hexatp.com?subject=India%20Form%2048%20Consultation&body=Hello%20HexaTP%20Team,%0A%0AI%20need%20assistance%20with%20India%20Form%2048%20compliance%20and%20transfer%20pricing%20documentation.%0A%0APlease%20contact%20me%20to%20discuss%20how%20you%20can%20help.%0A%0AThank%20you" class="cta-btn">Request a Consultation</a>
     </div>
 
     <footer>
