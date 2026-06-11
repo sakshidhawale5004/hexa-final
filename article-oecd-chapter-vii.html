@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OECD Proposes Updates to Intra-Group Services Guidance Under Chapter VII | HexaTP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-light: #ffffff;
+            --bg-subtle: #f9fafb;
+            --accent: #f5c400;
+            --accent-glow: rgba(245, 196, 0, 0.2);
+            --card-bg: #ffffff;
+            --glass-border: rgba(0, 0, 0, 0.08);
+            --text-main: #0f172a;
+            --text-slate: #64748b;
+        }
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 10px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-weight: 800; font-size: 20px; text-transform: uppercase; }
+        .logo span { color: var(--accent); }
+        .logo-img { height: 38px !important; padding: 4px 0; width: auto !important; display: block; object-fit: contain; }
+        nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
+        nav a { text-decoration: none; color: #444; font-size: 14px; font-weight: 600; transition: 0.3s; }
+        nav a:hover { color: var(--accent); }
+        .btn-main { background: var(--accent); color: #000; padding: 12px 30px; border-radius: 100px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 20px var(--accent-glow); transition: 0.3s; display: inline-block; }
+        .btn-main:hover { transform: translateY(-3px); background: #fff; }
+        .article-hero { padding: 160px 5% 60px; background: linear-gradient(135deg, rgba(245, 196, 0, 0.1) 0%, var(--bg-light) 100%); text-align: center; }
+        .article-hero h1 { font-size: 42px; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
+        .article-hero p { font-size: 18px; color: var(--text-slate); margin-bottom: 15px; }
+        .article-meta { display: flex; justify-content: center; gap: 20px; font-size: 14px; color: var(--text-slate); flex-wrap: wrap; }
+        .article-container { max-width: 800px; margin: 60px auto; padding: 0 20px; }
+        .article-badge { display: inline-block; background: rgba(245, 196, 0, 0.1); color: var(--accent); padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; }
+        .article-content { line-height: 1.8; color: var(--text-main); }
+        .article-content h2 { font-size: 28px; font-weight: 700; margin-top: 40px; margin-bottom: 20px; color: var(--text-main); border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
+        .article-content h3 { font-size: 22px; font-weight: 700; margin-top: 30px; margin-bottom: 15px; color: var(--text-main); }
+        .article-content p { font-size: 16px; margin-bottom: 20px; }
+        .article-content ul, .article-content ol { margin-left: 30px; margin-bottom: 20px; }
+        .article-content li { margin-bottom: 10px; font-size: 16px; }
+        .highlight-box { background: rgba(245, 196, 0, 0.05); border-left: 4px solid var(--accent); padding: 20px; border-radius: 8px; margin: 30px 0; }
+        .highlight-box strong { color: var(--accent); }
+        .cta-section { background: linear-gradient(135deg, var(--text-main) 0%, #1a2a4a 100%); color: #ffffff; padding: 60px 40px; border-radius: 20px; text-align: center; margin-top: 60px; margin-bottom: 60px; box-shadow: 0 10px 40px rgba(245, 196, 0, 0.15); width: 100%; box-sizing: border-box; }
+        .cta-section h3 { font-size: 28px; font-weight: 800; margin-bottom: 15px; }
+        .cta-section p { font-size: 16px; margin-bottom: 30px; opacity: 0.9; }
+        .cta-btn { background: var(--accent); color: #000; padding: 14px 32px; border-radius: 100px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
+        .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(245, 196, 0, 0.3); }
+        footer { padding: 40px 20px; text-align: center; color: var(--text-slate); font-size: 14px; border-top: 1px solid var(--glass-border); }
+        @media (max-width: 768px) {
+            header { top: 10px; width: 95%; padding: 8px 15px; }
+            .logo { font-size: 16px; }
+            .article-hero { padding: 100px 20px 40px; }
+            .article-hero h1 { font-size: 28px; }
+            .article-container { margin: 40px auto; }
+            .article-content h2 { font-size: 24px; }
+            .article-content h3 { font-size: 20px; }
+            nav.d-none.d-md-block { display: none !important; }
+            .btn-main { padding: 10px 20px; font-size: 12px; }
+            .cta-section { padding: 40px 20px !important; margin-top: 40px; margin-bottom: 40px; }
+            .cta-section h3 { font-size: 22px; }
+            .cta-section p { font-size: 14px; margin-bottom: 25px; }
+            .cta-btn { padding: 12px 24px; font-size: 14px; }
+        }
+        .dropdown-menu { border: 1px solid var(--glass-border); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 10px; background: #ffffff !important; min-width: 200px; z-index: 9999; }
+        .dropdown-item { padding: 10px 20px; font-size: 14px; font-weight: 500; color: var(--text-main); border-radius: 8px; transition: 0.2s; }
+        .dropdown-item:hover { background-color: var(--accent); color: #000 !important; }
+        .mobile-nav-toggle { display: none; position: fixed; right: 15px; top: 15px; background: #f5c400; border: none; color: #000; font-size: 24px; cursor: pointer; z-index: 1001; padding: 10px 12px; line-height: 1; border-radius: 6px; }
+        .mobile-menu { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-left: 1px solid rgba(0,0,0,0.1); padding: 80px 20px 20px; transition: right 0.3s ease; z-index: 1000; overflow-y: auto; }
+        .mobile-menu.active { right: 0; }
+        .mobile-menu ul { list-style: none; padding: 0; margin: 0; }
+        .mobile-menu ul li { margin-bottom: 15px; }
+        .mobile-menu ul li a { color: var(--text-main); text-decoration: none; font-size: 18px; display: block; padding: 12px 15px; border-radius: 8px; transition: 0.3s; }
+        .mobile-menu ul li a:hover { background: rgba(245,196,0,0.1); color: #f5c400; }
+        .mobile-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 999; backdrop-filter: blur(2px); }
+        .mobile-overlay.active { display: block; }
+        .close-menu { position: absolute; top: 20px; right: 20px; background: none; border: none; color: #f5c400; font-size: 32px; cursor: pointer; padding: 5px; line-height: 1; }
+        @media (max-width: 768px) {
+            .mobile-nav-toggle { display: block; }
+            header nav.d-none.d-md-block { display: none !important; }
+        }
+        @media (min-width: 769px) { 
+            .mobile-menu, .mobile-overlay, .mobile-nav-toggle { display: none !important; } 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="mobile-nav-toggle" onclick="openMobileMenu()" aria-label="Open menu">☰</button>
+        <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="close-menu" onclick="closeMobileMenu()" aria-label="Close menu">✕</button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="solution.html">Solutions</a></li>
+                <li><a href="insights.html">TP Insights</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <a href="index.html">
+            <img src="logo-hexatp.jpeg" alt="HexaTP" class="logo-img" />
+        </a>
+        <nav class="d-none d-md-block">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="solution.html">Solutions</a></li>
+                <li><a href="insights.html">TP Insights</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="mailto:md@hexatp.com?subject=Transfer%20Pricing%20Consultation%20Request&body=Hello%20HexaTP%20Team,%0A%0AI%20am%20interested%20in%20discussing%20transfer%20pricing%20solutions.%0A%0APlease%20contact%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you" class="btn-main">Get Started</a>
+    </header>
+
+    <section class="article-hero">
+        <h1>OECD Proposes Updates to Intra-Group Services Guidance Under Chapter VII</h1>
+        <p>Understanding the Impact of the New Transfer Pricing Guidelines for Intra-Group Services</p>
+        <div class="article-meta">
+            <span>📅 June 2026</span>
+            <span>⏱️ 6 min read</span>
+            <span>📚 Transfer Pricing</span>
+        </div>
+    </section>
+
+    <div class="article-container">
+        <span class="article-badge">Transfer Pricing</span>
+
+        <div class="article-content">
+            <h2>OECD Chapter VII: Major Updates to Intra-Group Services</h2>
+            <p>On 1 June 2026, the OECD released a public consultation document proposing updates to Chapter VII of the OECD Transfer Pricing Guidelines. Chapter VII deals with how intra-group services — services provided between companies within the same multinational group — should be priced for transfer pricing purposes.</p>
+
+            <p>These are the most significant proposed changes to this chapter since 2015, when the OECD's BEPS Project introduced a simplified pricing regime for routine, low value-adding services within a group.</p>
+
+            <h2>Key Changes in the Proposed Revisions</h2>
+
+            <h3>1. Accurate Delineation Comes First</h3>
+            <p>The most structurally significant change is a reordering of the analytical sequence. Under the current Chapter VII, the benefit test is applied at the outset. The revised chapter inverts this: taxpayers must first accurately delineate the transaction — analysing commercial and financial relations between the parties, contractual terms, conduct, and economically relevant characteristics — before asking whether a benefit was conferred.</p>
+
+            <h3>2. A Sharper Benefit Test</h3>
+            <p>The benefit test remains the cornerstone of Chapter VII: a charge for an intra-group service is arm's length only if the recipient would have been willing to pay an independent party for that activity, or would have performed it independently. The proposed chapter provides clearer definition and additional examples of situations where the test typically fails.</p>
+
+            <h3>3. Interconnected Transactions Get Dedicated Guidance</h3>
+            <p>Modern shared services centres bundle IT infrastructure, HR administration, financial reporting, and legal coordination into single arrangements. The proposed chapter introduces structured guidance on interconnected transactions: how to determine when services are sufficiently integrated to be analysed as a single arrangement, when they must be delineated and priced separately, and how method selection should respond to that determination.</p>
+
+            <h3>4. Cost-Plus Is No Longer the Default</h3>
+            <p>Cost-based methods — the cost-plus method and the LVAIGS mark-up regime — have long been treated in practice as the presumptive methodology for intra-group services. The revised chapter explicitly challenges this. Where parties perform unique and valuable functions, or assume economically significant risks, more complex methods — including the transactional profit split method — may be appropriate or necessary.</p>
+
+            <h3>5. Documentation Gets Its Own Framework</h3>
+            <p>The proposed chapter introduces a dedicated section on evidentiary considerations and documentation. The revised guidance sets out specific types of evidence needed to support an intra-group service charge: proof that activities were performed, evidence of benefit received, rationale for pricing method, and allocation keys.</p>
+
+            <h2>Regional Impact: India, Gulf, and Southeast Asia</h2>
+            <p>These proposed revisions have significant implications across key markets:</p>
+
+            <h3>India</h3>
+            <p>India has long been a litigation-intensive environment for intra-group service charges. The revised Chapter VII's emphasis on functional analysis, genuine benefit, and method rigour directly mirrors the scrutiny the Indian Revenue applies. Once finalised, the revised chapter is likely to be cited in ITAT proceedings and APA negotiations.</p>
+
+            <h3>Gulf Region</h3>
+            <p>The UAE and Saudi Arabia present increasingly complex environments for management fee structures. Saudi Arabia's Transfer Pricing Bylaws already require detailed functional analysis and contemporaneous documentation for intra-group service charges. The accurate delineation requirement and the proposed end of cost-plus as a default will directly affect how Gulf shared services structures are documented and defended.</p>
+
+            <h2>The Takeaway</h2>
+            <p>The proposed Chapter VII revisions are not cosmetic. They reorder the analytical sequence, tighten the benefit test, end the presumptive status of cost-plus, and introduce documentation expectations that will raise the bar for how intra-group service arrangements are structured and evidenced.</p>
+
+            <p>For MNE groups with significant cross-border services activity — particularly those relying on management fee structures, shared service centres, or cost-plus default pricing — now is the time to review existing arrangements against the proposed framework.</p>
+
+            <div style="margin: 40px 0; padding: 20px; background: rgba(245, 196, 0, 0.05); border-radius: 12px; text-align: center;">
+                <p style="margin-bottom: 20px; font-size: 15px; color: var(--text-slate);">Learn more about how these OECD changes may impact your transfer pricing strategy.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section" style="max-width: 800px; margin: 80px auto; padding: 60px 40px !important; width: 90%;">
+        <h3>Need Expert Guidance on OECD Chapter VII Changes?</h3>
+        <p>Our transfer pricing specialists can help you understand and implement these changes. Get in touch today for a consultation.</p>
+        <a href="mailto:md@hexatp.com?subject=OECD%20Chapter%20VII%20Consultation&body=Hello%20HexaTP%20Team,%0A%0AI%20need%20guidance%20on%20the%20proposed%20OECD%20Chapter%20VII%20changes%20for%20intra-group%20services.%0A%0APlease%20contact%20me%20to%20discuss.%0A%0AThank%20you" class="cta-btn">Request a Consultation</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 HexaTP. All rights reserved. | <a href="contact.html" style="color: var(--accent); text-decoration: none;">Contact Us</a></p>
+    </footer>
+
+    <script>
+        function openMobileMenu() {
+            document.getElementById('mobileMenu').classList.add('active');
+            document.getElementById('mobileOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').classList.remove('active');
+            document.getElementById('mobileOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
+</body>
+</html>
