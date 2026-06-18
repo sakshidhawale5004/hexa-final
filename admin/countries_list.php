@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Countries List Page
  * Country Content CMS
@@ -382,10 +382,10 @@ $stats = $contentService->getStatistics();
                         
                         // Special cases for filenames that don't match standard pattern
                         $special_cases = [
-                            'united arab emirates' => 'unitedarab.html',
+                            'united arab emirates' => 'unitedarabemirates.html',
                             'saudi arabia' => 'saudiarabia.html',
                             'vietnam' => 'viethnam.html',
-                            'united states' => 'us.html'
+                            'united states' => 'unitedstates.html'
                         ];
                         
                         $lookup_name = strtolower(trim($country->country_name));

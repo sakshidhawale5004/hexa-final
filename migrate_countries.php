@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Country Content Migration Script
  * 
@@ -36,7 +36,7 @@ $results = [
 // Country mapping: filename => [country_name, country_code, flag_url]
 $countries_to_migrate = [
     // Gulf Region
-    'unitedarab.html' => [
+    'unitedarabemirates.html' => [
         'name' => 'United Arab Emirates',
         'code' => 'AE',
         'flag' => 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Flag_of_the_United_Arab_Emirates.svg'
@@ -134,7 +134,7 @@ $countries_to_migrate = [
         'code' => 'CA',
         'flag' => 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Flag_of_Canada_%28Pantone%29.svg'
     ],
-    'us.html' => [
+    'unitedstates.html' => [
         'name' => 'United States',
         'code' => 'US',
         'flag' => 'https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg'

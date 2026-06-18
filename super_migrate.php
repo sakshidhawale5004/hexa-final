@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Super Migration Script
  * Migrates content for ALL countries and updates existing records.
@@ -12,7 +12,7 @@ $countryRepo = new CountryRepository($conn);
 
 // Mapping from migrate_content.php
 $countries_to_migrate = [
-    'unitedarab.html' => ['name' => 'United Arab Emirates', 'code' => 'AE', 'flag' => 'Flag_of_the_United_Arab_Emirates.jpeg'],
+    'unitedarabemirates.html' => ['name' => 'United Arab Emirates', 'code' => 'AE', 'flag' => 'Flag_of_the_United_Arab_Emirates.jpeg'],
     'Saudiarabia.html' => ['name' => 'Saudi Arabia', 'code' => 'SA', 'flag' => 'saudi_arabia.jpeg'],
     'Qatar.html' => ['name' => 'Qatar', 'code' => 'QA', 'flag' => 'Flag_of_Qatar.jpeg'],
     'oman.html' => ['name' => 'Oman', 'code' => 'OM', 'flag' => 'Flag_of_Oman.jpeg'],
@@ -30,7 +30,7 @@ $countries_to_migrate = [
     'ghana.html' => ['name' => 'Ghana', 'code' => 'GH', 'flag' => 'Flag_of_Ghana.jpeg'],
     'kenya.html' => ['name' => 'Kenya', 'code' => 'KE', 'flag' => 'Flag_of_Kenya.jpeg'],
     'canada.html' => ['name' => 'Canada', 'code' => 'CA', 'flag' => 'Flag_of_Canada_3-2.jpeg'],
-    'us.html' => ['name' => 'United States', 'code' => 'US', 'flag' => 'Flag_of_the_United_States_1912-1959.jpeg']
+    'unitedstates.html' => ['name' => 'United States', 'code' => 'US', 'flag' => 'Flag_of_the_United_States_1912-1959.jpeg']
 ];
 
 function extractHero($html) {

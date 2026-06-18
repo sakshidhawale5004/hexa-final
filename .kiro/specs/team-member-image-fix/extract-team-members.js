@@ -1,4 +1,4 @@
-// Script to extract all team member information from the 6 affected HTML files
+﻿// Script to extract all team member information from the 6 affected HTML files
 const fs = require('fs');
 const path = require('path');
 
@@ -6,19 +6,19 @@ const files = [
   'kenya.html',
   'bangladesh.html',
   'ghana.html',
-  'unitedarab.html',
+  'unitedarabemirates.html',
   'viethnam.html',
-  'us.html'
+  'unitedstates.html'
 ];
 
 const buggyProfiles = [
   { file: 'kenya.html', name: 'George Mureithi', bugType: 'external URL' },
   { file: 'bangladesh.html', name: 'Mosttafa Shazzad Hasan', bugType: 'external URL' },
   { file: 'ghana.html', name: 'Nathaniel Owusu Ansah', bugType: 'external URL' },
-  { file: 'unitedarab.html', name: 'Mohammad Taher Shaikh', bugType: 'wrong local file' },
-  { file: 'unitedarab.html', name: 'Saniya Abbasi', bugType: 'wrong local file' },
+  { file: 'unitedarabemirates.html', name: 'Mohammad Taher Shaikh', bugType: 'wrong local file' },
+  { file: 'unitedarabemirates.html', name: 'Saniya Abbasi', bugType: 'wrong local file' },
   { file: 'viethnam.html', name: 'Udit Gupta', bugType: 'wrong local file' },
-  { file: 'us.html', name: 'Udit Gupta', bugType: 'wrong local file' }
+  { file: 'unitedstates.html', name: 'Udit Gupta', bugType: 'wrong local file' }
 ];
 
 const results = {

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Bug Condition Exploration Test for Team Member Image Fix
  * 
  * **Validates: Requirements 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7**
@@ -44,14 +44,14 @@ const testCases = [
     requirement: '1.3, 2.3'
   },
   {
-    file: 'unitedarab.html',
+    file: 'unitedarabemirates.html',
     teamMember: 'Mohammad Taher Shaikh',
     expectedSrc: 'Mohammad Taher Shaikh new.jpg',
     bugType: 'incorrect-local',
     requirement: '1.4, 2.4'
   },
   {
-    file: 'unitedarab.html',
+    file: 'unitedarabemirates.html',
     teamMember: 'Saniya Abbasi',
     expectedSrc: 'SANIYA.jpg',
     bugType: 'incorrect-local',
@@ -65,7 +65,7 @@ const testCases = [
     requirement: '1.6, 2.6'
   },
   {
-    file: 'us.html',
+    file: 'unitedstates.html',
     teamMember: 'Udit Gupta',
     expectedSrc: 'Udit Gupta.jpg',
     bugType: 'incorrect-local',

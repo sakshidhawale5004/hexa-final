@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Admin Content Migration
  * HexaTP Country Content Management System
@@ -34,7 +34,7 @@ $results = [
 // Country mapping: filename => [country_name, country_code, flag_url]
 $countries_to_migrate = [
     // Gulf Region
-    'unitedarab.html' => [
+    'unitedarabemirates.html' => [
         'name' => 'United Arab Emirates',
         'code' => 'AE',
         'flag' => 'Flag_of_the_United_Arab_Emirates.jpeg'
@@ -132,7 +132,7 @@ $countries_to_migrate = [
         'code' => 'CA',
         'flag' => 'Flag_of_Canada_3-2.jpeg'
     ],
-    'us.html' => [
+    'unitedstates.html' => [
         'name' => 'United States',
         'code' => 'US',
         'flag' => 'Flag_of_the_United_States_1912-1959.jpeg'

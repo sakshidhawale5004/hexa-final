@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * CMS Activation Script
  * 
@@ -7,11 +7,11 @@
  */
 
 $countries = [
-    'unitedarab.html', 'Saudiarabia.html', 'Qatar.html', 'oman.html',
+    'unitedarabemirates.html', 'Saudiarabia.html', 'Qatar.html', 'oman.html',
     'bahrain.html', 'egypt.html', 'India.html', 'bangladesh.html',
     'singapore.html', 'thailand.html', 'malaysia.html', 'australia.html',
     'indonesia.html', 'viethnam.html', 'botswana.html', 'ghana.html',
-    'kenya.html', 'canada.html', 'us.html'
+    'kenya.html', 'canada.html', 'unitedstates.html'
 ];
 
 echo "<h2>CMS Activation: Renaming Static Files</h2>";

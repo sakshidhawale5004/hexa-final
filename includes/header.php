@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Global Header for HexaTP
  */
@@ -141,7 +141,7 @@
                         <li>
                             <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('gulfMenu', this)"><span>Gulf Region</span></div>
                             <ul class="mobile-submenu" id="gulfMenu">
-                                <li><a href="unitedarab.html">UAE</a></li>
+                                <li><a href="unitedarabemirates.html">UAE</a></li>
                                 <li><a href="Saudiarabia.html">Saudi Arabia</a></li>
                                 <li><a href="Qatar.html">Qatar</a></li>
                                 <li><a href="oman.html">Oman</a></li>
@@ -179,7 +179,7 @@
                             <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('americaMenu', this)"><span>America</span></div>
                             <ul class="mobile-submenu" id="americaMenu">
                                 <li><a href="canada.html">Canada</a></li>
-                                <li><a href="us.html">United States</a></li>
+                                <li><a href="unitedstates.html">United States</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -204,7 +204,7 @@
                         <li class="dropdown-submenu position-relative">
                             <a class="dropdown-item dropdown-toggle" href="#">Gulf Region</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="unitedarab.html">UAE</a></li>
+                                <li><a class="dropdown-item" href="unitedarabemirates.html">UAE</a></li>
                                 <li><a class="dropdown-item" href="Saudiarabia.html">Saudi Arabia</a></li>
                                 <li><a class="dropdown-item" href="Qatar.html">Qatar</a></li>
                                 <li><a class="dropdown-item" href="oman.html">Oman</a></li>
@@ -246,7 +246,7 @@
                             <a class="dropdown-item dropdown-toggle" href="#">America</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="canada.html">Canada</a></li>
-                                <li><a class="dropdown-item" href="us.html">United States</a></li>
+                                <li><a class="dropdown-item" href="unitedstates.html">United States</a></li>
                             </ul>
                         </li>
                     </ul>

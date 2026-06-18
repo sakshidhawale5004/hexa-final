@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Country Edit Form
  * Country Content CMS
@@ -620,10 +620,10 @@ if ($action === 'edit' && $country_id) {
                         // Logic to find live HTML file
                         $html_file = strtolower(str_replace(' ', '', $country->country_name)) . '.html';
                         $special_cases = [
-                            'united arab emirates' => 'unitedarab.html',
+                            'united arab emirates' => 'unitedarabemirates.html',
                             'saudi arabia' => 'saudiarabia.html',
                             'vietnam' => 'viethnam.html',
-                            'united states' => 'us.html'
+                            'united states' => 'unitedstates.html'
                         ];
                         $lookup_name = strtolower(trim($country->country_name));
                         if (isset($special_cases[$lookup_name])) {

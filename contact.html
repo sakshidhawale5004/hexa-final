@@ -541,7 +541,7 @@ footer { padding: 20px; text-align: center; color: var(--text-slate); font-size:
         .dropdown-submenu:hover > .dropdown-menu { display: block; }
         /* Mobile Nav */
         .mobile-nav-toggle { display: none; position: fixed; right: 15px; top: 15px; background: #f5c400; border: none; color: #000; font-size: 24px; cursor: pointer; z-index: 1001; padding: 10px 12px; line-height: 1; width: auto; height: auto; min-width: auto; min-height: auto; border-radius: 6px; }
-        .mobile-nav-toggle::before { content: ''; display: block; width: 28px; height: 3px; background: #f5c400; position: relative; box-shadow: 0 10px 0 #f5c400, 0 20px 0 #f5c400; }
+        .mobile-nav-toggle::before { content: '\2630'; display: inline-block; font-size: 24px; font-weight: bold; }
         .mobile-menu { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-left: 1px solid rgba(0,0,0,0.1); padding: 80px 20px 20px; transition: right 0.3s ease; z-index: 1000; overflow-y: auto; box-shadow: -5px 0 20px rgba(0,0,0,0.5); }
         .mobile-menu.active { right: 0; }
         .mobile-menu ul { list-style: none; padding: 0; margin: 0; }
@@ -566,7 +566,10 @@ footer { padding: 20px; text-align: center; color: var(--text-slate); font-size:
             .mobile-nav-toggle { display: block; }
             header nav.d-none.d-md-block { display: none !important; }
             .logo-img { height: 35px; width: auto; }
-            header { width: 95% !important; padding: 8px 12px !important; top: 10px !important; } header > a.btn-main { order: -1; margin-right: auto; padding: 6px 10px !important; font-size: 10px !important; white-space: nowrap; }
+            header { width: 100% !important; padding: 12px 15px !important; top: 0 !important; left: 0 !important; transform: none !important; border-radius: 0 !important; justify-content: space-between !important; align-items: center !important; max-width: 100% !important; }
+            header > a.btn-main { display: none !important; }
+            header > img.logo-img { order: 1; margin: 0 !important; }
+            .mobile-nav-toggle { order: 2; position: static !important; right: auto !important; top: auto !important; }
         }
         @media (min-width: 769px) { .mobile-menu, .mobile-overlay, .mobile-nav-toggle { display: none !important; } }
         .mobile-menu::-webkit-scrollbar { width: 6px; }
@@ -862,8 +865,8 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                                 <span>Gulf Region</span>
                             </div>
                             <ul class="mobile-submenu" id="gulfMenu">
-                                <li><a href="unitedarab.html">UAE</a></li>
-                                <li><a href="Saudiarabia.html">Saudi Arabia</a></li>
+                                <li><a href="unitedarabemirates.html">UAE</a></li>
+                                <li><a href="KingdomofSaudiArabia.html">Kingdom of Saudi Arabia</a></li>
                                 <li><a href="Qatar.html">Qatar</a></li>
                                 <li><a href="oman.html">Oman</a></li>
                                 <li><a href="bahrain.html">Bahrain</a></li>
@@ -908,11 +911,12 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                             </div>
                             <ul class="mobile-submenu" id="americaMenu">
                                 <li><a href="canada.html">Canada</a></li>
-                                <li><a href="us.html">United States</a></li>
+                                <li><a href="unitedstates.html">United States</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
+                <li><a href="oecd.html">OECD</a></li>
                 <li><a href="insights.html">TP Insights</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -932,8 +936,8 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                         <li class="dropdown-submenu position-relative">
                             <a class="dropdown-item dropdown-toggle" href="#">Gulf Region</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="unitedarab.html">UAE</a></li>
-                                <li><a class="dropdown-item" href="Saudiarabia.html">Saudi Arabia</a></li>
+                                <li><a class="dropdown-item" href="unitedarabemirates.html">UAE</a></li>
+                                <li><a class="dropdown-item" href="KingdomofSaudiArabia.html">Kingdom of Saudi Arabia</a></li>
                                 <li><a class="dropdown-item" href="Qatar.html">Qatar</a></li>
                                 <li><a class="dropdown-item" href="oman.html">Oman</a></li>
                                 <li><a class="dropdown-item" href="bahrain.html">Bahrain</a></li>
@@ -974,11 +978,12 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                             <a class="dropdown-item dropdown-toggle" href="#">America</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="canada.html">Canada</a></li>
-                                <li><a class="dropdown-item" href="us.html">United States</a></li>
+                                <li><a class="dropdown-item" href="unitedstates.html">United States</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
+                <li><a href="oecd.html">OECD</a></li>
                 <li><a href="insights.html">TP Insights</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
