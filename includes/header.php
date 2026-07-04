@@ -255,7 +255,7 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <a href="mailto:md@hexatp.com" class="btn-main py-2 px-4 fs-6">Get Started</a>
+        <a href="mailto:connect@hexatp.com" class="btn-main py-2 px-4 fs-6">Get Started</a>
     </header>
 
     <script>

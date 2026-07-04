@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * HexaTP Country Page - Master Template
  * Mirrors the premium India.html design perfectly.
@@ -248,7 +248,7 @@ include 'includes/header.php';
     <div class="container">
         <h2><?php echo htmlspecialchars($country->cta_title); ?></h2>
         <p style="color:var(--text-slate)">Navigate the complex TP landscape with our specialized local expertise and benchmarking solutions.</p>
-        <a class="btn btn-accent mt-3" href="mailto:md@hexatp.com"><?php echo htmlspecialchars($country->cta_button_text); ?></a>
+        <a class="btn btn-accent mt-3" href="mailto:connect@hexatp.com"><?php echo htmlspecialchars($country->cta_button_text); ?></a>
     </div>
 </section>
 
@@ -259,7 +259,7 @@ $teamFile = __DIR__ . '/custom_layouts/' . strtolower($slug) . '_team.html';
 if (file_exists($teamFile)) {
     include $teamFile;
 } else {
-    echo '<section class="py-5"><div class="container"><p class="text-center text-muted">Contact our Managing Director at md@hexatp.com</p></div></section>';
+    echo '<section class="py-5"><div class="container"><p class="text-center text-muted">Contact our Managing Director at connect@hexatp.com</p></div></section>';
 }
 ?>
 

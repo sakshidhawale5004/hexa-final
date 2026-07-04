@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Global Footer for HexaTP - Mirroring India.html Premium Design
  */
@@ -6,7 +6,7 @@
     <section class="contact-footer">
         <span class="text-warning text-uppercase fw-bold" style="letter-spacing:2px;">Secure Your Future</span>
         <h2 class="mt-3">Ready for a Professional Consultation?</h2>
-        <a href="mailto:md@hexatp.com" class="btn-main px-5 py-3 fs-5 mt-4">md@hexatp.com</a>
+        <a href="mailto:connect@hexatp.com" class="btn-main px-5 py-3 fs-5 mt-4">connect@hexatp.com</a>
         <p class="mt-4 text-muted">Contact our Managing Director for a confidential consultation on your Transfer Pricing needs.</p>
     </section>
 

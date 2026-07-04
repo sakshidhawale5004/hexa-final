@@ -471,7 +471,7 @@ function extractFooter($html) {
     
     $footer = [
         'title' => '',
-        'email' => 'md@hexatp.com'
+        'email' => 'connect@hexatp.com'
     ];
     
     $section = $xpath->query("//section[contains(@class, 'contact-footer')]")->item(0);
@@ -542,7 +542,7 @@ function migrateCountry($filename, $countryData, $countryRepo) {
         $country->cta_title = $cta['title'] ?: "Seeking TP Advisory in " . $countryData['name'] . "?";
         $country->cta_button_text = $cta['button_text'] ?: "Contact Specialist";
         $country->footer_title = $footer['title'] ?: "Ready for a Professional Consultation?";
-        $country->footer_email = $footer['email'] ?: "md@hexatp.com";
+        $country->footer_email = $footer['email'] ?: "connect@hexatp.com";
         $country->status = 'published'; // Set as published
         
         // Check if country already exists and delete it for a fresh migration

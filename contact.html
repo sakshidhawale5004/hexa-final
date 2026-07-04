@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -842,6 +842,8 @@ body {
 /* Ensure images don't overflow */
 img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !important; }
 </style>
+
+    <link rel="icon" type="image/png" href="favicon.png?v=3">
 </head>
 <body>
 <header>
@@ -850,7 +852,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
         <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
         <div class="mobile-menu" id="mobileMenu">
             <button class="close-menu" onclick="closeMobileMenu()" aria-label="Close menu">&#x2715;</button>
-            <a href="mailto:md@hexatp.com?subject=Transfer%20Pricing%20Consultation%20Request&body=Hello%20HexaTP%20Team,%0A%0AI%20am%20interested%20in%20discussing%20transfer%20pricing%20solutions.%0A%0APlease%20contact%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you" class="btn-main" style="display: block; width: 100%; text-align: center; margin-bottom: 20px; padding: 12px 16px !important; font-size: 14px !important;">Get Started</a>
+            <a href="mailto:connect@hexatp.com?subject=Transfer%20Pricing%20Consultation%20Request&body=Hello%20HexaTP%20Team,%0A%0AI%20am%20interested%20in%20discussing%20transfer%20pricing%20solutions.%0A%0APlease%20contact%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you" class="btn-main" style="display: block; width: 100%; text-align: center; margin-bottom: 20px; padding: 12px 16px !important; font-size: 14px !important;">Get Started</a>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutus.html">About</a></li>
@@ -919,6 +921,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                 <li><a href="oecd.html">OECD</a></li>
                 <li><a href="insights.html">TP Insights</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
             </ul>
         </div>
         <a href="index.html">
@@ -986,9 +989,10 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                 <li><a href="oecd.html">OECD</a></li>
                 <li><a href="insights.html">TP Insights</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
-        <a href="mailto:md@hexatp.com?subject=Transfer%20Pricing%20Consultation%20Request&body=Hello%20HexaTP%20Team,%0A%0AI%20am%20interested%20in%20discussing%20transfer%20pricing%20solutions.%0A%0APlease%20contact%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you" class="btn-main py-2 px-4 fs-6">Get Started</a>
+        <a href="mailto:connect@hexatp.com?subject=Transfer%20Pricing%20Consultation%20Request&body=Hello%20HexaTP%20Team,%0A%0AI%20am%20interested%20in%20discussing%20transfer%20pricing%20solutions.%0A%0APlease%20contact%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you" class="btn-main py-2 px-4 fs-6">Get Started</a>
     </header>
 <section class="contact-hero">
         <div class="container">
@@ -1050,24 +1054,73 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                 <div class="col-lg-6">
                     <div class="glass-card">
                         <h3 class="mb-4">📍 GET IN TOUCH</h3>
-<!-- HEAD OFFICE -->
+<!-- REGISTERED OFFICE -->
                         <div class="mb-4">
-                            <h5 style="color: var(--accent); font-weight: 600;">HEAD OFFICE</h5>
+                            <h5 style="color: var(--accent); font-weight: 600;">Registered Office</h5>
                             <p class="text-muted mb-0">
-                                C2-48, Tilak Lane, New Delhi 110001<br>
-                                <small>Delhi, India</small>
-                            </p>
-                            <p class="text-muted">
                                 647, Pace City II, Sector 37, Gurugram, Haryana<br>
                                 <small>Gurugram, India</small>
+                            </p>
+                        </div>
+<!-- AUSTRALIA -->
+                        <div class="mb-4">
+                            <h5 style="color: var(--accent); font-weight: 600;">AUSTRALIA</h5>
+                            <p class="text-muted mb-0">
+                                26 Blueberry Grove Glenwood, Sydney, NSW 2768
+                            </p>
+                        </div>
+<!-- INDIA -->
+                        <div class="mb-4">
+                            <h5 style="color: var(--accent); font-weight: 600;">INDIA</h5>
+                            <p class="text-muted mb-0">
+                                &bull; PS Arcadia, 9th floor, 4A Camac Street, Kolkata &ndash; 700016<br>
+                                &bull; 25/C SF, Hameed Shah Complex, Cubbonpet Main Road, Bangalore &ndash; 560002<br>
+                                &bull; 517, Phase III, Udyog Vihar III, Sector 19, Gurugram - 122016, Haryana<br>
+                                &bull; Aparna Sarovar society, Nallagandla, Hyderabad, TL 500019
+                            </p>
+                        </div>
+<!-- GERMANY -->
+                        <div class="mb-4">
+                            <h5 style="color: var(--accent); font-weight: 600;">GERMANY</h5>
+                            <p class="text-muted mb-0">
+                                Kapellstr. 2a, Dusseldorf, 40479, Germany
+                            </p>
+                        </div>
+<!-- UNITED KINGDOM -->
+                        <div class="mb-4">
+                            <h5 style="color: var(--accent); font-weight: 600;">UNITED KINGDOM</h5>
+                            <p class="text-muted mb-0">
+                                106 A, Harrowdeneroad, Wembley &ndash; HA0 2JF, UK
+                            </p>
+                        </div>
+<!-- UNITED STATES -->
+                        <div class="mb-4">
+                            <h5 style="color: var(--accent); font-weight: 600;">UNITED STATES</h5>
+                            <p class="text-muted mb-0">
+                                &bull; 61 Fredrick Ave, Atherton, CA 94027, USA<br>
+                                &bull; 180 Brookline Ave, Boston, MA 02215, USA
+                            </p>
+                        </div>
+<!-- CANADA -->
+                        <div class="mb-4">
+                            <h5 style="color: var(--accent); font-weight: 600;">CANADA</h5>
+                            <p class="text-muted mb-0">
+                                381 Front St W Suite 305, Toronto, ON M5V 3R8, Canada
+                            </p>
+                        </div>
+<!-- KENYA -->
+                        <div class="mb-4">
+                            <h5 style="color: var(--accent); font-weight: 600;">KENYA</h5>
+                            <p class="text-muted mb-0">
+                                3rd Floor Ngong Business Arcade, Nairobi, Kenya
                             </p>
                         </div>
 <!-- EMAIL -->
                         <div class="mb-4">
                             <h5 style="color: var(--accent); font-weight: 600;">EMAIL</h5>
                             <p class="text-muted mb-0">
-                                <a href="mailto:md@hexatp.com?subject=Transfer%20Pricing%20Consultation%20Request&body=Hello%20HexaTP%20Team,%0A%0AI%20am%20interested%20in%20discussing%20transfer%20pricing%20solutions.%0A%0APlease%20contact%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you" style="color: var(--accent); text-decoration: none;">md@hexatp.com</a><br>
-                                <a href="mailto:info@hexatp.com" style="color: var(--accent); text-decoration: none;">info@hexatp.com</a>
+                                <a href="mailto:connect@hexatp.com?subject=Transfer%20Pricing%20Consultation%20Request&body=Hello%20HexaTP%20Team,%0A%0AI%20am%20interested%20in%20discussing%20transfer%20pricing%20solutions.%0A%0APlease%20contact%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you" style="color: var(--accent); text-decoration: none;">connect@hexatp.com</a><br>
+                                <a href="mailto:admin@hexatp.com" style="color: var(--accent); text-decoration: none;">admin@hexatp.com</a>
                             </p>
                         </div>
 <!-- PHONE -->
@@ -1102,7 +1155,7 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
 <section class="contact-footer">
         <span class="text-warning text-uppercase fw-bold letter-spacing-2">Secure Your Future</span>
         <h2 class="mt-3">Ready for a Professional Consultation?</h2>
-        <a href="mailto:md@hexatp.com?subject=Transfer%20Pricing%20Consultation%20Request&body=Hello%20HexaTP%20Team,%0A%0AI%20am%20interested%20in%20discussing%20transfer%20pricing%20solutions.%0A%0APlease%20contact%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you" class="btn-main px-5 py-3 fs-5 mt-4">md@hexatp.com</a>
+        <a href="mailto:connect@hexatp.com?subject=Transfer%20Pricing%20Consultation%20Request&body=Hello%20HexaTP%20Team,%0A%0AI%20am%20interested%20in%20discussing%20transfer%20pricing%20solutions.%0A%0APlease%20contact%20me%20at%20your%20earliest%20convenience.%0A%0AThank%20you" class="btn-main px-5 py-3 fs-5 mt-4">connect@hexatp.com</a>
         <p class="mt-4 text-muted">Contact our Managing Director for a confidential consultation on your Transfer Pricing needs.</p>
     </section>
  <footer>
@@ -1348,7 +1401,7 @@ fetch('save_inquiry.php', {
     <span class="floating-widget-close" onclick="toggleFloatingWidget()">✕</span>
     <h4>Need Expert Guidance on OECD Chapter VII Changes?</h4>
     <p>Our transfer pricing specialists can help you understand and implement these changes. Get in touch today for a consultation.</p>
-    <a href="mailto:md@hexatp.com?subject=OECD%20Chapter%20VII%20Consultation" class="btn-consult">Request a Consultation</a>
+    <a href="mailto:connect@hexatp.com?subject=OECD%20Chapter%20VII%20Consultation" class="btn-consult">Request a Consultation</a>
 </div>
 <script>
 function toggleFloatingWidget() {
