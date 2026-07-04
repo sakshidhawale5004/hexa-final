@@ -98,6 +98,7 @@
         <div class="error-msg" id="errorMsg">Unauthorized email address.</div>
         <form onsubmit="handleLogin(event)">
             <input type="email" id="emailInput" class="form-control" placeholder="Enter your email address" required>
+            <input type="password" id="passwordInput" class="form-control" placeholder="Enter password" required>
             <button type="submit" class="btn-main">Login</button>
         </form>
         <a href="index.html" style="display: block; margin-top: 20px; color: #64748b; font-size: 14px; text-decoration: none;">&larr; Back to Home</a>
@@ -126,10 +127,17 @@
         function handleLogin(e) {
             e.preventDefault();
             const email = document.getElementById("emailInput").value.toLowerCase().trim();
-            if (allowedEmails.includes(email)) {
+            const password = document.getElementById("passwordInput").value;
+            
+            // Default password for all users
+            const validPassword = "hexatp123";
+
+            if (allowedEmails.includes(email) && password === validPassword) {
                 document.getElementById("loginForm").style.display = "none";
                 document.getElementById("dashboard").style.display = "block";
+                document.getElementById("errorMsg").style.display = "none";
             } else {
+                document.getElementById("errorMsg").innerText = "Invalid email or password.";
                 document.getElementById("errorMsg").style.display = "block";
             }
         }
