@@ -108,6 +108,10 @@ nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
             cursor: pointer;
         }
 .glass-card:hover { transform: translateY(-6px); border-color: var(--accent); }
+.dark-link-card { background: var(--text-main); border: 2px solid var(--accent); border-radius: 8px; padding: 25px 20px; text-align: center; display: block; text-decoration: none; height: 100%; transition: 0.3s; }
+.dark-link-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px var(--accent-glow); }
+.dark-link-card h5 { color: var(--accent); font-weight: 700; font-size: 1.1rem; margin-bottom: 8px; }
+.dark-link-card p { color: #f8fafc; font-size: 0.95rem; margin: 0; font-weight: 500; }
 .section-title { font-weight: 700; font-size: 34px; margin-bottom: 40px; }
 .reg-box {
             padding: 25px;
@@ -892,15 +896,15 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
             <h2 class="section-title text-center">Regulatory & OECD Profile Links</h2>
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-6">
-                    <a href="https://phl.hasil.gov.my/pdf/pdfam/Income_Tax_Transfer_Pricing_Rules_2012.pdf" target="_blank" class="glass-card d-block text-decoration-none h-100">
-                        <h5 class="mb-2" style="color: var(--accent);">Malaysia TP Regulation</h5>
-                        <p class="mb-0" style="color: var(--text-slate);">Official TP Regulation Guidelines</p>
+                    <a href="https://phl.hasil.gov.my/pdf/pdfam/Income_Tax_Transfer_Pricing_Rules_2012.pdf" target="_blank" class="dark-link-card">
+                        <h5>Malaysia TP Regulation</h5>
+                        <p>Official TP Regulation Guidelines</p>
                     </a>
                 </div>
                 <div class="col-lg-6">
-                    <a href="https://www.oecd.org/content/dam/oecd/en/topics/policy-sub-issues/transfer-pricing/transfer-pricing-country-profile-malaysia.pdf" target="_blank" class="glass-card d-block text-decoration-none h-100">
-                        <h5 class="mb-2" style="color: var(--accent);">OECD Country Profile</h5>
-                        <p class="mb-0" style="color: var(--text-slate);">Malaysia Transfer Pricing Profile (PDF)</p>
+                    <a href="https://www.oecd.org/content/dam/oecd/en/topics/policy-sub-issues/transfer-pricing/transfer-pricing-country-profile-malaysia.pdf" target="_blank" class="dark-link-card">
+                        <h5>OECD Country Profile</h5>
+                        <p>Malaysia Transfer Pricing Profile (PDF)</p>
                     </a>
                 </div>
             </div>
