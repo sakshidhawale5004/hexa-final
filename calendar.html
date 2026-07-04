@@ -65,12 +65,17 @@
     background-size:cover;
     background-position:top right;
     background-repeat:no-repeat;
-    border-radius:var(--radius) var(--radius) 0 0;
     overflow:hidden;
+  }
+  .tpc-top-strip{
+    background:#fff;
+    padding:16px 26px;
+    border-radius:var(--radius) var(--radius) 0 0;
+    border-bottom:1px solid #E4DFD1;
   }
   .tpc-header{
     color:#fff;
-    padding:22px 26px 18px;
+    padding:18px 26px;
   }
   .tpc-brand{display:flex;align-items:center;margin-bottom:14px;}
   .tpc-brand-logo{height:26px;width:auto;display:block;}
@@ -311,11 +316,13 @@
 </style>
 
 <div class="tpc-root" id="tpcRoot">
+  <div class="tpc-top-strip">
+    <div class="tpc-brand" style="margin:0;">
+      <img class="tpc-brand-logo" src="logo-hexatp.jpeg" style="height:32px;" alt="HexaTP - Transfer Pricing Simplified" />
+    </div>
+  </div>
   <div class="tpc-hero">
     <div class="tpc-header">
-      <div class="tpc-brand">
-        <img class="tpc-brand-logo" src="hexatp-logo.png" alt="HexaTP - Transfer Pricing Simplified" />
-      </div>
       <p class="tpc-eyebrow">Internal — Team Compliance Tracker</p>
       <div class="tpc-title-row">
         <div>
@@ -394,7 +401,7 @@
     which is the way to share updates or refresh everyone onto the same data after this page is re-uploaded.
   </div>
   <div class="tpc-footer">
-    <img src="hexatp-logo.png" alt="HexaTP" style="height:16px;width:auto;vertical-align:middle;margin-right:6px;opacity:.8;" />
+    <img src="logo-hexatp.jpeg" alt="HexaTP" style="height:16px;width:auto;vertical-align:middle;margin-right:6px;opacity:.8; mix-blend-mode: darken;" />
     © 2026 HexaTP — Internal compliance tool. Not for external sharing.
   </div>
 </div>
