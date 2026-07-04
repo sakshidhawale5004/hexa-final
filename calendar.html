@@ -53,8 +53,6 @@
   *{box-sizing:border-box;}
   .tpc-root{
     background-color:var(--paper);
-    background-image:url("hexa-logo-home.jpg");
-    background-repeat:repeat;
     color:var(--ink);
     padding:0;
     min-height:100%;
@@ -314,35 +312,35 @@
 
 <div class="tpc-root" id="tpcRoot">
   <div class="tpc-hero">
-  <div class="tpc-header">
-    <div class="tpc-brand">
-      <img class="tpc-brand-logo" src="hexa-logo-home.jpg" alt="HexaTP — Transfer Pricing Simplified" />
-    </div>
-    <p class="tpc-eyebrow">Internal — Team Compliance Tracker</p>
-    <div class="tpc-title-row">
-      <div>
-        <h1 class="tpc-title">Compliance &amp; Calendar Desk</h1>
-        <p class="tpc-sub">Transfer pricing deadlines, income tax deadlines, and local holidays — across every jurisdiction we cover.</p>
+    <div class="tpc-header">
+      <div class="tpc-brand">
+        <img class="tpc-brand-logo" src="hexatp-logo.png" alt="HexaTP - Transfer Pricing Simplified" />
       </div>
-      <div style="display:flex;gap:8px;align-items:center;">
-        <button class="tpc-iconbtn" id="tpcExportBtn" title="Download all entries as a JSON file">⇩ Export</button>
-        <button class="tpc-iconbtn" id="tpcImportBtn" title="Load a JSON file exported from this tool">⇪ Import</button>
-        <input type="file" id="tpcImportFile" accept="application/json" style="display:none;" />
-        <button class="tpc-addbtn" id="tpcAddBtn">+ Add Entry</button>
+      <p class="tpc-eyebrow">Internal — Team Compliance Tracker</p>
+      <div class="tpc-title-row">
+        <div>
+          <h1 class="tpc-title">Compliance &amp; Calendar Desk</h1>
+          <p class="tpc-sub">Transfer pricing deadlines, income tax deadlines, and local holidays — across every jurisdiction we cover.</p>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;">
+          <button class="tpc-iconbtn" id="tpcExportBtn" title="Download all entries as a JSON file">⇩ Export</button>
+          <button class="tpc-iconbtn" id="tpcImportBtn" title="Load a JSON file exported from this tool">⇪ Import</button>
+          <input type="file" id="tpcImportFile" accept="application/json" style="display:none;" />
+          <button class="tpc-addbtn" id="tpcAddBtn">+ Add Entry</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="tpc-upcoming">
-    <div class="tpc-upcoming-row">
-      <div class="tpc-upcoming-label">TP Deadline In</div>
-      <div class="tpc-upcoming-track" id="tpcUpcomingTP"></div>
+    <div class="tpc-upcoming">
+      <div class="tpc-upcoming-row">
+        <div class="tpc-upcoming-label">TP Deadline In</div>
+        <div class="tpc-upcoming-track" id="tpcUpcomingTP"></div>
+      </div>
+      <div class="tpc-upcoming-row">
+        <div class="tpc-upcoming-label">CT Deadline In</div>
+        <div class="tpc-upcoming-track" id="tpcUpcomingCT"></div>
+      </div>
     </div>
-    <div class="tpc-upcoming-row">
-      <div class="tpc-upcoming-label">CT Deadline In</div>
-      <div class="tpc-upcoming-track" id="tpcUpcomingCT"></div>
-    </div>
-  </div>
   </div>
 
   <div class="tpc-filters">
@@ -396,8 +394,8 @@
     which is the way to share updates or refresh everyone onto the same data after this page is re-uploaded.
   </div>
   <div class="tpc-footer">
-    <img src="hexa-logo-home.jpg" alt="HexaTP" style="height:16px;width:auto;vertical-align:middle;margin-right:6px;opacity:.8;" />
-    © 2026 HexaTP — Internal compliance tool. Not for external distribution.
+    <img src="hexatp-logo.png" alt="HexaTP" style="height:16px;width:auto;vertical-align:middle;margin-right:6px;opacity:.8;" />
+    © 2026 HexaTP — Internal compliance tool. Not for external sharing.
   </div>
 </div>
 
