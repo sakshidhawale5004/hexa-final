@@ -113,26 +113,23 @@
     </div>
 
     <script>
-        const allowedEmails = [
-            "md@hexatp.com",
-            "gp@hexatp.com",
-            "ps@hexatp.com",
-            "saniya@hexatp.com",
-            "himanshu@hexatp.com",
-            "yishu@hexatp.com",
-            "nk@hexatp.com",
-            "astha@hexatp.com"
-        ];
+        const userCredentials = {
+            "md@hexatp.com": "Md@123",
+            "gp@hexatp.com": "Gp@234",
+            "ps@hexatp.com": "Ps@345",
+            "saniya@hexatp.com": "Saniya@456",
+            "himanshu@hexatp.com": "Himanshu@567",
+            "yishu@hexatp.com": "Yishu@678",
+            "nk@hexatp.com": "Nk@789",
+            "astha@hexatp.com": "Astha@890"
+        };
 
         function handleLogin(e) {
             e.preventDefault();
             const email = document.getElementById("emailInput").value.toLowerCase().trim();
             const password = document.getElementById("passwordInput").value;
-            
-            // Default password for all users
-            const validPassword = "hexatp123";
 
-            if (allowedEmails.includes(email) && password === validPassword) {
+            if (userCredentials[email] && userCredentials[email] === password) {
                 document.getElementById("loginForm").style.display = "none";
                 document.getElementById("dashboard").style.display = "block";
                 document.getElementById("errorMsg").style.display = "none";
