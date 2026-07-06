@@ -1188,15 +1188,29 @@ h1, h2, h3, h4, h5, h6 {
             align-items: center;
         }
 
+        .ticker-viewport {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
         .ticker-scroll {
             display: flex;
             white-space: nowrap;
+            width: max-content;
             animation: ticker-marquee 45s linear infinite;
-            padding-left: 20px;
         }
 
         .ticker-scroll:hover {
             animation-play-state: paused;
+        }
+
+        .ticker-content {
+            display: flex;
+            flex-shrink: 0;
+            padding-left: 20px;
         }
 
         .ticker-item {
@@ -1274,28 +1288,30 @@ h1, h2, h3, h4, h5, h6 {
             <div class="pulse-dot"></div>
             <div class="ticker-label">COMPLIANCE DEADLINES</div>
         </div>
-        <div class="ticker-scroll">
-            <div style="display: flex;">
-                <div class="ticker-item"><span class="country">🇵🇹 PORTUGAL</span> <span class="days">11 days</span> <span class="desc">Local File deadline</span></div>
-                <div class="ticker-item"><span class="country">🇪🇸 SPAIN</span> <span class="days">21 days</span> <span class="desc">CT/income tax return due</span></div>
-                <div class="ticker-item"><span class="country">🇩🇪 GERMANY</span> <span class="days">27 days</span> <span class="desc">CT/income tax return due</span></div>
-                <div class="ticker-item"><span class="country">🇲🇾 MALAYSIA</span> <span class="days">27 days</span> <span class="desc">CT/income tax return due</span></div>
-                <div class="ticker-item"><span class="country">🇮🇪 IRELAND</span> <span class="days">81 days</span> <span class="desc">CT/income tax return due</span></div>
-                <div class="ticker-item"><span class="country">🇦🇪 UAE</span> <span class="days">88 days</span> <span class="desc">CT/income tax return incl. TP</span></div>
-                <div class="ticker-item"><span class="country">🇭🇰 HONG KONG SAR</span> <span class="days">88 days</span> <span class="desc">Local File deadline</span></div>
-                <div class="ticker-item"><span class="country">🇲🇹 MALTA</span> <span class="days">88 days</span> <span class="desc">CT/income tax return due</span></div>
-                <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">119 days</span> <span class="desc">Local File deadline</span></div>
-            </div>
-            <div style="display: flex;">
-                <div class="ticker-item"><span class="country">🇵🇹 PORTUGAL</span> <span class="days">11 days</span> <span class="desc">Local File deadline</span></div>
-                <div class="ticker-item"><span class="country">🇪🇸 SPAIN</span> <span class="days">21 days</span> <span class="desc">CT/income tax return due</span></div>
-                <div class="ticker-item"><span class="country">🇩🇪 GERMANY</span> <span class="days">27 days</span> <span class="desc">CT/income tax return due</span></div>
-                <div class="ticker-item"><span class="country">🇲🇾 MALAYSIA</span> <span class="days">27 days</span> <span class="desc">CT/income tax return due</span></div>
-                <div class="ticker-item"><span class="country">🇮🇪 IRELAND</span> <span class="days">81 days</span> <span class="desc">CT/income tax return due</span></div>
-                <div class="ticker-item"><span class="country">🇦🇪 UAE</span> <span class="days">88 days</span> <span class="desc">CT/income tax return incl. TP</span></div>
-                <div class="ticker-item"><span class="country">🇭🇰 HONG KONG SAR</span> <span class="days">88 days</span> <span class="desc">Local File deadline</span></div>
-                <div class="ticker-item"><span class="country">🇲🇹 MALTA</span> <span class="days">88 days</span> <span class="desc">CT/income tax return due</span></div>
-                <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">119 days</span> <span class="desc">Local File deadline</span></div>
+        <div class="ticker-viewport">
+            <div class="ticker-scroll">
+                <div class="ticker-content">
+                    <div class="ticker-item"><span class="country">🇵🇹 PORTUGAL</span> <span class="days">11 days</span> <span class="desc">Local File deadline</span></div>
+                    <div class="ticker-item"><span class="country">🇪🇸 SPAIN</span> <span class="days">21 days</span> <span class="desc">CT/income tax return due</span></div>
+                    <div class="ticker-item"><span class="country">🇩🇪 GERMANY</span> <span class="days">27 days</span> <span class="desc">CT/income tax return due</span></div>
+                    <div class="ticker-item"><span class="country">🇲🇾 MALAYSIA</span> <span class="days">27 days</span> <span class="desc">CT/income tax return due</span></div>
+                    <div class="ticker-item"><span class="country">🇮🇪 IRELAND</span> <span class="days">81 days</span> <span class="desc">CT/income tax return due</span></div>
+                    <div class="ticker-item"><span class="country">🇦🇪 UAE</span> <span class="days">88 days</span> <span class="desc">CT/income tax return incl. TP</span></div>
+                    <div class="ticker-item"><span class="country">🇭🇰 HONG KONG SAR</span> <span class="days">88 days</span> <span class="desc">Local File deadline</span></div>
+                    <div class="ticker-item"><span class="country">🇲🇹 MALTA</span> <span class="days">88 days</span> <span class="desc">CT/income tax return due</span></div>
+                    <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">119 days</span> <span class="desc">Local File deadline</span></div>
+                </div>
+                <div class="ticker-content">
+                    <div class="ticker-item"><span class="country">🇵🇹 PORTUGAL</span> <span class="days">11 days</span> <span class="desc">Local File deadline</span></div>
+                    <div class="ticker-item"><span class="country">🇪🇸 SPAIN</span> <span class="days">21 days</span> <span class="desc">CT/income tax return due</span></div>
+                    <div class="ticker-item"><span class="country">🇩🇪 GERMANY</span> <span class="days">27 days</span> <span class="desc">CT/income tax return due</span></div>
+                    <div class="ticker-item"><span class="country">🇲🇾 MALAYSIA</span> <span class="days">27 days</span> <span class="desc">CT/income tax return due</span></div>
+                    <div class="ticker-item"><span class="country">🇮🇪 IRELAND</span> <span class="days">81 days</span> <span class="desc">CT/income tax return due</span></div>
+                    <div class="ticker-item"><span class="country">🇦🇪 UAE</span> <span class="days">88 days</span> <span class="desc">CT/income tax return incl. TP</span></div>
+                    <div class="ticker-item"><span class="country">🇭🇰 HONG KONG SAR</span> <span class="days">88 days</span> <span class="desc">Local File deadline</span></div>
+                    <div class="ticker-item"><span class="country">🇲🇹 MALTA</span> <span class="days">88 days</span> <span class="desc">CT/income tax return due</span></div>
+                    <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">119 days</span> <span class="desc">Local File deadline</span></div>
+                </div>
             </div>
         </div>
     </div>
