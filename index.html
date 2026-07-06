@@ -1195,11 +1195,10 @@ h1, h2, h3, h4, h5, h6 {
         }
 
         .ticker-scroll {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             height: 100%;
             white-space: nowrap;
-            width: max-content;
             animation: ticker-marquee 60s linear infinite;
         }
 
@@ -1210,6 +1209,7 @@ h1, h2, h3, h4, h5, h6 {
         .ticker-content {
             display: flex;
             align-items: center;
+            flex-shrink: 0;
             padding-left: 20px;
         }
 
@@ -1217,6 +1217,7 @@ h1, h2, h3, h4, h5, h6 {
             display: inline-flex;
             align-items: center;
             margin-right: 15px;
+            flex-shrink: 0;
         }
 
         .ticker-item::after {
