@@ -1192,40 +1192,36 @@ h1, h2, h3, h4, h5, h6 {
             flex: 1;
             overflow: hidden;
             height: 100%;
-        }
-
-        .ticker-scroll {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            white-space: nowrap;
-            width: max-content;
-            animation: ticker-marquee 60s linear infinite;
-        }
-
-        .ticker-scroll:hover {
-            animation-play-state: paused;
+            display: flex; /* Allow content blocks to sit side-by-side */
         }
 
         .ticker-content {
             display: flex;
             align-items: center;
             flex-shrink: 0;
+            min-width: max-content; /* Ensure it takes full width of its items */
             padding-left: 20px;
+            animation: ticker-marquee 60s linear infinite;
+        }
+
+        /* Pause both blocks on hover */
+        .ticker-viewport:hover .ticker-content {
+            animation-play-state: paused;
         }
 
         .ticker-item {
-            display: flex;
-            align-items: center;
+            display: inline-block;
+            vertical-align: middle;
             margin-right: 15px;
-            flex-shrink: 0;
-            white-space: nowrap;
+            white-space: nowrap; /* Forcibly prevent wrapping */
         }
 
         .ticker-item::after {
             content: "•";
             color: rgba(255, 255, 255, 0.15);
             margin-left: 15px;
+            display: inline-block;
+            vertical-align: middle;
         }
 
         .ticker-item:last-child::after {
@@ -1233,8 +1229,8 @@ h1, h2, h3, h4, h5, h6 {
         }
 
         .ticker-item .country {
-            display: flex;
-            align-items: center;
+            display: inline-block;
+            vertical-align: middle;
             color: #ffffff;
             font-weight: 700;
             margin-right: 8px;
@@ -1242,6 +1238,8 @@ h1, h2, h3, h4, h5, h6 {
         }
 
         .ticker-item .days {
+            display: inline-block;
+            vertical-align: middle;
             color: #0B1F3A;
             background: #C89B3C;
             font-weight: 800;
@@ -1254,8 +1252,15 @@ h1, h2, h3, h4, h5, h6 {
         }
 
         .ticker-item .desc {
+            display: inline-block;
+            vertical-align: middle;
             color: #cbd5e1;
             font-size: 12.5px;
+        }
+
+        @keyframes ticker-marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); } /* Flawless loop by moving entire block by its own exact width */
         }
 
         @keyframes ticker-marquee {
@@ -1291,31 +1296,29 @@ h1, h2, h3, h4, h5, h6 {
             <div class="ticker-label">COMPLIANCE DEADLINES</div>
         </div>
         <div class="ticker-viewport">
-            <div class="ticker-scroll">
-                <div class="ticker-content">
-                    <div class="ticker-item"><span class="country">🇵🇹 PORTUGAL</span> <span class="days">9 days</span> <span class="desc">Local File deadline</span></div>
-                    <div class="ticker-item"><span class="country">🇦🇪 UAE</span> <span class="days">86 days</span> <span class="desc">CT/income tax return (incl. TP)</span></div>
-                    <div class="ticker-item"><span class="country">🇭🇰 HONG KONG SAR</span> <span class="days">86 days</span> <span class="desc">Local File deadline</span></div>
-                    <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">117 days</span> <span class="desc">Local File deadline</span></div>
-                    <div class="ticker-item"><span class="country">🇮🇳 INDIA</span> <span class="days">117 days</span> <span class="desc">TP disclosure / annual filing</span></div>
-                    <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">147 days</span> <span class="desc">TP disclosure / annual filing</span></div>
-                    <div class="ticker-item"><span class="country">🇧🇪 BELGIUM</span> <span class="days">178 days</span> <span class="desc">TP disclosure / annual filing</span></div>
-                    <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">178 days</span> <span class="desc">Master File deadline</span></div>
-                    <div class="ticker-item"><span class="country">🇭🇺 HUNGARY</span> <span class="days">178 days</span> <span class="desc">Master File deadline</span></div>
-                    <div class="ticker-item"><span class="country">🇰🇷 SOUTH KOREA</span> <span class="days">178 days</span> <span class="desc">Local File deadline</span></div>
-                </div>
-                <div class="ticker-content">
-                    <div class="ticker-item"><span class="country">🇵🇹 PORTUGAL</span> <span class="days">9 days</span> <span class="desc">Local File deadline</span></div>
-                    <div class="ticker-item"><span class="country">🇦🇪 UAE</span> <span class="days">86 days</span> <span class="desc">CT/income tax return (incl. TP)</span></div>
-                    <div class="ticker-item"><span class="country">🇭🇰 HONG KONG SAR</span> <span class="days">86 days</span> <span class="desc">Local File deadline</span></div>
-                    <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">117 days</span> <span class="desc">Local File deadline</span></div>
-                    <div class="ticker-item"><span class="country">🇮🇳 INDIA</span> <span class="days">117 days</span> <span class="desc">TP disclosure / annual filing</span></div>
-                    <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">147 days</span> <span class="desc">TP disclosure / annual filing</span></div>
-                    <div class="ticker-item"><span class="country">🇧🇪 BELGIUM</span> <span class="days">178 days</span> <span class="desc">TP disclosure / annual filing</span></div>
-                    <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">178 days</span> <span class="desc">Master File deadline</span></div>
-                    <div class="ticker-item"><span class="country">🇭🇺 HUNGARY</span> <span class="days">178 days</span> <span class="desc">Master File deadline</span></div>
-                    <div class="ticker-item"><span class="country">🇰🇷 SOUTH KOREA</span> <span class="days">178 days</span> <span class="desc">Local File deadline</span></div>
-                </div>
+            <div class="ticker-content">
+                <div class="ticker-item"><span class="country">🇵🇹 PORTUGAL</span> <span class="days">9 days</span> <span class="desc">Local File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇦🇪 UAE</span> <span class="days">86 days</span> <span class="desc">CT/income tax return (incl. TP)</span></div>
+                <div class="ticker-item"><span class="country">🇭🇰 HONG KONG SAR</span> <span class="days">86 days</span> <span class="desc">Local File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">117 days</span> <span class="desc">Local File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇮🇳 INDIA</span> <span class="days">117 days</span> <span class="desc">TP disclosure / annual filing</span></div>
+                <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">147 days</span> <span class="desc">TP disclosure / annual filing</span></div>
+                <div class="ticker-item"><span class="country">🇧🇪 BELGIUM</span> <span class="days">178 days</span> <span class="desc">TP disclosure / annual filing</span></div>
+                <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">178 days</span> <span class="desc">Master File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇭🇺 HUNGARY</span> <span class="days">178 days</span> <span class="desc">Master File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇰🇷 SOUTH KOREA</span> <span class="days">178 days</span> <span class="desc">Local File deadline</span></div>
+            </div>
+            <div class="ticker-content">
+                <div class="ticker-item"><span class="country">🇵🇹 PORTUGAL</span> <span class="days">9 days</span> <span class="desc">Local File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇦🇪 UAE</span> <span class="days">86 days</span> <span class="desc">CT/income tax return (incl. TP)</span></div>
+                <div class="ticker-item"><span class="country">🇭🇰 HONG KONG SAR</span> <span class="days">86 days</span> <span class="desc">Local File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">117 days</span> <span class="desc">Local File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇮🇳 INDIA</span> <span class="days">117 days</span> <span class="desc">TP disclosure / annual filing</span></div>
+                <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">147 days</span> <span class="desc">TP disclosure / annual filing</span></div>
+                <div class="ticker-item"><span class="country">🇧🇪 BELGIUM</span> <span class="days">178 days</span> <span class="desc">TP disclosure / annual filing</span></div>
+                <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">178 days</span> <span class="desc">Master File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇭🇺 HUNGARY</span> <span class="days">178 days</span> <span class="desc">Master File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇰🇷 SOUTH KOREA</span> <span class="days">178 days</span> <span class="desc">Local File deadline</span></div>
             </div>
         </div>
     </div>
