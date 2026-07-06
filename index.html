@@ -1129,11 +1129,11 @@ h1, h2, h3, h4, h5, h6 {
             }
         }
 
-        /* Compliance Ticker Styles */
+        /* Premium Compliance Ticker Styles */
         .compliance-ticker-wrap {
-            background-color: #0f172a;
+            background: #0B1F3A; /* Matches HexaTP deep navy */
             color: #ffffff;
-            height: 40px;
+            height: 38px;
             display: flex;
             align-items: center;
             position: fixed;
@@ -1141,63 +1141,118 @@ h1, h2, h3, h4, h5, h6 {
             left: 0;
             width: 100%;
             z-index: 9999;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
             font-size: 13px;
             font-weight: 500;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(200, 155, 60, 0.3); /* Gold border */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
-        .ticker-label {
-            background-color: #f5c400;
-            color: #000;
-            padding: 0 20px;
+
+        .ticker-label-container {
+            background: #0B1F3A;
+            padding: 0 25px;
             height: 100%;
             display: flex;
             align-items: center;
-            font-weight: 700;
             z-index: 2;
-            box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+            position: relative;
+            box-shadow: 15px 0 20px -5px #0B1F3A;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .pulse-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #C89B3C; /* HexaTP gold */
+            border-radius: 50%;
+            margin-right: 10px;
+            box-shadow: 0 0 8px #C89B3C;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; box-shadow: 0 0 8px #C89B3C; }
+            50% { opacity: 0.4; box-shadow: 0 0 2px #C89B3C; }
+            100% { opacity: 1; box-shadow: 0 0 8px #C89B3C; }
+        }
+
+        .ticker-label {
+            color: #C89B3C;
+            font-weight: 800;
             white-space: nowrap;
             text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 0.5px;
+            font-size: 11.5px;
+            letter-spacing: 1.2px;
+            display: flex;
+            align-items: center;
         }
+
         .ticker-scroll {
             display: flex;
             white-space: nowrap;
-            animation: ticker-marquee 40s linear infinite;
+            animation: ticker-marquee 45s linear infinite;
             padding-left: 20px;
         }
+
         .ticker-scroll:hover {
             animation-play-state: paused;
         }
+
         .ticker-item {
             display: inline-flex;
             align-items: center;
-            margin-right: 40px;
+            margin-right: 25px;
         }
+
+        .ticker-item::after {
+            content: "•";
+            color: rgba(255, 255, 255, 0.15);
+            margin-left: 25px;
+        }
+
+        .ticker-item:last-child::after {
+            display: none;
+        }
+
         .ticker-item .country {
-            color: #f5c400;
+            color: #ffffff;
             font-weight: 700;
-            margin-right: 6px;
+            margin-right: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .ticker-item .days {
+            color: #0B1F3A;
+            background: #C89B3C;
+            font-weight: 800;
+            margin-right: 8px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
         }
-        .ticker-item .days {
-            color: #ef4444;
-            font-weight: 700;
-            margin-right: 6px;
-        }
+
         .ticker-item .desc {
             color: #cbd5e1;
+            font-size: 12.5px;
         }
+
         @keyframes ticker-marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
 
         /* Adjust header to account for ticker */
-        header {
-            top: 55px !important;
+        @media (min-width: 769px) {
+            header { top: 58px !important; }
+        }
+        @media (max-width: 768px) {
+            header { top: 38px !important; }
         }
     </style>
 <!-- Google tag (gtag.js) -->
@@ -1215,29 +1270,32 @@ h1, h2, h3, h4, h5, h6 {
 <body>
     <!-- Compliance Deadline Ticker -->
     <div class="compliance-ticker-wrap">
-        <div class="ticker-label">Upcoming Deadlines</div>
+        <div class="ticker-label-container">
+            <div class="pulse-dot"></div>
+            <div class="ticker-label">COMPLIANCE DEADLINES</div>
+        </div>
         <div class="ticker-scroll">
             <div style="display: flex;">
-                <div class="ticker-item"><span class="country">🇵🇹 PORTUGAL:</span> <span class="days">11 days</span> <span class="desc">(Local File deadline)</span></div>
-                <div class="ticker-item"><span class="country">🇪🇸 SPAIN:</span> <span class="days">21 days</span> <span class="desc">(CT/income tax return due)</span></div>
-                <div class="ticker-item"><span class="country">🇩🇪 GERMANY:</span> <span class="days">27 days</span> <span class="desc">(CT/income tax return due)</span></div>
-                <div class="ticker-item"><span class="country">🇲🇾 MALAYSIA:</span> <span class="days">27 days</span> <span class="desc">(CT/income tax return due)</span></div>
-                <div class="ticker-item"><span class="country">🇮🇪 IRELAND:</span> <span class="days">81 days</span> <span class="desc">(CT/income tax return due)</span></div>
-                <div class="ticker-item"><span class="country">🇦🇪 UAE:</span> <span class="days">88 days</span> <span class="desc">(CT/income tax return incl. TP)</span></div>
-                <div class="ticker-item"><span class="country">🇭🇰 HONG KONG SAR:</span> <span class="days">88 days</span> <span class="desc">(Local File deadline)</span></div>
-                <div class="ticker-item"><span class="country">🇲🇹 MALTA:</span> <span class="days">88 days</span> <span class="desc">(CT/income tax return due)</span></div>
-                <div class="ticker-item"><span class="country">🇵🇱 POLAND:</span> <span class="days">119 days</span> <span class="desc">(Local File deadline)</span></div>
+                <div class="ticker-item"><span class="country">🇵🇹 PORTUGAL</span> <span class="days">11 days</span> <span class="desc">Local File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇪🇸 SPAIN</span> <span class="days">21 days</span> <span class="desc">CT/income tax return due</span></div>
+                <div class="ticker-item"><span class="country">🇩🇪 GERMANY</span> <span class="days">27 days</span> <span class="desc">CT/income tax return due</span></div>
+                <div class="ticker-item"><span class="country">🇲🇾 MALAYSIA</span> <span class="days">27 days</span> <span class="desc">CT/income tax return due</span></div>
+                <div class="ticker-item"><span class="country">🇮🇪 IRELAND</span> <span class="days">81 days</span> <span class="desc">CT/income tax return due</span></div>
+                <div class="ticker-item"><span class="country">🇦🇪 UAE</span> <span class="days">88 days</span> <span class="desc">CT/income tax return incl. TP</span></div>
+                <div class="ticker-item"><span class="country">🇭🇰 HONG KONG SAR</span> <span class="days">88 days</span> <span class="desc">Local File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇲🇹 MALTA</span> <span class="days">88 days</span> <span class="desc">CT/income tax return due</span></div>
+                <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">119 days</span> <span class="desc">Local File deadline</span></div>
             </div>
             <div style="display: flex;">
-                <div class="ticker-item"><span class="country">🇵🇹 PORTUGAL:</span> <span class="days">11 days</span> <span class="desc">(Local File deadline)</span></div>
-                <div class="ticker-item"><span class="country">🇪🇸 SPAIN:</span> <span class="days">21 days</span> <span class="desc">(CT/income tax return due)</span></div>
-                <div class="ticker-item"><span class="country">🇩🇪 GERMANY:</span> <span class="days">27 days</span> <span class="desc">(CT/income tax return due)</span></div>
-                <div class="ticker-item"><span class="country">🇲🇾 MALAYSIA:</span> <span class="days">27 days</span> <span class="desc">(CT/income tax return due)</span></div>
-                <div class="ticker-item"><span class="country">🇮🇪 IRELAND:</span> <span class="days">81 days</span> <span class="desc">(CT/income tax return due)</span></div>
-                <div class="ticker-item"><span class="country">🇦🇪 UAE:</span> <span class="days">88 days</span> <span class="desc">(CT/income tax return incl. TP)</span></div>
-                <div class="ticker-item"><span class="country">🇭🇰 HONG KONG SAR:</span> <span class="days">88 days</span> <span class="desc">(Local File deadline)</span></div>
-                <div class="ticker-item"><span class="country">🇲🇹 MALTA:</span> <span class="days">88 days</span> <span class="desc">(CT/income tax return due)</span></div>
-                <div class="ticker-item"><span class="country">🇵🇱 POLAND:</span> <span class="days">119 days</span> <span class="desc">(Local File deadline)</span></div>
+                <div class="ticker-item"><span class="country">🇵🇹 PORTUGAL</span> <span class="days">11 days</span> <span class="desc">Local File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇪🇸 SPAIN</span> <span class="days">21 days</span> <span class="desc">CT/income tax return due</span></div>
+                <div class="ticker-item"><span class="country">🇩🇪 GERMANY</span> <span class="days">27 days</span> <span class="desc">CT/income tax return due</span></div>
+                <div class="ticker-item"><span class="country">🇲🇾 MALAYSIA</span> <span class="days">27 days</span> <span class="desc">CT/income tax return due</span></div>
+                <div class="ticker-item"><span class="country">🇮🇪 IRELAND</span> <span class="days">81 days</span> <span class="desc">CT/income tax return due</span></div>
+                <div class="ticker-item"><span class="country">🇦🇪 UAE</span> <span class="days">88 days</span> <span class="desc">CT/income tax return incl. TP</span></div>
+                <div class="ticker-item"><span class="country">🇭🇰 HONG KONG SAR</span> <span class="days">88 days</span> <span class="desc">Local File deadline</span></div>
+                <div class="ticker-item"><span class="country">🇲🇹 MALTA</span> <span class="days">88 days</span> <span class="desc">CT/income tax return due</span></div>
+                <div class="ticker-item"><span class="country">🇵🇱 POLAND</span> <span class="days">119 days</span> <span class="desc">Local File deadline</span></div>
             </div>
         </div>
     </div>
