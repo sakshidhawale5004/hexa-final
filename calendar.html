@@ -31,6 +31,19 @@
     .tpc-page-wrap { border-radius:0; box-shadow:none; }
   }
 </style>
+
+<style>
+.mobile-submenu { padding-left: 20px; margin-top: 10px; display: none; border-left: 2px solid rgba(245,196,0,0.3); max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.mobile-submenu.active { display: block; max-height: 2000px; animation: slideDown 0.3s ease; }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+.mobile-submenu li a { font-size: 16px; padding: 10px 15px; }
+.mobile-dropdown-toggle { color: var(--text-main); font-size: 18px; padding: 12px 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-radius: 8px; transition: all 0.3s ease; user-select: none; }
+.mobile-dropdown-toggle:hover { background: rgba(245,196,0,0.1); color: #f5c400; }
+.mobile-dropdown-toggle::after { content: '\25BC'; font-size: 12px; transition: transform 0.3s ease; }
+.mobile-dropdown-toggle.active { color: #f5c400; }
+.mobile-dropdown-toggle.active::after { transform: rotate(180deg); }
+</style>
+
 </head>
 <body>
 <div class="tpc-page-wrap">
@@ -815,5 +828,16 @@
 </script>
 
 </div>
+
+<script>
+function toggleSubmenu(submenuId, toggleElement) {
+    const submenu = document.getElementById(submenuId);
+    if (submenu) {
+        submenu.classList.toggle('active');
+        toggleElement.classList.toggle('active');
+    }
+}
+</script>
+
 </body>
 </html>

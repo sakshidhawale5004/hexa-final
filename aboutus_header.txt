@@ -23,7 +23,7 @@
                                 <li><a href="Qatar.html">Qatar</a></li>
                                 <li><a href="oman.html">Oman</a></li>
                                 <li><a href="bahrain.html">Bahrain</a></li>
-</ul>
+                            </ul>
                         </li>
                         <li>
                             <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('asiaMenu', this)">
@@ -99,7 +99,7 @@
                                 <li><a class="dropdown-item" href="Qatar.html">Qatar</a></li>
                                 <li><a class="dropdown-item" href="oman.html">Oman</a></li>
                                 <li><a class="dropdown-item" href="bahrain.html">Bahrain</a></li>
-</ul>
+                            </ul>
                         </li>
                         <!-- Asia -->
                         <li class="dropdown-submenu">
@@ -127,11 +127,11 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="kenya.html">Kenya</a></li>
                                 <li><a class="dropdown-item" href="egypt.html">Egypt</a></li>
-                                <li><a class="dropdown-item" href="ghana.html">Ghana</a></li>
+<li><a class="dropdown-item" href="ghana.html">Ghana</a></li>
                                 <li><a class="dropdown-item" href="botswana.html">Botswana</a></li>
                             </ul>
                         </li>
-                        <!-- Americas & Oceania -->
+                        <!-- America -->
                         <li class="dropdown-submenu">
                             <a class="dropdown-item dropdown-toggle" href="#">America</a>
                             <ul class="dropdown-menu">

@@ -123,12 +123,12 @@ nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
 .cta {
             padding: 80px 0;
             text-align: center;
-            background: var(--bg-subtle);
+            background: url('88298.jpg') center/cover no-repeat;
         }
 .contact-footer {
             padding: 100px 5%;
             text-align: center;
-            background: linear-gradient(0deg, #fff9e6 0%, var(--bg-light) 100%);
+            background: url('88298.jpg') center/cover no-repeat;
         }
 /* --- Team Section Styles --- */
 .team-card {
@@ -238,8 +238,8 @@ z-index: 0;
         .dropdown-submenu:hover > .dropdown-menu { display: block; }
         /* Mobile Nav */
         .mobile-nav-toggle { display: none; position: fixed; right: 15px; top: 15px; background: #f5c400; border: none; color: #000; font-size: 24px; cursor: pointer; z-index: 1001; padding: 10px 12px; line-height: 1; width: auto; height: auto; min-width: auto; min-height: auto; border-radius: 6px; }
-        .mobile-nav-toggle::before { content: '\2630'; display: inline-block; font-size: 24px; font-weight: bold; }
-        .mobile-menu { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-left: 1px solid rgba(0,0,0,0.1); padding: 80px 20px 20px; transition: right 0.3s ease; z-index: 1000; overflow-y: auto; box-shadow: -5px 0 20px rgba(0,0,0,0.5); }
+        
+        .mobile-menu { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-left: 1px solid rgba(0,0,0,0.1); padding: 80px 20px 20px; transition: right 0.3s ease; z-index: 10001; overflow-y: auto; box-shadow: -5px 0 20px rgba(0,0,0,0.5); }
         .mobile-menu.active { right: 0; }
         .mobile-menu ul { list-style: none; padding: 0; margin: 0; }
         .mobile-menu ul li { margin-bottom: 15px; }
@@ -254,7 +254,7 @@ z-index: 0;
         .mobile-dropdown-toggle::after { content: '\25BC'; font-size: 12px; transition: transform 0.3s ease; }
         .mobile-dropdown-toggle.active { color: #f5c400; }
         .mobile-dropdown-toggle.active::after { transform: rotate(180deg); }
-        .mobile-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 999; backdrop-filter: blur(2px); }
+        .mobile-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; backdrop-filter: blur(2px); }
         .mobile-overlay.active { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .close-menu { position: absolute; top: 20px; right: 20px; background: none; border: none; color: #f5c400; font-size: 32px; cursor: pointer; padding: 5px; line-height: 1; transition: transform 0.3s ease; }
@@ -265,7 +265,7 @@ z-index: 0;
             .logo-img { height: 35px; width: auto; }
             header { width: 100% !important; padding: 12px 15px !important; top: 0 !important; left: 0 !important; transform: none !important; border-radius: 0 !important; justify-content: space-between !important; align-items: center !important; max-width: 100% !important; }
             header > a.btn-main { display: none !important; }
-            header > img.logo-img { order: 1; margin: 0 !important; }
+            header > a { order: 1; margin: 0 !important; }
             .mobile-nav-toggle { order: 2; position: static !important; right: auto !important; top: auto !important; }
         }
         @media (min-width: 769px) { .mobile-menu, .mobile-overlay, .mobile-nav-toggle { display: none !important; } }
@@ -545,15 +545,11 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
 <body>
         <header>
         <!-- Mobile Navigation -->
-        <button class="mobile-nav-toggle" onclick="openMobileMenu()" aria-label="Open menu"></button>
+        <button class="mobile-nav-toggle" onclick="openMobileMenu()" aria-label="Open menu"><i class="bi bi-list"></i></button>
         <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
         <div class="mobile-menu" id="mobileMenu">
             <button class="close-menu" onclick="closeMobileMenu()" aria-label="Close menu">&#x2715;</button>
-            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
-                <a href="contact.html" class="btn-main" style="display: block; width: 100%; text-align: center; padding: 12px 16px !important; font-size: 14px !important;">Get Started</a>
-                <a href="login.html" class="btn-main" style="display: block; width: 100%; text-align: center; padding: 12px 16px !important; font-size: 14px !important; background: transparent; border: 2px solid var(--accent); color: var(--text-main);">Login</a>
-            </div>
-            <ul>
+<ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutus.html">About</a></li>
                 <li><a href="solution.html">Solutions</a></li>
@@ -622,7 +618,12 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                 <li><a href="insights.html">TP Insights</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-        </div>
+        
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 30px; margin-bottom: 30px;">
+                <a href="contact.html" class="btn-main" style="display: block; width: 100%; text-align: center; padding: 12px 16px !important; font-size: 14px !important;">Get Started</a>
+                <a href="login.html" class="btn-main" style="display: block; width: 100%; text-align: center; padding: 12px 16px !important; font-size: 14px !important; background: transparent; border: 2px solid var(--accent); color: var(--text-main);">Login</a>
+            </div>
+            </div>
         <a href="index.html">
             <img src="logo-hexatp.jpeg" alt="HexaTP - Transfer Pricing Simplified" class="logo-img" />
         </a>
@@ -669,12 +670,13 @@ img:not(.logo-img), video, iframe { max-width: 100% !important; height: auto !im
                         <li class="dropdown-submenu">
                             <a class="dropdown-item dropdown-toggle" href="#">Africa</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="botswana.html">Botswana</a></li>
-                                <li><a class="dropdown-item" href="ghana.html">Ghana</a></li>
                                 <li><a class="dropdown-item" href="kenya.html">Kenya</a></li>
+                                <li><a class="dropdown-item" href="egypt.html">Egypt</a></li>
+                                <li><a class="dropdown-item" href="ghana.html">Ghana</a></li>
+                                <li><a class="dropdown-item" href="botswana.html">Botswana</a></li>
                             </ul>
                         </li>
-                        <!-- America -->
+                        <!-- Americas & Oceania -->
                         <li class="dropdown-submenu">
                             <a class="dropdown-item dropdown-toggle" href="#">America</a>
                             <ul class="dropdown-menu">

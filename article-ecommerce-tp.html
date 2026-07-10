@@ -70,8 +70,8 @@ header {
         .dropdown-submenu .dropdown-menu { position: absolute; top: 0; left: 100%; display: none; margin-top: -5px; background: #ffffff; border: 1px solid var(--glass-border); }
         .dropdown-submenu:hover > .dropdown-menu { display: block; }
 .mobile-nav-toggle { display: none; position: fixed; right: 15px; top: 15px; background: #f5c400; border: none; color: #000; font-size: 24px; cursor: pointer; z-index: 1001; padding: 10px 12px; line-height: 1; width: auto; height: auto; min-width: auto; min-height: auto; border-radius: 6px; }
-        .mobile-nav-toggle::before { content: '\2630'; display: inline-block; font-size: 24px; font-weight: bold; }
-        .mobile-menu { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-left: 1px solid rgba(0,0,0,0.1); padding: 80px 20px 20px; transition: right 0.3s ease; z-index: 1000; overflow-y: auto; box-shadow: -5px 0 20px rgba(0,0,0,0.5); }
+        
+        .mobile-menu { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: rgba(255,255,255,0.98); backdrop-filter: blur(20px); border-left: 1px solid rgba(0,0,0,0.1); padding: 80px 20px 20px; transition: right 0.3s ease; z-index: 10001; overflow-y: auto; box-shadow: -5px 0 20px rgba(0,0,0,0.5); }
         .mobile-menu.active { right: 0; }
         .mobile-menu ul { list-style: none; padding: 0; margin: 0; }
         .mobile-menu ul li { margin-bottom: 15px; }
@@ -86,7 +86,7 @@ header {
         .mobile-dropdown-toggle::after { content: '▼'; font-size: 12px; transition: transform 0.3s ease; }
         .mobile-dropdown-toggle.active { color: #f5c400; }
         .mobile-dropdown-toggle.active::after { transform: rotate(180deg); }
-        .mobile-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 999; backdrop-filter: blur(2px); }
+        .mobile-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; backdrop-filter: blur(2px); }
         .mobile-overlay.active { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .close-menu { position: absolute; top: 20px; right: 20px; background: none; border: none; color: #f5c400; font-size: 32px; cursor: pointer; padding: 5px; line-height: 1; transition: transform 0.3s ease; }
@@ -97,7 +97,7 @@ header {
             .logo-img { height: 35px; width: auto; }
             .d-flex { flex-direction: column !important; align-items: center !important; } .d-flex .btn-main { width: 100% !important; max-width: 280px !important; margin-bottom: 12px !important; } header { width: 100% !important; padding: 12px 15px !important; top: 0 !important; left: 0 !important; transform: none !important; border-radius: 0 !important; justify-content: space-between !important; align-items: center !important; max-width: 100% !important; }
             header > a.btn-main { display: none !important; }
-            header > img.logo-img { order: 1; margin: 0 !important; }
+            header > a { order: 1; margin: 0 !important; }
             .mobile-nav-toggle { order: 2; position: static !important; right: auto !important; top: auto !important; }
         }
         /* Mobile Hero Section */
@@ -213,31 +213,148 @@ footer {
 </head>
 <body>
     <header>
-        <button class="mobile-nav-toggle" onclick="openMobileMenu()" aria-label="Open menu"></button>
+        <!-- Mobile Navigation -->
+        <button class="mobile-nav-toggle" onclick="openMobileMenu()" aria-label="Open menu"><i class="bi bi-list"></i></button>
         <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
         <div class="mobile-menu" id="mobileMenu">
             <button class="close-menu" onclick="closeMobileMenu()" aria-label="Close menu">&#x2715;</button>
-            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
-                <a href="contact.html" class="btn-main" style="display: block; width: 100%; text-align: center; padding: 12px 16px !important; font-size: 14px !important;">Get Started</a>
-                <a href="login.html" class="btn-main" style="display: block; width: 100%; text-align: center; padding: 12px 16px !important; font-size: 14px !important; background: transparent; border: 2px solid var(--accent); color: var(--text-main);">Login</a>
-            </div>
-            <ul>
+<ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutus.html">About</a></li>
                 <li><a href="solution.html">Solutions</a></li>
+                <li>
+                    <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('countriesMenu', this)">
+                        <span>Countries</span>
+                    </div>
+                    <ul class="mobile-submenu" id="countriesMenu">
+                        <li>
+                            <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('gulfMenu', this)">
+                                <span>Gulf Region</span>
+                            </div>
+                            <ul class="mobile-submenu" id="gulfMenu">
+                                <li><a href="unitedarabemirates.html">UAE</a></li>
+                                <li><a href="KingdomofSaudiArabia.html">Kingdom of Saudi Arabia</a></li>
+                                <li><a href="Qatar.html">Qatar</a></li>
+                                <li><a href="oman.html">Oman</a></li>
+                                <li><a href="bahrain.html">Bahrain</a></li>
+</ul>
+                        </li>
+                        <li>
+                            <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('asiaMenu', this)">
+                                <span>Asia</span>
+                            </div>
+                            <ul class="mobile-submenu" id="asiaMenu">
+                                <li><a href="India.html">India</a></li>
+                                <li><a href="bangladesh.html">Bangladesh</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('seaMenu', this)">
+                                <span>South East Asia</span>
+                            </div>
+                            <ul class="mobile-submenu" id="seaMenu">
+                                <li><a href="singapore.html">Singapore</a></li>
+                                <li><a href="thailand.html">Thailand</a></li>
+                                <li><a href="malaysia.html">Malaysia</a></li>
+                                <li><a href="australia.html">Australia</a></li>
+                                <li><a href="indonesia.html">Indonesia</a></li>
+                                <li><a href="vietnam.html">Vietnam</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('africaMenu', this)">
+                                <span>Africa</span>
+                            </div>
+                            <ul class="mobile-submenu" id="africaMenu">
+                                <li><a href="kenya.html">Kenya</a></li>
+                                <li><a href="ghana.html">Ghana</a></li>
+                                <li><a href="botswana.html">Botswana</a></li>
+                                <li><a href="egypt.html">Egypt</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="mobile-dropdown-toggle" onclick="toggleSubmenu('americaMenu', this)">
+                                <span>America</span>
+                            </div>
+                            <ul class="mobile-submenu" id="americaMenu">
+                                <li><a href="canada.html">Canada</a></li>
+                                <li><a href="unitedstates.html">United States</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
                 <li><a href="oecd.html">OECD</a></li>
                 <li><a href="insights.html">TP Insights</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-        </div>
-<a href="index.html">
-            <img src="logo-hexatp.jpeg" alt="HexaTP" class="logo-img" />
+        
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 30px; margin-bottom: 30px;">
+                <a href="contact.html" class="btn-main" style="display: block; width: 100%; text-align: center; padding: 12px 16px !important; font-size: 14px !important;">Get Started</a>
+                <a href="login.html" class="btn-main" style="display: block; width: 100%; text-align: center; padding: 12px 16px !important; font-size: 14px !important; background: transparent; border: 2px solid var(--accent); color: var(--text-main);">Login</a>
+            </div>
+            </div>
+        <a href="index.html">
+            <img src="logo-hexatp.jpeg" alt="HexaTP - Transfer Pricing Simplified" class="logo-img" />
         </a>
         <nav class="d-none d-md-block">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutus.html">About</a></li>
                 <li><a href="solution.html">Solutions</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Countries</a>
+                    <ul class="dropdown-menu">
+                        <!-- Gulf Region -->
+                        <li class="dropdown-submenu position-relative">
+                            <a class="dropdown-item dropdown-toggle" href="#">Gulf Region</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="unitedarabemirates.html">UAE</a></li>
+                                <li><a class="dropdown-item" href="KingdomofSaudiArabia.html">Kingdom of Saudi Arabia</a></li>
+                                <li><a class="dropdown-item" href="Qatar.html">Qatar</a></li>
+                                <li><a class="dropdown-item" href="oman.html">Oman</a></li>
+                                <li><a class="dropdown-item" href="bahrain.html">Bahrain</a></li>
+</ul>
+                        </li>
+                        <!-- Asia -->
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">Asia</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="India.html">India</a></li>
+                                <li><a class="dropdown-item" href="bangladesh.html">Bangladesh</a></li>
+                            </ul>
+                        </li>
+                        <!-- South East Asia -->
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">South East Asia</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="singapore.html">Singapore</a></li>
+                                <li><a class="dropdown-item" href="thailand.html">Thailand</a></li>
+                                <li><a class="dropdown-item" href="malaysia.html">Malaysia</a></li>
+                                <li><a class="dropdown-item" href="australia.html">Australia</a></li>
+                                <li><a class="dropdown-item" href="indonesia.html">Indonesia</a></li>
+                                <li><a class="dropdown-item" href="vietnam.html">Vietnam</a></li>
+                            </ul>
+                        </li>
+                        <!-- Africa -->
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">Africa</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="kenya.html">Kenya</a></li>
+                                <li><a class="dropdown-item" href="egypt.html">Egypt</a></li>
+                                <li><a class="dropdown-item" href="ghana.html">Ghana</a></li>
+                                <li><a class="dropdown-item" href="botswana.html">Botswana</a></li>
+                            </ul>
+                        </li>
+                        <!-- Americas & Oceania -->
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#">America</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="canada.html">Canada</a></li>
+                                <li><a class="dropdown-item" href="unitedstates.html">United States</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
                 <li><a href="oecd.html">OECD</a></li>
                 <li><a href="insights.html">TP Insights</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -466,6 +583,17 @@ function toggleFloatingWidget() {
 }
 </script>
 <!-- End Floating Widget -->
+
+<script>
+function toggleSubmenu(submenuId, toggleElement) {
+    const submenu = document.getElementById(submenuId);
+    if (submenu) {
+        submenu.classList.toggle('active');
+        toggleElement.classList.toggle('active');
+    }
+}
+</script>
+
 </body>
 </html>
 
