@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Save Consultation Inquiry
  * HexaTP Consultation System
@@ -96,13 +96,14 @@ if ($stmt->execute()) {
                  "Appointment Date: $appointment_date\n" .
                  "Appointment Time: $appointment_time\n" .
                  "Message: $message\n";
-    $headers = "From: HexaTP Website <connect@hexatp.com>\r\n" .
+    $sender_email = "connect@hexatp.com";
+    $headers = "From: HexaTP Website <$sender_email>\r\n" .
                "Reply-To: $email\r\n" .
                "X-Mailer: PHP/" . phpversion() . "\r\n" .
                "MIME-Version: 1.0\r\n" .
                "Content-Type: text/plain; charset=UTF-8\r\n";
 
-    @mail($to, $email_subject, $email_body, $headers);
+    @mail($to, $email_subject, $email_body, $headers, "-f $sender_email");
 
     echo json_encode([
         'success' => true,

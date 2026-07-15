@@ -128,7 +128,17 @@ nav ul { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
 .contact-footer {
             padding: 100px 5%;
             text-align: center;
-            background: url('contactsection.bg.jpeg') center/cover no-repeat;
+            background: none;
+            position: relative;
+            z-index: 1;
+        }
+        .contact-footer::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('contactsectionbgfinal.jpeg') center/cover no-repeat;
+            opacity: 0.15; /* Reduced opacity */
+            z-index: -1;
         }
         .contact-footer h2, .contact-footer p, .contact-footer span { color: #0f172a !important; }
 
@@ -1003,9 +1013,64 @@ document.getElementById('inquiryForm').addEventListener('submit', function(e) {
         <p class="mt-4 text-muted">Tailored transfer pricing solutions for the Thai market.</p>
     </section>
 <footer>
-<img src="logo-hexatp.jpeg" alt="HexaTP Logo" class="logo-img" style="height: 35px !important; max-height: 35px !important; width: auto !important; display: block; margin: 0 auto 8px auto; opacity: 0.9;"><br>
-        2026 HexaTP  Transfer Pricing Intelligence Platform
-    </footer>
+    <div class="container" style="text-align: left; padding: 40px 0 20px 0;">
+        <div class="row g-4">
+            <!-- Solutions Column -->
+            <div class="col-lg-4 col-md-6">
+                <h5 style="color: var(--text-main); font-weight: 700; margin-bottom: 20px;">Solutions</h5>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px;"><a href="solution.html" style="color: var(--text-slate); text-decoration: none;">Transfer Pricing Services</a></li>
+                    <li style="margin-bottom: 12px;"><a href="article-apa.html" style="color: var(--text-slate); text-decoration: none;">Advance Pricing Agreements</a></li>
+                    <li style="margin-bottom: 12px;"><a href="article-benchmarking.html" style="color: var(--text-slate); text-decoration: none;">Benchmarking Studies</a></li>
+                    <li style="margin-bottom: 12px;"><a href="article-audit-defense.html" style="color: var(--text-slate); text-decoration: none;">Audit Defense</a></li>
+                </ul>
+            </div>
+            
+            <!-- Quick Links Column -->
+            <div class="col-lg-4 col-md-6">
+                <h5 style="color: var(--text-main); font-weight: 700; margin-bottom: 20px;">Quick Links</h5>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px;"><a href="index.html" style="color: var(--text-slate); text-decoration: none;">Home</a></li>
+                    <li style="margin-bottom: 12px;"><a href="aboutus.html" style="color: var(--text-slate); text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 12px;"><a href="insights.html" style="color: var(--text-slate); text-decoration: none;">TP Insights</a></li>
+                    <li style="margin-bottom: 12px;"><a href="oecd.html" style="color: var(--text-slate); text-decoration: none;">OECD</a></li>
+                    <li style="margin-bottom: 12px;"><a href="contact.html" style="color: var(--text-slate); text-decoration: none;">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Column -->
+            <div class="col-lg-4 col-md-12">
+                <h5 style="color: var(--text-main); font-weight: 700; margin-bottom: 20px;">Contact</h5>
+                <div style="margin-bottom: 15px;">
+                    <a href="mailto:connect@hexatp.com" style="color: var(--text-slate); text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                        <i class="bi bi-envelope"></i> connect@hexatp.com
+                    </a>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <a href="tel:+919971544055" style="color: var(--text-slate); text-decoration: none; display: flex; align-items: center; gap: 10px;">
+                        <i class="bi bi-telephone"></i> +91 99715 44055
+                    </a>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="https://share.google/LOCWZr4eHpDmZAFIv" target="_blank" style="color: var(--accent); font-size: 20px; text-decoration: none;"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/hexatp/" target="_blank" style="color: var(--accent); font-size: 20px; text-decoration: none;"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/hexatp/" target="_blank" style="color: var(--accent); font-size: 20px; text-decoration: none;"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="border-top: 1px solid var(--glass-border); margin-top: 40px; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div style="color: var(--text-slate); font-size: 14px; margin-bottom: 10px;">
+                &copy; 2026 HexaTP &ndash; Transfer Pricing Intelligence Platform
+            </div>
+            <div style="font-size: 14px; margin-bottom: 10px;">
+                <a href="#" style="color: var(--text-slate); text-decoration: none;">Privacy Policy</a>
+                <span style="color: var(--text-slate); margin: 0 10px;">|</span>
+                <a href="#" style="color: var(--text-slate); text-decoration: none;">Terms of Use</a>
+            </div>
+        </div>
+    </div>
+</footer>
 <script>
         function toggleContent(contentId, arrowId) {
             let content = document.getElementById(contentId);
