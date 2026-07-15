@@ -12,6 +12,8 @@ define('DB_NAME', 'u852823366_hexatp_db');       // Your Hostinger database name
 define('DB_USER', 'u852823366_hexatp_user');     // Your Hostinger database username (FIXED: single underscore)
 define('DB_PASS', 'Hexatp_2026');                // Your Hostinger database password
 define('DB_CHARSET', 'utf8mb4');
+// Set default timezone for India
+date_default_timezone_set('Asia/Kolkata');
 
 /**
  * Get Database Connection
