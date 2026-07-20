@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
             width: 100vw;
             height: 100vh;
             overflow: hidden;
-            z-index: -1; /* Place behind all content */
+            z-index: 999; /* Place above content so it's visible throughout */
             pointer-events: none;
             perspective: 1000px;
         }
