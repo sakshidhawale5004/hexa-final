@@ -809,6 +809,7 @@ nav.d-none.d-md-block {
             <button class="filter-btn" onclick="filterInsights('blog')">Blogs</button>
             <button class="filter-btn" onclick="filterInsights('article')">Articles</button>
             <button class="filter-btn" onclick="filterInsights('news')">News</button>
+            <button class="filter-btn" onclick="filterInsights('webinar')">Webinars</button>
         </div>
 <!-- FEATURED ARTICLE -->
         <div class="featured-article">
@@ -1103,9 +1104,18 @@ nav.d-none.d-md-block {
         function filterInsights(category) {
             const cards = document.querySelectorAll('.insight-card');
             const buttons = document.querySelectorAll('.filter-btn');
+            const featuredArticle = document.querySelector('.featured-article');
 // Update active button
             buttons.forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
+            
+            if (featuredArticle) {
+                if (category === 'all') {
+                    featuredArticle.style.display = 'grid';
+                } else {
+                    featuredArticle.style.display = 'none';
+                }
+            }
 // Filter cards
             cards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-category') === category) {
