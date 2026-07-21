@@ -103,9 +103,9 @@ nav a:hover {
         }
 /* --- HERO SECTION --- */
         .insights-hero {
-            padding: 180px 5% 100px;
+            padding: 140px 5% 60px;
             text-align: center;
-            background: linear-gradient(135deg, #fff9e6 0%, var(--bg-light) 100%);
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9)), url('whitegoldenimageforbg.jpg') center/cover no-repeat;
         }
 .insights-hero h1 {
             font-size: clamp(32px, 5vw, 55px);
@@ -809,6 +809,7 @@ nav.d-none.d-md-block {
             <button class="filter-btn" onclick="filterInsights('blog')">Blogs</button>
             <button class="filter-btn" onclick="filterInsights('article')">Articles</button>
             <button class="filter-btn" onclick="filterInsights('news')">News</button>
+            <button class="filter-btn" onclick="filterInsights('webinar')">Webinars</button>
         </div>
 <!-- FEATURED ARTICLE -->
         <div class="featured-article">
@@ -824,6 +825,21 @@ nav.d-none.d-md-block {
         </div>
 <!-- INSIGHTS GRID -->
         <div class="insights-grid" id="insightsGrid">
+            <!-- Webinar 1 -->
+            <div class="insight-card" data-category="webinar">
+                <div class="insight-image">
+                    <img src="flyer.jpeg" alt="UAE Transfer Pricing Webinar">
+                </div>
+                <div class="insight-content">
+                    <span class="insight-badge">Webinar</span>
+                    <h4 class="insight-title">UAE Transfer Pricing: What Changed in the Past Six Months?</h4>
+                    <p class="insight-excerpt">Join HexaTP’s complimentary live webinar for a focused discussion on documentation readiness, benchmarking gaps, and FTA expectations.</p>
+                    <div class="insight-meta">
+                        <span class="insight-date">July 24, 2026</span>
+                        <a href="article-uae-tp-webinar.html" class="read-more">Register Now →</a>
+                    </div>
+                </div>
+            </div>
             <!-- Blog Post 1 -->
             <div class="insight-card" data-category="blog">
                 <div class="insight-image">
