@@ -134,9 +134,9 @@ header {
         }
         @media (min-width: 769px) { .mobile-menu, .mobile-overlay, .mobile-nav-toggle { display: none !important; } }
 
-.article-hero { padding: 160px 5% 120px; background: #050B18; color: #ffffff; text-align: center; position: relative; overflow: hidden; font-family: 'DM Sans', sans-serif; }
-.article-hero::after { content: ''; position: absolute; inset: 0; opacity: 0.15; pointer-events: none; }
-.article-hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(38px, 5vw, 65px); font-weight: 500; margin-bottom: 25px; line-height: 1.15; letter-spacing: -0.01em; text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); position: relative; z-index: 1; color: #ffffff; }
+.article-hero { padding: 160px 5% 120px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #ffffff; text-align: center; position: relative; overflow: hidden; }
+.article-hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(245, 196, 0, 0.15) 0%, transparent 50%); pointer-events: none; }
+.article-hero h1 { font-size: clamp(32px, 5vw, 55px); font-weight: 800; margin-bottom: 25px; line-height: 1.2; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); position: relative; z-index: 1; font-family: 'Poppins', sans-serif; }
 .article-meta { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; position: relative; z-index: 1; }
 .article-meta span { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); padding: 8px 20px; border-radius: 100px; color: #f8fafc; font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 8px; }
 .back-link { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 30px; color: var(--accent); text-decoration: none; font-weight: 600; transition: 0.3s; background: rgba(245, 196, 0, 0.1); padding: 8px 20px; border-radius: 100px; position: relative; z-index: 1; }
@@ -341,79 +341,161 @@ footer {
             <a href="contact.html" class="btn-main py-2 px-4 fs-6">Get Started</a>
         </div>
     </header>
+<style>
+/* New Light Mode Layout Styles */
+.light-webinar-page {
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 80px;
+}
+.light-webinar-page::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: url('assets/uae-bg.png') top right / cover no-repeat;
+    opacity: 0.03; pointer-events: none; z-index: 0; filter: invert(1);
+}
+.hero-split {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+    max-width: 1200px; margin: 0 auto; padding: 40px 5%; position: relative; z-index: 2;
+}
+.hero-text-col { flex: 1 1 500px; padding-right: 40px; margin-bottom: 40px; text-align: left; }
+.hero-img-col { flex: 1 1 400px; position: relative; text-align: center; }
+.hero-img-col img { max-width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 30px rgba(201,168,76,0.1); border: 1px solid rgba(0,0,0,0.05); }
+.hero-img-col img:hover { box-shadow: 0 25px 50px rgba(0,0,0,0.15), 0 0 40px rgba(201,168,76,0.2); }
+
+.hero-text-col h1 { font-family: 'Poppins', sans-serif; font-size: clamp(35px, 4vw, 55px); font-weight: 700; margin-bottom: 10px; line-height: 1.2; letter-spacing: -0.01em; color: #0f172a; text-shadow: none; }
+.hero-subtitle { font-family: 'Poppins', sans-serif; font-size: 24px; font-weight: 500; color: #d4af37; margin-bottom: 25px; }
+
+.floating-details-bar {
+    display: flex; flex-wrap: wrap; background: rgba(255,255,255,0.85); backdrop-filter: blur(15px);
+    border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; margin: 40px 0; padding: 25px 30px;
+    gap: 30px; justify-content: space-between; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+.detail-item { display: flex; flex-direction: column; gap: 8px; }
+.detail-label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #64748b; font-weight: 700; }
+.detail-val { font-family: 'Poppins', sans-serif; font-size: 22px; color: #0f172a; line-height: 1.2; white-space: nowrap; font-weight: 600; }
+
+.roadmap-container { max-width: 1000px; margin: 0 auto; padding: 60px 5%; position: relative; z-index: 2; }
+.roadmap-container h2 { font-size: 20px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #d4af37; margin-bottom: 40px; text-align: left; }
+.roadmap { position: relative; padding-left: 30px; }
+.roadmap::before { content: ''; position: absolute; left: 8px; top: 10px; bottom: 0; width: 2px; background: linear-gradient(to bottom, #d4af37, rgba(201,168,76,0.1)); }
+.roadmap-item { position: relative; background: #ffffff; border: 1px solid rgba(0,0,0,0.06); padding: 25px 30px; border-radius: 8px; margin-bottom: 25px; transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
+.roadmap-item:hover { border-color: rgba(201,168,76,0.3); background: #ffffff; transform: translateX(5px); box-shadow: 0 10px 25px rgba(201,168,76,0.08); }
+.roadmap-item::before { content: ''; position: absolute; left: -27px; top: 30px; width: 12px; height: 12px; border-radius: 50%; background: #ffffff; border: 2px solid #d4af37; box-shadow: 0 0 10px rgba(212,175,55,0.4); }
+.rm-title { display: flex; align-items: baseline; gap: 15px; margin-bottom: 10px; }
+.rm-num { font-family: 'Poppins', sans-serif; font-size: 24px; color: rgba(212,175,55,0.8); line-height: 1; font-weight: 700; }
+.rm-text { font-size: 20px; font-weight: 700; color: #0f172a; text-transform: uppercase; letter-spacing: 0.03em; }
+.rm-desc { color: #475569; font-size: 16px; line-height: 1.6; margin: 0; padding-left: 45px; }
+
+@media (max-width: 900px) {
+    .hero-split { flex-direction: column; text-align: center; }
+    .hero-text-col { padding-right: 0; text-align: center; }
+    .floating-details-bar { flex-direction: column; align-items: center; text-align: center; }
+    .roadmap { padding-left: 0; }
+    .roadmap::before { display: none; }
+    .roadmap-item::before { display: none; }
+    .rm-desc { padding-left: 0; }
+}
+</style>
+
 <section class="article-hero">
-        <div class="container">
-            <a href="insights.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to TP Insights</a>
-            <h1>Navigating UAE Transfer Pricing in 2026:<br>Latest FTA Updates</h1>
-            <div class="article-meta">
-                <span><i class="bi bi-calendar-event"></i> July 29, 2026</span>
-                <span><i class="bi bi-clock-history"></i> 1 hour, including Q&A</span>
-            </div>
+    <div class="container">
+        <a href="insights.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to TP Insights</a>
+        <h1>Webinar on Navigating UAE Transfer Pricing in 2026:<br>Latest FTA Updates</h1>
+        <div class="article-meta">
+            <span><i class="bi bi-calendar-event"></i> July 29, 2026</span>
+            <span><i class="bi bi-clock-history"></i> 1 hour, including Q&A</span>
         </div>
-    </section>
-<section class="article-content">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <img src="29-july-webinar.jpeg" alt="July Transfer Pricing Webinar Flyer" class="webinar-flyer">
-        </div>
-        
-        <h2>Overview</h2>
-        <p>Join HexaTP’s complimentary live webinar for a focused discussion on the latest transfer pricing updates, practical compliance steps, and benchmarking strategies.</p>
-        
-        <div class="focus-points">
-            <div class="focus-point">
-                <i class="bi bi-check-circle-fill"></i>
-                <span><strong>30 September Deadline:</strong> Filing timeline, who must comply, and penalties for late or missing documentation.</span>
+    </div>
+</section>
+
+<div class="light-webinar-page" style="padding-top: 60px;">
+    <div class="hero-split">
+        <div class="hero-text-col">
+            <div style="display:flex;align-items:center;gap:9px;margin-bottom:18px;">
+                <span style="width:7px;height:7px;border-radius:50%;background:#d4af37;animation:pulseGlow 2s infinite;"></span>
+                <span style="font-size:14px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#d4af37;">Live Webinar · Complimentary</span>
             </div>
-            <div class="focus-point">
-                <i class="bi bi-check-circle-fill"></i>
-                <span><strong>Documentation Readiness:</strong> TP documentation structure, contemporaneous requirements, and FTA expectations.</span>
+            
+            <p style="font-size:18px;color:#475569;line-height:1.6;max-width:600px;margin-bottom: 30px;">
+                Join HexaTP's specialists for a focused session on TP documentation and FTA updates ahead of the UAE's 30 September deadline.
+            </p>
+            
+            <div class="who-should-attend" style="margin-bottom: 40px;">
+                <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 15px; font-weight: 700;">Who Should Attend</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; color: #0f172a;">
+                    <li style="display: flex; gap: 10px; align-items: flex-start;"><i class="bi bi-check-circle-fill" style="color: #d4af37; margin-top: 3px;"></i> <span><strong>Tax Directors & Managers</strong> navigating UAE regulations</span></li>
+                    <li style="display: flex; gap: 10px; align-items: flex-start;"><i class="bi bi-check-circle-fill" style="color: #d4af37; margin-top: 3px;"></i> <span><strong>CFOs & Finance Controllers</strong> ensuring compliance</span></li>
+                    <li style="display: flex; gap: 10px; align-items: flex-start;"><i class="bi bi-check-circle-fill" style="color: #d4af37; margin-top: 3px;"></i> <span><strong>TP Professionals</strong> looking for practical FTA insights</span></li>
+                    <li style="display: flex; gap: 10px; align-items: flex-start;"><i class="bi bi-check-circle-fill" style="color: #d4af37; margin-top: 3px;"></i> <span><strong>Multinational Enterprises</strong> operating in the UAE</span></li>
+                </ul>
             </div>
-            <div class="focus-point">
-                <i class="bi bi-check-circle-fill"></i>
-                <span><strong>Common Compliance Gaps:</strong> Benchmarking pitfalls, weak FAR analysis, and inconsistent related-party disclosures.</span>
-            </div>
-            <div class="focus-point">
-                <i class="bi bi-check-circle-fill"></i>
-                <span><strong>Getting Audit-Ready:</strong> Practical steps to close gaps before submission and reduce audit risk.</span>
-            </div>
-        </div>
-        
-        <h2>Event Details</h2>
-        <div class="event-details-grid">
-            <div class="event-detail-card">
-                <i class="bi bi-calendar3 event-detail-icon"></i>
-                <span class="event-detail-label">Date</span>
-                <span class="event-detail-value">July 29, 2026</span>
-            </div>
-            <div class="event-detail-card">
-                <i class="bi bi-clock event-detail-icon"></i>
-                <span class="event-detail-label">Time</span>
-                <span class="event-detail-value">11:00 AM GST</span>
-            </div>
-            <div class="event-detail-card">
-                <i class="bi bi-hourglass-split event-detail-icon"></i>
-                <span class="event-detail-label">Duration</span>
-                <span class="event-detail-value">1 hour, including Q&A</span>
-            </div>
-            <div class="event-detail-card">
-                <i class="bi bi-person-badge event-detail-icon"></i>
-                <span class="event-detail-label">Speakers</span>
-                <span class="event-detail-value">Priyanka Sondhi & Himanshu Gautam</span>
-            </div>
-        </div>
-        
-        <div style="text-align: center; margin-top: 50px; margin-bottom: 50px;">
+            
             <a href="https://forms.gle/vGgdjGRrwmnwmKgYA" target="_blank" class="register-cta">
-                Register Now <i class="bi bi-arrow-right-circle-fill"></i>
+                Register Your Seat <i class="bi bi-arrow-right-circle-fill"></i>
             </a>
+            
+            <div class="floating-details-bar">
+                <div class="detail-item">
+                    <span class="detail-label">Date</span>
+                    <span class="detail-val">29 July 2026</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Time</span>
+                    <span class="detail-val">11:00 AM GST</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Duration</span>
+                    <span class="detail-val">1 Hour</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Speakers</span>
+                    <span class="detail-val" style="font-size: 22px;">Priyanka &amp; Himanshu</span>
+                </div>
+            </div>
         </div>
         
-        <p>HexaTP can support businesses with transfer pricing documentation, benchmarking, compliance reviews and audit-readiness assessments across the UAE.</p>
-        
-        <p style="color: var(--accent); font-size: 14px; margin-top: 40px; font-weight: 600;">
-            #UAETransferPricing #TransferPricing #UAETax #CorporateTaxUAE #FTA #TaxCompliance #TransferPricingDocumentation #Benchmarking #HexaTP #Webinar
-        </p>
-    </section>
+        <div class="hero-img-col">
+            <img src="29-july-webinar.jpeg" alt="July Transfer Pricing Webinar Flyer">
+        </div>
+    </div>
+    
+    <div class="roadmap-container">
+        <h2>What we'll cover</h2>
+        <div class="roadmap">
+            <div class="roadmap-item">
+                <div class="rm-title">
+                    <span class="rm-num">01</span>
+                    <span class="rm-text">30 September Deadline</span>
+                </div>
+                <p class="rm-desc">Filing timeline, who must comply, and penalties for late or missing documentation.</p>
+            </div>
+            <div class="roadmap-item">
+                <div class="rm-title">
+                    <span class="rm-num">02</span>
+                    <span class="rm-text">Documentation Readiness</span>
+                </div>
+                <p class="rm-desc">TP documentation structure, contemporaneous requirements, and FTA expectations.</p>
+            </div>
+            <div class="roadmap-item">
+                <div class="rm-title">
+                    <span class="rm-num">03</span>
+                    <span class="rm-text">Common Compliance Gaps</span>
+                </div>
+                <p class="rm-desc">Benchmarking pitfalls, weak FAR analysis, and inconsistent related-party disclosures.</p>
+            </div>
+            <div class="roadmap-item">
+                <div class="rm-title">
+                    <span class="rm-num">04</span>
+                    <span class="rm-text">Getting Audit-Ready</span>
+                </div>
+                <p class="rm-desc">Practical steps to close gaps before submission and reduce audit risk.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
     <section style="display: flex; justify-content: center; padding: 80px 5%; background: #ffffff;">
         <div class="cta-section" style="max-width: 800px; width: 100%; margin: 0; padding: 60px 40px !important;">
@@ -482,6 +564,7 @@ footer {
         </div>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
         function openMobileMenu() {
             document.getElementById('mobileMenu').classList.add('active');
